@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */; };
+		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
+		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
+		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
+		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
+		FDF5C2FE2909ACB30003A675 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2FD2909ACB30003A675 /* ButtonView.swift */; };
+		FDF5C302290BDFE40003A675 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C301290BDFE40003A675 /* TextView.swift */; };
+		FDF5C304290C0E960003A675 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */; };
+		FDF5C306290D7E700003A675 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C305290D7E700003A675 /* DocumentPicker.swift */; };
+		FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C307290F0D250003A675 /* SettingsView.swift */; };
+		FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C309290F122E0003A675 /* SettingsLabelView.swift */; };
+		FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.debug.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.release.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.release.xcconfig"; sourceTree = "<group>"; };
+		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
+		FDF5C2EF290990F20003A675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FDF5C2F1290990F60003A675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FDF5C2FD2909ACB30003A675 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		FDF5C301290BDFE40003A675 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		FDF5C305290D7E700003A675 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		FDF5C307290F0D250003A675 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FDF5C309290F122E0003A675 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDF5C2E7290990F10003A675 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		103D19877BD647723098FF78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */,
+				DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36463982B28F8F097B9982BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDF5C2E1290990F10003A675 = {
+			isa = PBXGroup;
+			children = (
+				FDF5C2EC290990F10003A675 /* TextAloud */,
+				FDF5C2EB290990F10003A675 /* Products */,
+				103D19877BD647723098FF78 /* Pods */,
+				36463982B28F8F097B9982BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF5C2EB290990F10003A675 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C2EA290990F10003A675 /* TextAloud.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDF5C2EC290990F10003A675 /* TextAloud */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C30D290F4AB20003A675 /* Models */,
+				FDF5C2ED290990F10003A675 /* TextAloudApp.swift */,
+				FDF5C2FC2909AC6E0003A675 /* App */,
+				FDF5C2FB2909AC4B0003A675 /* View */,
+				FDF5C2F1290990F60003A675 /* Assets.xcassets */,
+				FDF5C2F3290990F60003A675 /* Preview Content */,
+				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
+			);
+			path = TextAloud;
+			sourceTree = "<group>";
+		};
+		FDF5C2F3290990F60003A675 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDF5C2FB2909AC4B0003A675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C305290D7E700003A675 /* DocumentPicker.swift */,
+				FDF5C2FD2909ACB30003A675 /* ButtonView.swift */,
+				FDF5C301290BDFE40003A675 /* TextView.swift */,
+				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDF5C2FC2909AC6E0003A675 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C2EF290990F20003A675 /* ContentView.swift */,
+				FDF5C307290F0D250003A675 /* SettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FDF5C30D290F4AB20003A675 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDF5C2E9290990F10003A675 /* TextAloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF5C2F8290990F60003A675 /* Build configuration list for PBXNativeTarget "TextAloud" */;
+			buildPhases = (
+				F7C85CE66D4CEC8D86BB4E21 /* [CP] Check Pods Manifest.lock */,
+				FDF5C2E6290990F10003A675 /* Sources */,
+				FDF5C2E7290990F10003A675 /* Frameworks */,
+				FDF5C2E8290990F10003A675 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextAloud;
+			productName = ReadAloud;
+			productReference = FDF5C2EA290990F10003A675 /* TextAloud.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDF5C2E2290990F10003A675 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					FDF5C2E9290990F10003A675 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = FDF5C2E5290990F10003A675 /* Build configuration list for PBXProject "TextAloud" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDF5C2E1290990F10003A675;
+			productRefGroup = FDF5C2EB290990F10003A675 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDF5C2E9290990F10003A675 /* TextAloud */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDF5C2E8290990F10003A675 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */,
+				FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F7C85CE66D4CEC8D86BB4E21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReadAloud-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDF5C2E6290990F10003A675 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
+				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
+				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
+				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
+				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
+				FDF5C2FE2909ACB30003A675 /* ButtonView.swift in Sources */,
+				FDF5C306290D7E700003A675 /* DocumentPicker.swift in Sources */,
+				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
+				FDF5C304290C0E960003A675 /* SpeechSynthesizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FDF5C2F6290990F60003A675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDF5C2F7290990F60003A675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF5C2F9290990F60003A675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDF5C2FA290990F60003A675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDF5C2E5290990F10003A675 /* Build configuration list for PBXProject "TextAloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF5C2F6290990F60003A675 /* Debug */,
+				FDF5C2F7290990F60003A675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF5C2F8290990F60003A675 /* Build configuration list for PBXNativeTarget "TextAloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF5C2F9290990F60003A675 /* Debug */,
+				FDF5C2FA290990F60003A675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDF5C2E2290990F10003A675 /* Project object */;
+}
