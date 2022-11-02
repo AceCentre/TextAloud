@@ -1,6 +1,19 @@
-# TextAloud
+<p align="center">
+  <a href="https://acecentre.org.uk/">
+    <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/assets/readme-logo.png" alt="TextAloud logo" width="300" />
+  </a>
+</p>
+<p align="center"><i>Reads out text - sentence by sentence, paragraph by paragraph or word by word.</i></p>
 
-Reads out text - sentence by sentence, paragraph by paragraph or word by word. 
+<p align="center">
+  <img alt="GitHub" src="https://img.shields.io/github/license/acecentre/textaloud">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/acecentre/textaloud">
+  <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/acecentre/textaloud">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/assets/readme-demo.gif" alt="TextAloud demo" width="500" />
+</p>
 
 
 ## How to use
