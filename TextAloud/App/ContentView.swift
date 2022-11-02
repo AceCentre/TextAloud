@@ -103,7 +103,7 @@ struct ContentView: View {
                                 .sheet(isPresented: $isShowingSettings) {
                                     SettingsView()
                                 }
-                                Text("Read Aloud")
+                                Text("Text Aloud")
                                     .foregroundColor(.white)
                                     .fontWeight(.heavy)
                             },

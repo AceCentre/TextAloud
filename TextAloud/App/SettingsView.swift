@@ -47,9 +47,9 @@ struct SettingsView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
-                    GroupBox(label: SettingsLabelView(labelText: "Read Aloud", labelImage: "info.circle")) {
+                    GroupBox(label: SettingsLabelView(labelText: "Text Aloud", labelImage: "info.circle")) {
                         Divider().padding(.vertical, 4)
-                        Text("The Read Aloud application makes it easy to read any text that you write yourself, or import through a special window.")
+                        Text("The Text Aloud application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices")
                             .padding(.vertical, 8)
                             .frame(minHeight: 60)
                             .layoutPriority(1)
