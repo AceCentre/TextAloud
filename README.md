@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://acecentre.org.uk/">
-    <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/assets/readme-logo.png" alt="TextAloud logo" width="300" />
+    <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/readme-logo.png" alt="TextAloud logo" width="300" />
   </a>
 </p>
 <p align="center"><i>Reads out text - sentence by sentence, paragraph by paragraph or word by word.</i></p>
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/assets/readme-demo.gif" alt="TextAloud demo" width="500" />
+  <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/readme-demo.gif" alt="TextAloud demo" width="500" />
 </p>
 
 
