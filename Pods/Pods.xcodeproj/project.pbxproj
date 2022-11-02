@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100F1D28723161CCDDB98B63F06C5A8E /* Zip64EndOfCentralDirectoryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D898EB232381CAD3B28A199ABF0B0978 /* Zip64EndOfCentralDirectoryRecord.swift */; };
+		131E1B04690B97D7B600596675DAEC2D /* Pods-ReadAloud-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D226B5781965EE7D6DEE5F2DD4E9FDD6 /* Pods-ReadAloud-dummy.m */; };
+		1B2E32631719874EFF63919647747027 /* BufferedReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2EE2B061668D5099D3E76209E19484 /* BufferedReader.swift */; };
+		1EAFE60700218557D3D6561083DEF81E /* Pods-ReadAloud-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 111943EA7BFED686F93259A3B06ECD3A /* Pods-ReadAloud-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1F85B6CEF2E77708E3ED4A914D815B9D /* SNDocx-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8591DF8C3C39C69DC66D039AC0452E69 /* SNDocx-dummy.m */; };
+		3754216B58220B2BFE4996844ADD366E /* GzipConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42696B300FCACFA205B479D063E2403 /* GzipConstants.swift */; };
+		38311C3DD1FAD26B13D052FEB6C843C9 /* EndOfCentralDirectoryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4AF6DF17D5F9D7A33146C198F1D19 /* EndOfCentralDirectoryRecord.swift */; };
+		489A003027BC50D848D695C6909FD889 /* Zip64ExtendedInformationExtraField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF7E2144CAD0EB760065536A1DBED /* Zip64ExtendedInformationExtraField.swift */; };
+		5370AAA281A4B6DF10651317FD40255C /* ZipFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D127EEF37DCD7AEC43897228541AD6 /* ZipFile.swift */; };
+		5BEC96C6C89142CB99482859D4DC0BB6 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D599C966B22E6D1BBA311BAA45404CAA /* CRC.swift */; };
+		6667DA6A681868EFDDCABA518A048B20 /* SplitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B175306ECE6A5C54A9102584748DE0 /* SplitData.swift */; };
+		69B7F3F4C04BCD9CCC95BEE63BE639EF /* CentralDirectoryFileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41BF7926C918AC9E032F2821CA4FAA7 /* CentralDirectoryFileHeader.swift */; };
+		7B6F5E0E8052CD5F467B57594EB34517 /* GzipHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0E54BD917697170A75996530DFCE6 /* GzipHeader.swift */; };
+		828ED907ED42D5D7A708B0D36240FE8B /* SNDocx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD62FD3FE6CBFE82287FD8D2137CACD9 /* SNDocx.swift */; };
+		832E1594762261B28D6E7B888ADA3613 /* ZipStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F99ACF8249097C208B57B77BDE13FDA /* ZipStructs.swift */; };
+		893A6E439E736A8517099C5E4AFDCD42 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C847F1959192E875EC9C3FAD6676F933 /* Errors.swift */; };
+		8CFAA58B9A0D8413CD8F314BA22E55C1 /* SNDocx-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F207054EF1E3B4B628429D528F8C694 /* SNDocx-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A4CEB08183E648D9470BAB83A9E758A6 /* Zippy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96ADC9E0729F282EB8F605E8EE46CC47 /* Zippy-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AC3B5FB33D65887315D523539599B28F /* Zippy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96AF4592D0F7D637FEECB613C4C737 /* Zippy-dummy.m */; };
+		B0EDDA93D2E1A22981E4757EE0CE8513 /* ZipErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A805E04F309107574F3BE237F4BB7 /* ZipErrors.swift */; };
+		D20ADC14B5F91ACCBDF0512CFFD80EEF /* SwappableInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F6692ED8FBC8532F311F1BA8CA17A6 /* SwappableInteger.swift */; };
+		D54A5BBE4B00D0BF1DBF7B85C2A1718E /* GzipStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD6BE380AD41D489BE4870885D8CC9 /* GzipStream.swift */; };
+		D5F83ADAD95BF55C0520FAF0A1835D9B /* GzipErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25136851741F8EE6E1DEC825CCAFDDB1 /* GzipErrors.swift */; };
+		D8CD6D4B51CC17B1AF0DEBA8C5959BC9 /* Zip64EndOfCentralDirectoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBCC12147D1B95942B10AB05A8759AE /* Zip64EndOfCentralDirectoryLocator.swift */; };
+		E0201E744085565D50BC512EF5A14841 /* GzipFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC0BE5A0A83D24888251EDECE2F7EB /* GzipFooter.swift */; };
+		E81BC464EFCBD15E4632310030082848 /* Zippy.h in Headers */ = {isa = PBXBuildFile; fileRef = A8FAF80BF2AA121B8E80C3713B474BB8 /* Zippy.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F9C6220BD51A26567A5CAC4C8F747669 /* ZipEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33361622DD007A498985CC56032B3ABC /* ZipEntry.swift */; };
+		FB8C0538045D9F5ADAAFCDF2C556DD78 /* LocalFileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6322CA97F6006465C9F38CC88CEE1235 /* LocalFileHeader.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B204D4E17AE013111D095726A2877033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8227333BF9F432EF8ACD55C60FC75759;
+			remoteInfo = SNDocx;
+		};
+		D330EB729E39CE3178CC6860ABA697A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93DBBE04B0EADB9F01255E00CFCED58C;
+			remoteInfo = Zippy;
+		};
+		F6F656DB8FEBA208524E038F5338DFE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93DBBE04B0EADB9F01255E00CFCED58C;
+			remoteInfo = Zippy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		067668AB5D5B714F16F9E31C82504B26 /* Pods-ReadAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReadAloud.release.xcconfig"; sourceTree = "<group>"; };
+		111943EA7BFED686F93259A3B06ECD3A /* Pods-ReadAloud-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReadAloud-umbrella.h"; sourceTree = "<group>"; };
+		2109942283BBC7CCAF9409D86E07BFD4 /* SNDocx.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SNDocx.modulemap; sourceTree = "<group>"; };
+		25136851741F8EE6E1DEC825CCAFDDB1 /* GzipErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GzipErrors.swift; path = Zippy/GzipErrors.swift; sourceTree = "<group>"; };
+		29B162DA3D9C0A34ED0DA02A9133FABD /* libSNDocx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSNDocx.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3209B1A3107D55143AB91A3D191354EB /* SNDocx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SNDocx.release.xcconfig; sourceTree = "<group>"; };
+		33361622DD007A498985CC56032B3ABC /* ZipEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipEntry.swift; path = Zippy/ZipEntry.swift; sourceTree = "<group>"; };
+		3C9E514A6016A2723775FADD6FE92FB0 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		4D33EAEBFF21FFBBBEB3A3F10D80BFD3 /* SNDocx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SNDocx.debug.xcconfig; sourceTree = "<group>"; };
+		4F207054EF1E3B4B628429D528F8C694 /* SNDocx-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SNDocx-umbrella.h"; sourceTree = "<group>"; };
+		6322CA97F6006465C9F38CC88CEE1235 /* LocalFileHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocalFileHeader.swift; path = Zippy/LocalFileHeader.swift; sourceTree = "<group>"; };
+		64308AE798CBA66653D03688EED8CD08 /* Zippy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Zippy.release.xcconfig; sourceTree = "<group>"; };
+		664E8FC77AC473D4080A4B8E17C79483 /* Pods-ReadAloud.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReadAloud.modulemap"; sourceTree = "<group>"; };
+		77AC0BE5A0A83D24888251EDECE2F7EB /* GzipFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GzipFooter.swift; path = Zippy/GzipFooter.swift; sourceTree = "<group>"; };
+		78CD6BE380AD41D489BE4870885D8CC9 /* GzipStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GzipStream.swift; path = Zippy/GzipStream.swift; sourceTree = "<group>"; };
+		7DE4AF6DF17D5F9D7A33146C198F1D19 /* EndOfCentralDirectoryRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndOfCentralDirectoryRecord.swift; path = Zippy/EndOfCentralDirectoryRecord.swift; sourceTree = "<group>"; };
+		8591DF8C3C39C69DC66D039AC0452E69 /* SNDocx-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SNDocx-dummy.m"; sourceTree = "<group>"; };
+		8B57B0CD03B274404FFA694698A2888A /* Pods-ReadAloud-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReadAloud-acknowledgements.plist"; sourceTree = "<group>"; };
+		8F2EE2B061668D5099D3E76209E19484 /* BufferedReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BufferedReader.swift; path = Zippy/BufferedReader.swift; sourceTree = "<group>"; };
+		96ADC9E0729F282EB8F605E8EE46CC47 /* Zippy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Zippy-umbrella.h"; sourceTree = "<group>"; };
+		9A77B038B606FF7F4CCC496ECE1EAF71 /* Pods-ReadAloud */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Pods-ReadAloud"; path = "libPods-ReadAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A7A805E04F309107574F3BE237F4BB7 /* ZipErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipErrors.swift; path = Zippy/ZipErrors.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F99ACF8249097C208B57B77BDE13FDA /* ZipStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipStructs.swift; path = Zippy/ZipStructs.swift; sourceTree = "<group>"; };
+		A8FAF80BF2AA121B8E80C3713B474BB8 /* Zippy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Zippy.h; path = Zippy/Zippy.h; sourceTree = "<group>"; };
+		AD62FD3FE6CBFE82287FD8D2137CACD9 /* SNDocx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SNDocx.swift; path = SNDocx/Classes/SNDocx.swift; sourceTree = "<group>"; };
+		AE96AF4592D0F7D637FEECB613C4C737 /* Zippy-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Zippy-dummy.m"; sourceTree = "<group>"; };
+		B0A94324AEA4B2111227F27D1AC98452 /* Zippy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Zippy.modulemap; sourceTree = "<group>"; };
+		B41BF7926C918AC9E032F2821CA4FAA7 /* CentralDirectoryFileHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CentralDirectoryFileHeader.swift; path = Zippy/CentralDirectoryFileHeader.swift; sourceTree = "<group>"; };
+		B42696B300FCACFA205B479D063E2403 /* GzipConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GzipConstants.swift; path = Zippy/GzipConstants.swift; sourceTree = "<group>"; };
+		B562E85DB028D407F4DD447A3E31A1A4 /* SNDocx-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SNDocx-prefix.pch"; sourceTree = "<group>"; };
+		B8BA2044E8819665994F850D3B23005E /* Zippy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Zippy.debug.xcconfig; sourceTree = "<group>"; };
+		C847F1959192E875EC9C3FAD6676F933 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Zippy/Errors.swift; sourceTree = "<group>"; };
+		C8ACF7E2144CAD0EB760065536A1DBED /* Zip64ExtendedInformationExtraField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zip64ExtendedInformationExtraField.swift; path = Zippy/Zip64ExtendedInformationExtraField.swift; sourceTree = "<group>"; };
+		D226B5781965EE7D6DEE5F2DD4E9FDD6 /* Pods-ReadAloud-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReadAloud-dummy.m"; sourceTree = "<group>"; };
+		D599C966B22E6D1BBA311BAA45404CAA /* CRC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CRC.swift; path = Zippy/CRC.swift; sourceTree = "<group>"; };
+		D898EB232381CAD3B28A199ABF0B0978 /* Zip64EndOfCentralDirectoryRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zip64EndOfCentralDirectoryRecord.swift; path = Zippy/Zip64EndOfCentralDirectoryRecord.swift; sourceTree = "<group>"; };
+		D9FA5B7E0A9E8B6C58270FA607BA63B4 /* Zippy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Zippy-prefix.pch"; sourceTree = "<group>"; };
+		E0B175306ECE6A5C54A9102584748DE0 /* SplitData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SplitData.swift; path = Zippy/SplitData.swift; sourceTree = "<group>"; };
+		EBA83A31C0253D7A0214E0210D987DAA /* libZippy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libZippy.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D127EEF37DCD7AEC43897228541AD6 /* ZipFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipFile.swift; path = Zippy/ZipFile.swift; sourceTree = "<group>"; };
+		F6CD29E38CE14D141B401E699D040316 /* Pods-ReadAloud-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReadAloud-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6F6692ED8FBC8532F311F1BA8CA17A6 /* SwappableInteger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwappableInteger.swift; path = Zippy/SwappableInteger.swift; sourceTree = "<group>"; };
+		FBA0E54BD917697170A75996530DFCE6 /* GzipHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GzipHeader.swift; path = Zippy/GzipHeader.swift; sourceTree = "<group>"; };
+		FEBCC12147D1B95942B10AB05A8759AE /* Zip64EndOfCentralDirectoryLocator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zip64EndOfCentralDirectoryLocator.swift; path = Zippy/Zip64EndOfCentralDirectoryLocator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		036412889B51A3CA5A3AB32F639429AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BB1EA7E3631CE51C32A30D37C912481 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEB2758DF0F1FA353497D5102EEEF568 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49994C2D1ADA821959A65229111B571F /* Pods-ReadAloud */ = {
+			isa = PBXGroup;
+			children = (
+				664E8FC77AC473D4080A4B8E17C79483 /* Pods-ReadAloud.modulemap */,
+				F6CD29E38CE14D141B401E699D040316 /* Pods-ReadAloud-acknowledgements.markdown */,
+				8B57B0CD03B274404FFA694698A2888A /* Pods-ReadAloud-acknowledgements.plist */,
+				D226B5781965EE7D6DEE5F2DD4E9FDD6 /* Pods-ReadAloud-dummy.m */,
+				111943EA7BFED686F93259A3B06ECD3A /* Pods-ReadAloud-umbrella.h */,
+				3C9E514A6016A2723775FADD6FE92FB0 /* Pods-ReadAloud.debug.xcconfig */,
+				067668AB5D5B714F16F9E31C82504B26 /* Pods-ReadAloud.release.xcconfig */,
+			);
+			name = "Pods-ReadAloud";
+			path = "Target Support Files/Pods-ReadAloud";
+			sourceTree = "<group>";
+		};
+		7135A9A85053BB7F2F294AD2250E4282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A77B038B606FF7F4CCC496ECE1EAF71 /* Pods-ReadAloud */,
+				29B162DA3D9C0A34ED0DA02A9133FABD /* libSNDocx.a */,
+				EBA83A31C0253D7A0214E0210D987DAA /* libZippy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90A5F5507B52497FFCE8AB1B895D0BC0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0A94324AEA4B2111227F27D1AC98452 /* Zippy.modulemap */,
+				AE96AF4592D0F7D637FEECB613C4C737 /* Zippy-dummy.m */,
+				D9FA5B7E0A9E8B6C58270FA607BA63B4 /* Zippy-prefix.pch */,
+				96ADC9E0729F282EB8F605E8EE46CC47 /* Zippy-umbrella.h */,
+				B8BA2044E8819665994F850D3B23005E /* Zippy.debug.xcconfig */,
+				64308AE798CBA66653D03688EED8CD08 /* Zippy.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Zippy";
+			sourceTree = "<group>";
+		};
+		9960D1273E859A7B89F330AA75B3A084 /* SNDocx */ = {
+			isa = PBXGroup;
+			children = (
+				AD62FD3FE6CBFE82287FD8D2137CACD9 /* SNDocx.swift */,
+				BC181C39BDF84D2E1B159D040B4424C7 /* Support Files */,
+			);
+			path = SNDocx;
+			sourceTree = "<group>";
+		};
+		A87B0269F48914870BA41C4AF6F55066 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49994C2D1ADA821959A65229111B571F /* Pods-ReadAloud */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AD08BE23BE7EB4DEE20DE195192FE56C /* Zippy */ = {
+			isa = PBXGroup;
+			children = (
+				8F2EE2B061668D5099D3E76209E19484 /* BufferedReader.swift */,
+				B41BF7926C918AC9E032F2821CA4FAA7 /* CentralDirectoryFileHeader.swift */,
+				D599C966B22E6D1BBA311BAA45404CAA /* CRC.swift */,
+				7DE4AF6DF17D5F9D7A33146C198F1D19 /* EndOfCentralDirectoryRecord.swift */,
+				C847F1959192E875EC9C3FAD6676F933 /* Errors.swift */,
+				B42696B300FCACFA205B479D063E2403 /* GzipConstants.swift */,
+				25136851741F8EE6E1DEC825CCAFDDB1 /* GzipErrors.swift */,
+				77AC0BE5A0A83D24888251EDECE2F7EB /* GzipFooter.swift */,
+				FBA0E54BD917697170A75996530DFCE6 /* GzipHeader.swift */,
+				78CD6BE380AD41D489BE4870885D8CC9 /* GzipStream.swift */,
+				6322CA97F6006465C9F38CC88CEE1235 /* LocalFileHeader.swift */,
+				E0B175306ECE6A5C54A9102584748DE0 /* SplitData.swift */,
+				F6F6692ED8FBC8532F311F1BA8CA17A6 /* SwappableInteger.swift */,
+				FEBCC12147D1B95942B10AB05A8759AE /* Zip64EndOfCentralDirectoryLocator.swift */,
+				D898EB232381CAD3B28A199ABF0B0978 /* Zip64EndOfCentralDirectoryRecord.swift */,
+				C8ACF7E2144CAD0EB760065536A1DBED /* Zip64ExtendedInformationExtraField.swift */,
+				33361622DD007A498985CC56032B3ABC /* ZipEntry.swift */,
+				9A7A805E04F309107574F3BE237F4BB7 /* ZipErrors.swift */,
+				F3D127EEF37DCD7AEC43897228541AD6 /* ZipFile.swift */,
+				A8FAF80BF2AA121B8E80C3713B474BB8 /* Zippy.h */,
+				9F99ACF8249097C208B57B77BDE13FDA /* ZipStructs.swift */,
+				90A5F5507B52497FFCE8AB1B895D0BC0 /* Support Files */,
+			);
+			path = Zippy;
+			sourceTree = "<group>";
+		};
+		BC181C39BDF84D2E1B159D040B4424C7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2109942283BBC7CCAF9409D86E07BFD4 /* SNDocx.modulemap */,
+				8591DF8C3C39C69DC66D039AC0452E69 /* SNDocx-dummy.m */,
+				B562E85DB028D407F4DD447A3E31A1A4 /* SNDocx-prefix.pch */,
+				4F207054EF1E3B4B628429D528F8C694 /* SNDocx-umbrella.h */,
+				4D33EAEBFF21FFBBBEB3A3F10D80BFD3 /* SNDocx.debug.xcconfig */,
+				3209B1A3107D55143AB91A3D191354EB /* SNDocx.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SNDocx";
+			sourceTree = "<group>";
+		};
+		C3C6BCCE0761882840D25DA7A9B239E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9960D1273E859A7B89F330AA75B3A084 /* SNDocx */,
+				AD08BE23BE7EB4DEE20DE195192FE56C /* Zippy */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				C3C6BCCE0761882840D25DA7A9B239E2 /* Pods */,
+				7135A9A85053BB7F2F294AD2250E4282 /* Products */,
+				A87B0269F48914870BA41C4AF6F55066 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0F0C12FC06552169A94B0CB20C0E9A1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFAA58B9A0D8413CD8F314BA22E55C1 /* SNDocx-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E2B4298CBB626D9250060895D8BDE3E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EAFE60700218557D3D6561083DEF81E /* Pods-ReadAloud-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDFA6843CB03B0413689CDBF573E147 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E81BC464EFCBD15E4632310030082848 /* Zippy.h in Headers */,
+				A4CEB08183E648D9470BAB83A9E758A6 /* Zippy-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7065BFB52CC00A5CE58193A8D8E38914 /* Pods-ReadAloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D54D124C370E384BCDB73718B7D0ED5 /* Build configuration list for PBXNativeTarget "Pods-ReadAloud" */;
+			buildPhases = (
+				2E2B4298CBB626D9250060895D8BDE3E /* Headers */,
+				2C5BC16030D4502D242A69F296FBE717 /* Sources */,
+				3BB1EA7E3631CE51C32A30D37C912481 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BC28B29668181B383FF9060E7D78D1D /* PBXTargetDependency */,
+				7CDC02E8197F89CF5C33FF386EBD06AD /* PBXTargetDependency */,
+			);
+			name = "Pods-ReadAloud";
+			productName = "Pods-ReadAloud";
+			productReference = 9A77B038B606FF7F4CCC496ECE1EAF71 /* Pods-ReadAloud */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8227333BF9F432EF8ACD55C60FC75759 /* SNDocx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 542503224C86E54FAB790F0825E49B89 /* Build configuration list for PBXNativeTarget "SNDocx" */;
+			buildPhases = (
+				0F0C12FC06552169A94B0CB20C0E9A1B /* Headers */,
+				389807CC66DF633DAC7B65706E96C328 /* Sources */,
+				FEB2758DF0F1FA353497D5102EEEF568 /* Frameworks */,
+				5EA454AE56C27031E10C2094426305AA /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EA99990A7E2B1291E8378DF96046996 /* PBXTargetDependency */,
+			);
+			name = SNDocx;
+			productName = SNDocx;
+			productReference = 29B162DA3D9C0A34ED0DA02A9133FABD /* libSNDocx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		93DBBE04B0EADB9F01255E00CFCED58C /* Zippy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A138E84CC1408F37987B7264A404C533 /* Build configuration list for PBXNativeTarget "Zippy" */;
+			buildPhases = (
+				9BDFA6843CB03B0413689CDBF573E147 /* Headers */,
+				4C5A1FCBCDE49B6E57B720D83D848BAF /* Sources */,
+				036412889B51A3CA5A3AB32F639429AF /* Frameworks */,
+				818DAF2EC1EA9B40038F68EF605A4E26 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zippy;
+			productName = Zippy;
+			productReference = EBA83A31C0253D7A0214E0210D987DAA /* libZippy.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7135A9A85053BB7F2F294AD2250E4282 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7065BFB52CC00A5CE58193A8D8E38914 /* Pods-ReadAloud */,
+				8227333BF9F432EF8ACD55C60FC75759 /* SNDocx */,
+				93DBBE04B0EADB9F01255E00CFCED58C /* Zippy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EA454AE56C27031E10C2094426305AA /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SNDocx/SNDocx.modulemap",
+				"${PODS_ROOT}/Headers/Public/SNDocx/SNDocx-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SNDocx-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SNDocx/SNDocx.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SNDocx/SNDocx-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+		818DAF2EC1EA9B40038F68EF605A4E26 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/Zippy/Zippy.modulemap",
+				"${PODS_ROOT}/Headers/Public/Zippy/Zippy-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/Zippy-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Zippy/Zippy.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/Zippy/Zippy-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C5BC16030D4502D242A69F296FBE717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				131E1B04690B97D7B600596675DAEC2D /* Pods-ReadAloud-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		389807CC66DF633DAC7B65706E96C328 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828ED907ED42D5D7A708B0D36240FE8B /* SNDocx.swift in Sources */,
+				1F85B6CEF2E77708E3ED4A914D815B9D /* SNDocx-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C5A1FCBCDE49B6E57B720D83D848BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2E32631719874EFF63919647747027 /* BufferedReader.swift in Sources */,
+				69B7F3F4C04BCD9CCC95BEE63BE639EF /* CentralDirectoryFileHeader.swift in Sources */,
+				5BEC96C6C89142CB99482859D4DC0BB6 /* CRC.swift in Sources */,
+				38311C3DD1FAD26B13D052FEB6C843C9 /* EndOfCentralDirectoryRecord.swift in Sources */,
+				893A6E439E736A8517099C5E4AFDCD42 /* Errors.swift in Sources */,
+				3754216B58220B2BFE4996844ADD366E /* GzipConstants.swift in Sources */,
+				D5F83ADAD95BF55C0520FAF0A1835D9B /* GzipErrors.swift in Sources */,
+				E0201E744085565D50BC512EF5A14841 /* GzipFooter.swift in Sources */,
+				7B6F5E0E8052CD5F467B57594EB34517 /* GzipHeader.swift in Sources */,
+				D54A5BBE4B00D0BF1DBF7B85C2A1718E /* GzipStream.swift in Sources */,
+				FB8C0538045D9F5ADAAFCDF2C556DD78 /* LocalFileHeader.swift in Sources */,
+				6667DA6A681868EFDDCABA518A048B20 /* SplitData.swift in Sources */,
+				D20ADC14B5F91ACCBDF0512CFFD80EEF /* SwappableInteger.swift in Sources */,
+				D8CD6D4B51CC17B1AF0DEBA8C5959BC9 /* Zip64EndOfCentralDirectoryLocator.swift in Sources */,
+				100F1D28723161CCDDB98B63F06C5A8E /* Zip64EndOfCentralDirectoryRecord.swift in Sources */,
+				489A003027BC50D848D695C6909FD889 /* Zip64ExtendedInformationExtraField.swift in Sources */,
+				F9C6220BD51A26567A5CAC4C8F747669 /* ZipEntry.swift in Sources */,
+				B0EDDA93D2E1A22981E4757EE0CE8513 /* ZipErrors.swift in Sources */,
+				5370AAA281A4B6DF10651317FD40255C /* ZipFile.swift in Sources */,
+				AC3B5FB33D65887315D523539599B28F /* Zippy-dummy.m in Sources */,
+				832E1594762261B28D6E7B888ADA3613 /* ZipStructs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0EA99990A7E2B1291E8378DF96046996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Zippy;
+			target = 93DBBE04B0EADB9F01255E00CFCED58C /* Zippy */;
+			targetProxy = D330EB729E39CE3178CC6860ABA697A3 /* PBXContainerItemProxy */;
+		};
+		7BC28B29668181B383FF9060E7D78D1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SNDocx;
+			target = 8227333BF9F432EF8ACD55C60FC75759 /* SNDocx */;
+			targetProxy = B204D4E17AE013111D095726A2877033 /* PBXContainerItemProxy */;
+		};
+		7CDC02E8197F89CF5C33FF386EBD06AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Zippy;
+			target = 93DBBE04B0EADB9F01255E00CFCED58C /* Zippy */;
+			targetProxy = F6F656DB8FEBA208524E038F5338DFE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C30D289E53750BB67F6A79561FF2E13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 067668AB5D5B714F16F9E31C82504B26 /* Pods-ReadAloud.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		65AE1C15DA957701AD5B24625EDDBE14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64308AE798CBA66653D03688EED8CD08 /* Zippy.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Zippy/Zippy-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MODULEMAP_FILE = Headers/Public/Zippy/Zippy.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Zippy;
+				PRODUCT_NAME = Zippy;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70B9630CE15ABCF1BB7AF5AE1CEE6A40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3209B1A3107D55143AB91A3D191354EB /* SNDocx.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SNDocx/SNDocx-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MODULEMAP_FILE = Headers/Public/SNDocx/SNDocx.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SNDocx;
+				PRODUCT_NAME = SNDocx;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B94117CA3105C3B8C7B4DA03541130E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C9E514A6016A2723775FADD6FE92FB0 /* Pods-ReadAloud.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9E19B8BCE2B92211347D45D8C64EDD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D33EAEBFF21FFBBBEB3A3F10D80BFD3 /* SNDocx.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SNDocx/SNDocx-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MODULEMAP_FILE = Headers/Public/SNDocx/SNDocx.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SNDocx;
+				PRODUCT_NAME = SNDocx;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E56FFC0FCB28A91C885CC0F0CFDCEA5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8BA2044E8819665994F850D3B23005E /* Zippy.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/Zippy/Zippy-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MODULEMAP_FILE = Headers/Public/Zippy/Zippy.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Zippy;
+				PRODUCT_NAME = Zippy;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4FF6A0D1970CA9705974E3CB2134802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D54D124C370E384BCDB73718B7D0ED5 /* Build configuration list for PBXNativeTarget "Pods-ReadAloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B94117CA3105C3B8C7B4DA03541130E7 /* Debug */,
+				0C30D289E53750BB67F6A79561FF2E13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FF6A0D1970CA9705974E3CB2134802 /* Debug */,
+				30E0B9EFD9A5C45D0D351231E81B30B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		542503224C86E54FAB790F0825E49B89 /* Build configuration list for PBXNativeTarget "SNDocx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9E19B8BCE2B92211347D45D8C64EDD8 /* Debug */,
+				70B9630CE15ABCF1BB7AF5AE1CEE6A40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A138E84CC1408F37987B7264A404C533 /* Build configuration list for PBXNativeTarget "Zippy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E56FFC0FCB28A91C885CC0F0CFDCEA5F /* Debug */,
+				65AE1C15DA957701AD5B24625EDDBE14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
