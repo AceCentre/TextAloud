@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/readme-demo.gif" alt="TextAloud demo" width="500" />
+  <img src="https://raw.githubusercontent.com/AceCentre/TextAloud/main/readme-demo.gif" alt="TextAloud demo" width="250" />
 </p>
 
 
