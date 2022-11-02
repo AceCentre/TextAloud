@@ -53,5 +53,5 @@ Remember that both Android and iOS have built in options to read out streams of 
 
 * https://www.appcoda.com/text-to-speech-swiftui/ - this Tutorial formed an original base of code 
 * Daniil Balakiriev
-
+* Icon from Canva (https://www.canva.com/p/qoolio/ - Paperclip and Bubble)
 
