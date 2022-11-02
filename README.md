@@ -30,7 +30,8 @@ Remember that both Android and iOS have built in options to read out streams of 
 * A range of online TTS systems to support a wider range of voices and demonstrate techniques to locally cache data. 
 
 
-# Credits 
+# Credits
+
 
 * https://www.appcoda.com/text-to-speech-swiftui/ - this Tutorial formed an original base of code 
 * Daniil Balakiriev
