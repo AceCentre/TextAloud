@@ -6,9 +6,8 @@
 <p align="center"><i>Reads out text - sentence by sentence, paragraph by paragraph or word by word.</i></p>
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/acecentre/textaloud">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/acecentre/textaloud">
-  <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/acecentre/textaloud">
+  <img alt="GitHub" src="https://img.shields.io/github/license/AceCentre/TextAloud">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/AceCentre/TextAloud">
 </p>
 
 <p align="center">
