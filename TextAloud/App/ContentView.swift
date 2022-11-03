@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  TextAloud
 //
-//  Created by Will Wade on 26.10.2022.
+//  Created by Will Wade, Daniil Balakiriev  on 26.10.2022.
 //
 
 import SwiftUI

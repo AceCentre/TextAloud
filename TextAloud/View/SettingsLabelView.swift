@@ -2,7 +2,7 @@
 //  SettingsLabelView.swift
 //  TextAloud
 //
-//  Created by Will Wade on 30.10.2022.
+//  Created by Will Wade, Daniil Balakiriev  on 30.10.2022.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  SpeechSynthesizer.swift
 //  TextAloud
 //
-//  Created by Will Wade on 28.10.2022.
+//  Created by Will Wade, Daniil Balakiriev  on 28.10.2022.
 //
 
 import SwiftUI

@@ -2,7 +2,7 @@
 //  DocumentPicker.swift
 //  TextAloud
 //
-//  Created by Will Wade on 29.10.2022.
+//  Created by Will Wade, Daniil Balakiriev  on 29.10.2022.
 //
 
 import SwiftUI
