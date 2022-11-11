@@ -35,7 +35,9 @@ struct SettingsView: View {
     @AppStorage("selectedColor") var selectedColor: Color = Color(UIColor(red: 0.96, green: 0.9, blue: 0.258, alpha: 0.4))
     @AppStorage("readingColor") var readingColor: Color = Color.red
     @AppStorage("fontSize") var fontSize: Int = 25
+    @AppStorage("selectedVoice") var pickedVoice: String = "com.apple.voice.compact.en-GB.Daniel"
     @Environment(\.presentationMode) var presentationMode
+    var voiceModel: VoiceModel = VoiceModel()
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
@@ -55,6 +57,26 @@ struct SettingsView: View {
                             .layoutPriority(1)
                             .font(.footnote)
                             .multilineTextAlignment(.leading)
+                    }
+                    GroupBox(label: SettingsLabelView(labelText: "voice customization", labelImage: "speaker.wave.2.bubble.left")) {
+                        Divider().padding(.vertical, 4)
+                        Text("In this section you can configure voice speech. We recommended downloading enhanced voices. To do this, go to Settings -> Accessibility -> Conversational Content -> Voices")
+                            .padding(.vertical, 8)
+                            .frame(minHeight: 60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                        Divider().padding(.vertical, 4)
+                        HStack {
+                            Text("Voice")
+                            Spacer()
+                            Picker("Voice", selection: $pickedVoice){
+                                ForEach(voiceModel.getVoicesNamesAndIdentifiers(language: "en-GB"), id: \.0) {
+                                    Text($0.1).tag($0.0)
+                                }
+                            }
+                        }
+                        .padding([.leading, .trailing])
                     }
                     GroupBox(label: SettingsLabelView(labelText: "customization", labelImage: "paintbrush")) {
                         Divider().padding(.vertical, 4)

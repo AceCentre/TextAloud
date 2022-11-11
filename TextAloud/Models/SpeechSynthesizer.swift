@@ -21,6 +21,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     private var offset: Int = 0
     private var length: Int = 0
     private var isSpeak: Bool = false
+    @AppStorage("selectedVoice") var selectedVoice: String = "com.apple.voice.compact.en-GB.Daniel"
     
     override init() {
         super.init()
@@ -34,6 +35,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         offset = 0
         let utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.47
+        utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoice)
         synth.speak(utterance)
     }
     
