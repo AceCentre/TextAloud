@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */; };
+		6550D2BE5C4974AC93692547 /* libPods-TextAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B07321DFED2F04D600E999F /* libPods-TextAloud.a */; };
+		FD1765F6291F104900F41B00 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1765F5291F104900F41B00 /* VoiceModel.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
@@ -22,9 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C02EBA600A95DF6E47AB5DE /* Pods-TextAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.debug.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.debug.xcconfig"; sourceTree = "<group>"; };
 		53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.debug.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
-		9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B07321DFED2F04D600E999F /* libPods-TextAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TextAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD48BD8490EC345B4C2F40FE /* Pods-TextAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.release.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.release.xcconfig"; sourceTree = "<group>"; };
 		DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.release.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.release.xcconfig"; sourceTree = "<group>"; };
+		FD1765F5291F104900F41B00 /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
 		FDF5C2EF290990F20003A675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */,
+				6550D2BE5C4974AC93692547 /* libPods-TextAloud.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,8 @@
 			children = (
 				53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */,
 				DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */,
+				2C02EBA600A95DF6E47AB5DE /* Pods-TextAloud.debug.xcconfig */,
+				AD48BD8490EC345B4C2F40FE /* Pods-TextAloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -63,7 +69,7 @@
 		36463982B28F8F097B9982BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */,
+				6B07321DFED2F04D600E999F /* libPods-TextAloud.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */,
+				FD1765F5291F104900F41B00 /* VoiceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,7 +225,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReadAloud-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TextAloud-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -232,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1765F6291F104900F41B00 /* VoiceModel.swift in Sources */,
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
@@ -363,14 +371,14 @@
 		};
 		FDF5C2F9290990F60003A675 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */;
+			baseConfigurationReference = 2C02EBA600A95DF6E47AB5DE /* Pods-TextAloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
-				DEVELOPMENT_TEAM = K45HHA96ND;
+				DEVELOPMENT_TEAM = 8UACNPTFYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloud;
@@ -385,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jestix.textaloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -398,14 +406,14 @@
 		};
 		FDF5C2FA290990F60003A675 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */;
+			baseConfigurationReference = AD48BD8490EC345B4C2F40FE /* Pods-TextAloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
-				DEVELOPMENT_TEAM = K45HHA96ND;
+				DEVELOPMENT_TEAM = 8UACNPTFYT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloud;
@@ -420,7 +428,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jestix.textaloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
