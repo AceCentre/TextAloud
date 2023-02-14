@@ -14,7 +14,7 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 32){
+            VStack(spacing: 0){
                 customNavHeaderView
                 speachTextViewComponet
                 Spacer()
@@ -53,11 +53,12 @@ extension RootView{
                 synthesizer.updateRate()
             }
             .tint(.limeChalk)
+            .disabled(rootVM.text.isEmpty)
             
             HStack{
-                ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", action: {synthesizer.stop()})
+                ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
                 Spacer()
-                ButtonView(buttonText: synthesizer.isPlay ? "Pause" : "Play", buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle"){
+                ButtonView(buttonText: synthesizer.isPlay ? "Pause" : "Play", buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
                     if synthesizer.isPlay{
                         synthesizer.pause()
                     }else{
@@ -76,7 +77,7 @@ extension RootView{
             Label {
                 Text(isFocused ? "Save" : "Edit")
             } icon: {
-                Image(systemName: "highlighter")
+                Image(systemName: isFocused ? "checkmark" : "highlighter")
             }
             .font(.title3.weight(.bold))
             .foregroundColor(.limeChalk)
@@ -92,6 +93,8 @@ extension RootView{
             editTestButton
                 .hTrailing()
         }
+        .padding(.top, 32)
+        .padding(.bottom, 16)
     }
 }
 

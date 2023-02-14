@@ -49,4 +49,8 @@ extension String {
         }
         return words
     }
+    
+    var withoutTags: String {
+        self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
 }

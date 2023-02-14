@@ -12,6 +12,7 @@ struct ButtonView: View {
     var buttonText: String
     var buttonIcon: String
     var withIcon: Bool = true
+    var isDisabled: Bool = false
     var action: () -> Void
     
     var body: some View {
@@ -31,6 +32,8 @@ struct ButtonView: View {
             }
         }
         .foregroundColor(.white)
+        .opacity(isDisabled ? 0.6 : 1)
+        .disabled(isDisabled)
     }
 }
 
@@ -39,7 +42,7 @@ struct ButtonView_Previews: PreviewProvider {
         VStack{
             ButtonView(buttonText: "Pause", buttonIcon: "pause.circle", withIcon: true, action: {})
             ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", withIcon: true, action: {})
-            ButtonView(buttonText: "Play", buttonIcon: "play.circle", withIcon: true, action: {})
+            ButtonView(buttonText: "Play", buttonIcon: "play.circle", withIcon: true, isDisabled: true, action: {})
 //                .preferredColorScheme(.dark)
 //                .previewLayout(.sizeThatFits)
         }

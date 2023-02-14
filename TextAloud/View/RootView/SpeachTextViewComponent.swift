@@ -15,12 +15,17 @@ struct SpeachTextViewComponent: View {
     var body: some View {
         GeometryReader { proxy in
             TextView(focused: $focused, text: $text, isEditing: $isEditing, currentWord: $currentWord)
-                 .padding(10)
-                 .frame(height: proxy.size.height)
-                 .background(.white)
-                 .cornerRadius(12)
+                .padding(10)
+                .frame(height: proxy.size.height)
+                .background(.white)
+                .cornerRadius(12)
+                .overlay{
+                    if focused{
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.limeChalk, lineWidth: 3)
+                    }
+                }
         }
-    
     }
 }
 

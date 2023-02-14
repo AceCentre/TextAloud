@@ -16,6 +16,7 @@
 		5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED7299B991B00E3B385 /* ButtonView.swift */; };
 		5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */; };
 		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
+		5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDE299BA73400E3B385 /* TestTextView.swift */; };
 		979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		5A4A0ED7299B991B00E3B385 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		5A4A0EDE299BA73400E3B385 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
 		9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.release.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.release.xcconfig"; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,10 +120,12 @@
 		5A4A0ECF299B97C600E3B385 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
+				FDF5C301290BDFE40003A675 /* TextView.swift */,
 				5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */,
 				5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */,
 				5A4A0ED0299B98DF00E3B385 /* RootView.swift */,
 				FDF5C2EF290990F20003A675 /* ContentView.swift */,
+				5A4A0EDE299BA73400E3B385 /* TestTextView.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -189,7 +193,6 @@
 				5A4A0ED6299B990800E3B385 /* ViewComponents */,
 				5A4A0ECF299B97C600E3B385 /* RootView */,
 				5A4A0ECE299B97C100E3B385 /* Settings */,
-				FDF5C301290BDFE40003A675 /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
 				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
+				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
 				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
 			);

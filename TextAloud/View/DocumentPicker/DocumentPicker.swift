@@ -47,22 +47,21 @@ class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigatio
             .documentType: NSAttributedString.DocumentType.rtf,
             .characterEncoding: String.Encoding.utf8.rawValue
             ], documentAttributes: nil) {
-            fileContent = tryForString.string
+            fileContent = tryForString.string.withoutTags
             return
         }
         if let tryForString = try? NSAttributedString(data: temp! as Data, options: [
             .documentType: NSAttributedString.DocumentType.plain,
             .characterEncoding: String.Encoding.utf8.rawValue
             ], documentAttributes: nil) {
-            fileContent = tryForString.string
+            fileContent = tryForString.string.withoutTags
             return
         }
         if let result = SNDocx.shared.getText(fileUrl: urls[0]) {
         
-            fileContent = result
+            fileContent = result.withoutTags
             print(result)
             return
         }
-        print(urls[0].absoluteURL)
     }
 }
