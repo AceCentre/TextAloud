@@ -60,10 +60,10 @@ struct SettingsView: View {
                         }
                         Divider().padding(.vertical, 4)
                         ColorPicker("Pick selection color", selection: $selectedColor, supportsOpacity: true)
-                            .fontWeight(.medium)
+                            //.fontWeight(.medium)
                         Divider().padding(.vertical, 4)
                         ColorPicker("Pick word highlight color", selection: $readingColor, supportsOpacity: true)
-                            .fontWeight(.medium)
+                            //.fontWeight(.medium)
                         Divider().padding(.vertical, 4)
                         Stepper {
                             HStack {
@@ -76,7 +76,7 @@ struct SettingsView: View {
                         } onDecrement: {
                             decrementStep()
                         }
-                        .fontWeight(.medium)
+                        //.fontWeight(.medium)
                     }
                 }
             }

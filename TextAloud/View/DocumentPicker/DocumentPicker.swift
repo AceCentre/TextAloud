@@ -11,7 +11,7 @@ import MobileCoreServices
 import SNDocx
 
 struct DocumentPicker: UIViewControllerRepresentable {
-    @Binding var fileContent: NSAttributedString
+    @Binding var fileContent: String
     
     func makeCoordinator() -> DocumentPickerCoordinator {
         return DocumentPickerCoordinator(fileContent: $fileContent)
@@ -33,9 +33,9 @@ struct DocumentPicker: UIViewControllerRepresentable {
 }
 
 class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigationControllerDelegate {
-    @Binding var fileContent: NSAttributedString
+    @Binding var fileContent: String
     
-    init(fileContent: Binding<NSAttributedString>) {
+    init(fileContent: Binding<String>) {
         _fileContent = fileContent
     }
     
@@ -47,18 +47,20 @@ class DocumentPickerCoordinator: NSObject, UIDocumentPickerDelegate, UINavigatio
             .documentType: NSAttributedString.DocumentType.rtf,
             .characterEncoding: String.Encoding.utf8.rawValue
             ], documentAttributes: nil) {
-            fileContent = NSAttributedString(string: tryForString.string)
+            fileContent = tryForString.string
             return
         }
         if let tryForString = try? NSAttributedString(data: temp! as Data, options: [
             .documentType: NSAttributedString.DocumentType.plain,
             .characterEncoding: String.Encoding.utf8.rawValue
             ], documentAttributes: nil) {
-            fileContent = NSAttributedString(string: tryForString.string)
+            fileContent = tryForString.string
             return
         }
         if let result = SNDocx.shared.getText(fileUrl: urls[0]) {
-            fileContent = NSAttributedString(string: result)
+        
+            fileContent = result
+            print(result)
             return
         }
         print(urls[0].absoluteURL)

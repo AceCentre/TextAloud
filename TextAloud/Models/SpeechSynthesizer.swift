@@ -17,35 +17,49 @@ extension String {
 
 class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published public var currentWord: NSRange?
-    let synth = AVSpeechSynthesizer()
+    @Published var isPlay: Bool = false
+    @Published var rate: Float = AVSpeechUtteranceDefaultSpeechRate
+    let rangeRate = (AVSpeechUtteranceMinimumSpeechRate...AVSpeechUtteranceMaximumSpeechRate)
+    var synth: AVSpeechSynthesizer
     private var offset: Int = 0
     private var length: Int = 0
-    private var isSpeak: Bool = false
+   
+    private var lastWord: NSRange?
+    private var lastUtterance: AVSpeechUtterance?
     
     override init() {
+        
+        AVAudioSessionManager.share.configurePlaybackSession()
+        
+        synth = AVSpeechSynthesizer()
+        
         super.init()
+        
         synth.delegate = self
+        
     }
     
     func speak(_ text: String) {
-        if(isSpeak) {
-            synth.stopSpeaking(at: .immediate)
-        }
         offset = 0
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.47
-        synth.speak(utterance)
+        if synth.isPaused{
+            synth.continueSpeaking()
+            isPlay = true
+        }else{
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.rate = rate
+            synth.speak(utterance)
+            print("speak")
+        }
     }
     
-    func speak(_ text: String, range: (Int, Int)) {
-        if(isSpeak) {
-            synth.stopSpeaking(at: .immediate)
-        }
-        offset = range.0
-        length = range.1
-        let utterance = AVSpeechUtterance(string: text[offset..<(offset+length)])
-        utterance.rate = 0.47
-        synth.speak(utterance)
+//    func speak(_ text: String, range: (Int, Int)) {
+//        offset = range.0
+//        length = range.1
+//
+//    }
+    
+    func pause(){
+        synth.pauseSpeaking(at: .immediate)
     }
     
     func stop() {
@@ -54,22 +68,41 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
     {
+        print(characterRange.location)
+        print(characterRange.length)
         var temp = characterRange
         temp.location += offset
         currentWord = temp
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        isSpeak = false
+        isPlay = false
         currentWord = nil
+        lastUtterance = utterance
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        isSpeak = false
+        isPlay = false
         currentWord = nil
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        isSpeak = true
+        isPlay = true
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
+        isPlay = false
+    }
+    
+    
+    func updateRate(){
+        if isPlay {
+            stop()
+            if let lastUtterance{
+                lastUtterance.rate = rate
+                synth.speak(lastUtterance)
+                self.lastUtterance = nil
+            }
+        }
     }
 }
