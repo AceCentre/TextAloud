@@ -10,15 +10,14 @@ struct RootView: View {
     @StateObject var rootVM = RootViewModel()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
     @State var sheetState: SheetEnum?
-    @State private var isFocused: Bool = false
-    
+
     var body: some View {
         ZStack {
             VStack(spacing: 0){
                 customNavHeaderView
                 speachTextViewComponet
                 Spacer()
-                if !isFocused{
+                if !rootVM.isFocused{
                     controlsSectionView
                     Spacer()
                 }
@@ -48,12 +47,24 @@ struct RootView_Previews: PreviewProvider {
 extension RootView{
     private var controlsSectionView: some View{
         VStack(spacing: 32){
-            Slider(value: $synthesizer.rate, in: synthesizer.rangeRate) { isEdit in
-                guard !isEdit else {return}
-                synthesizer.updateRate()
-            }
-            .tint(.limeChalk)
-            .disabled(rootVM.text.isEmpty)
+            //            Group{
+            //                Slider(value: $synthesizer.offset, in: (0...Double(rootVM.text.length))) { onChange in
+            //
+            //                    if onChange{
+            //                        synthesizer.scrubState = .scrubStarted
+            //                        print("onChange")
+            //                    }else{
+            //                        synthesizer.scrubState = .scrubEnded( rootVM.text)
+            //                        print("onEnd")
+            //                    }
+            //                }
+            //            }
+//            Slider(value: $synthesizer.rate, in: synthesizer.rangeRate) { isEdit in
+//                guard !isEdit else {return}
+//                synthesizer.updateRate()
+//            }
+//            .tint(.limeChalk)
+//            .disabled(rootVM.text.isEmpty)
             
             HStack{
                 ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
@@ -72,15 +83,52 @@ extension RootView{
     @ViewBuilder
     private var editTestButton: some View{
         Button {
+            if synthesizer.isPlay{
+                synthesizer.stop()
+            }
             rootVM.isEditMode.toggle()
         } label: {
             Label {
-                Text(isFocused ? "Save" : "Edit")
+                Text(rootVM.isFocused ? "Save" : "Edit")
             } icon: {
-                Image(systemName: isFocused ? "checkmark" : "highlighter")
+                Image(systemName: rootVM.isFocused ? "checkmark" : "highlighter")
             }
             .font(.title3.weight(.bold))
             .foregroundColor(.limeChalk)
+        }
+    }
+    
+    @ViewBuilder
+    private var selectedMenuButton: some View{
+        if !rootVM.isFocused{
+            Menu {
+                ForEach(SelectionEnum.allCases, id: \.self) { type in
+                    Button(type.rawValue.capitalized){
+                        rootVM.setSelectionMode(type)
+                    }
+                }
+            } label: {
+                Text(rootVM.currentSelectionMode.rawValue.capitalized)
+                    .font(.title3.weight(.bold))
+                    .foregroundColor(.limeChalk)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var rateMenuButton: some View{
+        if !rootVM.isFocused{
+            Menu {
+                ForEach(SpeechRateEnum.allCases, id: \.self) { type in
+                    Button(type.valueRepresentable){
+                        synthesizer.updateRate(type)
+                    }
+                }
+            } label: {
+                Text(synthesizer.rateMode.valueRepresentable)
+                    .font(.title3.weight(.bold))
+                    .foregroundColor(.limeChalk)
+            }
         }
     }
 }
@@ -89,9 +137,13 @@ extension RootView{
 extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
-            SpeachTextViewComponent(currentWord: $synthesizer.currentWord, isEditing: $rootVM.isEditMode, text: $rootVM.text, focused: $isFocused)
-            editTestButton
-                .hTrailing()
+            SpeachTextViewComponent(currentWord: $synthesizer.currentWord, rootVM: rootVM)
+            HStack {
+                selectedMenuButton
+                rateMenuButton
+                    .hCenter()
+                editTestButton
+            }
         }
         .padding(.top, 32)
         .padding(.bottom, 16)
@@ -119,14 +171,20 @@ extension RootView{
             Spacer()
             
             Group {
-                
-                Button {
-                    rootVM.removeText()
-                } label: {
-                    Image(systemName: "trash.circle.fill")
+                if !rootVM.text.isEmpty{
+                    Button {
+                        if synthesizer.isPlay{
+                            synthesizer.stop()
+                        }
+                        rootVM.removeText()
+                    } label: {
+                        Image(systemName: "trash.circle.fill")
+                    }
                 }
-                
                 Button {
+                    if synthesizer.isPlay{
+                        synthesizer.stop()
+                    }
                     sheetState = .addFile
                 } label: {
                     Image(systemName: "plus.circle.fill")

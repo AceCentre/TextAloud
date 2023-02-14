@@ -8,24 +8,19 @@
 import SwiftUI
 import AVFAudio
 
-extension String {
-    func substring(with nsrange: NSRange) -> Substring? {
-        guard let range = Range(nsrange, in: self) else { return nil }
-        return self[range]
-    }
-}
 
 class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published public var currentWord: NSRange?
     @Published var isPlay: Bool = false
-    @Published var rate: Float = AVSpeechUtteranceDefaultSpeechRate
-    let rangeRate = (AVSpeechUtteranceMinimumSpeechRate...AVSpeechUtteranceMaximumSpeechRate)
+    @Published var rateMode: SpeechRateEnum = .defaul
+    @Published var offset: Double = 0
+    
     var synth: AVSpeechSynthesizer
-    private var offset: Int = 0
+    
     private var length: Int = 0
-   
     private var lastWord: NSRange?
     private var lastUtterance: AVSpeechUtterance?
+    
     
     override init() {
         
@@ -46,17 +41,21 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
             isPlay = true
         }else{
             let utterance = AVSpeechUtterance(string: text)
-            utterance.rate = rate
+            utterance.rate = rateMode.rateValue
             synth.speak(utterance)
             print("speak")
         }
     }
     
-//    func speak(_ text: String, range: (Int, Int)) {
-//        offset = range.0
-//        length = range.1
-//
-//    }
+
+    func setSpeak(_ text: String) {
+        if isPlay {
+            synth.stopSpeaking(at: .immediate)
+        }
+        let utterance = AVSpeechUtterance(string: text[Int(offset)..<(text.length)])
+        utterance.rate = rateMode.rateValue
+        synth.speak(utterance)
+    }
     
     func pause(){
         synth.pauseSpeaking(at: .immediate)
@@ -66,13 +65,35 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         synth.stopSpeaking(at: .immediate)
     }
     
+    
+//    var scrubState: SpeechScrubState = .reset {
+//        didSet {
+//            switch scrubState {
+//            case .scrubEnded(let text):
+//                setSpeak(text)
+//                scrubState = .reset
+//            default : break
+//            }
+//        }
+//    }
+    
+
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
     {
-        print(characterRange.location)
-        print(characterRange.length)
-        var temp = characterRange
-        temp.location += offset
+        print(characterRange)
+
+        let temp = characterRange
         currentWord = temp
+        
+//        switch self.scrubState {
+//        case .reset:
+//            offset = Double(temp.location)
+//            currentWord = temp
+//        case .scrubStarted:
+//            currentWord = .init(location: Int(offset), length: 30)
+//        default : break
+//
+//        }
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
@@ -84,6 +105,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
         isPlay = false
         currentWord = nil
+        offset = .zero
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
@@ -95,14 +117,42 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
     
-    func updateRate(){
+    func updateRate(_ type: SpeechRateEnum){
+        rateMode = type
         if isPlay {
             stop()
             if let lastUtterance{
-                lastUtterance.rate = rate
+                lastUtterance.rate = rateMode.rateValue
                 synth.speak(lastUtterance)
                 self.lastUtterance = nil
             }
         }
     }
 }
+
+
+extension SpeechSynthesizer{
+    
+    enum SpeechScrubState{
+        case reset
+        case scrubStarted
+        case scrubEnded(String)
+    }
+}
+
+
+
+enum SpeechRateEnum: Int, CaseIterable{
+
+    case min, slow, defaul, fast, max
+    
+    var rateValue: Float{
+       Float(self.rawValue + 1) * (AVSpeechUtteranceMaximumSpeechRate / 5)
+    }
+    
+    var valueRepresentable: String{
+        let unit = "x"
+        return String(format: "%.01f%@", rateValue, unit)
+    }
+}
+
