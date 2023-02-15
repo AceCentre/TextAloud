@@ -40,9 +40,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         }else{
             offset = 0
             let utterance = AVSpeechUtterance(string: text)
-            if !selectedVoiceId.isEmpty{
-                utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoiceId)
-            }
+            setVoiceIfNeeded(utterance)
             utterance.rate = rateMode.rateValue
             synth.speak(utterance)
             print("speak")
@@ -57,6 +55,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         offset = range.location
         
         let utterance = AVSpeechUtterance(string: text[offset..<(offset + range.length)])
+        setVoiceIfNeeded(utterance)
         utterance.rate = rateMode.rateValue
         synth.speak(utterance)
     }
@@ -69,7 +68,11 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         synth.stopSpeaking(at: .immediate)
     }
     
-    
+    private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
+        if !selectedVoiceId.isEmpty{
+            utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoiceId)
+        }
+    }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
     {
@@ -110,6 +113,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
             if let lastUtterance{
                 offset = 0
                 lastUtterance.rate = rateMode.rateValue
+                setVoiceIfNeeded(lastUtterance)
                 synth.speak(lastUtterance)
                 self.lastUtterance = nil
             }
