@@ -30,4 +30,8 @@ enum SelectionEnum: Int, CaseIterable{
         case .sentence: return Localization.sentence.toString
         }
     }
+    
+    var keyboardShortcutValue: KeyEquivalent{
+        .init(Character(String(self.rawValue)))
+    }
 }

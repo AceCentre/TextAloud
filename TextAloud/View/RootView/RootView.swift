@@ -66,6 +66,7 @@ extension RootView{
         VStack(spacing: 32){
             HStack{
                 ButtonView(buttonText: Localization.stop.toString, buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
+                    .keyboardShortcut(.escape)
                 Spacer()
                 ButtonView(buttonText: synthesizer.isPlay ? Localization.pause.toString : Localization.play.toString, buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
                     if synthesizer.isPlay{
@@ -74,6 +75,7 @@ extension RootView{
                         synthesizer.speak(rootVM.text)
                     }
                 }
+                .keyboardShortcut(.space)
             }
         }
     }
@@ -104,6 +106,8 @@ extension RootView{
                     Button(type.locale){
                         rootVM.setSelectionMode(type)
                     }
+                    .keyboardShortcut(type.keyboardShortcutValue, modifiers: .control)
+                    /// 1, 2 , 3
                 }
             } label: {
                 Text(rootVM.currentSelectionMode.locale)
