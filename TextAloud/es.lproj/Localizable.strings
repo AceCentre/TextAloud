@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TextAloud
+
+  
+*/
+
+
+"play" = "Play";
+"stop" = "Stop";
+"pause" = "Pausa";
+"save" = "Guardar";
+"edit" = "Editar";
+"word" = "Palabra";
+"paragraph" = "Párrafo";
+"sentence" = "Frase";
+"settings" = "Configuraciones";
+
+"aboutTextAloud %@" = "La aplicación %@ facilita la lectura de cualquier texto que usted mismo escriba o importe. Para cambiar la configuración de voz, vaya a Configuración -> Accesibilidad -> Contenido hablado -> Voces";
+
+"customization" = "Personalización";
+"aboutCustomization" = "En esta sección, puede personalizar la apariencia de la aplicación. Elija un tamaño de fuente que sea conveniente para usted, resalte y color de selección";
+
+"textWillLook" = "Así es como se verá el texto:";
+"simpleText" = "¡Hola, mundo! ¿Cómo estás?";
+"pickSelection" = "Elegir color de selección";
+"pickHighlight" = "Seleccionar color de resaltado";
+"pickVoice" = "Seleccionar voz";
+"fontSize" = "Tamaño de fuente";

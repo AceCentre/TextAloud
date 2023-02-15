@@ -44,7 +44,19 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        
+        Group{
+            RootView()
+                .environment(\.locale, .init(identifier: "en"))
+            RootView()
+                .environment(\.locale, .init(identifier: "fr"))
+            RootView()
+                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+            RootView()
+                .environment(\.locale, .init(identifier: "de"))
+            RootView()
+                .environment(\.locale, .init(identifier: "es"))
+        }
     }
 }
 
@@ -89,12 +101,12 @@ extension RootView{
         if !rootVM.isFocused{
             Menu {
                 ForEach(SelectionEnum.allCases, id: \.self) { type in
-                    Button(type.locale.capitalized){
+                    Button(type.locale){
                         rootVM.setSelectionMode(type)
                     }
                 }
             } label: {
-                Text(rootVM.currentSelectionMode.locale.capitalized)
+                Text(rootVM.currentSelectionMode.locale)
                     .font(.title3.weight(.bold))
                     .foregroundColor(.limeChalk)
             }

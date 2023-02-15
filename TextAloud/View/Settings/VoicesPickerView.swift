@@ -65,7 +65,7 @@ struct VoicesPickerView: View {
                 .padding(.horizontal)
                 Spacer()
             }else{
-                Text("The Text Aloud application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices")
+                Text("aboutTextAloud \("Text Aloud")")
                     .font(.title3.weight(.medium))
                 Button("Ok") {
                     dismiss()

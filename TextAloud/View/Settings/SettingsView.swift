@@ -31,8 +31,18 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
-            .environment(\.locale, .init(identifier: "en"))
+        Group{
+            SettingsView()
+                .environment(\.locale, .init(identifier: "en"))
+            SettingsView()
+                .environment(\.locale, .init(identifier: "fr"))
+            SettingsView()
+                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+            SettingsView()
+                .environment(\.locale, .init(identifier: "de"))
+            SettingsView()
+                .environment(\.locale, .init(identifier: "es"))
+        }
     }
 }
 

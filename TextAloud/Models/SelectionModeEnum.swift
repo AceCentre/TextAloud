@@ -4,7 +4,7 @@
 //
 //
 
-import Foundation
+import SwiftUI
 
 
 enum SelectionEnum: Int, CaseIterable{
@@ -23,7 +23,7 @@ enum SelectionEnum: Int, CaseIterable{
     }
     
     
-    var locale: String{
+    var locale: LocalizedStringKey{
         switch self{
         case .word: return Localization.word.toString
         case .paragraph: return Localization.paragraph.toString

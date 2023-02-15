@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  TextAloud
+
+  
+*/
+
+
+"play" = "Jouer";
+"stop" = "Arrêter";
+"pause" = "Pause";
+"save" = "Enregistrer";
+"edit" = "Modifier";
+"word" = "Mot";
+"paragraph" = "Paragraphe";
+"sentence" = "Phrase";
+"settings" = "Paramètres";
+
+"aboutTextAloud %@" = "L'application %@ facilite la lecture de n'importe quel texte que vous écrivez vous-même ou que vous importez. Remarque pour modifier les paramètres de voix, allez dans Paramètres -> Accessibilité -> Contenu parlé -> Voix";
+
+"customization" = "Personnalisation";
+"aboutCustomization" = "Dans cette section, vous pouvez personnaliser l'apparence de l'application. Choisissez une taille de police qui vous convient, une couleur de surbrillance et de sélection";
+
+"textWillLook" = "Voici à quoi ressemblera le texte :";
+"simpleText" = "Bonjour, tout le monde ! Comment allez-vous ?";
+"pickSelection" = "Choisir la couleur de la sélection";
+"pickHighlight" = "Choisir la couleur de surbrillance";
+"pickVoice" = "Choisir la voix";
+"fontSize" = "Taille de la police";
+

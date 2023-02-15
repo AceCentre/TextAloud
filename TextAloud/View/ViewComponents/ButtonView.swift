@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonView: View {
     
-    var buttonText: String
+    var buttonText: LocalizedStringKey
     var buttonIcon: String
     var withIcon: Bool = true
     var isDisabled: Bool = false

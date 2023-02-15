@@ -4,7 +4,7 @@
 //
 //
 
-import Foundation
+import SwiftUI
 
 enum Localization: String {
 
@@ -28,7 +28,7 @@ enum Localization: String {
     case pickVoice
     
     
-    var toString: String {
-        NSLocalizedString(self.rawValue, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    var toString: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
     }
 }

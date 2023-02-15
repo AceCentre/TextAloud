@@ -38,10 +38,12 @@ class SettingViewModel: ObservableObject{
     
     func getNewString() -> AttributedString {
         
-        let srt = "Hello, World! How are you?"
+        let localizedKey = String.LocalizationValue(stringLiteral: Localization.simpleText.rawValue)
+        
+        let srt = String(localized: localizedKey)
         let words : [String] = srt.components(separatedBy: " ")
         
-        var temp = AttributedString(srt)
+        var temp = AttributedString(localized: "simpleText")
         
         if let word1 = words.first, let rangeSelected = temp.range(of: word1),
            let word2 = words.last, let rangeReading = temp.range(of: word2){
@@ -70,3 +72,5 @@ class SettingViewModel: ObservableObject{
         }
     }
 }
+
+
