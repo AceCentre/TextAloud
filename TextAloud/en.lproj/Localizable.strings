@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  TextAloud
+
+  
+*/
+
+
+"play" = "Play";
+"stop" = "Stop";
+"edit" = "Edit";
+"word" = "Word";
+"paragraph" = "Paragraph";
+"sentence" = "Sentence";
+"settings" = "Settings"
+
+"aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices";
+
+"customization" = "Customization";
+"aboutCustomization" = "Customization";
+"textWillLook" = "Here's what the text will look like:";
+"simpleText" = "Hello, World! How are you?";
+"pickSelection" = "Pick selection color";
+"pickHighlight" = "Pick highlight color";
+"fontSize" = "Font size";

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
+		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
 		5A498B81299CC97F00DFA38B /* SpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */; };
 		5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B82299CD14300DFA38B /* VoicesPickerView.swift */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.debug.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVoiceService.swift; sourceTree = "<group>"; };
 		5A498B82299CD14300DFA38B /* VoicesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesPickerView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				5A4A0EC6299B979D00E3B385 /* Extensions */,
 				5ADCBB56299C060300FC05C8 /* Helpers.swift */,
+				5A1555FE299D119D001A0B7D /* Localization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				FDF5C2FB2909AC4B0003A675 /* View */,
 				FDF5C2F1290990F60003A675 /* Assets.xcassets */,
 				FDF5C2F3290990F60003A675 /* Preview Content */,
+				5A155604299D128E001A0B7D /* Localizable.strings */,
 			);
 			path = TextAloud;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */,
+				5A155602299D128E001A0B7D /* Localizable.strings in Resources */,
 				FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +350,7 @@
 				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
 				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
+				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
 				5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */,
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
@@ -353,6 +361,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A155604299D128E001A0B7D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A155603299D128E001A0B7D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FDF5C2F6290990F60003A675 /* Debug */ = {

@@ -35,13 +35,21 @@ class SettingViewModel: ObservableObject{
         fontSize -= 1
     }
     
+    
     func getNewString() -> AttributedString {
-        var temp = AttributedString("Hello, World! How are you?")
-        let rangeSelected = temp.range(of: "World")!
-        let rangeReading = temp.range(of: "How")!
-        temp.foregroundColor = .black
-        temp[rangeSelected].backgroundColor = selectedColor
-        temp[rangeReading].foregroundColor = readingColor
+        
+        let srt = "Hello, World! How are you?"
+        let words : [String] = srt.components(separatedBy: " ")
+        
+        var temp = AttributedString(srt)
+        
+        if let word1 = words.first, let rangeSelected = temp.range(of: word1),
+           let word2 = words.last, let rangeReading = temp.range(of: word2){
+            temp.foregroundColor = .black
+            temp[rangeSelected].backgroundColor = selectedColor
+            temp[rangeReading].foregroundColor = readingColor
+        }
+        
         return temp
     }
     

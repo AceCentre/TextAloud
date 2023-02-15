@@ -2,7 +2,6 @@
 //  VoicesPickerView.swift
 //  TextAloud
 //
-//  Created by Богдан Зыков on 15.02.2023.
 //
 
 import SwiftUI
