@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
+		5A498B81299CC97F00DFA38B /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B80299CC97F00DFA38B /* VoiceModel.swift */; };
 		5A4A0EC9299B979D00E3B385 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC7299B979D00E3B385 /* View.swift */; };
 		5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC8299B979D00E3B385 /* Color.swift */; };
 		5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.debug.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		5A498B80299CC97F00DFA38B /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
 		5A4A0EC7299B979D00E3B385 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5A4A0EC8299B979D00E3B385 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioSessionManager.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			children = (
 				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
 				FDF5C307290F0D250003A675 /* SettingsView.swift */,
+				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */,
 				5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */,
+				5A498B80299CC97F00DFA38B /* VoiceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
 				5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */,
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
+				5A498B81299CC97F00DFA38B /* VoiceModel.swift in Sources */,
 				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
 				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
@@ -333,6 +340,7 @@
 				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
+				5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */,
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
 				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,

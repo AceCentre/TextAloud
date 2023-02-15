@@ -13,11 +13,12 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     @Published public var currentWord: NSRange?
     @Published var isPlay: Bool = false
     @Published var rateMode: SpeechRateEnum = .defaul
-    @Published var offset: Double = 0
+    
     
     var synth: AVSpeechSynthesizer
     
     private var length: Int = 0
+    private var offset: Int = 0
     private var lastWord: NSRange?
     private var lastUtterance: AVSpeechUtterance?
     
@@ -48,11 +49,13 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
 
-    func setSpeak(_ text: String) {
+    func setSpeakForRange(_ text: String, _ range: NSRange) {
         if isPlay {
             synth.stopSpeaking(at: .immediate)
         }
-        let utterance = AVSpeechUtterance(string: text[Int(offset)..<(text.length)])
+        offset = range.location
+        
+        let utterance = AVSpeechUtterance(string: text[offset..<(offset + range.length)])
         utterance.rate = rateMode.rateValue
         synth.speak(utterance)
     }
@@ -66,34 +69,15 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
     
-//    var scrubState: SpeechScrubState = .reset {
-//        didSet {
-//            switch scrubState {
-//            case .scrubEnded(let text):
-//                setSpeak(text)
-//                scrubState = .reset
-//            default : break
-//            }
-//        }
-//    }
     
-
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
     {
         print(characterRange)
 
-        let temp = characterRange
+        var temp = characterRange
+        temp.location += offset
         currentWord = temp
         
-//        switch self.scrubState {
-//        case .reset:
-//            offset = Double(temp.location)
-//            currentWord = temp
-//        case .scrubStarted:
-//            currentWord = .init(location: Int(offset), length: 30)
-//        default : break
-//
-//        }
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
@@ -122,6 +106,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         if isPlay {
             stop()
             if let lastUtterance{
+                offset = 0
                 lastUtterance.rate = rateMode.rateValue
                 synth.speak(lastUtterance)
                 self.lastUtterance = nil
@@ -144,15 +129,33 @@ extension SpeechSynthesizer{
 
 enum SpeechRateEnum: Int, CaseIterable{
 
-    case min, slow, defaul, fast, max
+    case min, slow, defaul, fast, veryFast, max
     
     var rateValue: Float{
-       Float(self.rawValue + 1) * (AVSpeechUtteranceMaximumSpeechRate / 5)
+        switch self {
+        case .min: return 0.1
+        case .slow: return 0.3
+        case .defaul: return 0.5
+        case .fast: return 0.7
+        case .veryFast: return 0.8
+        case .max: return 1
+        }
     }
     
     var valueRepresentable: String{
+        var value = 0.0
+        
+        switch self {
+        case .min: value += 0.2
+        case .slow: value += 0.5
+        case .defaul: value += 1
+        case .fast: value += 1.5
+        case .veryFast: value += 2
+        case .max: value += 2.5
+        }
+        
         let unit = "x"
-        return String(format: "%.01f%@", rateValue, unit)
+        return String(format: "%.01f%@", value, unit)
     }
 }
 

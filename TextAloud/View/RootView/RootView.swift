@@ -34,6 +34,11 @@ struct RootView: View {
                 DocumentPicker(fileContent: $rootVM.text)
             }
         }
+        .onChange(of: rootVM.selectedRange) { range in
+            if let range{
+                synthesizer.setSpeakForRange(rootVM.text, range)
+            }
+        }
     }
 }
 
@@ -47,25 +52,6 @@ struct RootView_Previews: PreviewProvider {
 extension RootView{
     private var controlsSectionView: some View{
         VStack(spacing: 32){
-            //            Group{
-            //                Slider(value: $synthesizer.offset, in: (0...Double(rootVM.text.length))) { onChange in
-            //
-            //                    if onChange{
-            //                        synthesizer.scrubState = .scrubStarted
-            //                        print("onChange")
-            //                    }else{
-            //                        synthesizer.scrubState = .scrubEnded( rootVM.text)
-            //                        print("onEnd")
-            //                    }
-            //                }
-            //            }
-//            Slider(value: $synthesizer.rate, in: synthesizer.rangeRate) { isEdit in
-//                guard !isEdit else {return}
-//                synthesizer.updateRate()
-//            }
-//            .tint(.limeChalk)
-//            .disabled(rootVM.text.isEmpty)
-            
             HStack{
                 ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
                 Spacer()
