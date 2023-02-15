@@ -13,7 +13,19 @@ class SettingViewModel: ObservableObject{
     @AppStorage("readingColor") var readingColor: Color = Color.red
     @AppStorage("fontSize") var fontSize: Int = 25
     
+    @AppStorage("selectedVoiceId") var selectedVoiceId: String = ""
     
+    @Published var showVoicePicker: Bool = false
+    @Published var currentLanguage: String = ""
+    @Published var tempVoiceId: String = ""
+    @Published var voiceModel: VoiceModel = SpeechVoiceService.share.defaultVoiceModel
+    
+    let voiceService = SpeechVoiceService.share
+        
+    
+    init(){
+        setCurrentVoiceModel()
+    }
     
     func incrementStep() {
         fontSize += 1
@@ -31,5 +43,22 @@ class SettingViewModel: ObservableObject{
         temp[rangeSelected].backgroundColor = selectedColor
         temp[rangeReading].foregroundColor = readingColor
         return temp
+    }
+    
+    
+    func setCurrentVoiceModel() {
+        if let voice = voiceService.getVoicesModelForId(selectedVoiceId){
+            self.voiceModel = voice
+        }
+        self.currentLanguage = voiceModel.languageCode
+        self.tempVoiceId = voiceModel.id
+    }
+    
+    func saveVoice(){
+        if !tempVoiceId.isEmpty{
+            selectedVoiceId = tempVoiceId
+            print(selectedVoiceId)
+            setCurrentVoiceModel()
+        }
     }
 }

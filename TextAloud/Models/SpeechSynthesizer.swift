@@ -13,13 +13,10 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     @Published public var currentWord: NSRange?
     @Published var isPlay: Bool = false
     @Published var rateMode: SpeechRateEnum = .defaul
-    
-    
-    var synth: AVSpeechSynthesizer
-    
-    private var length: Int = 0
+    @AppStorage("selectedVoiceId") var selectedVoiceId: String = SpeechVoiceService.share.defaultVoiceModel.id
+    private var synth: AVSpeechSynthesizer
+    let voices = SpeechVoiceService.share
     private var offset: Int = 0
-    private var lastWord: NSRange?
     private var lastUtterance: AVSpeechUtterance?
     
     
@@ -33,15 +30,19 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         
         synth.delegate = self
         
+        
     }
     
     func speak(_ text: String) {
-        offset = 0
         if synth.isPaused{
             synth.continueSpeaking()
             isPlay = true
         }else{
+            offset = 0
             let utterance = AVSpeechUtterance(string: text)
+            if !selectedVoiceId.isEmpty{
+                utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoiceId)
+            }
             utterance.rate = rateMode.rateValue
             synth.speak(utterance)
             print("speak")
@@ -81,15 +82,16 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("didFinish")
         isPlay = false
         currentWord = nil
         lastUtterance = utterance
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        print("didCancel")
         isPlay = false
         currentWord = nil
-        offset = .zero
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {

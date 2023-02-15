@@ -8,23 +8,24 @@
 import SwiftUI
 import UIKit
 
-
-#warning("Voices picker")
-
 struct SettingsView: View {
     @StateObject var settingVM = SettingViewModel()
     @Environment(\.dismiss) var dismiss
         
     var body: some View {
-        
-        if #available(iOS 16.0, *) {
-            NavigationStack{
-                viewContainer
+        Group{
+            if #available(iOS 16.0, *) {
+                NavigationStack{
+                    viewContainer
+                }
+            } else {
+                NavigationView{
+                    viewContainer
+                }
             }
-        } else {
-            NavigationView{
-                viewContainer
-            }
+        }
+        .sheet(isPresented: $settingVM.showVoicePicker) {
+            VoicesPickerView(settingVM: settingVM)
         }
     }
 }
@@ -71,6 +72,8 @@ extension SettingsView{
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
+            Divider().padding(.vertical, 4)
+            voicePickerButton
         }
     }
     
@@ -81,6 +84,7 @@ extension SettingsView{
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
+            
             Divider().padding(.vertical, 4)
             VStack {
                 Text("Here's what the text will look like:")
@@ -121,5 +125,21 @@ extension SettingsView{
             }
             .font(.headline.weight(.medium))
         }
+    }
+    
+    
+    private var voicePickerButton: some View{
+        Button {
+            settingVM.showVoicePicker.toggle()
+        } label: {
+            HStack{
+                Text("Pick voice")
+                Spacer()
+                Text("\(settingVM.voiceModel.name) \(settingVM.voiceModel.languageStr)")
+                    .lineLimit(1)
+            }
+        }
+        .hLeading()
+        .font(.headline.weight(.medium))
     }
 }
