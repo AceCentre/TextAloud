@@ -8,18 +8,22 @@
 
 "play" = "Play";
 "stop" = "Stop";
+"pause" = "Pause";
+"save" = "Save";
 "edit" = "Edit";
 "word" = "Word";
 "paragraph" = "Paragraph";
 "sentence" = "Sentence";
-"settings" = "Settings"
+"settings" = "Settings";
 
 "aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices";
 
 "customization" = "Customization";
-"aboutCustomization" = "Customization";
+"aboutCustomization" = "In this section, you can customize the appearance of the application. Choose a font size that is convenient for you, highlight and selection color";
+
 "textWillLook" = "Here's what the text will look like:";
 "simpleText" = "Hello, World! How are you?";
 "pickSelection" = "Pick selection color";
 "pickHighlight" = "Pick highlight color";
+"pickVoice" = "Pick voice";
 "fontSize" = "Font size";

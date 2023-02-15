@@ -7,7 +7,7 @@
 import Foundation
 
 
-enum SelectionEnum: String, CaseIterable{
+enum SelectionEnum: Int, CaseIterable{
     
     case word, paragraph, sentence
     
@@ -22,4 +22,12 @@ enum SelectionEnum: String, CaseIterable{
         
     }
     
+    
+    var locale: String{
+        switch self{
+        case .word: return Localization.word.toString
+        case .paragraph: return Localization.paragraph.toString
+        case .sentence: return Localization.sentence.toString
+        }
+    }
 }

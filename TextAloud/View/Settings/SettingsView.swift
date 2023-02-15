@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct SettingsView: View {
     @StateObject var settingVM = SettingViewModel()
@@ -33,6 +32,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environment(\.locale, .init(identifier: "en"))
     }
 }
 
@@ -49,7 +49,7 @@ extension SettingsView{
             .padding(.horizontal)
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Settings")
+        .navigationTitle(Localization.settings.toString)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
@@ -68,7 +68,7 @@ extension SettingsView{
     private var aboutGroupView: some View{
         GroupBox(label: SettingsLabelView(labelText: "Text Aloud", labelImage: "info.circle")) {
             Divider().padding(.vertical, 4)
-            Text("The Text Aloud application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices")
+            Text("aboutTextAloud \("Text Aloud")")
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
@@ -78,16 +78,16 @@ extension SettingsView{
     }
     
     private var customizationGroupView: some View{
-        GroupBox(label: SettingsLabelView(labelText: "customization", labelImage: "paintbrush")) {
+        GroupBox(label: SettingsLabelView(labelText: Localization.customization.toString, labelImage: "paintbrush")) {
             Divider().padding(.vertical, 4)
-            Text("In this section, you can customize the appearance of the application. Choose a font size that is convenient for you, highlight and selection color")
+            Text(Localization.aboutCustomization.toString)
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
             
             Divider().padding(.vertical, 4)
             VStack {
-                Text("Here's what the text will look like:")
+                Text(Localization.textWillLook.toString)
                     .hLeading()
                 HStack {
                     Text(settingVM.getNewString())
@@ -103,17 +103,17 @@ extension SettingsView{
             Divider().padding(.vertical, 4)
             
             Group{
-                ColorPicker("Pick selection color", selection: $settingVM.selectedColor, supportsOpacity: true)
+                ColorPicker(Localization.pickSelection.toString, selection: $settingVM.selectedColor, supportsOpacity: true)
                 
                 Divider().padding(.vertical, 4)
                 
-                ColorPicker("Pick word highlight color", selection: $settingVM.readingColor, supportsOpacity: true)
+                ColorPicker(Localization.pickHighlight.toString, selection: $settingVM.readingColor, supportsOpacity: true)
                 
                 Divider().padding(.vertical, 4)
                 
                 Stepper {
                     HStack {
-                        Text("Font size")
+                        Text(Localization.fontSize.toString)
                         Spacer()
                         Text("\(settingVM.fontSize)")
                     }
@@ -133,7 +133,7 @@ extension SettingsView{
             settingVM.showVoicePicker.toggle()
         } label: {
             HStack{
-                Text("Pick voice")
+                Text(Localization.pickVoice.toString)
                 Spacer()
                 Text("\(settingVM.voiceModel.name) \(settingVM.voiceModel.languageStr)")
                     .lineLimit(1)

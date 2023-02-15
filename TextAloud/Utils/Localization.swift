@@ -11,6 +11,8 @@ enum Localization: String {
     case play
     case stop
     case edit
+    case pause
+    case save
     case word
     case paragraph
     case sentence
@@ -23,5 +25,10 @@ enum Localization: String {
     case pickSelection
     case pickHighlight
     case fontSize
+    case pickVoice
     
+    
+    var toString: String {
+        NSLocalizedString(self.rawValue, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }

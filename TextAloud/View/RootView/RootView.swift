@@ -53,9 +53,9 @@ extension RootView{
     private var controlsSectionView: some View{
         VStack(spacing: 32){
             HStack{
-                ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
+                ButtonView(buttonText: Localization.stop.toString, buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
                 Spacer()
-                ButtonView(buttonText: synthesizer.isPlay ? "Pause" : "Play", buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
+                ButtonView(buttonText: synthesizer.isPlay ? Localization.pause.toString : Localization.play.toString, buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
                     if synthesizer.isPlay{
                         synthesizer.pause()
                     }else{
@@ -75,7 +75,7 @@ extension RootView{
             rootVM.isEditMode.toggle()
         } label: {
             Label {
-                Text(rootVM.isFocused ? "Save" : "Edit")
+                Text(rootVM.isFocused ? Localization.save.toString : Localization.edit.toString)
             } icon: {
                 Image(systemName: rootVM.isFocused ? "checkmark" : "highlighter")
             }
@@ -89,12 +89,12 @@ extension RootView{
         if !rootVM.isFocused{
             Menu {
                 ForEach(SelectionEnum.allCases, id: \.self) { type in
-                    Button(type.rawValue.capitalized){
+                    Button(type.locale.capitalized){
                         rootVM.setSelectionMode(type)
                     }
                 }
             } label: {
-                Text(rootVM.currentSelectionMode.rawValue.capitalized)
+                Text(rootVM.currentSelectionMode.locale.capitalized)
                     .font(.title3.weight(.bold))
                     .foregroundColor(.limeChalk)
             }
