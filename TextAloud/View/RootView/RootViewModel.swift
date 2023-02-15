@@ -8,7 +8,7 @@ import Foundation
 
 class RootViewModel: ObservableObject{
     
-    @Published var text: String = "Ut. Sed et arcu ultricies. Amet, efficitur nec lectus interdum eleifend interdum elit. Dictum vulputate ornare faucibus. Sit vulputate platea elit. Non pulvinar vitae ultricies. Leo, dui sapien leo, et, Ut. Sed et arcu ultricies. Amet, efficitur nec lectus interdum eleifend interdum elit. Dictum vulputate ornare faucibus. Sit vulputate platea elit."
+    @Published var text: String = "Example text, press the plus button to add your own document."
     
     
     @Published var isEditMode: Bool = false
