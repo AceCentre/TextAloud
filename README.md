@@ -19,8 +19,9 @@
 
 - Set a voice. To do this go to System Settings -> Accessibility - Spoken Content -> and Voices. Select a voice - download voice data to get a higher quality voice. 
 - You need your iOS device not on Silent! (Obvious but seriously in testing I was always doing this)
-- Import a text file (you can import a word document but we havent built a nice word to text parser yet (see ([#4](https://github.com/AceCentre/TextAloud/issues/4)))
--  Select some text. Press Paragraph, word or sentence - or read all. 
+- Import a text file 
+- Use a physical keyboard or switch box to control actions: Play: Space, Escape: Stop, 1: word, 2: sentence, 3: paragraph
+- Select some text. Press Paragraph, word or sentence - or read all. 
 
 
 ## Why?
