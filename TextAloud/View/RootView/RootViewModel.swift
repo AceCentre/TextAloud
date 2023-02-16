@@ -27,7 +27,12 @@ class RootViewModel: ObservableObject{
         currentSelectionMode = type
     }
     
-    
+    func onEditToggle(){
+        isEditMode.toggle()
+        if selectedRange != nil{
+            self.selectedRange = nil
+        }
+    }
     
 }
 

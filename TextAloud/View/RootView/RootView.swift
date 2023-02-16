@@ -86,7 +86,8 @@ extension RootView{
             if synthesizer.isPlay{
                 synthesizer.stop()
             }
-            rootVM.isEditMode.toggle()
+            rootVM.onEditToggle()
+            
         } label: {
             Label {
                 Text(rootVM.isFocused ? Localization.save.toString : Localization.edit.toString)
