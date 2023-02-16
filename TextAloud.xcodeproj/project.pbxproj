@@ -23,6 +23,8 @@
 		5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */; };
 		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
 		5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDE299BA73400E3B385 /* TestTextView.swift */; };
+		5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */; };
+		5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDC299E260100C591D7 /* UserDefaults.swift */; };
 		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
 		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
 		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
@@ -57,6 +59,8 @@
 		5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		5A4A0EDE299BA73400E3B385 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
+		5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
+		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				5A4A0EC7299B979D00E3B385 /* View.swift */,
 				5A4A0EC8299B979D00E3B385 /* Color.swift */,
 				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
+				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */,
 				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
+				5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
+				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
 				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
 				5A4A0EC9299B979D00E3B385 /* View.swift in Sources */,
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
@@ -360,6 +367,7 @@
 				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
 				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
+				5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */,
 				5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */,
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
 				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
