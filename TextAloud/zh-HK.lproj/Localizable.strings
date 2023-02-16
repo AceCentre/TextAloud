@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TextAloud
+
+  
+*/
+
+
+"play" = "播放";
+"stop" = "停止";
+"pause" = "暂停";
+"save" = "保存";
+"edit" = "编辑";
+"word" = "单词";
+"paragraph" = "段落";
+"sentence" = "句子";
+"settings" = "设置";
+
+"aboutTextAloud %@" = "%@ 应用程序可以轻松阅读您自己编写或导入的任何文本。注意更改语音设置，请转到设置 -> 辅助功能 -> 语音内容 -> 语音";
+
+"customization" = "自定义";
+"aboutCustomization" = "在此部分，您可以自定义应用程序的外观。选择适合您的字体大小、突出显示和选择颜色";
+
+"textWillLook" = "这是文本的样子：";
+"simpleText" = "你好，世界！你好吗?";
+"pickSelection" = "选择选择颜色";
+"pickHighlight" = "选择高亮颜色";
+"pickVoice" = "选择语音";
+"fontSize" = "字体大小";

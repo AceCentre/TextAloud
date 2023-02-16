@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TextAloud
+
+  
+*/
+
+
+"play" = "Play";
+"stop" = "Stoppen";
+"pause" = "Pause";
+"save" = "Speichern";
+"edit" = "Edit";
+"word" = "Wort";
+"paragraph" = "Absatz";
+"sentence" = "Satz";
+"settings" = "Einstellungen";
+
+"aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren. Hinweis: Gehen Sie zum Ändern der Spracheinstellungen zu Einstellungen -> Bedienungshilfen -> Gesprochene Inhalte -> Stimmen";
+
+"customization" = "Anpassung";
+"aboutCustomization" = "In diesem Abschnitt können Sie das Erscheinungsbild der Anwendung anpassen. Wählen Sie eine für Sie passende Schriftgröße, Hervorhebungs- und Auswahlfarbe";
+
+"textWillLook" = "So wird der Text aussehen:";
+"simpleText" = "Hallo Welt! Wie geht es dir?";
+"pickSelection" = "Auswahlfarbe auswählen";
+"pickHighlight" = "Hervorhebungsfarbe auswählen";
+"pickVoice" = "Stimme auswählen";
+"fontSize" = "Schriftgröße";

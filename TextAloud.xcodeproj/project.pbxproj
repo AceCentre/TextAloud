@@ -7,33 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */; };
+		201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */; };
+		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
+		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
+		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
+		5A498B81299CC97F00DFA38B /* SpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */; };
+		5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B82299CD14300DFA38B /* VoicesPickerView.swift */; };
+		5A4A0EC9299B979D00E3B385 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC7299B979D00E3B385 /* View.swift */; };
+		5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC8299B979D00E3B385 /* Color.swift */; };
+		5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */; };
+		5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED0299B98DF00E3B385 /* RootView.swift */; };
+		5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */; };
+		5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */; };
+		5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED7299B991B00E3B385 /* ButtonView.swift */; };
+		5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */; };
+		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
+		5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDE299BA73400E3B385 /* TestTextView.swift */; };
+		5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */; };
+		5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDC299E260100C591D7 /* UserDefaults.swift */; };
+		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
+		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
+		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
-		FDF5C2FE2909ACB30003A675 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2FD2909ACB30003A675 /* ButtonView.swift */; };
 		FDF5C302290BDFE40003A675 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C301290BDFE40003A675 /* TextView.swift */; };
-		FDF5C304290C0E960003A675 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */; };
-		FDF5C306290D7E700003A675 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C305290D7E700003A675 /* DocumentPicker.swift */; };
 		FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C307290F0D250003A675 /* SettingsView.swift */; };
 		FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C309290F122E0003A675 /* SettingsLabelView.swift */; };
 		FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.debug.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.debug.xcconfig"; sourceTree = "<group>"; };
-		9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReadAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadAloud.release.xcconfig"; path = "Target Support Files/Pods-ReadAloud/Pods-ReadAloud.release.xcconfig"; sourceTree = "<group>"; };
+		1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.release.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.release.xcconfig"; sourceTree = "<group>"; };
+		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A155607299D1E80001A0B7D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A155608299D1F3F001A0B7D /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVoiceService.swift; sourceTree = "<group>"; };
+		5A498B82299CD14300DFA38B /* VoicesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesPickerView.swift; sourceTree = "<group>"; };
+		5A4A0EC7299B979D00E3B385 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		5A4A0EC8299B979D00E3B385 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioSessionManager.swift; sourceTree = "<group>"; };
+		5A4A0ED0299B98DF00E3B385 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
+		5A4A0ED7299B991B00E3B385 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		5A4A0EDE299BA73400E3B385 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
+		5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
+		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
+		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
+		7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.debug.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TextAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
 		FDF5C2EF290990F20003A675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FDF5C2F1290990F60003A675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FDF5C2FD2909ACB30003A675 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FDF5C301290BDFE40003A675 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
-		FDF5C305290D7E700003A675 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		FDF5C307290F0D250003A675 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDF5C309290F122E0003A675 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
@@ -44,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979E54F1A97329A14CF98164 /* libPods-ReadAloud.a in Frameworks */,
+				201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,8 +92,8 @@
 		103D19877BD647723098FF78 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */,
-				DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */,
+				7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */,
+				1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -63,9 +101,81 @@
 		36463982B28F8F097B9982BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B23B6B9E525682ADF9E226C /* libPods-ReadAloud.a */,
+				DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A4A0EC5299B979D00E3B385 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A0EC6299B979D00E3B385 /* Extensions */,
+				5ADCBB56299C060300FC05C8 /* Helpers.swift */,
+				5A1555FE299D119D001A0B7D /* Localization.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5A4A0EC6299B979D00E3B385 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A0EC7299B979D00E3B385 /* View.swift */,
+				5A4A0EC8299B979D00E3B385 /* Color.swift */,
+				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
+				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A4A0ECB299B97A200E3B385 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */,
+				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
+				5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5A4A0ECE299B97C100E3B385 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
+				FDF5C307290F0D250003A675 /* SettingsView.swift */,
+				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
+				5A498B82299CD14300DFA38B /* VoicesPickerView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5A4A0ECF299B97C600E3B385 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5C301290BDFE40003A675 /* TextView.swift */,
+				5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */,
+				5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */,
+				5A4A0ED0299B98DF00E3B385 /* RootView.swift */,
+				FDF5C2EF290990F20003A675 /* ContentView.swift */,
+				5A4A0EDE299BA73400E3B385 /* TestTextView.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		5A4A0ED6299B990800E3B385 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
+				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		5A4A0ED9299B993200E3B385 /* DocumentPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */,
+			);
+			path = DocumentPicker;
 			sourceTree = "<group>";
 		};
 		FDF5C2E1290990F10003A675 = {
@@ -89,13 +199,14 @@
 		FDF5C2EC290990F10003A675 /* TextAloud */ = {
 			isa = PBXGroup;
 			children = (
-				FDF5C30D290F4AB20003A675 /* Models */,
-				FDF5C2ED290990F10003A675 /* TextAloudApp.swift */,
 				FDF5C2FC2909AC6E0003A675 /* App */,
+				5A4A0ECB299B97A200E3B385 /* Services */,
+				5A4A0EC5299B979D00E3B385 /* Utils */,
+				FDF5C30D290F4AB20003A675 /* Models */,
 				FDF5C2FB2909AC4B0003A675 /* View */,
 				FDF5C2F1290990F60003A675 /* Assets.xcassets */,
 				FDF5C2F3290990F60003A675 /* Preview Content */,
-				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
+				5A155604299D128E001A0B7D /* Localizable.strings */,
 			);
 			path = TextAloud;
 			sourceTree = "<group>";
@@ -111,10 +222,10 @@
 		FDF5C2FB2909AC4B0003A675 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FDF5C305290D7E700003A675 /* DocumentPicker.swift */,
-				FDF5C2FD2909ACB30003A675 /* ButtonView.swift */,
-				FDF5C301290BDFE40003A675 /* TextView.swift */,
-				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
+				5A4A0ED9299B993200E3B385 /* DocumentPicker */,
+				5A4A0ED6299B990800E3B385 /* ViewComponents */,
+				5A4A0ECF299B97C600E3B385 /* RootView */,
+				5A4A0ECE299B97C100E3B385 /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,8 +233,7 @@
 		FDF5C2FC2909AC6E0003A675 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				FDF5C2EF290990F20003A675 /* ContentView.swift */,
-				FDF5C307290F0D250003A675 /* SettingsView.swift */,
+				FDF5C2ED290990F10003A675 /* TextAloudApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -131,7 +241,8 @@
 		FDF5C30D290F4AB20003A675 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FDF5C303290C0E960003A675 /* SpeechSynthesizer.swift */,
+				5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */,
+				5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +290,10 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				de,
+				es,
+				"zh-HK",
 			);
 			mainGroup = FDF5C2E1290990F10003A675;
 			productRefGroup = FDF5C2EB290990F10003A675 /* Products */;
@@ -196,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */,
+				5A155602299D128E001A0B7D /* Localizable.strings in Resources */,
 				FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +334,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReadAloud-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TextAloud-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -234,23 +350,55 @@
 			files = (
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
+				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
+				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
+				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
+				5A4A0EC9299B979D00E3B385 /* View.swift in Sources */,
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
+				5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */,
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
+				5A498B81299CC97F00DFA38B /* SpeechVoiceService.swift in Sources */,
+				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
+				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
-				FDF5C2FE2909ACB30003A675 /* ButtonView.swift in Sources */,
-				FDF5C306290D7E700003A675 /* DocumentPicker.swift in Sources */,
+				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
+				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
+				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
+				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
+				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
+				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
+				5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */,
+				5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */,
+				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
+				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
-				FDF5C304290C0E960003A675 /* SpeechSynthesizer.swift in Sources */,
+				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A155604299D128E001A0B7D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A155603299D128E001A0B7D /* en */,
+				5A155605299D1CC0001A0B7D /* fr */,
+				5A155606299D1DB1001A0B7D /* de */,
+				5A155607299D1E80001A0B7D /* es */,
+				5A155608299D1F3F001A0B7D /* zh-HK */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FDF5C2F6290990F60003A675 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -311,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -363,14 +512,14 @@
 		};
 		FDF5C2F9290990F60003A675 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53CF01701DE347CFF0E0C218 /* Pods-ReadAloud.debug.xcconfig */;
+			baseConfigurationReference = 7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
-				DEVELOPMENT_TEAM = K45HHA96ND;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloud;
@@ -380,12 +529,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -398,14 +548,14 @@
 		};
 		FDF5C2FA290990F60003A675 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE1869705F1D8870951539D6 /* Pods-ReadAloud.release.xcconfig */;
+			baseConfigurationReference = 1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
-				DEVELOPMENT_TEAM = K45HHA96ND;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloud;
@@ -415,12 +565,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -7,15 +7,6 @@
 
 import Foundation
 
-
-func isInCharacterSer(_ input: String, _ set: CharacterSet) -> Bool {
-    return input.rangeOfCharacter(from: set) != nil
-}
-
-func isEndOfSentence(_ input: String) -> Bool {
-    return input == "." || input == "!" || input == "?"
-}
-
 extension String {
 
     var length: Int {
@@ -49,4 +40,15 @@ extension String {
         }
         return words
     }
+    
+    var withoutTags: String {
+        self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+    
+    func substring(with nsrange: NSRange) -> Substring? {
+        guard let range = Range(nsrange, in: self) else { return nil }
+        return self[range]
+    }
 }
+
+
