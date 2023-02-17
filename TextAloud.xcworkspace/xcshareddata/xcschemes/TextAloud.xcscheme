@@ -50,6 +50,18 @@
             ReferencedContainer = "container:TextAloud.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "SPEECH_KEY"
+            value = "688eeeba205b456d8474beb30c5e457c"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SPEECH_REGION"
+            value = "uksouth"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -29,7 +29,7 @@ struct RootView: View {
         .sheet(item: $sheetState) { type in
             switch type{
             case .settings:
-                SettingsView()
+                SettingsView(speech: synthesizer)
             case .addFile:
                 DocumentPicker(fileContent: $rootVM.text)
             }
@@ -107,7 +107,7 @@ extension RootView{
                     Button(type.locale){
                         rootVM.setSelectionMode(type)
                     }
-                    .keyboardShortcut(type.keyboardShortcutValue, modifiers: .control)
+                    .keyboardShortcut(type.keyboardShortcutValue)
                     /// 1, 2 , 3
                 }
             } label: {
@@ -178,6 +178,7 @@ extension RootView{
                     Button {
                         if synthesizer.isPlay{
                             synthesizer.stop()
+                            synthesizer.currentWord = nil
                         }
                         rootVM.removeText()
                     } label: {

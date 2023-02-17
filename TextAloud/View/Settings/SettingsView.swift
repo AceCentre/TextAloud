@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var speech: SpeechSynthesizer
     @StateObject var settingVM = SettingViewModel()
     @Environment(\.dismiss) var dismiss
         
@@ -32,16 +33,16 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            SettingsView()
+            SettingsView(speech: SpeechSynthesizer())
                 .environment(\.locale, .init(identifier: "en"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "fr"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "de"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "es"))
+//          SettingsView(rootVM: RootViewModel())
+//                .environment(\.locale, .init(identifier: "fr"))
+//           SettingsView(rootVM: RootViewModel())
+//                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+//           SettingsView(rootVM: RootViewModel())
+//                .environment(\.locale, .init(identifier: "de"))
+//            SettingsView(rootVM: RootViewModel())
+//                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
@@ -82,6 +83,8 @@ extension SettingsView{
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
+            Divider().padding(.vertical, 4)
+            voiceServiceLinkView
             Divider().padding(.vertical, 4)
             voicePickerButton
         }
@@ -151,5 +154,31 @@ extension SettingsView{
         }
         .hLeading()
         .font(.headline.weight(.medium))
+    }
+    
+    private var voiceServiceLinkView: some View{
+        Menu {
+            Button("Apple"){
+                settingVM.changeVoiceService(false)
+            }
+            
+            Button("Azure"){
+                settingVM.changeVoiceService(true)
+            }
+        } label: {
+            HStack {
+                Text("Speech service")
+                Spacer()
+                Text(settingVM.isAzureSpeech ? "Azure" : "Apple")
+            }
+            .font(.headline.weight(.medium))
+            
+        }
+        .hLeading()
+        .onChange(of: settingVM.isAzureSpeech) { isAzuse in
+            if isAzuse{
+                speech.configureteAzure()
+            }
+        }
     }
 }

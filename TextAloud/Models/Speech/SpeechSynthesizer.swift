@@ -9,16 +9,18 @@ import SwiftUI
 import AVFAudio
 
 
-class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+class SpeechSynthesizer: NSObject, ObservableObject {
     @Published public var currentWord: NSRange?
     @Published var isPlay: Bool = false
     @Published var rateMode: SpeechRateEnum = .defaul
-    @AppStorage("selectedVoiceId") var selectedVoiceId: String = SpeechVoiceService.share.defaultVoiceModel.id
+    @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
+    @AppStorage("aVFVoiceId") var aVFVoiceId: String = SpeechVoiceService.share.defaultVoiceModel.id
+    @AppStorage("azureVoiceId") var azureVoiceId: String = SpeechVoiceService.share.defaultAzureVoiceId
     private var synth: AVSpeechSynthesizer
-    let voices = SpeechVoiceService.share
     private var offset: Int = 0
-    private var lastUtterance: AVSpeechUtterance?
+    var lastUtterance: AVSpeechUtterance?
     
+    let azureSpeech = AzureSpeech.share
     
     override init() {
         
@@ -30,10 +32,15 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         
         synth.delegate = self
         
-        
+        //configureteAzure()
     }
     
     func speak(_ text: String) {
+        
+        if isAzureSpeech{
+            azureSpeech.speak(text, type: .text)
+            return
+        }
         if synth.isPaused{
             synth.continueSpeaking()
             isPlay = true
@@ -50,11 +57,17 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
 
     func setSpeakForRange(_ text: String, _ range: NSRange) {
         if isPlay {
-            synth.stopSpeaking(at: .immediate)
+            stop()
         }
         offset = range.location
+        let range = offset..<(offset + range.length)
         
-        let utterance = AVSpeechUtterance(string: text[offset..<(offset + range.length)])
+        if isAzureSpeech{
+            azureSpeech.speak(text[range], type: .text)
+            return
+        }
+        
+        let utterance = AVSpeechUtterance(string: text[range])
         setVoiceIfNeeded(utterance)
         utterance.rate = rateMode.rateValue
         synth.speak(utterance)
@@ -65,12 +78,16 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
     func stop() {
-        synth.stopSpeaking(at: .immediate)
+        if isAzureSpeech{
+            azureSpeech.stop()
+        }else{
+            synth.stopSpeaking(at: .immediate)
+        }
     }
     
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
-        if !selectedVoiceId.isEmpty{
-            utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoiceId)
+        if !aVFVoiceId.isEmpty{
+            utterance.voice = AVSpeechSynthesisVoice(identifier: aVFVoiceId)
         }
     }
     
@@ -84,26 +101,7 @@ class SpeechSynthesizer: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("didFinish")
-        isPlay = false
-        currentWord = nil
-        lastUtterance = utterance
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        print("didCancel")
-        isPlay = false
-        currentWord = nil
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        isPlay = true
-    }
-    
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
-        isPlay = false
-    }
+
     
     
     func updateRate(_ type: SpeechRateEnum){

@@ -4,26 +4,33 @@
 //
 //
 
-import Foundation
+import SwiftUI
 import AVFAudio
+import MicrosoftCognitiveServicesSpeech
 
 class SpeechVoiceService {
     
     static let share = SpeechVoiceService()
     
-    private var voices: [AVSpeechSynthesisVoice]
+    @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
+    let azureSpeech = AzureSpeech.share
+    let defaultAzureVoiceId = "en-US-JennyNeural"
+    
+    private var aVFvoices: [AVSpeechSynthesisVoice]
+    private var azureVoices: [SPXVoiceInfo]
     
     private init() {
-        voices = AVSpeechSynthesisVoice.speechVoices()
+        aVFvoices = AVSpeechSynthesisVoice.speechVoices()
+        azureVoices = azureSpeech.getAllVoices() ?? []
     }
     
     var uniquedLanguagesCodes: [String]{
-        voices.map({$0.language}).uniqued()
+        
+        return isAzureSpeech ? azureVoices.map({$0.locale}).uniqued() :
+        
+        aVFvoices.map({$0.language}).uniqued()
     }
-   
-    func getLanguageForId(_ identifier: String) -> String?{
-        voices.first(where: {$0.identifier == identifier})?.language.getFullLocaleLanguageStr
-    }
+    
     
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
@@ -32,12 +39,23 @@ class SpeechVoiceService {
     }
     
     func getVoicesModelForLanguage(_ language: String) -> [VoiceModel] {
-        let filtered = voices.filter({$0.language == language})
-        return filtered.map({.init(id: $0.identifier, name: $0.name, languageCode: $0.language)})
+        
+        if isAzureSpeech{
+            let filtered = azureVoices.filter({$0.locale == language})
+            return filtered.map({.init(id: $0.shortName, name: $0.shortName, languageCode: $0.locale)})
+        }else{
+            let filtered = aVFvoices.filter({$0.language == language})
+            return filtered.map({.init(id: $0.identifier, name: $0.name, languageCode: $0.language)})
+        }
     }
     
     func getVoicesModelForId(_ id: String) -> VoiceModel? {
-        voices.first(where: {$0.identifier == id}).map({.init(id: $0.identifier, name: $0.name, languageCode: $0.language)})
+        
+        if isAzureSpeech{
+          return azureVoices.first(where: {$0.shortName == id}).map({.init(id: $0.shortName, name: $0.shortName, languageCode: $0.locale)})
+        }else{
+            return aVFvoices.first(where: {$0.identifier == id}).map({.init(id: $0.identifier, name: $0.name, languageCode: $0.language)})
+        }
     }
 }
 
@@ -69,7 +87,7 @@ extension String {
         }
         
         guard let region = locale.localizedString(forRegionCode: String(self.suffix(2))) else{
-
+            
             return countru
         }
         return "\(countru) (\(region))"
