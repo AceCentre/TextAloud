@@ -161,7 +161,7 @@ extension RootView{
                     .font(.title)
             }
             
-            Text("Text Aloud")
+            Text("TextAloud")
                 .foregroundColor(.white)
                 .font(.title)
                 .fontWeight(.heavy)

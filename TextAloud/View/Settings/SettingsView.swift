@@ -77,9 +77,9 @@ extension SettingsView{
 //MARK: - View components
 extension SettingsView{
     private var aboutGroupView: some View{
-        GroupBox(label: SettingsLabelView(labelText: "Text Aloud", labelImage: "info.circle")) {
+        GroupBox(label: SettingsLabelView(labelText: "TextAloud", labelImage: "info.circle")) {
             Divider().padding(.vertical, 4)
-            Text("aboutTextAloud \("Text Aloud")")
+            Text("aboutTextAloud \("TextAloud")")
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)

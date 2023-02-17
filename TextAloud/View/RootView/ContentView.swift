@@ -103,7 +103,7 @@
 //                                .sheet(isPresented: $isShowingSettings) {
 //                                    SettingsView()
 //                                }
-//                                Text("Text Aloud")
+//                                Text("TextAloud")
 //                                    .foregroundColor(.white)
 //                                    .fontWeight(.heavy)
 //                            },

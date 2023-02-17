@@ -65,7 +65,7 @@ struct VoicesPickerView: View {
                 .padding(.horizontal)
                 Spacer()
             }else{
-                Text("aboutTextAloud \("Text Aloud")")
+                Text("aboutTextAloud \("TextAloud")")
                     .font(.title3.weight(.medium))
                 Button("Ok") {
                     dismiss()
