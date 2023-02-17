@@ -14,10 +14,10 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     @Published var isPlay: Bool = false
     @Published var rateMode: SpeechRateEnum = .defaul
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
-    @AppStorage("aVFVoiceId") var aVFVoiceId: String = SpeechVoiceService.share.defaultVoiceModel.id
-    @AppStorage("azureVoiceId") var azureVoiceId: String = SpeechVoiceService.share.defaultAzureVoiceId
+    @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
+    @AppStorage("azureVoiceId") var azureVoiceId: String = ""
     private var synth: AVSpeechSynthesizer
-    private var offset: Int = 0
+    var offset: Int = 0
     var lastUtterance: AVSpeechUtterance?
     
     let azureSpeech = AzureSpeech.share
@@ -31,14 +31,13 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         super.init()
         
         synth.delegate = self
-        
-        //configureteAzure()
+    
     }
     
     func speak(_ text: String) {
         
         if isAzureSpeech{
-            azureSpeech.speak(text, type: .text)
+            speakAzure(text)
             return
         }
         if synth.isPaused{
@@ -63,7 +62,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         let range = offset..<(offset + range.length)
         
         if isAzureSpeech{
-            azureSpeech.speak(text[range], type: .text)
+            speakAzure(text[range])
             return
         }
         

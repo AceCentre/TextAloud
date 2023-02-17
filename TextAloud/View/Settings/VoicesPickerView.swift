@@ -12,11 +12,11 @@ struct VoicesPickerView: View {
     @ObservedObject var settingVM: SettingViewModel
   
     var voices: [VoiceModel] {
-        settingVM.voiceService.getVoicesModelForLanguage(settingVM.currentLanguage)
+        settingVM.voicesForLanguage
     }
     
     var uniquedLanguagesCodes: [String]{
-        settingVM.voiceService.uniquedLanguagesCodes
+        settingVM.uniquedLanguagesCodes
     }
     
     var body: some View {
@@ -25,14 +25,14 @@ struct VoicesPickerView: View {
             if !uniquedLanguagesCodes.isEmpty{
                 Label("Languages", systemImage: "globe")
                     .foregroundColor(.deepOcean)
-                Picker(selection: $settingVM.currentLanguage) {
+                Picker(selection: $settingVM.selectedLanguageCode) {
                     ForEach(uniquedLanguagesCodes, id: \.self) { code in
                         Text(code.getFullLocaleLanguageStr)
                             .tag(code)
                     }
                 } label: {}.labelsHidden()
                 .pickerStyle(.wheel)
-                .onChange(of: settingVM.currentLanguage) { newValue in
+                .onChange(of: settingVM.selectedLanguageCode) { newValue in
                     if let id = voices.first?.id{
                         settingVM.tempVoiceId = id
                     }
@@ -76,6 +76,9 @@ struct VoicesPickerView: View {
         }
         .padding(.top, 30)
         .padding(.horizontal)
+        .onAppear{
+            settingVM.setTempData()
+        }
     }
 }
 

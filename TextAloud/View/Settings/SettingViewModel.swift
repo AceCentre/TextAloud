@@ -5,7 +5,7 @@
 //
 
 import SwiftUI
-
+import Combine
 
 class SettingViewModel: ObservableObject{
     
@@ -15,30 +15,42 @@ class SettingViewModel: ObservableObject{
     @AppStorage("readingColor") var readingColor: Color = Color.red
     @AppStorage("fontSize") var fontSize: Int = 25
     
-    @AppStorage("aVFVoiceId") var aVFVoiceId: String = SpeechVoiceService.share.defaultVoiceModel.id
-    @AppStorage("azureVoiceId") var azureVoiceId: String = SpeechVoiceService.share.defaultAzureVoiceId
+    @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
+    @AppStorage("azureVoiceId") var azureVoiceId: String = "en-US-JennyNeural"
     
     @Published var showVoicePicker: Bool = false
-    @Published var currentLanguage: String = ""
+    @Published var selectedLanguageCode: String = ""
     @Published var tempVoiceId: String = ""
-    @Published var voiceModel: VoiceModel = SpeechVoiceService.share.defaultVoiceModel
+    @Published var currentVoice: VoiceModel?
     
-    let voiceService = SpeechVoiceService.share
+    @Published var isChangeVoiceService: Bool = false
+    
+    private var cancellable = Set<AnyCancellable>()
+    
+    let aVoiceService = AVSpeechVoiceService()
+    let azureVoiceService = AzureVoiceService()
         
-    
     init(){
-        setCurrentVoiceModel()
+        startVoiceSubscriptions()
+    }
+
+    
+    private func startVoiceSubscriptions(){
+        aVoiceService.$voices
+            .combineLatest(azureVoiceService.$voices)
+            .combineLatest($isChangeVoiceService)
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _, _ in
+                guard let self = self else {return}
+                let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(self.azureVoiceId) :
+                self.aVoiceService.getVoicesModelForId(self.aVFVoiceId)
+                
+                self.currentVoice = voice
+                self.setTempData()
+            }
+            .store(in: &cancellable)
     }
     
-    
-    func setCurrentVoiceModel() {
-        let voiceId = isAzureSpeech ? azureVoiceId : aVFVoiceId
-        if let voice = voiceService.getVoicesModelForId(voiceId){
-            self.voiceModel = voice
-        }
-        self.currentLanguage = voiceModel.languageCode
-        self.tempVoiceId = voiceModel.id
-    }
     
     func saveVoice(){
         
@@ -50,13 +62,30 @@ class SettingViewModel: ObservableObject{
                 aVFVoiceId = tempVoiceId
             }
             print(isAzureSpeech ? azureVoiceId : aVFVoiceId)
-            setCurrentVoiceModel()
         }
     }
     
     func changeVoiceService(_ value: Bool){
         self.isAzureSpeech = value
-        setCurrentVoiceModel()
+        self.isChangeVoiceService.toggle()
+    }
+    
+    func setTempData(){
+        if let currentVoice{
+            selectedLanguageCode = currentVoice.languageCode
+            tempVoiceId = currentVoice.id
+        }
+    }
+    
+    
+    var voicesForLanguage: [VoiceModel] {
+        isAzureSpeech ? azureVoiceService.getVoicesModelsForLanguage(selectedLanguageCode) :
+        aVoiceService.getVoicesModelsForLanguage(selectedLanguageCode)
+    }
+    
+    var uniquedLanguagesCodes: [String]{
+        isAzureSpeech ? azureVoiceService.uniquedLanguagesCodes :
+        aVoiceService.uniquedLanguagesCodes
     }
 }
 

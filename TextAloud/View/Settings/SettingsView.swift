@@ -148,8 +148,12 @@ extension SettingsView{
             HStack{
                 Text(Localization.pickVoice.toString)
                 Spacer()
-                Text("\(settingVM.voiceModel.name) \(settingVM.voiceModel.languageStr)")
-                    .lineLimit(1)
+                if let voiceModel = settingVM.currentVoice{
+                    Text("\(voiceModel.name) \(voiceModel.languageStr)")
+                        .lineLimit(1)
+                }else{
+                    ProgressView()
+                }
             }
         }
         .hLeading()
@@ -175,10 +179,5 @@ extension SettingsView{
             
         }
         .hLeading()
-        .onChange(of: settingVM.isAzureSpeech) { isAzuse in
-            if isAzuse{
-                speech.configureteAzure()
-            }
-        }
     }
 }

@@ -2,7 +2,6 @@
 //  AzureSpeech.swift
 //  TextAloud
 //
-//  Created by Богдан Зыков on 16.02.2023.
 //
 
 import Foundation
@@ -25,18 +24,18 @@ class AzureSpeech{
     var onTest: ((SPXSpeechSynthesisEventArgs) -> Void)?
     
     
-   private init(){
-        configurateSpeechSynthesizer()
-    }
+   private init(){}
     
     /// Setting up SpeechSynthesizer for environments key sub and region
     /// - Parameter speechSynthesisVoiceName: speech voice name
     func configurateSpeechSynthesizer(_ speechSynthesisVoiceName: String = "en-US-JennyNeural") -> Bool{
         
-        let sub = ProcessInfo.processInfo.environment["SPEECH_KEY"]!
-        let region = ProcessInfo.processInfo.environment["SPEECH_REGION"]!
         var result: Bool = false
+        
         do {
+            let sub = SPEECH_KEY
+            let region = SPEECH_REGION
+            
             if let speechConfig = try? SPXSpeechConfiguration(subscription: sub, region: region){
                 
                 speechConfig.speechSynthesisVoiceName = speechSynthesisVoiceName
