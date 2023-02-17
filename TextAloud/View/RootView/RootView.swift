@@ -62,20 +62,14 @@ struct RootView_Previews: PreviewProvider {
 
 //MARK: - Controls Section view
 extension RootView{
+    @ViewBuilder
     private var controlsSectionView: some View{
-        VStack(spacing: 32){
-            HStack{
-                ButtonView(buttonText: Localization.stop.toString, buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
-                    .keyboardShortcut(.escape)
-                Spacer()
-                ButtonView(buttonText: synthesizer.isPlay ? Localization.pause.toString : Localization.play.toString, buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
-                    if synthesizer.isPlay{
-                        synthesizer.pause()
-                    }else{
-                        synthesizer.speak(rootVM.text)
-                    }
-                }
-                .keyboardShortcut(.space)
+        let isPlay = synthesizer.isPlay
+        CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+            if synthesizer.isPlay{
+                synthesizer.stop()
+            }else{
+                synthesizer.speak(rootVM.text)
             }
         }
     }
@@ -120,7 +114,7 @@ extension RootView{
     
     @ViewBuilder
     private var rateMenuButton: some View{
-        if !rootVM.isFocused{
+        if !rootVM.isFocused && !synthesizer.isAzureSpeech{
             Menu {
                 ForEach(SpeechRateEnum.allCases, id: \.self) { type in
                     Button(type.valueRepresentable){
@@ -143,8 +137,9 @@ extension RootView{
             SpeachTextViewComponent(currentWord: $synthesizer.currentWord, rootVM: rootVM)
             HStack {
                 selectedMenuButton
+                Spacer()
                 rateMenuButton
-                    .hCenter()
+                Spacer()
                 editTestButton
             }
         }

@@ -19,13 +19,13 @@ struct ButtonView: View {
         Button(action: action){
             HStack(spacing: 8) {
                 Text(buttonText)
-                    .font(.title3.weight(.heavy))
+                    .font(.title2.weight(.heavy))
                 if withIcon {
                     Image(systemName: buttonIcon)
-                        .font(.title2)
+                        .font(.title)
                 }
             }
-            .frame(width: 150, height: 45)
+            .frame(width: 150, height: 55)
             .background{
                 Capsule().strokeBorder(Color("Lime Chalk"), lineWidth: 30)
                     .shadow(color: .black.opacity(0.15), radius: 4, x: 2, y: 4)
@@ -40,7 +40,6 @@ struct ButtonView: View {
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            ButtonView(buttonText: "Pause", buttonIcon: "pause.circle", withIcon: true, action: {})
             ButtonView(buttonText: "Stop", buttonIcon: "stop.circle", withIcon: true, action: {})
             ButtonView(buttonText: "Play", buttonIcon: "play.circle", withIcon: true, isDisabled: true, action: {})
 //                .preferredColorScheme(.dark)

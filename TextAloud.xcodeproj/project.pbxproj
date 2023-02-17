@@ -28,6 +28,7 @@
 		5A4CC759299FA8F800D8E146 /* AzureVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */; };
 		5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */; };
 		5A4CC75E299FC56600D8E146 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75D299FC56600D8E146 /* VoiceModel.swift */; };
+		5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */; };
 		5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */; };
 		5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDC299E260100C591D7 /* UserDefaults.swift */; };
 		5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
@@ -86,6 +87,7 @@
 		5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureVoiceService.swift; sourceTree = "<group>"; };
 		5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechVoiceService.swift; sourceTree = "<group>"; };
 		5A4CC75D299FC56600D8E146 /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
+		5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleControlButtonView.swift; sourceTree = "<group>"; };
 		5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
 		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MicrosoftCognitiveServicesSpeech.xcframework; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
 				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
+				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -224,7 +227,6 @@
 			children = (
 				5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */,
 				5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */,
-				5A4CC75D299FC56600D8E146 /* VoiceModel.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -302,6 +304,7 @@
 		FDF5C30D290F4AB20003A675 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CC75D299FC56600D8E146 /* VoiceModel.swift */,
 				5A4CC751299F6F5F00D8E146 /* Speech */,
 				5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */,
 			);
@@ -412,6 +415,7 @@
 			files = (
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
 				5A4CC757299F99FF00D8E146 /* .env.swift in Sources */,
+				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
 				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,

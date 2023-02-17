@@ -37,6 +37,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     func speak(_ text: String) {
         
         if isAzureSpeech{
+            offset = 0
             speakAzure(text)
             return
         }
