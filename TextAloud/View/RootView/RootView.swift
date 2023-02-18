@@ -39,6 +39,9 @@ struct RootView: View {
                 synthesizer.setSpeakForRange(rootVM.text, range)
             }
         }
+        .onChange(of: rootVM.text) { _ in
+            rootVM.isChangeText = true
+        }
     }
 }
 
@@ -75,23 +78,25 @@ extension RootView{
     }
     
     @ViewBuilder
-    private var editTestButton: some View{
-        Button {
+    private var editButton: some View{
+        TextButtonView(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
             if synthesizer.isPlay{
                 synthesizer.stop()
             }
-            rootVM.onEditToggle()
-            
-        } label: {
-            Label {
-                Text(rootVM.isFocused ? Localization.save.toString : Localization.edit.toString)
-            } icon: {
-                Image(systemName: rootVM.isFocused ? "checkmark" : "highlighter")
-            }
-            .font(.title3.weight(.bold))
-            .foregroundColor(.limeChalk)
+            rootVM.onTappedEditSaveButton()
         }
     }
+    
+    
+    @ViewBuilder
+    private var cancelButton: some View{
+        if rootVM.isFocused{
+            TextButtonView(title: Localization.cancel.toString, image: "xmark", isDisabled: false) {
+                rootVM.onCancelTapped()
+            }
+        }
+    }
+    
     
     @ViewBuilder
     private var selectedMenuButton: some View{
@@ -136,11 +141,12 @@ extension RootView{
         VStack(spacing: 16) {
             SpeachTextViewComponent(currentWord: $synthesizer.currentWord, rootVM: rootVM)
             HStack {
+                cancelButton
                 selectedMenuButton
                 Spacer()
                 rateMenuButton
                 Spacer()
-                editTestButton
+                editButton
             }
         }
         .padding(.top, 32)

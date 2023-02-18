@@ -8,6 +8,7 @@
 
 "play" = "播放";
 "stop" = "停止";
+"cancel" = "取消";
 "pause" = "暂停";
 "save" = "保存";
 "edit" = "编辑";

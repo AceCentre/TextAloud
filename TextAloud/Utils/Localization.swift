@@ -11,6 +11,7 @@ enum Localization: String {
     case play
     case stop
     case edit
+    case cancel
     case pause
     case save
     case word

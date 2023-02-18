@@ -34,6 +34,7 @@
 		5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
 		5A6F8DE3299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A6F8DE8299E848400C591D7 /* AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DE7299E848400C591D7 /* AzureSpeech.swift */; };
+		5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96E56F29A1588A00347F12 /* TextButtonView.swift */; };
 		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
 		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
 		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
@@ -92,6 +93,7 @@
 		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MicrosoftCognitiveServicesSpeech.xcframework; sourceTree = "<group>"; };
 		5A6F8DE7299E848400C591D7 /* AzureSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureSpeech.swift; sourceTree = "<group>"; };
+		5A96E56F29A1588A00347F12 /* TextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
 		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
 				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
 				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
+				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
 				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
+				5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

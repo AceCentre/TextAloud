@@ -8,6 +8,7 @@
 
 "play" = "Play all";
 "stop" = "Stop";
+"cancel" = "Cancel";
 "pause" = "Pause";
 "save" = "Save";
 "edit" = "Edit";

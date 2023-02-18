@@ -8,6 +8,7 @@
 
 "play" = "Jouer";
 "stop" = "Arrêter";
+"cancel" = "Annuler";
 "pause" = "Pause";
 "save" = "Enregistrer";
 "edit" = "Modifier";
