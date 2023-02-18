@@ -27,56 +27,17 @@ class SettingViewModel: ObservableObject{
     
     private var cancellable = Set<AnyCancellable>()
     
-    let aVoiceService = AVSpeechVoiceService()
-    let azureVoiceService = AzureVoiceService()
+    private let aVoiceService = AVSpeechVoiceService()
+    private let azureVoiceService = AzureVoiceService()
         
     init(){
         startVoiceSubscriptions()
     }
 
-    
-    private func startVoiceSubscriptions(){
-        aVoiceService.$voices
-            .combineLatest(azureVoiceService.$voices)
-            .combineLatest($isChangeVoiceService)
-            .receive(on: DispatchQueue.main)
-            .sink {[weak self] _, _ in
-                guard let self = self else {return}
-                let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(self.azureVoiceId) :
-                self.aVoiceService.getVoicesModelForId(self.aVFVoiceId)
-                
-                self.currentVoice = voice
-                self.setTempData()
-            }
-            .store(in: &cancellable)
-    }
-    
-    
-    func saveVoice(){
-        
-        if !tempVoiceId.isEmpty{
-            
-            if isAzureSpeech{
-                azureVoiceId = tempVoiceId
-            }else{
-                aVFVoiceId = tempVoiceId
-            }
-            print(isAzureSpeech ? azureVoiceId : aVFVoiceId)
-        }
-    }
-    
-    func changeVoiceService(_ value: Bool){
-        self.isAzureSpeech = value
-        self.isChangeVoiceService.toggle()
-    }
-    
-    func setTempData(){
-        if let currentVoice{
-            selectedLanguageCode = currentVoice.languageCode
-            tempVoiceId = currentVoice.id
-        }
-    }
-    
+}
+
+//MARK: - Voice
+extension SettingViewModel{
     
     var voicesForLanguage: [VoiceModel] {
         isAzureSpeech ? azureVoiceService.getVoicesModelsForLanguage(selectedLanguageCode) :
@@ -87,8 +48,43 @@ class SettingViewModel: ObservableObject{
         isAzureSpeech ? azureVoiceService.uniquedLanguagesCodes :
         aVoiceService.uniquedLanguagesCodes
     }
+    
+    func saveVoice(){
+        if !tempVoiceId.isEmpty{
+            if isAzureSpeech{
+                azureVoiceId = tempVoiceId
+            }else{
+                aVFVoiceId = tempVoiceId
+            }
+            setVoiceModel()
+        }
+    }
+    
+    func changeVoiceService(_ value: Bool){
+        self.isAzureSpeech = value
+        self.isChangeVoiceService.toggle()
+    }
+    
+    private func startVoiceSubscriptions(){
+        aVoiceService.$voices
+            .combineLatest(azureVoiceService.$voices)
+            .combineLatest($isChangeVoiceService)
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] _, _ in
+                guard let self = self else {return}
+                self.setVoiceModel()
+            }
+            .store(in: &cancellable)
+    }
+    
+    private func setVoiceModel(){
+       guard let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(self.azureVoiceId) :
+                self.aVoiceService.getVoicesModelForId(self.aVFVoiceId) else { return }
+        self.currentVoice = voice
+        selectedLanguageCode = voice.languageCode
+        tempVoiceId = voice.id
+    }
 }
-
 
 
 //MARK: - View setings
@@ -120,3 +116,5 @@ extension SettingViewModel{
         fontSize -= 1
     }
 }
+
+

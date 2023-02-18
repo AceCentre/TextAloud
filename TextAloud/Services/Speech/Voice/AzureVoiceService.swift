@@ -23,7 +23,7 @@ class AzureVoiceService: VoiceServiceProtocol{
             guard let self = self else {return}
             if self.azureSpeech.configurateSpeechSynthesizer(){
                 if let azureVoices = self.azureSpeech.getAllVoices(){
-                    self.voices = azureVoices.map({.init(id: $0.shortName, name: $0.shortName, languageCode: $0.locale)})
+                    self.voices = azureVoices.map({.init(id: $0.shortName, name: $0.shortName, languageCode: $0.locale, type: .azure)})
                 }
             }
         }
@@ -36,7 +36,7 @@ class AzureVoiceService: VoiceServiceProtocol{
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
         return getVoicesModelsForLanguage(currentLocaleCode).first ??
-            .init(id: "non", name: "", languageCode: "en-US")
+            .init(id: defaultAzureVoiceId, name: defaultAzureVoiceId, languageCode: "en-US", type: .azure)
     }
     
     func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {

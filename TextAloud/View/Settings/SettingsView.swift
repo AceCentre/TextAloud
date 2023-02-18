@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var speech: SpeechSynthesizer
-    @StateObject var settingVM = SettingViewModel()
+    @ObservedObject var settingVM: SettingViewModel
     @Environment(\.dismiss) var dismiss
         
     var body: some View {
@@ -33,15 +33,15 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            SettingsView(speech: SpeechSynthesizer())
+            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
                 .environment(\.locale, .init(identifier: "en"))
-//          SettingsView(rootVM: RootViewModel())
+//          SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
 //                .environment(\.locale, .init(identifier: "fr"))
-//           SettingsView(rootVM: RootViewModel())
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
 //                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-//           SettingsView(rootVM: RootViewModel())
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
 //                .environment(\.locale, .init(identifier: "de"))
-//            SettingsView(rootVM: RootViewModel())
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
 //                .environment(\.locale, .init(identifier: "es"))
         }
     }
@@ -149,8 +149,9 @@ extension SettingsView{
                 Text(Localization.pickVoice.toString)
                 Spacer()
                 if let voiceModel = settingVM.currentVoice{
-                    Text("\(voiceModel.name) \(voiceModel.languageStr)")
+                    Text("\(voiceModel.representableName) \(voiceModel.languageStr)")
                         .lineLimit(1)
+                        .font(.callout.weight(.medium))
                 }else{
                     ProgressView()
                 }

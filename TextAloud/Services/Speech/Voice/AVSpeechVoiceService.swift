@@ -19,9 +19,8 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     
     func fetchVoices() {
         let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
-        let voice: [VoiceModel] = aVFvoices.map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language)})
+        let voice: [VoiceModel] = aVFvoices.map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, type: .apple)})
         self.voices = voice
-        print(voice.count)
     }
     
     
@@ -32,7 +31,7 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
         return getVoicesModelsForLanguage(currentLocaleCode).first ??
-            .init(id: "non", name: "", languageCode: "en-US")
+            .init(id: "non", name: "", languageCode: "en-US", type: .apple)
     }
     
     func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {

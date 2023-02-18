@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct RootView: View {
+    @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
     @State var sheetState: SheetEnum?
@@ -29,7 +30,7 @@ struct RootView: View {
         .sheet(item: $sheetState) { type in
             switch type{
             case .settings:
-                SettingsView(speech: synthesizer)
+                SettingsView(speech: synthesizer, settingVM: settingsVM)
             case .addFile:
                 DocumentPicker(fileContent: $rootVM.text)
             }

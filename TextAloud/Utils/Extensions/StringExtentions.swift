@@ -45,10 +45,36 @@ extension String {
         self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
     
+    var titlecased: String {
+        self.replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression, range: self.range(of: self))
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .capitalized
+    }
+    
     func substring(with nsrange: NSRange) -> Substring? {
         guard let range = Range(nsrange, in: self) else { return nil }
         return self[range]
     }
+    
+    var getFullLocaleLanguageStr: String{
+        let locale: Locale = .current
+        
+        guard let countru = locale.localizedString(forLanguageCode: self) else {
+            return "None"
+        }
+        
+        guard let region = locale.localizedString(forRegionCode: String(self.suffix(2))) else{
+            
+            return countru
+        }
+        return "\(countru) (\(region))"
+    }
 }
 
 
+extension Sequence where Element: Hashable {
+    func uniqued() -> [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
+    }
+}
