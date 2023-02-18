@@ -51,7 +51,7 @@ struct TextView: UIViewRepresentable {
         textView.backgroundColor = UIColor.white
         textView.delegate = context.coordinator
         textView.tintColor = .black
-        textView.textAlignment = .justified
+        textView.textAlignment = .natural
         textView.isScrollEnabled = true
         textView.isEditable = false
         textView.isSelectable = false
@@ -59,6 +59,7 @@ struct TextView: UIViewRepresentable {
         textView.showsVerticalScrollIndicator = true
         textView.showsHorizontalScrollIndicator = false
         textView.allowsEditingTextAttributes = false
+        textView.autocorrectionType = .default
       
         
         let gesture = UITapGestureRecognizer(target: context.coordinator,
@@ -271,3 +272,10 @@ struct TextView: UIViewRepresentable {
 //        }
 //    }
 //}
+
+
+extension UIView {
+    var isRightToLeftLayout: Bool {
+        return UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft
+    }
+}
