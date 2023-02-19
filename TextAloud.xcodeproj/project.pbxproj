@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */; };
+		5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */; };
 		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
@@ -19,7 +20,6 @@
 		5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */; };
 		5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */; };
 		5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED7299B991B00E3B385 /* ButtonView.swift */; };
-		5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */; };
 		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
 		5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDE299BA73400E3B385 /* TestTextView.swift */; };
 		5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */; };
@@ -64,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.release.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.release.xcconfig"; sourceTree = "<group>"; };
+		5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
 		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
 		5A4A0ED7299B991B00E3B385 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		5A4A0EDE299BA73400E3B385 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
 		5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift"; sourceTree = "<group>"; };
@@ -203,16 +203,9 @@
 				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
 				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
 				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
+				5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */,
 			);
 			path = ViewComponents;
-			sourceTree = "<group>";
-		};
-		5A4A0ED9299B993200E3B385 /* DocumentPicker */ = {
-			isa = PBXGroup;
-			children = (
-				5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */,
-			);
-			path = DocumentPicker;
 			sourceTree = "<group>";
 		};
 		5A4CC751299F6F5F00D8E146 /* Speech */ = {
@@ -288,7 +281,6 @@
 		FDF5C2FB2909AC4B0003A675 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A4A0ED9299B993200E3B385 /* DocumentPicker */,
 				5A4A0ED6299B990800E3B385 /* ViewComponents */,
 				5A4A0ECF299B97C600E3B385 /* RootView */,
 				5A4A0ECE299B97C100E3B385 /* Settings */,
@@ -421,6 +413,7 @@
 				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
+				5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */,
 				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
 				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
 				5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
@@ -434,7 +427,6 @@
 				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
-				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
 				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
 				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,

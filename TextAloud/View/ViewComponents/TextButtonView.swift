@@ -2,7 +2,6 @@
 //  TextButtonView.swift
 //  TextAloud
 //
-//  Created by Богдан Зыков on 18.02.2023.
 //
 
 import SwiftUI

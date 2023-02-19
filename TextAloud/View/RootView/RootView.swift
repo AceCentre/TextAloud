@@ -10,8 +10,8 @@ struct RootView: View {
     @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
-    @State var sheetState: SheetEnum?
-
+    @State var showSetting: Bool = false
+    @State var showFileImporter: Bool = false
     var body: some View {
         ZStack {
             VStack(spacing: 0){
@@ -24,17 +24,10 @@ struct RootView: View {
                 }
             }
             .padding(.horizontal)
+            loaderView
         }
         .allFrame()
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
-        .sheet(item: $sheetState) { type in
-            switch type{
-            case .settings:
-                SettingsView(speech: synthesizer, settingVM: settingsVM)
-            case .addFile:
-                DocumentPicker(fileContent: $rootVM.text)
-            }
-        }
         .onChange(of: rootVM.selectedRange) { range in
             if let range{
                 synthesizer.setSpeakForRange(rootVM.text, range)
@@ -43,6 +36,12 @@ struct RootView: View {
         .onChange(of: rootVM.text) { _ in
             rootVM.isChangeText = true
         }
+        
+        .sheet(isPresented: $showSetting){
+            SettingsView(speech: synthesizer, settingVM: settingsVM)
+        }
+        .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
+        .handle(error: $rootVM.error)
     }
 }
 
@@ -52,14 +51,14 @@ struct RootView_Previews: PreviewProvider {
         Group{
             RootView()
                 .environment(\.locale, .init(identifier: "en"))
-            RootView()
-                .environment(\.locale, .init(identifier: "fr"))
-            RootView()
-                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-            RootView()
-                .environment(\.locale, .init(identifier: "de"))
-            RootView()
-                .environment(\.locale, .init(identifier: "es"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "fr"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "de"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
@@ -161,7 +160,7 @@ extension RootView{
         HStack(spacing: 16){
         
             Button {
-                sheetState = .settings
+                showSetting.toggle()
             } label: {
                 Image(systemName: "slider.horizontal.3")
                     .foregroundColor(.limeChalk)
@@ -191,7 +190,7 @@ extension RootView{
                     if synthesizer.isPlay{
                         synthesizer.stop()
                     }
-                    sheetState = .addFile
+                    showFileImporter.toggle()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
@@ -200,10 +199,26 @@ extension RootView{
             .font(.title)
         }
     }
-    
-    enum SheetEnum: Int16, Identifiable{
-        var id: Int16 {self.rawValue}
-        case settings, addFile
-    }
 }
 
+extension RootView{
+    
+    @ViewBuilder
+    private var loaderView: some View{
+        if rootVM.showLoader{
+            ZStack{
+                Color.deepOcean.opacity(0.1).ignoresSafeArea()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .frame(width: 100, height: 100)
+                        .shadow(color: .black.opacity(0.1), radius: 5)
+                    ProgressView()
+                        .scaleEffect(1.5)
+                        .tint(.deepOcean)
+                }
+            }
+        }
+    }
+    
+}
