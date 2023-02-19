@@ -42,6 +42,10 @@ Remember that both Android and iOS have built in options to read out streams of 
 * [Voice Dream Reader](https://www.voicedream.com/reader/). Read in a wide range of formats. Offline voices from Acapella. 
 * [Aloud!](https://appappworks.com/aloud/). Listen to PDFs. Nice simple UI. Save progress and Free. 
 
+And there are some AAC specific apps that kind of do this but generally not all three options. Eg
+
+* [SayIt!](https://enaboapps.com/sayit-easy-aac/)
+* [Proloquo4Text](https://www.assistiveware.com/products/proloquo4text)
 
 # Whats next?
 
