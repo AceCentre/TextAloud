@@ -2,7 +2,6 @@
 //  Task.swift
 //  TextAloud
 //
-//  Created by Богдан Зыков on 20.02.2023.
 //
 
 import Foundation
@@ -26,7 +25,13 @@ extension Task where Failure == Error {
 
 extension UInt{
     
-    var toSeconds: Double{
-        (Double(self) / 10_000_000)
+    ///ticks = 100 nanosec
+    var tikcsToSeconds: Double{
+        Double(self) / 10_000_000
     }
+    
+    var tikcsToMillisecond: Double{
+        Double(self) / 10
+    }
+    
 }
