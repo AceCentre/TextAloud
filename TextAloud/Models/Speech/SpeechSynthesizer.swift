@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AVFAudio
-
+import Combine
 
 class SpeechSynthesizer: NSObject, ObservableObject {
     @Published public var currentWord: NSRange?
@@ -17,9 +17,12 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
     @AppStorage("azureVoiceId") var azureVoiceId: String = ""
     private var synth: AVSpeechSynthesizer
+    
+    var rangePublisher = PassthroughSubject<NSRange, Never>()
+    var cancellable: AnyCancellable?
+    var azureHandlerTask: Task<(), any Error>?
     var offset: Int = 0
     var lastUtterance: AVSpeechUtterance?
-    
     let azureSpeech = AzureSpeech.share
     
     override init() {
@@ -32,6 +35,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         
         synth.delegate = self
     
+        startAzureRangeSubscription()
     }
     
     func speak(_ text: String) {
@@ -80,6 +84,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
+            azureHandlerTask?.cancel()
+            cancellable?.cancel()
         }else{
             synth.stopSpeaking(at: .immediate)
         }
@@ -93,8 +99,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
     {
-        print(characterRange)
-
+       
         var temp = characterRange
         temp.location += offset
         currentWord = temp
@@ -120,14 +125,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
 }
 
 
-extension SpeechSynthesizer{
-    
-    enum SpeechScrubState{
-        case reset
-        case scrubStarted
-        case scrubEnded(String)
-    }
-}
 
 
 

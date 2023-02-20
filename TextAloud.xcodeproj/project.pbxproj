@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */; };
 		5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */; };
+		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
 		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.release.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.release.xcconfig"; sourceTree = "<group>"; };
 		5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
+		5A12CBBE29A3593A00E950A8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				5A4A0EC8299B979D00E3B385 /* Color.swift */,
 				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
 				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
+				5A12CBBE29A3593A00E950A8 /* Task.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
 				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
+				5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */,
 				5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

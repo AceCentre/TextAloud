@@ -5,8 +5,21 @@
 //
 
 import Foundation
+import Combine
 
 extension SpeechSynthesizer{
+    
+    
+    func startAzureRangeSubscription(){
+        cancellable = rangePublisher
+            .sink{ range in
+                var tempRange = range
+                tempRange.location += self.offset
+                self.currentWord = tempRange
+            }
+    }
+    
+    
     
     func speakAzure(_ text: String){
         let voiceId = azureVoiceId.isEmpty ? "en-US-JennyNeural" : azureVoiceId
@@ -18,6 +31,8 @@ extension SpeechSynthesizer{
     
     private func addHandlers(){
      
+        startAzureRangeSubscription()
+        
         azureSpeech.onCompletedHandler = { event in
             DispatchQueue.main.async {
                 self.isPlay = false
@@ -42,11 +57,10 @@ extension SpeechSynthesizer{
         }
         
         azureSpeech.onWordBoundaryHandler = { boundary in
-            let time: DispatchTime = .now() + (Double(boundary.audioOffset) / 10_000_000)
-            var tempOffset = Int(boundary.textOffset)
-            tempOffset += self.offset
-            DispatchQueue.main.asyncAfter(deadline: time){
-                self.currentWord = .init(location: tempOffset, length: Int(boundary.wordLength))
+            self.azureHandlerTask = Task.delayed(byTimeInterval: boundary.audioOffset.toSeconds) {
+                await MainActor.run {
+                    self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
+                }
             }
         }
      }
