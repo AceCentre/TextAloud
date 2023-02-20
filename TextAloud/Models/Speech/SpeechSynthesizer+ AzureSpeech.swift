@@ -14,7 +14,7 @@ extension SpeechSynthesizer{
         cancellable = rangePublisher
             .sink{ range in
                 var tempRange = range
-                tempRange.location += self.offset
+                tempRange.location += self.rangeOffset
                 self.currentWord = tempRange
             }
     }
@@ -37,7 +37,9 @@ extension SpeechSynthesizer{
             DispatchQueue.main.async {
                 self.isPlay = false
                 self.currentWord = nil
-                print("Stop", "Duration \(event.result.audioDuration)")
+                if self.isPlayAll{
+                    self.saveAudio(for: event.result.audioDuration, audioData: event.result.audioData)
+                }
             }
         }
         

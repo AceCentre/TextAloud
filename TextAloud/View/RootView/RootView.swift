@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct RootView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject var audioManager = AudioPlayerManager()
     @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
@@ -28,6 +30,11 @@ struct RootView: View {
         }
         .allFrame()
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
+        .onAppear{
+            if let text = synthesizer.getSpeechData(){
+                rootVM.text = text
+            }
+        }
         .onChange(of: rootVM.selectedRange) { range in
             if let range{
                 synthesizer.setSpeakForRange(rootVM.text, range)
@@ -35,6 +42,13 @@ struct RootView: View {
         }
         .onChange(of: rootVM.text) { _ in
             rootVM.isChangeText = true
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase{
+            case .background, .inactive:
+                synthesizer.saveSpeechData(rootVM.text)
+            default: break
+            }
         }
         
         .sheet(isPresented: $showSetting){
@@ -67,14 +81,43 @@ struct RootView_Previews: PreviewProvider {
 extension RootView{
     @ViewBuilder
     private var controlsSectionView: some View{
-        let isPlay = synthesizer.isPlay
-        CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
-            if synthesizer.isPlay{
-                synthesizer.stop()
-            }else{
-                synthesizer.speak(rootVM.text)
+        let isPlay = synthesizer.isActiveCashAudio ? audioManager.isPlaying :  synthesizer.isPlay
+            CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+                
+                if let audio = synthesizer.savedAudio, synthesizer.isActiveCashAudio{
+                    audioManager.audioAction(audio)
+                    return
+                }else{
+                    synthesizer.activate(rootVM.text)
+                }
             }
-        }
+            .hCenter()
+            .overlay(alignment: .trailing) {
+                if synthesizer.isActiveCashAudio{
+                    
+                    Menu {
+                        Button("Remove", role: .destructive) {
+                            synthesizer.removeAudio()
+                        }
+                        Button("Share"){
+                            if let audioUrl = synthesizer.savedAudio?.url{
+                                Helpers.showShareSheet(data: audioUrl)
+                            }
+                        }
+                    } label: {
+                        Label {
+                            Image(systemName: "waveform.circle.fill")
+                                .font(.title)
+                        } icon: {
+                            Text("Audio")
+                                .font(.footnote.bold())
+                                .foregroundColor(.deepOcean)
+                        }
+                        .padding(.vertical, 10)
+                        .foregroundColor(.deepOcean)
+                    }
+                }
+            }
     }
     
     @ViewBuilder

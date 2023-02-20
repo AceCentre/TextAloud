@@ -10,24 +10,39 @@ import AVFAudio
 import Combine
 
 class SpeechSynthesizer: NSObject, ObservableObject {
-    @Published public var currentWord: NSRange?
-    @Published var isPlay: Bool = false
-    @Published var rateMode: SpeechRateEnum = .defaul
+    
+    //MARK: Storage
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
     @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
     @AppStorage("azureVoiceId") var azureVoiceId: String = ""
+    let speechSaveService = SpeechSaveService.shared
+    
+    //MARK: AVSpeech
+    @Published var rateMode: SpeechRateEnum = .defaul
+    var lastUtterance: AVSpeechUtterance?
     private var synth: AVSpeechSynthesizer
     
+    //MARK: - Azure
+    let azureSpeech = AzureSpeech.share
+    let audioSaveService = AudioSavedService()
+    @Published var savedAudio: AudioModel?
+    var prepairRangesData = [AudioModel.RangesData]()
     var rangePublisher = PassthroughSubject<NSRange, Never>()
     var cancellable: AnyCancellable?
     var azureHandlerTask: Task<(), any Error>?
-    var offset: Int = 0
-    var lastUtterance: AVSpeechUtterance?
-    let azureSpeech = AzureSpeech.share
+    var isPlayAll: Bool = false
+
+    @Published var currentWord: NSRange?
+    @Published var isPlay: Bool = false
+    var rangeOffset: Int = 0
+    
+    var isActiveCashAudio: Bool{
+        isAzureSpeech && savedAudio != nil
+    }
     
     override init() {
         
-        AVAudioSessionManager.share.configurePlaybackSession()
+        AVAudioSessionManager.share.setAudioSessionPlayback()
         
         synth = AVSpeechSynthesizer()
         
@@ -38,18 +53,24 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         startAzureRangeSubscription()
     }
     
+    
+    func activate(_ text: String){
+        if isPlay{
+            stop()
+        }else{
+           speak(text)
+        }
+    }
+    
     func speak(_ text: String) {
         
         if isAzureSpeech{
-            offset = 0
+            isPlayAll = true
+            rangeOffset = 0
             speakAzure(text)
             return
-        }
-        if synth.isPaused{
-            synth.continueSpeaking()
-            isPlay = true
         }else{
-            offset = 0
+            rangeOffset = 0
             let utterance = AVSpeechUtterance(string: text)
             setVoiceIfNeeded(utterance)
             utterance.rate = rateMode.rateValue
@@ -63,10 +84,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         if isPlay {
             stop()
         }
-        offset = range.location
-        let range = offset..<(offset + range.length)
+        rangeOffset = range.location
+        let range = rangeOffset..<(rangeOffset + range.length)
         
         if isAzureSpeech{
+            isPlayAll = false
             speakAzure(text[range])
             return
         }
@@ -101,7 +123,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     {
        
         var temp = characterRange
-        temp.location += offset
+        temp.location += rangeOffset
         currentWord = temp
         
     }
@@ -114,7 +136,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         if isPlay {
             stop()
             if let lastUtterance{
-                offset = 0
+                rangeOffset = 0
                 lastUtterance.rate = rateMode.rateValue
                 setVoiceIfNeeded(lastUtterance)
                 synth.speak(lastUtterance)

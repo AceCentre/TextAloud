@@ -33,6 +33,10 @@
 		5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493529A39F0E000A66A4 /* Audio.swift */; };
 		5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */; };
 		5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */; };
+		5A6E493D29A3AC06000A66A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493C29A3AC06000A66A4 /* Array.swift */; };
+		5A6E493F29A3AC4F000A66A4 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */; };
+		5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */; };
+		5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */; };
 		5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */; };
 		5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDC299E260100C591D7 /* UserDefaults.swift */; };
 		5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
@@ -97,6 +101,10 @@
 		5A6E493529A39F0E000A66A4 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSavedService.swift; sourceTree = "<group>"; };
 		5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		5A6E493C29A3AC06000A66A4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+Audio.swift"; sourceTree = "<group>"; };
+		5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+UserDefaults.swift"; sourceTree = "<group>"; };
 		5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
 		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MicrosoftCognitiveServicesSpeech.xcframework; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
 				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
 				5A12CBBE29A3593A00E950A8 /* Task.swift */,
+				5A6E493C29A3AC06000A66A4 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,7 +186,6 @@
 			children = (
 				5A6E493729A39FB9000A66A4 /* Audio */,
 				5A6F8DE9299E89D500C591D7 /* Speech */,
-				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -224,6 +232,8 @@
 				5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */,
 				5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */,
 				5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */,
+				5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */,
+				5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */,
 			);
 			path = Speech;
 			sourceTree = "<group>";
@@ -240,8 +250,10 @@
 		5A6E493729A39FB9000A66A4 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
 				5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */,
 				5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */,
+				5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -437,9 +449,12 @@
 				5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */,
 				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
 				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
+				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
+				5A6E493D29A3AC06000A66A4 /* Array.swift in Sources */,
 				5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
 				5A4A0EC9299B979D00E3B385 /* View.swift in Sources */,
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
+				5A6E493F29A3AC4F000A66A4 /* AudioPlayerManager.swift in Sources */,
 				5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */,
 				5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */,
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
@@ -452,6 +467,7 @@
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
 				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
 				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,
+				5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */,
 				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
 				5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */,

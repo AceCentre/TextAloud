@@ -7,7 +7,7 @@
 import Foundation
 
 
-struct AudioModel{
+struct AudioModel: Codable{
     let url: URL
     let duration: Double
     let rangesData: [RangesData]
@@ -34,7 +34,7 @@ struct AudioModel{
 //        remainingDuration = duration
 //    }
     
-    struct RangesData{
+    struct RangesData: Codable{
         
         let range: NSRange
         let timeOffsets: Double

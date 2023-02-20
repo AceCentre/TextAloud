@@ -16,10 +16,10 @@ class LocalFileManager{
     
     private init(){}
 
-    func save(for data: Data, fileNameWithExt: String, folderName: String) -> URL?{
-        createFolderIfNeeded(folderName)
+    func save(for data: Data, fileNameWithExt: String) -> URL?{
+        createFolderIfNeeded(rootFolder)
         
-        guard let url = createURL(fileNameWithExt: fileNameWithExt, folderName: folderName) else {return nil}
+        guard let url = createURL(fileNameWithExt: fileNameWithExt) else {return nil}
         do {
             try data.write(to: url)
             return url
@@ -38,7 +38,7 @@ class LocalFileManager{
         }
     }
     
-    @discardableResult
+    
     func remove(for url: URL) -> Bool{
         if fm.fileExists(atPath: url.path){
             do {
@@ -64,11 +64,11 @@ class LocalFileManager{
 
     private func getURLForFolder(_ folderName: String) -> URL?{
         guard let url = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
-        return url.appendingPathComponent(rootFolder).appendingPathComponent(folderName)
+        return url.appendingPathComponent(rootFolder)
     }
 
-    private func createURL(fileNameWithExt: String, folderName: String) -> URL?{
-        guard let folderUrl = getURLForFolder(folderName) else {return nil}
+    private func createURL(fileNameWithExt: String) -> URL?{
+        guard let folderUrl = getURLForFolder(rootFolder) else {return nil}
         return folderUrl.appendingPathComponent(fileNameWithExt)
     }
 }
