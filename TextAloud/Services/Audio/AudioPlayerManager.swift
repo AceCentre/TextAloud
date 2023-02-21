@@ -31,13 +31,7 @@ class AudioPlayerManager: ObservableObject {
     
     
     private func setAudio(_ audio: AudioModel){
-        
-        sumplesTimer?.invalidate()
-        removeTimeObserver()
-        currentAudio = nil
-        withAnimation {
-            currentAudio = audio
-        }
+        currentAudio = audio
         player = AVPlayer(url: audio.url)
         startSubscriptions()
     }
@@ -48,10 +42,10 @@ class AudioPlayerManager: ObservableObject {
     
  
     func audioAction(_ audio: AudioModel){
-        setAudio(audio)
         if isPlaying {
-            pauseAudio()
+            stopAudio()
         } else {
+            setAudio(audio)
             playAudio(audio)
         }
     }
@@ -103,17 +97,13 @@ extension AudioPlayerManager{
     }
     
     private func playAudio(_ audio: AudioModel) {
-         if isPlaying{
-             pauseAudio()
-         } else {
-             NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
-                 self.playerDidFinishPlaying()
-             }
-             player.play()
-             udateRate()
-             startTimer()
-         }
-     }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
+            self.playerDidFinishPlaying()
+        }
+        player.play()
+        udateRate()
+        startTimer()
+    }
     
     
     private func startTimer(for range: NSRange? = nil) {
@@ -147,9 +137,9 @@ extension AudioPlayerManager{
 
      }
      
-     private func pauseAudio() {
-         player.pause()
-         sumplesTimer?.invalidate()
+     private func stopAudio() {
+         playerDidFinishPlaying()
+         removeTimeObserver()
      }
 
      private func removeTimeObserver(){
@@ -160,13 +150,11 @@ extension AudioPlayerManager{
     
     private func playerDidFinishPlaying() {
          print("DidFinishPlaying")
-         player.pause()
-         player.seek(to: .zero)
-         sumplesTimer?.invalidate()
-         //currentAudio?.resetRemainingDuration()
-         withAnimation {
-             currentAudio = nil
-         }
-         //currentTime = .zero
+        player.pause()
+        player.seek(to: .zero)
+        sumplesTimer?.invalidate()
+        currentAudio = nil
+        
+        //currentTime = .zero
      }
 }

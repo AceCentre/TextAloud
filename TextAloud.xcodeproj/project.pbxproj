@@ -46,6 +46,8 @@
 		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
 		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
 		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
+		5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */; };
+		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
@@ -113,6 +115,8 @@
 		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
+		5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesSimpleTexts.swift; sourceTree = "<group>"; };
+		5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceListView.swift; sourceTree = "<group>"; };
 		7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.debug.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.debug.xcconfig"; sourceTree = "<group>"; };
 		DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TextAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,7 @@
 				FDF5C307290F0D250003A675 /* SettingsView.swift */,
 				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
 				5A498B82299CD14300DFA38B /* VoicesPickerView.swift */,
+				5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			children = (
 				5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */,
 				5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */,
+				5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -465,7 +471,9 @@
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
 				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
+				5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */,
 				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
+				5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */,
 				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,
 				5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */,
 				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,

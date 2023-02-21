@@ -19,11 +19,9 @@ class SettingViewModel: ObservableObject{
     @AppStorage("azureVoiceId") var azureVoiceId: String = "en-US-JennyNeural"
     
     @Published var showVoicePicker: Bool = false
-    @Published var selectedLanguageCode: String = ""
-    @Published var tempVoiceId: String = ""
-    @Published var currentVoice: VoiceModel?
-    
-    @Published var isChangeVoiceService: Bool = false
+
+    @Published var selectedVoice: VoiceModel?
+    @Published var voiceMode: VoiceMode = .apple
     
     private var cancellable = Set<AnyCancellable>()
     
@@ -31,6 +29,7 @@ class SettingViewModel: ObservableObject{
     private let azureVoiceService = AzureVoiceService()
         
     init(){
+        setVoiceMode()
         startVoiceSubscriptions()
     }
 
@@ -39,50 +38,45 @@ class SettingViewModel: ObservableObject{
 //MARK: - Voice
 extension SettingViewModel{
     
-    var voicesForLanguage: [VoiceModel] {
-        isAzureSpeech ? azureVoiceService.getVoicesModelsForLanguage(selectedLanguageCode) :
-        aVoiceService.getVoicesModelsForLanguage(selectedLanguageCode)
+
+    var languages: [LanguageModel]{
+        isAzureSpeech ? azureVoiceService.languages : aVoiceService.languages
     }
     
-    var uniquedLanguagesCodes: [String]{
-        isAzureSpeech ? azureVoiceService.uniquedLanguagesCodes :
-        aVoiceService.uniquedLanguagesCodes
-    }
-    
-    func saveVoice(){
-        if !tempVoiceId.isEmpty{
-            if isAzureSpeech{
-                azureVoiceId = tempVoiceId
-            }else{
-                aVFVoiceId = tempVoiceId
-            }
-            setVoiceModel()
+    func changeVoice(_ voice: VoiceModel){
+        if voice.type == .azure{
+            azureVoiceId = voice.id
+        }else{
+            aVFVoiceId = voice.id
         }
+        selectedVoice = voice
     }
     
-    func changeVoiceService(_ value: Bool){
-        self.isAzureSpeech = value
-        self.isChangeVoiceService.toggle()
+    private func changeVoiceMode(){
+        self.isAzureSpeech = voiceMode == .azure ? true : false
+    }
+    
+    private func setVoiceMode(){
+        voiceMode = isAzureSpeech ? .azure : .apple
     }
     
     private func startVoiceSubscriptions(){
-        aVoiceService.$voices
-            .combineLatest(azureVoiceService.$voices)
-            .combineLatest($isChangeVoiceService)
+        aVoiceService.$languages
+            .combineLatest(azureVoiceService.$languages)
+            .combineLatest($voiceMode)
             .receive(on: DispatchQueue.main)
             .sink {[weak self] _, _ in
                 guard let self = self else {return}
+                self.changeVoiceMode()
                 self.setVoiceModel()
             }
             .store(in: &cancellable)
     }
-    
+        
     private func setVoiceModel(){
        guard let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(self.azureVoiceId) :
                 self.aVoiceService.getVoicesModelForId(self.aVFVoiceId) else { return }
-        self.currentVoice = voice
-        selectedLanguageCode = voice.languageCode
-        tempVoiceId = voice.id
+        self.selectedVoice = voice
     }
 }
 
@@ -118,3 +112,16 @@ extension SettingViewModel{
 }
 
 
+extension SettingViewModel{
+    enum VoiceMode: Int, CaseIterable, Equatable{
+        case apple, azure
+        
+        var title: String{
+            switch self{
+                
+            case .apple: return "All Apple"
+            case .azure: return "All Azure"
+            }
+        }
+    }
+}

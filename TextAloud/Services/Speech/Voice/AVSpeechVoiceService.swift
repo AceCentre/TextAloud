@@ -10,7 +10,7 @@ import AVFAudio
 
 class AVSpeechVoiceService: VoiceServiceProtocol{
     
-    @Published var voices = [VoiceModel]()
+    @Published var languages = [LanguageModel]()
     
     
     init() {
@@ -19,27 +19,28 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     
     func fetchVoices() {
         let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
-        let voice: [VoiceModel] = aVFvoices.map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, type: .apple)})
-        self.voices = voice
+        let uniquedLang = aVFvoices.map({$0.language}).uniqued()
+        
+
+        self.languages = uniquedLang.map({ code -> LanguageModel in
+            let voice = aVFvoices.filter({$0.language == code}).map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: .init(rawValue: Int($0.gender.rawValue)) ?? .male, type: .apple)})
+            return  .init(code: code, voices: voice)
+        })
     }
     
-    
-    var uniquedLanguagesCodes: [String]{
-        voices.map({$0.languageCode}).uniqued()
-    }
     
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
-        return getVoicesModelsForLanguage(currentLocaleCode).first ??
-            .init(id: "non", name: "", languageCode: "en-US", type: .apple)
+        return getVoicesModelsForLanguage(currentLocaleCode)?.first ??
+            .init(id: "non", name: "Apple", languageCode: "en-US", gender: .female, type: .apple)
     }
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {
-        return voices.filter({$0.languageCode == language})
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]? {
+        languages.first(where: {$0.code == language})?.voices
     }
     
     func getVoicesModelForId(_ id: String) -> VoiceModel? {
-        return voices.first(where: {$0.id == id}) ?? defaultVoiceModel
+        languages.map({$0.voices}).flatMap({$0}).first(where: {$0.id == id}) ?? defaultVoiceModel
     }
     
 }

@@ -86,7 +86,6 @@ extension RootView{
                 
                 if let audio = synthesizer.savedAudio, synthesizer.isActiveCashAudio{
                     audioManager.audioAction(audio)
-                    return
                 }else{
                     synthesizer.activate(rootVM.text)
                 }

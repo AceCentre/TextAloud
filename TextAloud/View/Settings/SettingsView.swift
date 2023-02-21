@@ -25,7 +25,7 @@ struct SettingsView: View {
             }
         }
         .sheet(isPresented: $settingVM.showVoicePicker) {
-            VoicesPickerView(settingVM: settingVM)
+           VoiceListView(settingVM: settingVM)
         }
     }
 }
@@ -84,8 +84,6 @@ extension SettingsView{
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
             Divider().padding(.vertical, 4)
-            voiceServiceLinkView
-            Divider().padding(.vertical, 4)
             voicePickerButton
         }
     }
@@ -142,13 +140,14 @@ extension SettingsView{
     
     
     private var voicePickerButton: some View{
-        Button {
-            settingVM.showVoicePicker.toggle()
+        
+        NavigationLink {
+            VoiceListView(settingVM: settingVM)
         } label: {
             HStack{
                 Text(Localization.pickVoice.toString)
                 Spacer()
-                if let voiceModel = settingVM.currentVoice{
+                if let voiceModel = settingVM.selectedVoice{
                     Text("\(voiceModel.representableName) \(voiceModel.languageStr)")
                         .lineLimit(1)
                         .font(.callout.weight(.medium))
@@ -161,24 +160,4 @@ extension SettingsView{
         .font(.headline.weight(.medium))
     }
     
-    private var voiceServiceLinkView: some View{
-        Menu {
-            Button("Apple"){
-                settingVM.changeVoiceService(false)
-            }
-            
-            Button("Azure"){
-                settingVM.changeVoiceService(true)
-            }
-        } label: {
-            HStack {
-                Text("Speech service")
-                Spacer()
-                Text(settingVM.isAzureSpeech ? "Azure" : "Apple")
-            }
-            .font(.headline.weight(.medium))
-            
-        }
-        .hLeading()
-    }
 }

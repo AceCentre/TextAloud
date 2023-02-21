@@ -9,10 +9,9 @@ import MicrosoftCognitiveServicesSpeech
 
 class AzureVoiceService: VoiceServiceProtocol{
     
-    @Published var voices = [VoiceModel]()
     let azureSpeech = AzureSpeech.share
     let defaultAzureVoiceId = "en-US-JennyNeural"
-    
+    @Published var languages = [LanguageModel]()
     
     init(){
         fetchVoices()
@@ -23,28 +22,31 @@ class AzureVoiceService: VoiceServiceProtocol{
             guard let self = self else {return}
             if self.azureSpeech.configurateSpeechSynthesizer(){
                 if let azureVoices = self.azureSpeech.getAllVoices(){
-                    self.voices = azureVoices.map({.init(id: $0.shortName, name: $0.shortName, languageCode: $0.locale, type: .azure)})
+               
+                    let uniquedLang = azureVoices.map({$0.locale}).uniqued()
+                
+                    self.languages = uniquedLang.map({ code -> LanguageModel in
+                        let voice = azureVoices.filter({$0.locale == code}).map({VoiceModel(id: $0.shortName, name: $0.shortName, languageCode: $0.locale, gender: .init(rawValue: Int($0.gender.rawValue)) ?? .male, type: .azure)})
+                        return  .init(code: code, voices: voice)
+                    })
                 }
             }
         }
     }
     
-    var uniquedLanguagesCodes: [String]{
-        voices.map({$0.languageCode}).uniqued()
-    }
-    
+
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
-        return getVoicesModelsForLanguage(currentLocaleCode).first ??
-            .init(id: defaultAzureVoiceId, name: defaultAzureVoiceId, languageCode: "en-US", type: .azure)
+        return getVoicesModelsForLanguage(currentLocaleCode)?.first ??
+            .init(id: defaultAzureVoiceId, name: defaultAzureVoiceId, languageCode: "en-US", gender: .female, type: .azure)
     }
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {
-        return voices.filter({$0.languageCode == language})
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]? {
+        return languages.first(where: {$0.code == language})?.voices
     }
     
     func getVoicesModelForId(_ id: String) -> VoiceModel? {
-        return voices.first(where: {$0.id == id})
+        return languages.map({$0.voices}).flatMap({$0}).first(where: {$0.id == id}) ?? defaultVoiceModel
     }
     
 }
@@ -54,12 +56,10 @@ protocol VoiceServiceProtocol{
     
     func fetchVoices()
     
-    var uniquedLanguagesCodes: [String] {get}
-    
     var defaultVoiceModel: VoiceModel {get}
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]
-    
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]?
+        
     func getVoicesModelForId(_ id: String) -> VoiceModel?
     
 }
