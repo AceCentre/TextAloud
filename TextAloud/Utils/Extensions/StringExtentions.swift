@@ -69,6 +69,10 @@ extension String {
         }
         return "\(countru) (\(region))"
     }
+    
+    var createName: String{
+       String(self.prefix(10) + "...")
+    }
 }
 
 

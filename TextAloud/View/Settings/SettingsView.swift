@@ -24,9 +24,6 @@ struct SettingsView: View {
                 }
             }
         }
-        .sheet(isPresented: $settingVM.showVoicePicker) {
-           VoiceListView(settingVM: settingVM)
-        }
     }
 }
 
@@ -142,13 +139,13 @@ extension SettingsView{
     private var voicePickerButton: some View{
         
         NavigationLink {
-            VoiceListView(settingVM: settingVM)
+            VoiceListView(settingVM: settingVM, speech: speech)
         } label: {
             HStack{
                 Text(Localization.pickVoice.toString)
                 Spacer()
                 if let voiceModel = settingVM.selectedVoice{
-                    Text("\(voiceModel.representableName) \(voiceModel.languageStr)")
+                    Text("\(voiceModel.representableName)")
                         .lineLimit(1)
                         .font(.callout.weight(.medium))
                 }else{

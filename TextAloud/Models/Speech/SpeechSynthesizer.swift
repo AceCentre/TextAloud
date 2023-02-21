@@ -13,8 +13,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
     //MARK: Storage
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
-    @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
-    @AppStorage("azureVoiceId") var azureVoiceId: String = ""
+    @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     let speechSaveService = SpeechSaveService.shared
     
     //MARK: AVSpeech
@@ -30,7 +29,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     var rangePublisher = PassthroughSubject<NSRange, Never>()
     var cancellable: AnyCancellable?
     var azureHandlerTask: Task<(), any Error>?
-    var isPlayAll: Bool = false
+    var playMode: PlayMode = .all
 
     @Published var currentWord: NSRange?
     @Published var isPlay: Bool = false
@@ -50,37 +49,34 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         
         synth.delegate = self
     
-        startAzureRangeSubscription()
     }
     
     
-    func activate(_ text: String){
+    func activate(_ text: String, mode: PlayMode){
+        playMode = mode
         if isPlay{
             stop()
         }else{
-           speak(text)
+           speak(text, mode: mode)
         }
     }
     
-    func speak(_ text: String) {
-        
+   private func speak(_ text: String, mode: PlayMode) {
+        rangeOffset = 0
         if isAzureSpeech{
-            isPlayAll = true
-            rangeOffset = 0
             speakAzure(text)
             return
         }else{
-            rangeOffset = 0
             let utterance = AVSpeechUtterance(string: text)
             setVoiceIfNeeded(utterance)
             utterance.rate = rateMode.rateValue
             synth.speak(utterance)
-            print("speak")
         }
     }
     
 
     func setSpeakForRange(_ text: String, _ range: NSRange) {
+        playMode = .selecting
         if isPlay {
             stop()
         }
@@ -88,7 +84,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         let range = rangeOffset..<(rangeOffset + range.length)
         
         if isAzureSpeech{
-            isPlayAll = false
             speakAzure(text[range])
             return
         }
@@ -114,8 +109,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     }
     
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
-        if !aVFVoiceId.isEmpty{
-            utterance.voice = AVSpeechSynthesisVoice(identifier: aVFVoiceId)
+        if !activeVoiceId.isEmpty{
+            utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
         }
     }
     
@@ -182,3 +177,6 @@ enum SpeechRateEnum: Int, CaseIterable{
     }
 }
 
+enum PlayMode{
+    case all, inEdit, selecting, setting
+}

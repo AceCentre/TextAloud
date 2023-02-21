@@ -22,23 +22,24 @@ extension SpeechSynthesizer{
     
     
     func speakAzure(_ text: String){
-        let voiceId = azureVoiceId.isEmpty ? "en-US-JennyNeural" : azureVoiceId
+        let voiceId = activeVoiceId.isEmpty ? "en-US-JennyNeural" : activeVoiceId
         if azureSpeech.configurateSpeechSynthesizer(voiceId){
-            addHandlers()
+            addHandlers(text)
             azureSpeech.speak(text, type: .text)
         }
     }
     
-    private func addHandlers(){
-     
+    private func addHandlers(_ text: String){
+        if playMode == .setting {return}
+        
         startAzureRangeSubscription()
         
         azureSpeech.onCompletedHandler = { event in
             DispatchQueue.main.async {
                 self.isPlay = false
                 self.currentWord = nil
-                if self.isPlayAll{
-                    self.saveAudio(for: event.result.audioDuration, audioData: event.result.audioData)
+                if self.playMode == .all{
+                    self.saveAudio(name: text.createName, for: event.result.audioDuration, audioData: event.result.audioData)
                 }
             }
         }

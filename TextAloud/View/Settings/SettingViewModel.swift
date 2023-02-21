@@ -10,13 +10,10 @@ import Combine
 class SettingViewModel: ObservableObject{
     
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
-    
     @AppStorage("selectedColor") var selectedColor: Color = Color(UIColor(red: 0.96, green: 0.9, blue: 0.258, alpha: 0.4))
     @AppStorage("readingColor") var readingColor: Color = Color.red
     @AppStorage("fontSize") var fontSize: Int = 25
-    
-    @AppStorage("aVFVoiceId") var aVFVoiceId: String = ""
-    @AppStorage("azureVoiceId") var azureVoiceId: String = "en-US-JennyNeural"
+    @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     
     @Published var showVoicePicker: Bool = false
 
@@ -38,45 +35,35 @@ class SettingViewModel: ObservableObject{
 //MARK: - Voice
 extension SettingViewModel{
     
-
     var languages: [LanguageModel]{
-        isAzureSpeech ? azureVoiceService.languages : aVoiceService.languages
+        voiceMode == .azure ? azureVoiceService.languages : aVoiceService.languages
     }
     
     func changeVoice(_ voice: VoiceModel){
-        if voice.type == .azure{
-            azureVoiceId = voice.id
-        }else{
-            aVFVoiceId = voice.id
-        }
+        isAzureSpeech = voice.type == .azure
+        activeVoiceId = voice.id
         selectedVoice = voice
-    }
-    
-    private func changeVoiceMode(){
-        self.isAzureSpeech = voiceMode == .azure ? true : false
-    }
-    
-    private func setVoiceMode(){
-        voiceMode = isAzureSpeech ? .azure : .apple
     }
     
     private func startVoiceSubscriptions(){
         aVoiceService.$languages
             .combineLatest(azureVoiceService.$languages)
-            .combineLatest($voiceMode)
             .receive(on: DispatchQueue.main)
             .sink {[weak self] _, _ in
                 guard let self = self else {return}
-                self.changeVoiceMode()
-                self.setVoiceModel()
+                self.setCurrentModel()
             }
             .store(in: &cancellable)
     }
         
-    private func setVoiceModel(){
-       guard let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(self.azureVoiceId) :
-                self.aVoiceService.getVoicesModelForId(self.aVFVoiceId) else { return }
+    private func setCurrentModel(){
+       guard let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(activeVoiceId) :
+                self.aVoiceService.getVoicesModelForId(activeVoiceId) else { return }
         self.selectedVoice = voice
+    }
+    
+    private func setVoiceMode(){
+        voiceMode = isAzureSpeech ? .azure : .apple
     }
 }
 

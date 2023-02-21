@@ -11,6 +11,7 @@ struct VoiceListView: View {
     @State var showAbotSheet: Bool = false
     @State var searchText: String = ""
     @ObservedObject var settingVM: SettingViewModel
+    @ObservedObject var speech: SpeechSynthesizer
     var body: some View {
         ScrollViewReader { proxy in
             VStack{
@@ -39,7 +40,9 @@ struct VoiceListView: View {
                 }
             }
             .onChange(of: settingVM.voiceMode) { _ in
-                scrollToSelect(proxy)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                    scrollToSelect(proxy)
+                }
             }
         }
         .navigationTitle("Voices")
@@ -63,7 +66,7 @@ struct VoiceListView: View {
 struct VoiceListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            VoiceListView(settingVM: SettingViewModel())
+            VoiceListView(settingVM: SettingViewModel(), speech: SpeechSynthesizer())
         }
     }
 }
@@ -82,14 +85,14 @@ extension VoiceListView{
             ForEach(language.voices){voice in
                 Button {
                     settingVM.changeVoice(voice)
+                    speech.activate(language.simpleVoiceText, mode: .setting)
                 } label: {
                     voiceRowView(voice)
                         .contentShape(Rectangle())
-                        .id(voice.id)
-                        
                 }
                 .buttonStyle(.plain)
                 .listRowBackground(voice.id == settingVM.selectedVoice?.id ? Color.lightOcean.opacity(0.2) : .clear)
+                .id(voice.id)
             }
         } header: {
             Text(language.languageStr)

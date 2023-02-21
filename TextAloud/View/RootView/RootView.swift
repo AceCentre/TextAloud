@@ -87,7 +87,7 @@ extension RootView{
                 if let audio = synthesizer.savedAudio, synthesizer.isActiveCashAudio{
                     audioManager.audioAction(audio)
                 }else{
-                    synthesizer.activate(rootVM.text)
+                    synthesizer.activate(rootVM.text, mode: .all)
                 }
             }
             .hCenter()
@@ -126,6 +126,10 @@ extension RootView{
                 synthesizer.stop()
             }
             rootVM.onTappedEditSaveButton()
+            if rootVM.isFocused{
+                synthesizer.removeAudio()
+                synthesizer.saveSpeechData(rootVM.text)
+            }
         }
     }
     
@@ -224,6 +228,7 @@ extension RootView{
                             synthesizer.currentWord = nil
                         }
                         rootVM.removeText()
+                        synthesizer.removeAudio()
                     } label: {
                         Image(systemName: "trash.circle.fill")
                     }

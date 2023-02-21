@@ -9,8 +9,8 @@ import Foundation
 extension SpeechSynthesizer{
     
     
-    func saveAudio(for audioDuration: TimeInterval, audioData: Data?){
-        if let audioData, let url = audioSaveService.storeAudioFile(for: audioData){
+    func saveAudio(name: String, for audioDuration: TimeInterval, audioData: Data?){
+        if let audioData, let url = audioSaveService.storeAudioFile(name: name, for: audioData){
             savedAudio = .init(url: url, duration: audioDuration, rangesData: prepairRangesData)
         }
     }

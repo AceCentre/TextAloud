@@ -47,9 +47,9 @@ struct LanguageModel: Identifiable{
     let voices: [VoiceModel]
     
     
-    var simpleVoiceText: String?{
+    var simpleVoiceText: String{
         let code = String(code.prefix(2))
-        return voicesSimpleTexts[code]
+        return voicesSimpleTexts[code] ?? ""
     }
 }
 

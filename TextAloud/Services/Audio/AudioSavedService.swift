@@ -10,8 +10,8 @@ class AudioSavedService{
     
     let fileManager = LocalFileManager.instance
     
-    func storeAudioFile(for data: Data) -> URL?{
-        let name = "audio-\(Date().ISO8601Format()).mp3"
+    func storeAudioFile(name: String, for data: Data) -> URL?{
+        let name = "audio-\(name).mp3"
         return fileManager.save(for: data, fileNameWithExt: name)
     }
     
