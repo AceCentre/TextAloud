@@ -28,7 +28,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     var prepairRangesData = [AudioModel.RangesData]()
     var rangePublisher = PassthroughSubject<NSRange, Never>()
     var cancellable: AnyCancellable?
-    var azureHandlerTask: Task<(), any Error>?
+    var azureDelayTasks = [Task<(), any Error>]()
     var playMode: PlayMode = .all
 
     @Published var currentWord: NSRange?
@@ -101,7 +101,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
-            azureHandlerTask?.cancel()
+            azureDelayTasks.forEach({$0.cancel()})
             cancellable?.cancel()
         }else{
             synth.stopSpeaking(at: .immediate)

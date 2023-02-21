@@ -12,6 +12,7 @@ extension SpeechSynthesizer{
     
     func startAzureRangeSubscription(){
         cancellable = rangePublisher
+            .receive(on: DispatchQueue.main)
             .sink{ range in
                 var tempRange = range
                 tempRange.location += self.rangeOffset
@@ -60,11 +61,11 @@ extension SpeechSynthesizer{
         }
         
         azureSpeech.onWordBoundaryHandler = { boundary in
-            self.azureHandlerTask = Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
-                await MainActor.run {
-                    self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
+            self.azureDelayTasks.append(
+                Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
+                        self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
                 }
-            }
+            )
         }
      }
 }
