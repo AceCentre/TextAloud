@@ -10,6 +10,17 @@ import AVFAudio
 
 extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
     
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
+    {
+        guard playMode != .setting else {return}
+        var temp = characterRange
+        temp.location += rangeOffset
+        currentWord = temp
+        
+    }
+    
+    
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         guard playMode != .setting else {return}
         print("didFinish")
@@ -27,6 +38,7 @@ extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         guard playMode != .setting else {return}
+        print("didStart")
         isPlay = true
     }
     

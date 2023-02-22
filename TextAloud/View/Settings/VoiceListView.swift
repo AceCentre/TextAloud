@@ -2,7 +2,6 @@
 //  VoiceListView.swift
 //  TextAloud
 //
-//  Created by Богдан Зыков on 21.02.2023.
 //
 
 import SwiftUI
@@ -85,7 +84,7 @@ extension VoiceListView{
             ForEach(language.voices){voice in
                 Button {
                     settingVM.changeVoice(voice)
-                    speech.activate(language.simpleVoiceText, mode: .setting)
+                    speech.activateSimple(language.simpleVoiceText)
                 } label: {
                     voiceRowView(voice)
                         .contentShape(Rectangle())

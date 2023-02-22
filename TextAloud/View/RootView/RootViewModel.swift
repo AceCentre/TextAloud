@@ -59,6 +59,7 @@ extension RootViewModel{
     
     func onDocumentPick(for result: Result<[URL], Error>){
         showLoader = true
+        selectedRange = nil
         switch result {
         case .success(let success):
             if let url = success.first, url.startAccessingSecurityScopedResource(){

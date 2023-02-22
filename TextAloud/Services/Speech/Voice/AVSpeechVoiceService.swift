@@ -23,7 +23,7 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
         
 
         self.languages = uniquedLang.map({ code -> LanguageModel in
-            let voice = aVFvoices.filter({$0.language == code}).map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: .init(rawValue: Int($0.gender.rawValue)) ?? .male, type: .apple)})
+            let voice = aVFvoices.filter({$0.language == code}).map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: ($0.gender == .male ? .male : .female), type: .apple)})
             return  .init(code: code, voices: voice)
         })
     }

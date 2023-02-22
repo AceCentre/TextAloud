@@ -63,7 +63,9 @@ extension SpeechSynthesizer{
         azureSpeech.onWordBoundaryHandler = { boundary in
             self.azureDelayTasks.append(
                 Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
+                    await MainActor.run{
                         self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
+                    }
                 }
             )
         }

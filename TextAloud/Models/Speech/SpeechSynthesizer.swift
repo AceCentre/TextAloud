@@ -57,11 +57,19 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         if isPlay{
             stop()
         }else{
-           speak(text, mode: mode)
+           speak(text)
         }
     }
     
-   private func speak(_ text: String, mode: PlayMode) {
+    func activateSimple(_ text: String){
+        rangeOffset = 0
+        currentWord = nil
+        playMode = .setting
+        stop()
+        speak(text)
+    }
+    
+   private func speak(_ text: String) {
         rangeOffset = 0
         if isAzureSpeech{
             speakAzure(text)
@@ -103,7 +111,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             azureSpeech.stop()
             azureDelayTasks.forEach({$0.cancel()})
             cancellable?.cancel()
-        }else{
+        }else if synth.isSpeaking{
             synth.stopSpeaking(at: .immediate)
         }
     }
@@ -114,14 +122,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance)
-    {
-       
-        var temp = characterRange
-        temp.location += rangeOffset
-        currentWord = temp
-        
-    }
+
     
 
     
