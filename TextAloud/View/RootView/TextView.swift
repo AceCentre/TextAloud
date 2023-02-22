@@ -79,17 +79,14 @@ struct TextView: UIViewRepresentable {
 
         attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: attrStr.length))
 
-        if let currentWord, !isEditing, currentWord.location < text.length {
+        if let currentWord, currentWord.isExistRange(for: text) {
             attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWord)
-//            let sentenceRange = Helpers.getSentenceRangeForLocation(currentWord.location, text)
-//
-//            attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: sentenceRange)
-            
-            uiView.scrollRangeToVisible(currentWord)
-            
+            if !isEditing{
+                uiView.scrollRangeToVisible(currentWord)
+            }
         }
         
-        if let selectedRange, !isEditing, selectedRange.location < text.length{
+        if let selectedRange, selectedRange.isExistRange(for: text){
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
         }
     
@@ -159,3 +156,8 @@ struct TextView: UIViewRepresentable {
 }
 
 
+extension NSRange{
+    func isExistRange(for str: String) -> Bool{
+        self.location != NSNotFound && NSMaxRange(self) <= str.count
+    }
+}

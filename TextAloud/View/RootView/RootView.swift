@@ -122,11 +122,13 @@ extension RootView{
     @ViewBuilder
     private var editButton: some View{
         TextButtonView(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
-            if synthesizer.isPlay{
-                synthesizer.stop()
-            }
+        
             rootVM.onTappedEditSaveButton()
+            ///save action
             if rootVM.isFocused{
+                if synthesizer.isPlay{
+                    synthesizer.stop()
+                }
                 synthesizer.removeAudio()
                 synthesizer.saveSpeechData(rootVM.text)
             }
@@ -185,12 +187,10 @@ extension RootView{
 extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
-            SpeachTextViewComponent(currentWord: $synthesizer.currentWord, rootVM: rootVM)
+            SpeachTextViewComponent(currentWord: synthesizer.isActiveCashAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
             HStack {
                 cancelButton
                 selectedMenuButton
-                Spacer()
-                rateMenuButton
                 Spacer()
                 editButton
             }
@@ -226,6 +226,8 @@ extension RootView{
                         if synthesizer.isPlay{
                             synthesizer.stop()
                             synthesizer.currentWord = nil
+                        }else if audioManager.isPlaying{
+                            audioManager.stopAudio()
                         }
                         rootVM.removeText()
                         synthesizer.removeAudio()
@@ -236,6 +238,8 @@ extension RootView{
                 Button {
                     if synthesizer.isPlay{
                         synthesizer.stop()
+                    }else if audioManager.isPlaying{
+                        audioManager.stopAudio()
                     }
                     showFileImporter.toggle()
                 } label: {

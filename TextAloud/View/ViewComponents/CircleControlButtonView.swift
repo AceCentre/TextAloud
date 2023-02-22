@@ -9,15 +9,20 @@ import SwiftUI
 struct CircleControlButtonView: View {
     var isPlay: Bool
     var isDisabled: Bool = false
+    var isSmall: Bool = false
     var action: () -> Void
+    
+    private var size: CGFloat{
+        isSmall ? 45 : 65
+    }
     var body: some View {
         Button {
             action()
         } label: {
             Image(systemName: isPlay ? "stop.fill" : "play.fill")
-                .font(.system(size: 30))
+                .font(.system(size: isSmall ? 20 : 30))
                 .foregroundColor(.white)
-                .frame(width: 65, height: 65)
+                .frame(width: size, height: size)
                 .background{
                     Circle()
                         .fill(Color.limeChalk)
@@ -34,7 +39,7 @@ struct CircleControlButtonView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
             CircleControlButtonView(isPlay: false, action: {})
-            CircleControlButtonView(isPlay: true, action: {})
+            CircleControlButtonView(isPlay: true, isSmall: true, action: {})
         }
        
     }

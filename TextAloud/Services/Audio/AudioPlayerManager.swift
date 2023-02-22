@@ -51,28 +51,22 @@ class AudioPlayerManager: ObservableObject {
     }
     
     #warning("TODO")
-    func seekTo(_ audio: AudioModel, _ selectedRange: NSRange){
-        if !isPlaying{
-            setAudio(audio)
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
-                self.playerDidFinishPlaying()
-            }
-            udateRate()
-            startTimer(for: selectedRange)
-        }
-        
-        var time: Double = 0
-        
-        if rangeIndex > 0{
-            time = (0...rangeIndex).map({audio.rangesData[$0].timeOffsets}).reduce(0.0, +)
-        }
-        print("index-", rangeIndex, time)
-        let seekTime = CMTime(seconds:
-                                time, preferredTimescale: 60000)
-        print(seekTime.seconds)
-        player.seek(to: seekTime, toleranceBefore: .zero, toleranceAfter: .zero)
-        
-    }
+//    func seekTo(_ audio: AudioModel, _ selectedRange: NSRange){
+//        if !isPlaying{
+//            setAudio(audio)
+//            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
+//                self.playerDidFinishPlaying()
+//            }
+//            startTimer(for: selectedRange)
+//        }else{
+//            player.pause()
+//        }
+//
+//        let time: Double = Double(rangeIndex) * audio.averageWordTime
+//        let seekTime = CMTime(seconds: time, preferredTimescale: 60000)
+//        player.seek(to: seekTime, toleranceBefore: .zero, toleranceAfter: .zero)
+//        player.play()
+//    }
     
 }
 
@@ -82,11 +76,13 @@ extension AudioPlayerManager{
     private func startSubscriptions(){
         player.publisher(for: \.timeControlStatus)
             .sink { [weak self] status in
+                guard let self = self else {return}
                 switch status {
                 case .playing:
-                    self?.isPlaying = true
+                    self.isPlaying = true
+                    self.startTimer()
                 case .paused:
-                    self?.isPlaying = false
+                    self.isPlaying = false
                 case .waitingToPlayAtSpecifiedRate:
                     break
                 @unknown default:
@@ -101,8 +97,6 @@ extension AudioPlayerManager{
             self.playerDidFinishPlaying()
         }
         player.play()
-        udateRate()
-        startTimer()
     }
     
     
@@ -110,11 +104,9 @@ extension AudioPlayerManager{
 
          guard let audio = currentAudio else {return}
          
-         #warning("TODO")
          // set index if needded
          self.rangeIndex = audio.rangesData.firstIndex(where: {$0.range.location == range?.location}) ?? 0
-         let averageTime = audio.duration / Double(audio.rangesData.count)
-         self.sumplesTimer = Timer.scheduledTimer(withTimeInterval: averageTime, repeats: true, block: { (timer) in
+        self.sumplesTimer = Timer.scheduledTimer(withTimeInterval: audio.averageWordTime, repeats: true, block: { (timer) in
              
              if self.rangeIndex < audio.rangesData.count {
                  self.currentRange = audio.rangesData[self.rangeIndex].range
@@ -137,7 +129,7 @@ extension AudioPlayerManager{
 
      }
      
-     private func stopAudio() {
+    func stopAudio() {
          playerDidFinishPlaying()
          removeTimeObserver()
      }
@@ -154,7 +146,7 @@ extension AudioPlayerManager{
         player.seek(to: .zero)
         sumplesTimer?.invalidate()
         currentAudio = nil
-        
+        currentRange = nil
         //currentTime = .zero
      }
 }

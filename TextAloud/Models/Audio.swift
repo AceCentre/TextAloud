@@ -11,29 +11,16 @@ struct AudioModel: Codable{
     let url: URL
     let duration: Double
     let rangesData: [RangesData]
-    
-    
-    //var remainingDuration: Double
+    let averageWordTime: Double
     
     
     init(url: URL, duration: Double, rangesData: [RangesData]) {
         self.url = url
         self.duration = duration
-       // self.remainingDuration = duration
         self.rangesData = rangesData
+        self.averageWordTime = duration / Double(rangesData.count)
     }
-    
-//    mutating func updateRemainingDuration(_ currentTime: Double){
-//        let dif = duration - currentTime
-//        if dif > 0{
-//            remainingDuration = dif
-//        }
-//    }
-//
-//    mutating func resetRemainingDuration(){
-//        remainingDuration = duration
-//    }
-    
+        
     struct RangesData: Codable{
         
         let range: NSRange

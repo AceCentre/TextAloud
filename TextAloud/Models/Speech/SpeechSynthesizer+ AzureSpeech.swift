@@ -33,6 +33,7 @@ extension SpeechSynthesizer{
     private func addHandlers(_ text: String){
         if playMode == .setting {return}
         
+        prepairRangesData.removeAll()
         startAzureRangeSubscription()
         
         azureSpeech.onCompletedHandler = { event in
@@ -61,13 +62,17 @@ extension SpeechSynthesizer{
         }
         
         azureSpeech.onWordBoundaryHandler = { boundary in
-            self.azureDelayTasks.append(
-                Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
-                    await MainActor.run{
-                        self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
+            if boundary.boundaryType == .word{
+                self.prepairRangesData.append(.init(offset: boundary.textOffset, wordLength: boundary.wordLength, timeOffsets: boundary.audioOffset))
+                
+                self.azureDelayTasks.append(
+                    Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
+                        await MainActor.run{
+                            self.rangePublisher.send(.init(location: Int(boundary.textOffset), length: Int(boundary.wordLength)))
+                        }
                     }
-                }
-            )
+                )
+            }
         }
      }
 }
