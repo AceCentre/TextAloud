@@ -81,7 +81,7 @@ extension SettingsView{
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
             Divider().padding(.vertical, 4)
-            voicePickerButton
+            languageLink
         }
     }
     
@@ -135,26 +135,16 @@ extension SettingsView{
         }
     }
     
-    
-    private var voicePickerButton: some View{
-        
+    private var languageLink: some View{
         NavigationLink {
-            VoiceListView(settingVM: settingVM, speech: speech)
+            LanguageSpeechView()
+                .environmentObject(speech)
+                .environmentObject(settingVM)
         } label: {
-            HStack{
-                Text(Localization.pickVoice.toString)
-                Spacer()
-                if let voiceModel = settingVM.selectedVoice{
-                    Text("\(voiceModel.representableName)")
-                        .lineLimit(1)
-                        .font(.callout.weight(.medium))
-                }else{
-                    ProgressView()
-                }
-            }
+            Text("Language and Speech")
+                .font(.callout.weight(.medium))
+            Spacer()
+            Image(systemName: "chevron.right")
         }
-        .hLeading()
-        .font(.headline.weight(.medium))
     }
-    
 }

@@ -14,6 +14,7 @@ struct RootView: View {
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
     @State var showSetting: Bool = false
     @State var showFileImporter: Bool = false
+    @State var showLanguageSheet: Bool = false
     var body: some View {
         ZStack {
             VStack(spacing: 0){
@@ -54,6 +55,13 @@ struct RootView: View {
         .sheet(isPresented: $showSetting){
             SettingsView(speech: synthesizer, settingVM: settingsVM)
         }
+        .sheet(isPresented: $showLanguageSheet){
+            NavigationView {
+                LanguageSpeechView(isSheetView: true)
+                    .environmentObject(synthesizer)
+                    .environmentObject(settingsVM)
+            }
+        }
         .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
     }
@@ -91,29 +99,36 @@ extension RootView{
                 }
             }
             .hCenter()
-            .overlay(alignment: .trailing) {
-                if synthesizer.isActiveCashAudio{
+            .overlay {
+                
+                HStack{
+                    if let voice = settingsVM.activeVoiceModel{
+                        Button {
+                            showLanguageSheet.toggle()
+                        } label: {
+                            IconView(title: voice.languageCode.getcountruLocaleLanguage, icon: "globe.europe.africa.fill")
+                        }
+                    }
                     
-                    Menu {
-                        Button("Remove", role: .destructive) {
-                            synthesizer.removeAudio()
-                        }
-                        Button("Share"){
-                            if let audioUrl = synthesizer.savedAudio?.url{
-                                Helpers.showShareSheet(data: audioUrl)
+                    Spacer()
+                    if synthesizer.isActiveCashAudio{
+                        Menu {
+                            Button(role: .destructive) {
+                                synthesizer.removeAudio()
+                            } label: {
+                                Label("Remove", systemImage: "trash")
                             }
+                            
+                            Button {
+                                if let audioUrl = synthesizer.savedAudio?.url{
+                                    Helpers.showShareSheet(data: audioUrl)
+                                }
+                            } label: {
+                                Label("Share", systemImage: "arrowshape.turn.up.right.fill")
+                            }
+                        } label: {
+                            IconView(title: "Audio", icon: "waveform.circle.fill")
                         }
-                    } label: {
-                        Label {
-                            Image(systemName: "waveform.circle.fill")
-                                .font(.title)
-                        } icon: {
-                            Text("Audio")
-                                .font(.footnote.bold())
-                                .foregroundColor(.deepOcean)
-                        }
-                        .padding(.vertical, 10)
-                        .foregroundColor(.deepOcean)
                     }
                 }
             }

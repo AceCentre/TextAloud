@@ -37,15 +37,19 @@ class AzureVoiceService: VoiceServiceProtocol{
 
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
-        return getVoicesModelsForLanguage(currentLocaleCode)?.first ??
+        return getVoicesModelsForLanguage(currentLocaleCode).first ??
             .init(id: defaultAzureVoiceId, name: defaultAzureVoiceId, languageCode: "en-US", gender: .female, type: .azure)
     }
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]? {
-        return languages.first(where: {$0.code == language})?.voices
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {
+        return languages.first(where: {$0.code == language})?.voices ?? []
     }
     
-    func getVoicesModelForId(_ id: String) -> VoiceModel? {
+    func getLanguagesForCode(_ code: String) -> [LanguageModel] {
+        return languages.filter({$0.code == code})
+    }
+    
+    func getVoicesModelForId(_ id: String) -> VoiceModel {
         return languages.map({$0.voices}).flatMap({$0}).first(where: {$0.id == id}) ?? defaultVoiceModel
     }
     
@@ -58,8 +62,10 @@ protocol VoiceServiceProtocol{
     
     var defaultVoiceModel: VoiceModel {get}
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]?
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]
+    
+    func getLanguagesForCode(_ code: String) -> [LanguageModel]
         
-    func getVoicesModelForId(_ id: String) -> VoiceModel?
+    func getVoicesModelForId(_ id: String) -> VoiceModel
     
 }

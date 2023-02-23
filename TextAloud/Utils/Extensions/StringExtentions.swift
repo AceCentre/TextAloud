@@ -70,6 +70,15 @@ extension String {
         return "\(countru) (\(region))"
     }
     
+    var getcountruLocaleLanguage: String{
+        let locale: Locale = .current
+        
+        guard let countru = locale.localizedString(forLanguageCode: self) else {
+            return "None"
+        }
+        return countru
+    }
+    
     var createName: String{
        String(self.prefix(10) + "...")
     }

@@ -61,28 +61,23 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    func activateSimple(_ text: String){
+    //activate speek for test voices
+    func activateSimple(_ text: String, id: String, type: VoiceModel.VoiceType){
         rangeOffset = 0
         currentWord = nil
         playMode = .setting
         stop()
-        speak(text)
-    }
-    
-   private func speak(_ text: String) {
-        rangeOffset = 0
-        if isAzureSpeech{
-            speakAzure(text)
-            return
+        if type == .azure{
+            if azureSpeech.configurateSpeechSynthesizer(id){
+                azureSpeech.speak(text, type: .text)
+            }
         }else{
             let utterance = AVSpeechUtterance(string: text)
-            setVoiceIfNeeded(utterance)
-            utterance.rate = rateMode.rateValue
+            utterance.voice = AVSpeechSynthesisVoice(identifier: id)
             synth.speak(utterance)
         }
     }
-    
-
+            
     func setSpeakForRange(_ text: String, _ range: NSRange) {
         playMode = .selecting
         if isPlay {
@@ -116,17 +111,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
-        if !activeVoiceId.isEmpty{
-            utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
-        }
-    }
-    
-
-    
-
-    
-    
     func updateRate(_ type: SpeechRateEnum){
         rateMode = type
         if isPlay {
@@ -138,6 +122,25 @@ class SpeechSynthesizer: NSObject, ObservableObject {
                 synth.speak(lastUtterance)
                 self.lastUtterance = nil
             }
+        }
+    }
+    
+    private func speak(_ text: String) {
+         rangeOffset = 0
+         if isAzureSpeech{
+             speakAzure(text)
+             return
+         }else{
+             let utterance = AVSpeechUtterance(string: text)
+             setVoiceIfNeeded(utterance)
+             utterance.rate = rateMode.rateValue
+             synth.speak(utterance)
+         }
+     }
+    
+    private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
+        if !activeVoiceId.isEmpty{
+            utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
         }
     }
 }

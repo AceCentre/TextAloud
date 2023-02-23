@@ -12,8 +12,10 @@
 		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
 		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
+		5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176629A755AD009BB492 /* VoiceSaveService.swift */; };
+		5A1E176929A7638E009BB492 /* LanguageSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */; };
+		5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176A29A793FC009BB492 /* IconButtonView.swift */; };
 		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
-		5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B82299CD14300DFA38B /* VoicesPickerView.swift */; };
 		5A4A0EC9299B979D00E3B385 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC7299B979D00E3B385 /* View.swift */; };
 		5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC8299B979D00E3B385 /* Color.swift */; };
 		5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */; };
@@ -82,8 +84,10 @@
 		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155607299D1E80001A0B7D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155608299D1F3F001A0B7D /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A1E176629A755AD009BB492 /* VoiceSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
+		5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSpeechView.swift; sourceTree = "<group>"; };
+		5A1E176A29A793FC009BB492 /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		5A498B82299CD14300DFA38B /* VoicesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesPickerView.swift; sourceTree = "<group>"; };
 		5A4A0EC7299B979D00E3B385 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5A4A0EC8299B979D00E3B385 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioSessionManager.swift; sourceTree = "<group>"; };
@@ -200,8 +204,8 @@
 				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
 				FDF5C307290F0D250003A675 /* SettingsView.swift */,
 				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
-				5A498B82299CD14300DFA38B /* VoicesPickerView.swift */,
 				5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */,
+				5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -227,6 +231,7 @@
 				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
 				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
 				5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */,
+				5A1E176A29A793FC009BB492 /* IconButtonView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */,
 				5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */,
 				5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */,
+				5A1E176629A755AD009BB492 /* VoiceSaveService.swift */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -451,8 +457,10 @@
 				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
 				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
 				5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */,
+				5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
 				5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */,
+				5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */,
 				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
 				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
 				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
@@ -472,7 +480,6 @@
 				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
 				5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */,
-				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
 				5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */,
 				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,
 				5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */,
@@ -489,6 +496,7 @@
 				5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */,
 				5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */,
 				5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */,
+				5A1E176929A7638E009BB492 /* LanguageSpeechView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +695,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud2;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -17,14 +17,15 @@ class SettingViewModel: ObservableObject{
     
     @Published var showVoicePicker: Bool = false
 
-    @Published var selectedVoice: VoiceModel?
+    @Published var selectedVoices = [VoiceModel]()
     @Published var voiceMode: VoiceMode = .apple
-    
+    @Published var lastPrimaryLanguage: String = ""
     private var cancellable = Set<AnyCancellable>()
-    
+    let maxCountLaunguges: Int = 5
     private let aVoiceService = AVSpeechVoiceService()
     private let azureVoiceService = AzureVoiceService()
-        
+    private let voiceSaveService = VoiceSaveService.shared
+    
     init(){
         setVoiceMode()
         startVoiceSubscriptions()
@@ -35,14 +36,46 @@ class SettingViewModel: ObservableObject{
 //MARK: - Voice
 extension SettingViewModel{
     
-    var languages: [LanguageModel]{
+    var allLanguages: [LanguageModel]{
         voiceMode == .azure ? azureVoiceService.languages : aVoiceService.languages
     }
     
-    func changeVoice(_ voice: VoiceModel){
+    var activeVoiceModel: VoiceModel?{
+        selectedVoices.first(where: {$0.id == activeVoiceId})
+    }
+    
+    func languages(for code: String) -> [LanguageModel]{
+        voiceMode == .azure ? azureVoiceService.getLanguagesForCode(code) : aVoiceService.getLanguagesForCode(code)
+    }
+    
+    func addOrRemoveVoice(for voice: VoiceModel){
+        if voiceIsContains(for: voice.id){
+            removeVoice(for: voice.id)
+        }else{
+            addVoice(for: voice)
+        }
+    }
+    
+    func voiceIsContains(for id: String) -> Bool{
+        selectedVoices.contains(where: {$0.id == id})
+    }
+    
+    func voiceIsActive(_ id: String) -> Bool{
+        id == activeVoiceId
+    }
+    
+//    func changeVoice(_ voice: VoiceModel){
+//        if voice.id == activeVoiceId{
+//            setActiveVoice(for: voice)
+//        }
+//        if let index = selectedVoices.firstIndex(where: {$0.languageCode == voice.languageCode}){
+//            selectedVoices[index] = voice
+//        }
+//    }
+    
+    func setActiveVoice(for voice: VoiceModel){
         isAzureSpeech = voice.type == .azure
         activeVoiceId = voice.id
-        selectedVoice = voice
     }
     
     private func startVoiceSubscriptions(){
@@ -51,19 +84,32 @@ extension SettingViewModel{
             .receive(on: DispatchQueue.main)
             .sink {[weak self] _, _ in
                 guard let self = self else {return}
-                self.setCurrentModel()
+                self.setVoices()
             }
             .store(in: &cancellable)
-    }
-        
-    private func setCurrentModel(){
-       guard let voice = self.isAzureSpeech ? self.azureVoiceService.getVoicesModelForId(activeVoiceId) :
-                self.aVoiceService.getVoicesModelForId(activeVoiceId) else { return }
-        self.selectedVoice = voice
     }
     
     private func setVoiceMode(){
         voiceMode = isAzureSpeech ? .azure : .apple
+    }
+    
+    private func setVoices(){
+        let defaultVoice = self.isAzureSpeech ? azureVoiceService.getVoicesModelForId(activeVoiceId) :
+        aVoiceService.getVoicesModelForId(activeVoiceId)
+        let voices = voiceSaveService.load() ?? [defaultVoice]
+        selectedVoices = voices
+    }
+   
+    func removeVoice(for id: String){
+        selectedVoices.removeAll(where: {$0.id == id})
+        voiceSaveService.save(selectedVoices)
+    }
+    
+    private func addVoice(for voice: VoiceModel){
+        if selectedVoices.count < maxCountLaunguges{
+            selectedVoices.append(voice)
+        }
+        voiceSaveService.save(selectedVoices)
     }
 }
 

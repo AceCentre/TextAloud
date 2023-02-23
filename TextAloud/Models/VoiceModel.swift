@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct VoiceModel: Identifiable, Hashable{
+struct VoiceModel: Identifiable, Hashable, Codable{
     
     let id: String
     let name: String
@@ -23,12 +23,13 @@ struct VoiceModel: Identifiable, Hashable{
     }
 }
 
-extension VoiceModel{
-    enum VoiceType{
+extension VoiceModel {
+    
+    enum VoiceType: Codable{
         case apple, azure
     }
     
-    enum Gender: Int{
+    enum Gender: Int, Codable{
         case male, female
         
         var toStr: String{

@@ -31,15 +31,19 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     
     var defaultVoiceModel: VoiceModel{
         let currentLocaleCode = Locale.current.collatorIdentifier ?? "en-US"
-        return getVoicesModelsForLanguage(currentLocaleCode)?.first ??
+        return getVoicesModelsForLanguage(currentLocaleCode).first ??
             .init(id: "non", name: "Apple", languageCode: "en-US", gender: .female, type: .apple)
     }
     
-    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel]? {
-        languages.first(where: {$0.code == language})?.voices
+    func getVoicesModelsForLanguage(_ language: String) -> [VoiceModel] {
+        languages.first(where: {$0.code == language})?.voices ?? []
     }
     
-    func getVoicesModelForId(_ id: String) -> VoiceModel? {
+    func getLanguagesForCode(_ code: String) -> [LanguageModel] {
+        return languages.filter({$0.code == code})
+    }
+    
+    func getVoicesModelForId(_ id: String) -> VoiceModel {
         languages.map({$0.voices}).flatMap({$0}).first(where: {$0.id == id}) ?? defaultVoiceModel
     }
     
