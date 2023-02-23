@@ -82,6 +82,15 @@ extension String {
     var createName: String{
        String(self.prefix(10) + "...")
     }
+    
+    var isRTLCode: Bool{
+        switch self{
+        case "ar", "arc", "dv", "fa", "ha", "he", "khw", "ks", "ku",
+            "ps", "ur", "yi":
+            return true
+        default : return false
+        }
+    }
 }
 
 

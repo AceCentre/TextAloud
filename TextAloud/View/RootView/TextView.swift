@@ -92,6 +92,8 @@ struct TextView: UIViewRepresentable {
     
         uiView.attributedText = attrStr
         
+        updateTextAlignment(uiView)
+        
         onEdit(uiView, context: context)
     }
     
@@ -106,6 +108,11 @@ struct TextView: UIViewRepresentable {
                 uiView.isEditable = false
             }
         }
+    }
+    
+    func updateTextAlignment(_ uiView: UITextView){
+        guard let code = uiView.textInputMode?.primaryLanguage?.prefix(2) else {return}
+        uiView.textAlignment = String(code).isRTLCode ? .right : .natural
     }
     
     class Coordinator: NSObject, UITextViewDelegate {
