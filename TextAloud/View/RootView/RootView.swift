@@ -104,7 +104,12 @@ extension RootView{
                 HStack{
                     if let voice = settingsVM.activeVoiceModel{
                         Button {
-                            showLanguageSheet.toggle()
+                            if settingsVM.selectedVoices.count == 2{
+                                settingsVM.toggleVoice()
+                            }else{
+                                showLanguageSheet.toggle()
+                            }
+                            
                         } label: {
                             IconView(title: voice.languageCode.getcountruLocaleLanguage, icon: "globe.europe.africa.fill")
                         }

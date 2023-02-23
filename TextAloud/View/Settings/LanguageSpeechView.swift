@@ -79,6 +79,9 @@ extension LanguageSpeechView{
                 Button {
                     settingVM.setActiveVoice(for: voice)
                     speech.removeAudio()
+                    if isSheetView{
+                        dismiss()
+                    }
                 } label: {
                     Text(voice.languageStr)
                         .font(.callout.weight(.medium))

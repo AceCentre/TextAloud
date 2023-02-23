@@ -64,6 +64,11 @@ extension SettingViewModel{
         id == activeVoiceId
     }
     
+    func toggleVoice(){
+        guard let noActiveVoice = selectedVoices.first(where: {$0.id != activeVoiceId}) else { return }
+        setActiveVoice(for: noActiveVoice)
+    }
+    
 //    func changeVoice(_ voice: VoiceModel){
 //        if voice.id == activeVoiceId{
 //            setActiveVoice(for: voice)
