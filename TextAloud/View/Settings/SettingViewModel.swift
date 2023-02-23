@@ -103,6 +103,9 @@ extension SettingViewModel{
         aVoiceService.getVoicesModelForId(activeVoiceId)
         let voices = voiceSaveService.load() ?? [defaultVoice]
         selectedVoices = voices
+        if activeVoiceId.isEmpty {
+            activeVoiceId = defaultVoice.id
+        }
     }
    
     func removeVoice(for id: String){
