@@ -66,12 +66,13 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         rangeOffset = 0
         currentWord = nil
         playMode = .setting
-        stop()
         if type == .azure{
+            azureSpeech.stop()
             if azureSpeech.configurateSpeechSynthesizer(id){
                 azureSpeech.speak(text, type: .text)
             }
         }else{
+            synth.stopSpeaking(at: .immediate)
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = AVSpeechSynthesisVoice(identifier: id)
             synth.speak(utterance)
@@ -107,6 +108,13 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             azureDelayTasks.forEach({$0.cancel()})
             cancellable?.cancel()
         }else if synth.isSpeaking{
+            synth.stopSpeaking(at: .immediate)
+        }
+    }
+    
+    func stopAll(){
+        if isPlay{
+            azureSpeech.stop()
             synth.stopSpeaking(at: .immediate)
         }
     }
@@ -181,6 +189,6 @@ enum SpeechRateEnum: Int, CaseIterable{
     }
 }
 
-enum PlayMode{
+enum PlayMode: Int{
     case all, inEdit, selecting, setting
 }

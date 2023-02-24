@@ -12,7 +12,7 @@ import Combine
 class AudioPlayerManager: ObservableObject {
     
     //@Published var currentTime: Double = .zero
-
+    @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
     @Published var currentAudio: AudioModel?
     @Published var isPlaying: Bool = false
     @Published var player: AVPlayer!
@@ -29,6 +29,9 @@ class AudioPlayerManager: ObservableObject {
         removeTimeObserver()
     }
     
+    var isSetAudio: Bool{
+        isAzureSpeech && currentAudio != nil
+    }
     
     private func setAudio(_ audio: AudioModel){
         currentAudio = audio
@@ -130,8 +133,10 @@ extension AudioPlayerManager{
      }
      
     func stopAudio() {
-         playerDidFinishPlaying()
-         removeTimeObserver()
+        if isPlaying{
+            playerDidFinishPlaying()
+            removeTimeObserver()
+        }
      }
 
      private func removeTimeObserver(){

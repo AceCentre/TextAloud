@@ -64,7 +64,7 @@ struct VoiceListView: View {
             }
         }
         .onDisappear{
-            speech.stop()
+            speech.stopAll()
         }
     }
 }

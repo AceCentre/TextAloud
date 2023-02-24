@@ -38,6 +38,7 @@ struct RootView: View {
         }
         .onChange(of: rootVM.selectedRange) { range in
             if let range{
+                audioManager.stopAudio()
                 synthesizer.setSpeakForRange(rootVM.text, range)
             }
         }
@@ -207,7 +208,7 @@ extension RootView{
 extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
-            SpeachTextViewComponent(currentWord: synthesizer.isActiveCashAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
+            SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
             HStack {
                 cancelButton
                 selectedMenuButton

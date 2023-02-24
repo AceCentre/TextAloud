@@ -92,13 +92,11 @@ struct TextView: UIViewRepresentable {
     
         uiView.attributedText = attrStr
         
-        updateTextAlignment(uiView)
-        
-        onEdit(uiView, context: context)
+        onEdit(uiView)
     }
     
     
-    func onEdit(_ uiView: UITextView, context: Context){
+    func onEdit(_ uiView: UITextView){
         DispatchQueue.main.async {
             if isEditing {
                 uiView.isEditable = true
@@ -110,15 +108,15 @@ struct TextView: UIViewRepresentable {
         }
     }
     
-    func updateTextAlignment(_ uiView: UITextView){
-        guard let code = uiView.textInputMode?.primaryLanguage?.prefix(2) else {return}
-        uiView.textAlignment = String(code).isRTLCode ? .right : .natural
-    }
+//    func updateTextAlignment(_ uiView: UITextView){
+//        guard let code = uiView.textInputMode?.primaryLanguage?.prefix(2) else {return}
+//        uiView.textAlignment = String(code).isRTLCode ? .right : .natural
+//    }
     
     class Coordinator: NSObject, UITextViewDelegate {
 
         var parent: TextView
-     
+        var lastRextAlignment: NSTextAlignment = .natural
         
         init(_ uiTextView: TextView) {
             self.parent = uiTextView
