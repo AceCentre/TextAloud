@@ -36,7 +36,8 @@ This technique is surprisingly not common amongst products such as Natural Reade
 Remember that both Android and iOS have built in options to read out streams of text. As long as you have the accessibility settings enabled you can  select some text and then select the option to read it aloud. But there are some apps that make the process even easier. 
 
 * [WordTalk](https://www.wordtalk.org.uk/) from CALL Scotland is amazing. The only problem is its now quite difficult to use on recent versions of word. 
-* [NaturalReader](https://duckduckgo.com/?q=naturalreader&ia=web) is a really good, well designed reading software. A large range of voices and nice clean UI. We recommend looking at this if you need to read out text from a range of different formats across different operating systems
+* [NaturalReader](https://www.naturalreaders.com/) is a really good, well designed reading software. A large range of voices and nice clean UI. We recommend looking at this if you need to read out text from a range of different formats across different operating systems
+* [Speechify](https://speechify.com/) Similar to NaturalReader. Online and as an app. Basic features available for free. 
 * [Wrise](https://www.assistiveware.com/products/wrise). If you are on a Mac DEFINTLEY look at wrise. Its beautiful and allows for some markup of speech text
 * [SprintPlus](https://www.jabbla.co.uk/software/sprintplus/). Does a lot more than just reading documents - has a web app that works across browsers, allows for marking up documents. A solid tool to look at if you are needing something to support students
 * [Voice Dream Reader](https://www.voicedream.com/reader/). Read in a wide range of formats. Offline voices from Acapella. 
