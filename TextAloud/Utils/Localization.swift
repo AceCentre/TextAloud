@@ -17,6 +17,7 @@ enum Localization: String {
     case word
     case paragraph
     case sentence
+    case all
     case settings
     case aboutTextAloud
     case customization

@@ -30,10 +30,7 @@ final class AVAudioSessionManager{
     func setAudioSessionPlayback() {
         do {
             try audioSession.setActive(false)
-            try audioSession.setCategory(.playback, mode: .voicePrompt, policy: .default, options: [
-                .allowBluetooth,
-                .allowBluetoothA2DP
-            ])
+            try audioSession.setCategory(.playback, mode: .voicePrompt, policy: .default, options: [])
             try audioSession.setActive(true)
         } catch {
             print("Error setting audioSessionPlayback: \(error)")

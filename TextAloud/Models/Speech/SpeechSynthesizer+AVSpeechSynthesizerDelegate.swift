@@ -25,7 +25,6 @@ extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
         guard playMode != .setting else {return}
         print("didFinish")
         isPlay = false
-        currentWord = nil
         lastUtterance = utterance
     }
     
@@ -33,7 +32,6 @@ extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
         guard playMode != .setting else {return}
         print("didCancel")
         isPlay = false
-        currentWord = nil
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {

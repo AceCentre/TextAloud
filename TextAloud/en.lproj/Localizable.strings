@@ -15,6 +15,7 @@
 "word" = "Word";
 "paragraph" = "Paragraph";
 "sentence" = "Sentence";
+"all" = "All text";
 "settings" = "Settings";
 
 "aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices";

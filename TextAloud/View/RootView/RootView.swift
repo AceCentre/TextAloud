@@ -36,10 +36,10 @@ struct RootView: View {
                 rootVM.text = text
             }
         }
-        .onChange(of: rootVM.selectedRange) { range in
+        .onChange(of: rootVM.tappedRange) { range in
             if let range{
-                audioManager.stopAudio()
-                synthesizer.setSpeakForRange(rootVM.text, range)
+                rootVM.selectedRange = nil
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped)
             }
         }
         .onChange(of: rootVM.text) { _ in
@@ -90,60 +90,66 @@ struct RootView_Previews: PreviewProvider {
 extension RootView{
     @ViewBuilder
     private var controlsSectionView: some View{
-        let isPlay = synthesizer.isActiveCashAudio ? audioManager.isPlaying :  synthesizer.isPlay
-            CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+        CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+            
+//            if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
+//                audioManager.audioAction(audio)
+           // }else{
+                let location = synthesizer.currentWord?.nextLoacation ?? 3
+                let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
-                if let audio = synthesizer.savedAudio, synthesizer.isActiveCashAudio{
-                    audioManager.audioAction(audio)
-                }else{
-                    synthesizer.activate(rootVM.text, mode: .all)
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
+           // }
+        }
+        .hCenter()
+        .overlay {
+            HStack{
+                if let voice = settingsVM.activeVoiceModel{
+                    Button {
+                        if settingsVM.selectedVoices.count == 2{
+                            settingsVM.toggleVoice()
+                        }else{
+                            showLanguageSheet.toggle()
+                        }
+                        
+                    } label: {
+                        IconView(title: voice.languageCode.shortLocaleLanguage, icon: "globe.europe.africa.fill")
+                    }
                 }
-            }
-            .hCenter()
-            .overlay {
                 
-                HStack{
-                    if let voice = settingsVM.activeVoiceModel{
+                Spacer()
+                if synthesizer.isActiveCashAudio{
+                    Menu {
+                        Button(role: .destructive) {
+                            synthesizer.removeAudio()
+                        } label: {
+                            Label("Remove", systemImage: "trash")
+                        }
+                        
                         Button {
-                            if settingsVM.selectedVoices.count == 2{
-                                settingsVM.toggleVoice()
-                            }else{
-                                showLanguageSheet.toggle()
-                            }
-                            
-                        } label: {
-                            IconView(title: voice.languageCode.getcountruLocaleLanguage, icon: "globe.europe.africa.fill")
-                        }
-                    }
-                    
-                    Spacer()
-                    if synthesizer.isActiveCashAudio{
-                        Menu {
-                            Button(role: .destructive) {
-                                synthesizer.removeAudio()
-                            } label: {
-                                Label("Remove", systemImage: "trash")
-                            }
-                            
-                            Button {
-                                if let audioUrl = synthesizer.savedAudio?.url{
-                                    Helpers.showShareSheet(data: audioUrl)
-                                }
-                            } label: {
-                                Label("Share", systemImage: "arrowshape.turn.up.right.fill")
+                            if let audioUrl = synthesizer.savedAudio?.url{
+                                Helpers.showShareSheet(data: audioUrl)
                             }
                         } label: {
-                            IconView(title: "Audio", icon: "waveform.circle.fill")
+                            Label("Share", systemImage: "arrowshape.turn.up.right.fill")
                         }
+                    } label: {
+                        IconView(title: "Audio", icon: "waveform.circle.fill")
                     }
                 }
             }
+        }
+    }
+    
+    private var isPlay: Bool{
+        (synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all) ?
+        audioManager.isPlaying : synthesizer.isPlay
     }
     
     @ViewBuilder
     private var editButton: some View{
         TextButtonView(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
-        
+            
             rootVM.onTappedEditSaveButton()
             ///save action
             if rootVM.isFocused{

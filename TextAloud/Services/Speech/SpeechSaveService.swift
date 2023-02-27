@@ -33,5 +33,6 @@ class SpeechSaveService {
 struct SpeechSaveModel: Codable{
     var audio: AudioModel?
     var text: String
+    var lastWordRange: NSRange?
 }
 

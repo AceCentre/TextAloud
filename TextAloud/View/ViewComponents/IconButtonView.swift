@@ -14,7 +14,7 @@ struct IconView: View {
             Image(systemName: icon)
                 .font(.title)
             Text(title)
-                .font(.footnote)
+                .font(.caption)
                 .foregroundColor(.deepOcean)
         }
         .padding(.vertical, 10)

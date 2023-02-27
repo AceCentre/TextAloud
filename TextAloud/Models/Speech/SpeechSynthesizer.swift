@@ -79,35 +79,32 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
             
-    func setSpeakForRange(_ text: String, _ range: NSRange) {
-        playMode = .selecting
-        if isPlay {
+    func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode) {
+        print("PLAY")
+        playMode = mode
+        if isPlay{
             stop()
+            if mode != .tapped{return}
         }
         rangeOffset = range.location
         let range = rangeOffset..<(rangeOffset + range.length)
-        
+        let prepairText = text[range]
         if isAzureSpeech{
-            speakAzure(text[range])
-            return
+            speakAzure(prepairText)
+        }else{
+            let utterance = AVSpeechUtterance(string: prepairText)
+            setVoiceIfNeeded(utterance)
+            synth.speak(utterance)
         }
+    }
         
-        let utterance = AVSpeechUtterance(string: text[range])
-        setVoiceIfNeeded(utterance)
-        utterance.rate = rateMode.rateValue
-        synth.speak(utterance)
-    }
-    
-    func pause(){
-        synth.pauseSpeaking(at: .immediate)
-    }
-    
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
             azureDelayTasks.forEach({$0.cancel()})
             cancellable?.cancel()
         }else if synth.isSpeaking{
+            print("STOP")
             synth.stopSpeaking(at: .immediate)
         }
     }
@@ -156,7 +153,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
 
 
 
-
 enum SpeechRateEnum: Int, CaseIterable{
 
     case min, slow, defaul, fast, veryFast, max
@@ -190,5 +186,5 @@ enum SpeechRateEnum: Int, CaseIterable{
 }
 
 enum PlayMode: Int{
-    case all, inEdit, selecting, setting
+    case all, selecting, tapped, setting
 }

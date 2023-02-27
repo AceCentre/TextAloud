@@ -39,7 +39,6 @@ extension SpeechSynthesizer{
         azureSpeech.onCompletedHandler = { event in
             DispatchQueue.main.async {
                 self.isPlay = false
-                self.currentWord = nil
                 if self.playMode == .all{
                     self.saveAudio(name: text.createName, for: event.result.audioDuration, audioData: event.result.audioData)
                 }
@@ -56,7 +55,6 @@ extension SpeechSynthesizer{
         azureSpeech.onCanceledHandler = { _ in
             DispatchQueue.main.async {
                 self.isPlay = false
-                self.currentWord = nil
                 print("Cancel")
             }
         }
@@ -64,7 +62,6 @@ extension SpeechSynthesizer{
         azureSpeech.onWordBoundaryHandler = { boundary in
             if boundary.boundaryType == .word{
                 self.prepairRangesData.append(.init(offset: boundary.textOffset, wordLength: boundary.wordLength, timeOffsets: boundary.audioOffset))
-                
                 self.azureDelayTasks.append(
                     Task.delayed(byTimeInterval: boundary.audioOffset.tikcsToSeconds) {
                         await MainActor.run{

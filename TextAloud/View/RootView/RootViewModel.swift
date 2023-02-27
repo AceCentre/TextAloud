@@ -10,25 +10,33 @@ import Foundation
 class RootViewModel: ObservableObject{
     
     @Published var text: String = "Example text, press the plus button to add your own document."
-    var tempText: String = ""
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
     @Published var currentSelectionMode: SelectionEnum = .word
     @Published var isFocused: Bool = false
     @Published var selectedRange: NSRange?
+    @Published var tappedRange: NSRange?
     @Published var error: AppError?
     @Published var showLoader: Bool = false
+    
+    private var tempText: String = ""
     
     var isDisabledSaveButton: Bool{
         isFocused && !isChangeText
     }
     
+    init(){
+        setDefaultRangeForMode()
+    }
+    
     func removeText(){
+        tappedRange = nil
         selectedRange = nil
         text.removeAll()
     }
     
     func setSelectionMode(_ type: SelectionEnum){
+        tappedRange = nil
         selectedRange = nil
         currentSelectionMode = type
     }
@@ -51,6 +59,21 @@ class RootViewModel: ObservableObject{
         onEditToggle()
         isChangeText = false
     }
+    
+    func setSelectedRangeForMode(with location: Int) -> NSRange{
+        let range = currentSelectionMode.getRangeForIndex(location, text)
+        if currentSelectionMode != .all{
+            selectedRange = range
+            tappedRange = nil
+        }
+        return range
+    }
+    
+    private func setDefaultRangeForMode(){
+        if !text.isEmpty{
+            selectedRange = currentSelectionMode.getRangeForIndex(0, text)
+        }
+    }
 }
 
 
@@ -60,6 +83,7 @@ extension RootViewModel{
     func onDocumentPick(for result: Result<[URL], Error>){
         showLoader = true
         selectedRange = nil
+        tappedRange = nil
         switch result {
         case .success(let success):
             if let url = success.first, url.startAccessingSecurityScopedResource(){
@@ -72,6 +96,7 @@ extension RootViewModel{
                                 url.stopAccessingSecurityScopedResource()
                                 self.text = text
                                 self.showLoader = false
+                                self.setDefaultRangeForMode()
                                 if text.isEmpty{
                                     self.error = .messageError("Failed to upload, try again")
                                 }

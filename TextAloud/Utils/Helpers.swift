@@ -123,6 +123,9 @@ final class Helpers{
         return NSRange(location: startIndex, length: endIndex - startIndex)
     }
     
+    static func getAllTextRange(_ location: Int, _ text: String) -> NSRange{
+        .init(location: 0, length: text.length)
+    }
     
    static func isInCharacterSer(_ input: String, _ set: CharacterSet) -> Bool {
         return input.rangeOfCharacter(from: set) != nil
