@@ -34,8 +34,8 @@ struct TextView: UIViewRepresentable {
     @Binding var isEditing: Bool
     @Binding var currentWord: NSRange?
     @Binding var selectedRange: NSRange?
+    @Binding var tappedRange: NSRange?
     @Binding var selectionMode: SelectionEnum
-    
     @AppStorage("fontSize") var fontSize: Int = 25
     @AppStorage("selectedColor") var selectedColor: Color = Color(UIColor(red: 0.96, green: 0.9, blue: 0.258, alpha: 0.4))
     @AppStorage("readingColor") var readingColor: Color = Color.red
@@ -60,7 +60,7 @@ struct TextView: UIViewRepresentable {
         textView.showsHorizontalScrollIndicator = false
         textView.allowsEditingTextAttributes = false
         textView.autocorrectionType = .default
-      
+  
         
         let gesture = UITapGestureRecognizer(target: context.coordinator,
                                                      action: #selector(Coordinator.handleTap))
@@ -88,6 +88,10 @@ struct TextView: UIViewRepresentable {
         
         if let selectedRange, selectedRange.isExistRange(for: text){
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
+        }
+        
+        if let tappedRange, tappedRange.isExistRange(for: text){
+            attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: tappedRange)
         }
     
         uiView.attributedText = attrStr
@@ -154,7 +158,9 @@ struct TextView: UIViewRepresentable {
                 guard let characterIndex = index, characterIndex < textLength else {
                     return
                 }
-                parent.selectedRange = parent.selectionMode.getRangeForIndex(characterIndex, textView.textStorage.string)
+                if parent.selectionMode != .all{
+                    parent.tappedRange = parent.selectionMode.getRangeForIndex(characterIndex, textView.textStorage.string)
+                }
             }
         }
     }

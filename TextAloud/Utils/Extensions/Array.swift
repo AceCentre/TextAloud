@@ -14,3 +14,11 @@ extension Array where Iterator.Element == Double{
         return self.reduce(0.0, +) / Double(count)
     }
 }
+
+extension NSRange{
+    
+    var nextLoacation: Int{
+        self.location + self.length + 3
+    }
+    
+}

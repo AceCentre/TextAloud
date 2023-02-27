@@ -70,13 +70,14 @@ extension String {
         return "\(countru) (\(region))"
     }
     
-    var getcountruLocaleLanguage: String{
+    var shortLocaleLanguage: String{
         let locale: Locale = .current
         
         guard let countru = locale.localizedString(forLanguageCode: self) else {
             return "None"
         }
-        return countru
+        let region = String(self.suffix(2))
+        return "\(countru) \(region)"
     }
     
     var createName: String{

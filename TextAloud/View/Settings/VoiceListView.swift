@@ -16,51 +16,35 @@ struct VoiceListView: View {
     @ObservedObject var speech: SpeechSynthesizer
     
     var body: some View {
-        NavigationView {
-            ScrollViewReader { proxy in
-                VStack{
-                    Picker(selection: $settingVM.voiceMode) {
-                        ForEach(SettingViewModel.VoiceMode.allCases, id: \.self){mode in
-                            Text(mode.title)
-                                .tag(mode)
-                        }
-                    } label: {}.labelsHidden()
-                        .pickerStyle(.segmented)
-                        .padding(.horizontal)
-                    if !filteredLanguage.isEmpty{
-                        List{
-                            ForEach(filteredLanguage) { language in
-                                sectionRowView(language)
-                                    
-                            }
-                        }
-                        .onAppear{
-                            scrollToSelect(proxy)
-                        }
-                    }else{
-                        Spacer()
-                        ProgressView()
-                        Spacer()
+        VStack{
+            headerView
+            if !filteredLanguage.isEmpty{
+                List{
+                    ForEach(filteredLanguage) { language in
+                        sectionRowView(language)
+                        
                     }
                 }
+            }else{
+                Spacer()
+                ProgressView()
+                Spacer()
             }
-            .navigationTitle("Voices")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    aboutBottom
-                }
-                
-                ToolbarItemGroup(placement: .bottomBar) {
-                    bottomToolbarView
-                }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                aboutBottom
             }
-            .listStyle(.inset)
-            .searchable(text: $searchText, placement: SearchFieldPlacement.navigationBarDrawer(displayMode: .always))
-            .sheet(isPresented: $showAbotSheet) {
-                VStack{
-                    Text("Text about speech text systems and their functionality")
-                }
+            
+            ToolbarItemGroup(placement: .bottomBar) {
+                bottomToolbarView
+            }
+        }
+        .listStyle(.inset)
+        .searchable(text: $searchText, placement: SearchFieldPlacement.navigationBarDrawer(displayMode: .always))
+        .sheet(isPresented: $showAbotSheet) {
+            VStack{
+                Text("Text about speech text systems and their functionality")
             }
         }
         .onDisappear{
@@ -72,6 +56,35 @@ struct VoiceListView: View {
 struct VoiceListView_Previews: PreviewProvider {
     static var previews: some View {
         VoiceListView(selectedVoice: .constant(nil), settingVM: SettingViewModel(), speech: SpeechSynthesizer())
+    }
+}
+
+
+//MARK: - Header view
+extension VoiceListView{
+    private var headerView: some View{
+        VStack(spacing: 16){
+            Text("Voices")
+                .font(.headline)
+            voiceSearchView
+            voiceServicePisker
+        }
+        .padding()
+    }
+    
+    private var voiceServicePisker: some View{
+        Picker(selection: $settingVM.voiceMode) {
+            ForEach(SettingViewModel.VoiceMode.allCases, id: \.self){mode in
+                Text(mode.title)
+                    .tag(mode)
+            }
+        } label: {}.labelsHidden()
+            .pickerStyle(.segmented)
+    
+    }
+    
+    private var voiceSearchView: some View{
+        SearchTextView(text: $searchText)
     }
 }
 
