@@ -20,7 +20,6 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     func fetchVoices() {
         let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
         let uniquedLang = aVFvoices.map({$0.language}).uniqued()
-        
 
         self.languages = uniquedLang.map({ code -> LanguageModel in
             let voice = aVFvoices.filter({$0.language == code}).map({VoiceModel(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: ($0.gender == .male ? .male : .female), type: .apple)})

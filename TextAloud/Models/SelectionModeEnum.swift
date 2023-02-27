@@ -9,7 +9,7 @@ import SwiftUI
 
 enum SelectionEnum: Int, CaseIterable{
     
-    case word, paragraph, sentence, all
+    case all, word, paragraph, sentence
     
     
     var getRangeForIndex: ( _ index: Int, _ text: String) -> NSRange{

@@ -24,11 +24,7 @@ class RootViewModel: ObservableObject{
     var isDisabledSaveButton: Bool{
         isFocused && !isChangeText
     }
-    
-    init(){
-        setDefaultRangeForMode()
-    }
-    
+        
     func removeText(){
         tappedRange = nil
         selectedRange = nil

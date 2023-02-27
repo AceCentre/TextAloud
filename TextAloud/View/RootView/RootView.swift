@@ -92,14 +92,14 @@ extension RootView{
     private var controlsSectionView: some View{
         CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
             
-//            if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
-//                audioManager.audioAction(audio)
-           // }else{
+            if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
+                audioManager.audioAction(audio)
+            }else{
                 let location = synthesizer.currentWord?.nextLoacation ?? 3
                 let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
                 synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
-           // }
+           }
         }
         .hCenter()
         .overlay {
@@ -252,10 +252,10 @@ extension RootView{
                     Button {
                         if synthesizer.isPlay{
                             synthesizer.stop()
-                            synthesizer.currentWord = nil
                         }else if audioManager.isPlaying{
                             audioManager.stopAudio()
                         }
+                        synthesizer.currentWord = nil
                         rootVM.removeText()
                         synthesizer.removeAudio()
                     } label: {
@@ -268,6 +268,7 @@ extension RootView{
                     }else if audioManager.isPlaying{
                         audioManager.stopAudio()
                     }
+                    synthesizer.currentWord = nil
                     showFileImporter.toggle()
                 } label: {
                     Image(systemName: "plus.circle.fill")
