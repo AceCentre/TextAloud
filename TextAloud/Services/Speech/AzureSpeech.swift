@@ -28,7 +28,7 @@ class AzureSpeech{
     
     /// Setting up SpeechSynthesizer for environments key sub and region
     /// - Parameter speechSynthesisVoiceName: speech voice name
-    func configurateSpeechSynthesizer(_ speechSynthesisVoiceName: String = "en-US-JennyNeural") -> Bool{
+    func configurateSpeechSynthesizer(_ speechSynthesisVoiceName: String = "") -> Bool{
         
         var result: Bool = false
         
@@ -38,7 +38,7 @@ class AzureSpeech{
             
             if let speechConfig = try? SPXSpeechConfiguration(subscription: sub, region: region){
                 
-                speechConfig.speechSynthesisVoiceName = speechSynthesisVoiceName
+                speechConfig.speechSynthesisVoiceName = speechSynthesisVoiceName.isEmpty ? "en-US-JennyNeural" : speechSynthesisVoiceName
             
                 synthesizer = try SPXSpeechSynthesizer(speechConfig)
                 

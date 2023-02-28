@@ -14,9 +14,9 @@ struct VoiceListView: View {
     @State var searchText: String = ""
     @ObservedObject var settingVM: SettingViewModel
     @ObservedObject var speech: SpeechSynthesizer
-    
+    @State private var tappedVoiceId: String = ""
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             headerView
             if !filteredLanguage.isEmpty{
                 List{
@@ -30,26 +30,9 @@ struct VoiceListView: View {
                 ProgressView()
                 Spacer()
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                aboutBottom
-            }
-            
-            ToolbarItemGroup(placement: .bottomBar) {
-                bottomToolbarView
-            }
+            bottomToolbarView
         }
         .listStyle(.inset)
-        .searchable(text: $searchText, placement: SearchFieldPlacement.navigationBarDrawer(displayMode: .always))
-        .sheet(isPresented: $showAbotSheet) {
-            VStack{
-                Text("Text about speech text systems and their functionality")
-            }
-        }
-        .onDisappear{
-            speech.stopAll()
-        }
     }
 }
 
@@ -66,6 +49,15 @@ extension VoiceListView{
         VStack(spacing: 16){
             Text("Voices")
                 .font(.headline)
+                .hCenter()
+                .overlay(alignment: .leading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                    .buttonStyle(.plain)
+                }
             voiceSearchView
             voiceServicePisker
         }
@@ -122,23 +114,14 @@ extension VoiceListView{
     private func sectionRowView(_ language: LanguageModel) -> some View{
         Section {
             ForEach(language.voices){voice in
-                Button {
-                    speech.activateSimple(language.simpleVoiceText, id: voice.id, type: voice.type)
-                   
-                    if !settingVM.voiceIsActive(voice.id){
-//                        if viewMode == .onlyLanguage{
-//                            selectedVoice = voice
-//                            settingVM.changeVoice(voice)
-//
-                        settingVM.addOrRemoveVoice(for: voice)
+                voiceRowView(voice, voiceText: language.simpleVoiceText)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if !settingVM.voiceIsActive(voice.id){
+                            settingVM.addOrRemoveVoice(for: voice)
+                        }
                     }
-                } label: {
-                    voiceRowView(voice)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .listRowBackground(isSelect(voice.id) ? Color.limeChalk.opacity(0.1) : .clear)
-                .id(voice.id)
+                    .listRowBackground(isSelect(voice.id) ? Color.limeChalk.opacity(0.2) : .clear)
             }
         } header: {
             Text(language.languageStr)
@@ -146,7 +129,9 @@ extension VoiceListView{
         }
     }
     
-    private func voiceRowView(_ voice: VoiceModel) -> some View{
+    @ViewBuilder
+    private func voiceRowView(_ voice: VoiceModel, voiceText: String) -> some View{
+        let isPlay: Bool = speech.isPlay && tappedVoiceId == voice.id
         HStack {
             Image(systemName: "person.crop.circle.fill")
                 .font(.title)
@@ -158,16 +143,25 @@ extension VoiceListView{
                     .foregroundColor(.gray)
             }
             Spacer()
-            Group{
-                if settingVM.voiceIsActive(voice.id){
-                    Text("Active")
-                        .font(.caption.bold())
-                }
-                if isSelect(voice.id){
-                    Image(systemName: "checkmark.circle.fill")
-                }
+            if settingVM.voiceIsActive(voice.id){
+                Text("Active")
+                    .font(.subheadline.bold())
+                    .foregroundColor(.limeChalk)
             }
-            .foregroundColor(.limeChalk)
+            Spacer()
+            Button {
+                if isPlay{
+                    speech.stop(for: voice.type)
+                }else{
+                    tappedVoiceId = voice.id
+                    speech.activateSimple(voiceText, id: voice.id, type: voice.type)
+                }
+            } label: {
+                Image(systemName: isPlay ? "stop.circle.fill" : "play.circle.fill")
+                    .font(.title2)
+                    .foregroundColor(Color.deepOcean)
+            }
+            .buttonStyle(.plain)
         }
     }
     
@@ -182,26 +176,25 @@ extension VoiceListView{
     }
     
     
-    private func scrollToSelect(_ proxy: ScrollViewProxy){
-        if let id = selectedVoice?.id{
-            proxy.scrollTo(id, anchor: .top)
-        }
-    }
-    
-    
-    
+    @ViewBuilder
     private var bottomToolbarView: some View{
-        HStack(spacing: 30){
-            Text("Selected \(settingVM.selectedVoices.count)/\(settingVM.maxCountLaunguges)")
-                .font(.subheadline.weight(.medium))
-            Button {
-                dismiss()
-            } label: {
-                Text("Done")
-                    .font(.headline.weight(.medium))
-                    .foregroundColor(.deepOcean)
+        if !filteredLanguage.isEmpty{
+            VStack {
+                Divider()
+                HStack(spacing: 30){
+                    Text("Selected \(settingVM.selectedVoices.count)/\(settingVM.maxCountLaunguges)")
+                        .font(.subheadline.weight(.medium))
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .font(.headline.weight(.medium))
+                            .foregroundColor(.deepOcean)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.top, 5)
             }
-            .buttonStyle(.plain)
         }
     }
     

@@ -11,6 +11,7 @@ extension SpeechSynthesizer{
     
     
     func startAzureRangeSubscription(){
+        guard playMode != .setting else {return}
         cancellable = rangePublisher
             .receive(on: DispatchQueue.main)
             .sink{ range in
@@ -22,16 +23,15 @@ extension SpeechSynthesizer{
     
     
     
-    func speakAzure(_ text: String){
-        let voiceId = activeVoiceId.isEmpty ? "en-US-JennyNeural" : activeVoiceId
+    func speakAzure(_ text: String, voiceId: String){
         if azureSpeech.configurateSpeechSynthesizer(voiceId){
             addHandlers(text)
             azureSpeech.speak(text, type: .text)
         }
     }
     
+    
     private func addHandlers(_ text: String){
-        if playMode == .setting {return}
         
         prepairRangesData.removeAll()
         startAzureRangeSubscription()
@@ -60,6 +60,7 @@ extension SpeechSynthesizer{
         }
         
         azureSpeech.onWordBoundaryHandler = { boundary in
+            guard self.playMode != .setting else {return}
             if boundary.boundaryType == .word{
                 self.prepairRangesData.append(.init(offset: boundary.textOffset, wordLength: boundary.wordLength, timeOffsets: boundary.audioOffset))
                 self.azureDelayTasks.append(

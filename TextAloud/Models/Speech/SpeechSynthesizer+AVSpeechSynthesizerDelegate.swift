@@ -22,26 +22,22 @@ extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
     
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        guard playMode != .setting else {return}
         print("didFinish")
         isPlay = false
         lastUtterance = utterance
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        guard playMode != .setting else {return}
         print("didCancel")
         isPlay = false
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
-        guard playMode != .setting else {return}
         print("didStart")
         isPlay = true
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
-        guard playMode != .setting else {return}
         isPlay = false
     }
 }

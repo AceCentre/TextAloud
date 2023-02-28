@@ -51,26 +51,14 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
     }
     
-    
-    func activate(_ text: String, mode: PlayMode){
-        playMode = mode
-        if isPlay{
-            stop()
-        }else{
-           speak(text)
-        }
-    }
-    
+
     //activate speek for test voices
     func activateSimple(_ text: String, id: String, type: VoiceModel.VoiceType){
-        rangeOffset = 0
-        currentWord = nil
         playMode = .setting
+        
         if type == .azure{
             azureSpeech.stop()
-            if azureSpeech.configurateSpeechSynthesizer(id){
-                azureSpeech.speak(text, type: .text)
-            }
+            speakAzure(text, voiceId: id)
         }else{
             synth.stopSpeaking(at: .immediate)
             let utterance = AVSpeechUtterance(string: text)
@@ -90,7 +78,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         let range = rangeOffset..<(rangeOffset + range.length)
         let prepairText = text[range]
         if isAzureSpeech{
-            speakAzure(prepairText)
+            speakAzure(prepairText, voiceId: activeVoiceId)
         }else{
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
@@ -109,9 +97,10 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    func stopAll(){
-        if isPlay{
+    func stop(for type: VoiceModel.VoiceType){
+        if type == .azure{
             azureSpeech.stop()
+        }else if type == .apple{
             synth.stopSpeaking(at: .immediate)
         }
     }
@@ -129,20 +118,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             }
         }
     }
-    
-    private func speak(_ text: String) {
-         rangeOffset = 0
-         if isAzureSpeech{
-             speakAzure(text)
-             return
-         }else{
-             let utterance = AVSpeechUtterance(string: text)
-             setVoiceIfNeeded(utterance)
-             utterance.rate = rateMode.rateValue
-             synth.speak(utterance)
-         }
-     }
-    
+        
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
         if !activeVoiceId.isEmpty{
             utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
