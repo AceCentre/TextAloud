@@ -12,13 +12,13 @@ enum SelectionEnum: Int, CaseIterable{
     case all, word, paragraph, sentence
     
     
-    var getRangeForIndex: ( _ index: Int, _ text: String) -> NSRange{
+    func getRangeForIndex( _ index: Int, _ text: String) -> NSRange{
         
         switch self {
-        case .word: return Helpers.getWordRangeAtIndex(_:_:)
-        case .paragraph: return Helpers.getParagraphRangeForLocation(_:_:)
-        case .sentence: return Helpers.getSentenceRangeForLocation(_:_:)
-        case .all: return Helpers.getAllTextRange(_:_:)
+        case .word: return Helpers.getRangeTextForIndex(index: index, with: .byWords, text: text)
+        case .paragraph: return Helpers.getRangeTextForIndex(index: index, with: .byParagraphs, text: text)
+        case .sentence: return Helpers.getRangeTextForIndex(index: index, with: .bySentences, text: text)
+        case .all: return Helpers.getAllTextRange(index, text)
         }
         
     }

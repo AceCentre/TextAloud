@@ -83,18 +83,18 @@ struct TextView: UIViewRepresentable {
 
         attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: attrStr.length))
 
-        if let currentWord, currentWord.isExistRange(for: text) {
+        if let currentWord, currentWord.isExistRange(for: text), !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWord)
             if !isEditing{
                 uiView.scrollRangeToVisible(currentWord)
             }
         }
         
-        if let selectedRange, selectedRange.isExistRange(for: text){
+        if let selectedRange, selectedRange.isExistRange(for: text), !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
         }
         
-        if let tappedRange, tappedRange.isExistRange(for: text){
+        if let tappedRange, tappedRange.isExistRange(for: text), !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: tappedRange)
         }
     

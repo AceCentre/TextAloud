@@ -136,6 +136,13 @@ final class Helpers{
     }
     
     
+    static func getRangeTextForIndex(index: Int, with options: String.EnumerationOptions, text: String) -> NSRange{
+        var ranges = [NSRange]()
+        text.enumerateSubstrings(in: text.startIndex..<text.endIndex, options: options) { _, substringRange, _, _ in
+            ranges.append(NSRange(substringRange, in: text))
+        }
+        return ranges.first(where: {$0.contains(index)}) ?? .init(location: 0, length: 0)
+    }
     
     
    static func pdfToText(for url: URL) -> String?{
