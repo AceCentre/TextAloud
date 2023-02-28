@@ -112,7 +112,7 @@ extension RootView{
                         }
                         
                     } label: {
-                        IconView(title: voice.languageCode.shortLocaleLanguage, icon: "globe.europe.africa.fill")
+                        IconView(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
                     }
                 }
                 
@@ -187,6 +187,7 @@ extension RootView{
                 Text(rootVM.currentSelectionMode.locale)
                     .font(.title3.weight(.bold))
                     .foregroundColor(.limeChalk)
+                    .frame(width: 120, alignment: .leading)
             }
         }
     }
