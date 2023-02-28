@@ -193,7 +193,8 @@ extension VoiceListView{
                     }
                     .buttonStyle(.plain)
                 }
-                .padding(.top, 5)
+                .padding(.vertical, 5)
+                .padding(.bottom, 5)
             }
         }
     }

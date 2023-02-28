@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct SearchTextView: View {
+    @Namespace var namespace
     @FocusState var isFocus: Bool
     @Binding var text: String
     var body: some View {
@@ -16,6 +17,7 @@ struct SearchTextView: View {
                     .foregroundColor(.secondary)
                 TextField("Search", text: $text)
                     .focused($isFocus)
+                    .matchedGeometryEffect(id: "TextField", in: namespace)
                 if !text.isEmpty{
                     Button {
                         text = ""
@@ -37,10 +39,8 @@ struct SearchTextView: View {
                         .foregroundColor(.deepOcean)
                 }
                 .buttonStyle(.plain)
-                .transition(.move(edge: .trailing).combined(with: .opacity))
             }
         }
-        .animation(.easeIn(duration: 0.2), value: isFocus)
     }
 }
 

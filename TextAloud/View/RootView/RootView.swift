@@ -23,13 +23,12 @@ struct RootView: View {
                 Spacer()
                 if !rootVM.isFocused{
                     controlsSectionView
-                    Spacer()
                 }
+                Spacer()
             }
             .padding(.horizontal)
             loaderView
         }
-        .allFrame()
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
         .onAppear{
             if let text = synthesizer.getSpeechData(){
@@ -215,12 +214,13 @@ extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
             SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
-            HStack {
-                cancelButton
-                selectedMenuButton
-                Spacer()
-                editButton
-            }
+            
+            editButton
+                .hTrailing()
+                .overlay(alignment: .leading){
+                    cancelButton
+                    selectedMenuButton
+                }
         }
         .padding(.top, 32)
         .padding(.bottom, 16)

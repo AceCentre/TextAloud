@@ -60,7 +60,11 @@ struct TextView: UIViewRepresentable {
         textView.showsHorizontalScrollIndicator = false
         textView.allowsEditingTextAttributes = false
         textView.autocorrectionType = .default
-  
+        
+        textView.setContentHuggingPriority(.required, for: .vertical)
+        textView.setContentHuggingPriority(.required, for: .horizontal)
+        textView.contentInset = .zero
+    
         
         let gesture = UITapGestureRecognizer(target: context.coordinator,
                                                      action: #selector(Coordinator.handleTap))
