@@ -13,7 +13,7 @@ struct VoiceModel: Identifiable, Hashable, Codable{
     let languageCode: String
     var languageStr: String { languageCode.getFullLocaleLanguageStr }
     let gender: Gender
-    let type: VoiceType
+    let type: VoiceMode
     
     var representableName: String{
         switch type{
@@ -24,11 +24,7 @@ struct VoiceModel: Identifiable, Hashable, Codable{
 }
 
 extension VoiceModel {
-    
-    enum VoiceType: Codable{
-        case apple, azure
-    }
-    
+
     enum Gender: Int, Codable{
         case male, female
         
@@ -54,3 +50,14 @@ struct LanguageModel: Identifiable{
     }
 }
 
+enum VoiceMode: Int, CaseIterable, Equatable, Codable{
+    case apple, azure
+    
+    var title: String{
+        switch self{
+            
+        case .apple: return "Offline"
+        case .azure: return "Online"
+        }
+    }
+}

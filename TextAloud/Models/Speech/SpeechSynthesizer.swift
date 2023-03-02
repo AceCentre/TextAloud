@@ -15,7 +15,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
     @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     let speechSaveService = SpeechSaveService.shared
-    
+    let networkManager = NetworkMonitorManager()
     //MARK: AVSpeech
     @Published var rateMode: SpeechRateEnum = .defaul
     var lastUtterance: AVSpeechUtterance?
@@ -33,12 +33,13 @@ class SpeechSynthesizer: NSObject, ObservableObject {
 
     @Published var currentWord: NSRange?
     @Published var isPlay: Bool = false
+    @Published var showOfflineAlert: Bool = false
     var rangeOffset: Int = 0
     
     var isActiveCashAudio: Bool{
         isAzureSpeech && savedAudio != nil
     }
-    
+        
     override init() {
         
         AVAudioSessionManager.share.setAudioSessionPlayback()
@@ -53,9 +54,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
 
     //activate speek for test voices
-    func activateSimple(_ text: String, id: String, type: VoiceModel.VoiceType){
+    func activateSimple(_ text: String, id: String, type: VoiceMode){
         playMode = .setting
-        
         if type == .azure{
             azureSpeech.stop()
             speakAzure(text, voiceId: id)
@@ -78,7 +78,9 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         let range = rangeOffset..<(rangeOffset + range.length)
         let prepairText = text[range]
         if isAzureSpeech{
-            speakAzure(prepairText, voiceId: activeVoiceId)
+            if isOnlineMode{
+                speakAzure(prepairText, voiceId: activeVoiceId)
+            }
         }else{
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
@@ -97,7 +99,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    func stop(for type: VoiceModel.VoiceType){
+    func stop(for type: VoiceMode){
         if type == .azure{
             azureSpeech.stop()
         }else if type == .apple{
@@ -122,6 +124,15 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
         if !activeVoiceId.isEmpty{
             utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
+        }
+    }
+    
+    private var isOnlineMode: Bool{
+        if networkManager.isOnline{
+            return true
+        }else{
+            showOfflineAlert.toggle()
+            return false
         }
     }
 }

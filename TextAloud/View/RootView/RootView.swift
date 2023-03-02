@@ -64,6 +64,7 @@ struct RootView: View {
         }
         .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
+        .alert(Localization.offlineAlertTitle.toString, isPresented: $synthesizer.showOfflineAlert, actions: offlineAlertButton, message: offlineAlertMessage)
     }
 }
 
@@ -301,4 +302,17 @@ extension RootView{
         }
     }
     
+}
+
+//MARK: - Offline alert
+extension RootView{
+    private func offlineAlertMessage() -> some View{
+        Text(Localization.offlineAlertMessage.toString)
+    }
+    
+    private func offlineAlertButton() -> some View{
+        Button(Localization.selectVoices.toString) {
+            showLanguageSheet.toggle()
+        }
+    }
 }

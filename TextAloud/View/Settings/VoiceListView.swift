@@ -66,7 +66,7 @@ extension VoiceListView{
     
     private var voiceServicePisker: some View{
         Picker(selection: $settingVM.voiceMode) {
-            ForEach(SettingViewModel.VoiceMode.allCases, id: \.self){mode in
+            ForEach(VoiceMode.allCases, id: \.self){mode in
                 Text(mode.title)
                     .tag(mode)
             }

@@ -15,6 +15,7 @@
 "word" = "Mot";
 "paragraph" = "Paragraphe";
 "sentence" = "Phrase";
+"all" = "Tout le texte";
 "settings" = "Paramètres";
 
 "aboutTextAloud %@" = "L'application %@ facilite la lecture de n'importe quel texte que vous écrivez vous-même ou que vous importez. Remarque pour modifier les paramètres de voix, allez dans Paramètres -> Accessibilité -> Contenu parlé -> Voix";
@@ -29,3 +30,6 @@
 "pickVoice" = "Choisir la voix";
 "fontSize" = "Taille de la police";
 
+"offlineAlertMessage" = "Sélectionnez les voix hors ligne pour travailler hors ligne" ;
+"offlineAlertTitle" = "Pas de connexion Internet" ;
+"selectVoices" = "Sélectionner une voix";

@@ -152,17 +152,3 @@ extension SettingViewModel{
     }
 }
 
-
-extension SettingViewModel{
-    enum VoiceMode: Int, CaseIterable, Equatable{
-        case apple, azure
-        
-        var title: String{
-            switch self{
-                
-            case .apple: return "All Apple"
-            case .azure: return "All Azure"
-            }
-        }
-    }
-}

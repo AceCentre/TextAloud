@@ -13,6 +13,7 @@
 "save" = "保存";
 "edit" = "编辑";
 "word" = "单词";
+"all" = "所有文本";
 "paragraph" = "段落";
 "sentence" = "句子";
 "settings" = "设置";
@@ -28,3 +29,7 @@
 "pickHighlight" = "选择高亮颜色";
 "pickVoice" = "选择语音";
 "fontSize" = "字体大小";
+
+"offlineAlertMessage" = "选择离线语音离线工作";
+"offlineAlertTitle" = "没有网络连接";
+"selectVoices" = "选择语音";

@@ -29,3 +29,7 @@
 "pickHighlight" = "Pick highlight color";
 "pickVoice" = "Pick voice";
 "fontSize" = "Font size";
+
+"offlineAlertMessage" = "Select offline voices to work offline";
+"offlineAlertTitle" = "No internet connection";
+"selectVoices" = "Select voice";

@@ -13,6 +13,7 @@
 "save" = "Guardar";
 "edit" = "Editar";
 "word" = "Palabra";
+"todo" = "Todo el texto";
 "paragraph" = "Párrafo";
 "sentence" = "Frase";
 "settings" = "Configuraciones";
@@ -28,3 +29,7 @@
 "pickHighlight" = "Seleccionar color de resaltado";
 "pickVoice" = "Seleccionar voz";
 "fontSize" = "Tamaño de fuente";
+
+"offlineAlertMessage" = "Seleccione voces sin conexión para trabajar sin conexión";
+"offlineAlertTitle" = "Sin conexión a Internet";
+"selectVoices" = "Seleccionar voz";

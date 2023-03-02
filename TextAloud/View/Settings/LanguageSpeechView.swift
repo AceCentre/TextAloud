@@ -19,7 +19,7 @@ struct LanguageSpeechView: View {
                 
                rowView(voice)
                 .listRowBackground(settingVM.voiceIsActive(voice.id) ? Color.limeChalk.opacity(0.1) : .clear)
-                .padding(.vertical, 10)
+                .padding(.vertical, 5)
                 
                 .swipeActions(edge: .trailing) {
                     if !settingVM.voiceIsActive(voice.id){
@@ -83,15 +83,17 @@ extension LanguageSpeechView{
                         dismiss()
                     }
                 } label: {
-                    Text(voice.languageStr)
-                        .font(.callout.weight(.medium))
+                    HStack {
+                        Text(voice.languageStr)
+                            .font(.callout.weight(.medium))
+                        Text(voice.type.title)
+                            .font(.caption.weight(.medium))
+                    }
                 }
-            
                 
                 Text("\(voice.representableName)")
                     .font(.callout)
                     .foregroundColor(.secondary)
-                
             }.lineLimit(1)
             
             Spacer()
