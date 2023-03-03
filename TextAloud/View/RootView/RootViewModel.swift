@@ -5,21 +5,42 @@
 //
 
 import Foundation
-
+import Combine
 
 class RootViewModel: ObservableObject{
     
     @Published var text: String = "Example text, press the plus button to add your own document."
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
-    @Published var currentSelectionMode: SelectionEnum = .word
+    @Published var currentSelectionMode: SelectionEnum = .paragraph
     @Published var isFocused: Bool = false
     @Published var selectedRange: NSRange?
     @Published var tappedRange: NSRange?
     @Published var error: AppError?
     @Published var showLoader: Bool = false
+    private var cancellable = Set<AnyCancellable>()
+    private let ncPublisher = NotificationCenter.default
+        .publisher(for: NSNotification.OnStopSpeech)
     
     private var tempText: String = ""
+    
+    
+    
+    init(){
+        startNSNotificationSubsc()
+    }
+    
+    
+    
+    private func startNSNotificationSubsc(){
+        ncPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.tappedRange = nil
+            }
+            .store(in: &cancellable)
+    }
+    
     
     var isDisabledSaveButton: Bool{
         isFocused && !isChangeText

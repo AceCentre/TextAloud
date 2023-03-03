@@ -30,6 +30,6 @@
 "pickVoice" = "Choisir la voix";
 "fontSize" = "Taille de la police";
 
-"offlineAlertMessage" = "Sélectionnez les voix hors ligne pour travailler hors ligne" ;
-"offlineAlertTitle" = "Pas de connexion Internet" ;
+"offlineAlertMessage" = "Sélectionnez les voix hors ligne pour travailler hors ligne";
+"offlineAlertTitle" = "Pas de connexion Internet";
 "selectVoices" = "Sélectionner une voix";

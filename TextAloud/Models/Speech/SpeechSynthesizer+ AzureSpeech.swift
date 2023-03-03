@@ -43,6 +43,7 @@ extension SpeechSynthesizer{
                     self.saveAudio(name: text.createName, for: event.result.audioDuration, audioData: event.result.audioData)
                 }
             }
+            NotificationCenter.default.post(name: NSNotification.OnStopSpeech, object: nil)
         }
         
         azureSpeech.onStartedHandler = { _ in

@@ -25,6 +25,7 @@ extension SpeechSynthesizer: AVSpeechSynthesizerDelegate{
         print("didFinish")
         isPlay = false
         lastUtterance = utterance
+        NotificationCenter.default.post(name: NSNotification.OnStopSpeech, object: nil)
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
