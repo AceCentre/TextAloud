@@ -33,6 +33,7 @@
 		5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */; };
 		5A4CC75E299FC56600D8E146 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75D299FC56600D8E146 /* VoiceModel.swift */; };
 		5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */; };
+		5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C680529B5DDC300DDBF3D /* HelpsView.swift */; };
 		5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493529A39F0E000A66A4 /* Audio.swift */; };
 		5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */; };
 		5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */; };
@@ -106,6 +107,7 @@
 		5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechVoiceService.swift; sourceTree = "<group>"; };
 		5A4CC75D299FC56600D8E146 /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
 		5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleControlButtonView.swift; sourceTree = "<group>"; };
+		5A6C680529B5DDC300DDBF3D /* HelpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpsView.swift; sourceTree = "<group>"; };
 		5A6E493529A39F0E000A66A4 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSavedService.swift; sourceTree = "<group>"; };
 		5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		5A4A0ECE299B97C100E3B385 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5A6C680429B5DDB600DDBF3D /* HelpSection */,
 				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
 				FDF5C307290F0D250003A675 /* SettingsView.swift */,
 				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
@@ -260,6 +263,14 @@
 				5A1E176629A755AD009BB492 /* VoiceSaveService.swift */,
 			);
 			path = Voice;
+			sourceTree = "<group>";
+		};
+		5A6C680429B5DDB600DDBF3D /* HelpSection */ = {
+			isa = PBXGroup;
+			children = (
+				5A6C680529B5DDC300DDBF3D /* HelpsView.swift */,
+			);
+			path = HelpSection;
 			sourceTree = "<group>";
 		};
 		5A6E493729A39FB9000A66A4 /* Audio */ = {
@@ -477,6 +488,7 @@
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
 				5A4CC759299FA8F800D8E146 /* AzureVoiceService.swift in Sources */,
 				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
+				5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */,
 				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
@@ -663,7 +675,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -699,7 +711,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

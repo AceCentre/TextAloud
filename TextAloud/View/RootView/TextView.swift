@@ -116,19 +116,27 @@ struct TextView: UIViewRepresentable {
         }
     }
     
-//    func updateTextAlignment(_ uiView: UITextView){
-//        guard let code = uiView.textInputMode?.primaryLanguage?.prefix(2) else {return}
-//        uiView.textAlignment = String(code).isRTLCode ? .right : .natural
-//    }
     
     class Coordinator: NSObject, UITextViewDelegate {
 
         var parent: TextView
-        var lastRextAlignment: NSTextAlignment = .natural
         
         init(_ uiTextView: TextView) {
             self.parent = uiTextView
         }
+        
+        
+//        func updateTextAlignment(_ uiView: UITextView){
+//            guard let first = uiView.text.components(separatedBy: " ").first else { return }
+//            let isRTLCode = first.guessLanguageCode().isRTLCode
+//            let aligment: NSTextAlignment = isRTLCode ? .right : .natural
+//
+//
+//            if uiView.textAlignment != aligment {
+//                print("update aligment", isRTLCode)
+//                uiView.textAlignment = aligment
+//            }
+//        }
         
         
         func textViewDidBeginEditing(_ textView: UITextView) {
@@ -149,6 +157,12 @@ struct TextView: UIViewRepresentable {
             }
         }
         
+//        func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+//           updateTextAlignment(textView)
+//            return true
+//        }
+        
+
         
         /// Handle tapped in uiText view
         @objc func handleTap(_ sender: UITapGestureRecognizer) {
@@ -174,5 +188,14 @@ struct TextView: UIViewRepresentable {
 extension NSRange{
     func isExistRange(for str: String) -> Bool{
         self.location != NSNotFound && NSMaxRange(self) <= str.count
+    }
+}
+
+
+extension String {
+    func guessLanguageCode() -> String {
+        let length = self.utf16.count
+        let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
+        return languageCode
     }
 }

@@ -18,7 +18,7 @@
 "all" = "Tout le texte";
 "settings" = "Paramètres";
 
-"aboutTextAloud %@" = "L'application %@ facilite la lecture de n'importe quel texte que vous écrivez vous-même ou que vous importez. Remarque pour modifier les paramètres de voix, allez dans Paramètres -> Accessibilité -> Contenu parlé -> Voix";
+"aboutTextAloud %@" = "L'application %@ facilite la lecture de n'importe quel texte que vous écrivez vous-même ou que vous importez.";
 
 "customization" = "Personnalisation";
 "aboutCustomization" = "Dans cette section, vous pouvez personnaliser l'apparence de l'application. Choisissez une taille de police qui vous convient, une couleur de surbrillance et de sélection";

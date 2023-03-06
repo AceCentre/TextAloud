@@ -18,7 +18,7 @@
 "sentence" = "Frase";
 "settings" = "Configuraciones";
 
-"aboutTextAloud %@" = "La aplicación %@ facilita la lectura de cualquier texto que usted mismo escriba o importe. Para cambiar la configuración de voz, vaya a Configuración -> Accesibilidad -> Contenido hablado -> Voces";
+"aboutTextAloud %@" = "La aplicación %@ facilita la lectura de cualquier texto que usted mismo escriba o importe.";
 
 "customization" = "Personalización";
 "aboutCustomization" = "En esta sección, puede personalizar la apariencia de la aplicación. Elija un tamaño de fuente que sea conveniente para usted, resalte y color de selección";

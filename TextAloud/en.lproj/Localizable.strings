@@ -18,7 +18,7 @@
 "all" = "All text";
 "settings" = "Settings";
 
-"aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices";
+"aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import.";
 
 "customization" = "Customization";
 "aboutCustomization" = "In this section, you can customize the appearance of the application. Choose a font size that is convenient for you, highlight and selection color";

@@ -18,7 +18,7 @@
 "sentence" = "Satz";
 "settings" = "Einstellungen";
 
-"aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren. Hinweis: Gehen Sie zum Ändern der Spracheinstellungen zu Einstellungen -> Bedienungshilfen -> Gesprochene Inhalte -> Stimmen";
+"aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren.";
 
 "customization" = "Anpassung";
 "aboutCustomization" = "In diesem Abschnitt können Sie das Erscheinungsbild der Anwendung anpassen. Wählen Sie eine für Sie passende Schriftgröße, Hervorhebungs- und Auswahlfarbe";

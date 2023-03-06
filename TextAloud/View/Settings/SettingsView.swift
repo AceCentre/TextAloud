@@ -82,6 +82,8 @@ extension SettingsView{
                 .multilineTextAlignment(.leading)
             Divider().padding(.vertical, 4)
             languageLink
+            Divider().padding(.vertical, 4)
+            helpLink
         }
     }
     
@@ -142,6 +144,17 @@ extension SettingsView{
                 .environmentObject(settingVM)
         } label: {
             Text("Language and Speech")
+                .font(.callout.weight(.medium))
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+    }
+    
+    private var helpLink: some View{
+        NavigationLink {
+            HelpsView()
+        } label: {
+            Text("Help")
                 .font(.callout.weight(.medium))
             Spacer()
             Image(systemName: "chevron.right")
