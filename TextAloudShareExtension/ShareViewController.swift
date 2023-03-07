@@ -2,7 +2,6 @@
 //  ShareViewController.swift
 //  TextAloudShareExtension
 //
-//  Created by Bogdan Zykov on 07.03.2023.
 //
 
 import UIKit
