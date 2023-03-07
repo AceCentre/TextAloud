@@ -17,6 +17,7 @@
 "paragraph" = "Párrafo";
 "sentence" = "Frase";
 "settings" = "Configuraciones";
+"help" = "Help";
 
 "aboutTextAloud %@" = "La aplicación %@ facilita la lectura de cualquier texto que usted mismo escriba o importe.";
 

@@ -31,6 +31,7 @@ enum Localization: String {
     case pickHighlight
     case fontSize
     case pickVoice
+    case help
     
     
     var toString: LocalizedStringKey {

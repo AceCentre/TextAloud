@@ -17,6 +17,7 @@
 "sentence" = "Phrase";
 "all" = "Tout le texte";
 "settings" = "Paramètres";
+"help" = "Help";
 
 "aboutTextAloud %@" = "L'application %@ facilite la lecture de n'importe quel texte que vous écrivez vous-même ou que vous importez.";
 

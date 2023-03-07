@@ -53,6 +53,7 @@ extension SettingsView{
             VStack(spacing: 16) {
                 aboutGroupView
                 customizationGroupView
+                HelpsBlockView()
             }
             .padding(.horizontal)
         }
@@ -82,8 +83,6 @@ extension SettingsView{
                 .multilineTextAlignment(.leading)
             Divider().padding(.vertical, 4)
             languageLink
-            Divider().padding(.vertical, 4)
-            helpLink
         }
     }
     
@@ -137,6 +136,8 @@ extension SettingsView{
         }
     }
     
+   
+    
     private var languageLink: some View{
         NavigationLink {
             LanguageSpeechView()
@@ -150,14 +151,14 @@ extension SettingsView{
         }
     }
     
-    private var helpLink: some View{
-        NavigationLink {
-            HelpsView()
-        } label: {
-            Text("Help")
-                .font(.callout.weight(.medium))
-            Spacer()
-            Image(systemName: "chevron.right")
-        }
-    }
+//    private var helpLink: some View{
+//        NavigationLink {
+//            HelpsView()
+//        } label: {
+//            Text("Help")
+//                .font(.callout.weight(.medium))
+//            Spacer()
+//            Image(systemName: "chevron.right")
+//        }
+//    }
 }

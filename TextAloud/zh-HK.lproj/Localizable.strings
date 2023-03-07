@@ -17,6 +17,7 @@
 "paragraph" = "段落";
 "sentence" = "句子";
 "settings" = "设置";
+"help" = "Help";
 
 "aboutTextAloud %@" = "%@ 应用程序可以轻松阅读您自己编写或导入的任何文本";
 

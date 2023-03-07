@@ -17,6 +17,7 @@
 "paragraph" = "Absatz";
 "sentence" = "Satz";
 "settings" = "Einstellungen";
+"help" = "Help";
 
 "aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren.";
 

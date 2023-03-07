@@ -2,46 +2,48 @@
 //  HelpsView.swift
 //  TextAloud
 //
-//  Created by Bogdan Zykov on 06.03.2023.
 //
 
 import SwiftUI
 
-struct HelpsView: View {
+struct HelpsBlockView: View {
     let supportLink = "https://docs.acecentre.org.uk/products/v/textaloud/"
     let contactLink = "https://forms.office.com/Pages/ResponsePage.aspx?id=bFwgTJtTgU-Raj-O_eaPrNZFPqw5Il9Hp4B1mWQ_eQhUNzBFOEhKWFEwUVhBTEYzQkFIQTRMTjhaSS4u"
     let privacyLink = "https://docs.acecentre.org.uk/products/v/textaloud/privacy"
     var body: some View {
-        List {
-            linkView("Support Centre", link: supportLink)
-            linkView("Contact Us", link: contactLink)
-            Section {
+        Group{
+            GroupBox(label: SettingsLabelView(labelText: Localization.help.toString, labelImage: "questionmark.circle")) {
+                Divider().padding(.vertical, 4)
+                linkView("Support Centre", link: supportLink)
+                Divider().padding(.vertical, 4)
+                linkView("Contact Us", link: contactLink)
+            }
+            GroupBox(label: SettingsLabelView(labelText: "About TextAloud", labelImage: "questionmark.circle")) {
+                Divider().padding(.vertical, 4)
+                linkView("Terms & Privacy Policy", link: privacyLink)
+                Divider().padding(.vertical, 4)
                 HStack{
                     Text("Version")
+                        .font(.callout.weight(.medium))
                     Spacer()
                     Text(Bundle.main.appVersionShort)
                         .foregroundColor(.secondary)
                 }
-                linkView("Terms & Privacy Policy", link: privacyLink)
-            } header: {
-                Text("About TextAloud")
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Help")
     }
 }
 
-struct HelpsView_Previews: PreviewProvider {
+struct HelpsBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            HelpsView()
+        VStack{
+            HelpsBlockView()
         }
     }
 }
 
 
-extension HelpsView{
+extension HelpsBlockView{
     
     @ViewBuilder
     private func linkView(_ title: String, link: String) -> some View{
@@ -49,10 +51,9 @@ extension HelpsView{
             Link(destination: url) {
                 HStack{
                     Text(title)
+                        .font(.callout.weight(.medium))
                     Spacer()
                     Image(systemName: "chevron.right")
-                        .foregroundColor(.secondary)
-                        .font(.caption)
                 }
             }
         }else{

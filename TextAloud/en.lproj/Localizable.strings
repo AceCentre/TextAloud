@@ -17,10 +17,11 @@
 "sentence" = "Sentence";
 "all" = "All text";
 "settings" = "Settings";
+"help" = "Help";
 
 "aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import.";
 
-"customization" = "Customization";
+"customization" = "Text area Customisation";
 "aboutCustomization" = "In this section, you can customize the appearance of the application. Choose a font size that is convenient for you, highlight and selection color";
 
 "textWillLook" = "Here's what the text will look like:";
