@@ -12,6 +12,9 @@
 		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
 		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
+		5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */; };
+		5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */; };
 		5A1765B629B0A23B009CEA9E /* NetworkMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */; };
 		5A1765BA29B21245009CEA9E /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B929B21245009CEA9E /* NotificationName.swift */; };
 		5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176629A755AD009BB492 /* VoiceSaveService.swift */; };
@@ -62,7 +65,28 @@
 		FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A155D7529B76A5D00E18A3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF5C2E2290990F10003A675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A155D6C29B76A5D00E18A3B;
+			remoteInfo = TextAloudShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		5A155D7B29B76A5D00E18A3B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A6F8DE4299E7E1500C591D7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +110,12 @@
 		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155607299D1E80001A0B7D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155608299D1F3F001A0B7D /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TextAloudShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		5A155D7429B76A5D00E18A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A155D7C29B76C5900E18A3B /* TextAloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloud.entitlements; sourceTree = "<group>"; };
+		5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudShareExtension.entitlements; sourceTree = "<group>"; };
+		5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShareViewController.swift; sourceTree = "<group>"; };
 		5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitorManager.swift; sourceTree = "<group>"; };
 		5A1765B929B21245009CEA9E /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		5A1E176629A755AD009BB492 /* VoiceSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
@@ -139,6 +169,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A155D6A29B76A5D00E18A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E7290990F10003A675 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +204,17 @@
 				DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */,
+				5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */,
+				5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */,
+				5A155D7429B76A5D00E18A3B /* Info.plist */,
+			);
+			path = TextAloudShareExtension;
 			sourceTree = "<group>";
 		};
 		5A4A0EC5299B979D00E3B385 /* Utils */ = {
@@ -298,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF5C2EC290990F10003A675 /* TextAloud */,
+				5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */,
 				FDF5C2EB290990F10003A675 /* Products */,
 				103D19877BD647723098FF78 /* Pods */,
 				36463982B28F8F097B9982BA /* Frameworks */,
@@ -308,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF5C2EA290990F10003A675 /* TextAloud.app */,
+				5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +365,7 @@
 		FDF5C2EC290990F10003A675 /* TextAloud */ = {
 			isa = PBXGroup;
 			children = (
+				5A155D7C29B76C5900E18A3B /* TextAloud.entitlements */,
 				FDF5C2FC2909AC6E0003A675 /* App */,
 				5A4A0ECB299B97A200E3B385 /* Services */,
 				5A4A0EC5299B979D00E3B385 /* Utils */,
@@ -367,6 +418,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A155D7829B76A5D00E18A3B /* Build configuration list for PBXNativeTarget "TextAloudShareExtension" */;
+			buildPhases = (
+				5A155D6929B76A5D00E18A3B /* Sources */,
+				5A155D6A29B76A5D00E18A3B /* Frameworks */,
+				5A155D6B29B76A5D00E18A3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextAloudShareExtension;
+			productName = TextAloudShareExtension;
+			productReference = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FDF5C2E9290990F10003A675 /* TextAloud */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDF5C2F8290990F60003A675 /* Build configuration list for PBXNativeTarget "TextAloud" */;
@@ -376,10 +444,12 @@
 				FDF5C2E7290990F10003A675 /* Frameworks */,
 				FDF5C2E8290990F10003A675 /* Resources */,
 				5A6F8DE4299E7E1500C591D7 /* Embed Frameworks */,
+				5A155D7B29B76A5D00E18A3B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A155D7629B76A5D00E18A3B /* PBXTargetDependency */,
 			);
 			name = TextAloud;
 			productName = ReadAloud;
@@ -393,9 +463,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					5A155D6C29B76A5D00E18A3B = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					FDF5C2E9290990F10003A675 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -419,11 +492,19 @@
 			projectRoot = "";
 			targets = (
 				FDF5C2E9290990F10003A675 /* TextAloud */,
+				5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A155D6B29B76A5D00E18A3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E8290990F10003A675 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +543,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A155D6929B76A5D00E18A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */,
+				5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E6290990F10003A675 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +608,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A155D7629B76A5D00E18A3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */;
+			targetProxy = 5A155D7529B76A5D00E18A3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5A155604299D128E001A0B7D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -534,6 +632,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A155D7929B76A5D00E18A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudShareExtension/TextAloudShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud.shareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A155D7A29B76A5D00E18A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudShareExtension/TextAloudShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud.shareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FDF5C2F6290990F60003A675 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -654,8 +806,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloud/TextAloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
@@ -690,8 +844,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloud/TextAloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
@@ -725,6 +881,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A155D7829B76A5D00E18A3B /* Build configuration list for PBXNativeTarget "TextAloudShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A155D7929B76A5D00E18A3B /* Debug */,
+				5A155D7A29B76A5D00E18A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDF5C2E5290990F10003A675 /* Build configuration list for PBXProject "TextAloud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

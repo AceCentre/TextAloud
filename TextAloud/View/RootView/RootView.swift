@@ -31,8 +31,10 @@ struct RootView: View {
         }
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
         .onAppear{
-            if let text = synthesizer.getSpeechData(){
-                rootVM.text = text
+            if !rootVM.setShareObjectIfNeeded(){
+                if let text = synthesizer.getSpeechData(){
+                    rootVM.text = text
+                }
             }
         }
         .onChange(of: rootVM.tappedRange) { range in

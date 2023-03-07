@@ -91,6 +91,17 @@ class RootViewModel: ObservableObject{
             selectedRange = currentSelectionMode.getRangeForIndex(0, text)
         }
     }
+    
+    func setShareObjectIfNeeded() -> Bool{
+        let key = "shareText"
+        let def = UserDefaults(suiteName: "group.uk.org.acecentre.TextAloud")
+        if let text = def?.string(forKey: key), !text.isEmpty{
+            self.text = text
+            def?.removeObject(forKey: key)
+            return true
+        }
+        return false
+    }
 }
 
 
