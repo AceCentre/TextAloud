@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var settingVM = SettingViewModel()
+    @ObservedObject var speech: SpeechSynthesizer
+    @ObservedObject var settingVM: SettingViewModel
     @Environment(\.dismiss) var dismiss
         
     var body: some View {
@@ -23,25 +24,22 @@ struct SettingsView: View {
                 }
             }
         }
-        .sheet(isPresented: $settingVM.showVoicePicker) {
-            VoicesPickerView(settingVM: settingVM)
-        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            SettingsView()
+            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
                 .environment(\.locale, .init(identifier: "en"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "fr"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "de"))
-            SettingsView()
-                .environment(\.locale, .init(identifier: "es"))
+//          SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
+//                .environment(\.locale, .init(identifier: "fr"))
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
+//                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
+//                .environment(\.locale, .init(identifier: "de"))
+//            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
+//                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
@@ -55,6 +53,7 @@ extension SettingsView{
             VStack(spacing: 16) {
                 aboutGroupView
                 customizationGroupView
+                HelpsBlockView()
             }
             .padding(.horizontal)
         }
@@ -76,14 +75,14 @@ extension SettingsView{
 //MARK: - View components
 extension SettingsView{
     private var aboutGroupView: some View{
-        GroupBox(label: SettingsLabelView(labelText: "Text Aloud", labelImage: "info.circle")) {
+        GroupBox(label: SettingsLabelView(labelText: "TextAloud", labelImage: "info.circle")) {
             Divider().padding(.vertical, 4)
-            Text("aboutTextAloud \("Text Aloud")")
+            Text("aboutTextAloud \("TextAloud")")
                 .padding(.vertical, 8)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
             Divider().padding(.vertical, 4)
-            voicePickerButton
+            languageLink
         }
     }
     
@@ -137,19 +136,29 @@ extension SettingsView{
         }
     }
     
+   
     
-    private var voicePickerButton: some View{
-        Button {
-            settingVM.showVoicePicker.toggle()
+    private var languageLink: some View{
+        NavigationLink {
+            LanguageSpeechView()
+                .environmentObject(speech)
+                .environmentObject(settingVM)
         } label: {
-            HStack{
-                Text(Localization.pickVoice.toString)
-                Spacer()
-                Text("\(settingVM.voiceModel.name) \(settingVM.voiceModel.languageStr)")
-                    .lineLimit(1)
-            }
+            Text("Language and Speech")
+                .font(.callout.weight(.medium))
+            Spacer()
+            Image(systemName: "chevron.right")
         }
-        .hLeading()
-        .font(.headline.weight(.medium))
     }
+    
+//    private var helpLink: some View{
+//        NavigationLink {
+//            HelpsView()
+//        } label: {
+//            Text("Help")
+//                .font(.callout.weight(.medium))
+//            Spacer()
+//            Image(systemName: "chevron.right")
+//        }
+//    }
 }

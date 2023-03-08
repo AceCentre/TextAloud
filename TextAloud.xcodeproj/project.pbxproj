@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */; };
+		5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */; };
+		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
 		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
+		5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */; };
+		5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */; };
+		5A1765B629B0A23B009CEA9E /* NetworkMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */; };
+		5A1765BA29B21245009CEA9E /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B929B21245009CEA9E /* NotificationName.swift */; };
+		5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176629A755AD009BB492 /* VoiceSaveService.swift */; };
+		5A1E176929A7638E009BB492 /* LanguageSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */; };
+		5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176A29A793FC009BB492 /* IconButtonView.swift */; };
 		5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */; };
-		5A498B81299CC97F00DFA38B /* SpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */; };
-		5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498B82299CD14300DFA38B /* VoicesPickerView.swift */; };
 		5A4A0EC9299B979D00E3B385 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC7299B979D00E3B385 /* View.swift */; };
 		5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EC8299B979D00E3B385 /* Color.swift */; };
 		5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */; };
@@ -20,16 +28,35 @@
 		5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */; };
 		5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */; };
 		5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED7299B991B00E3B385 /* ButtonView.swift */; };
-		5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */; };
 		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
-		5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDE299BA73400E3B385 /* TestTextView.swift */; };
+		5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */; };
+		5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */; };
+		5A4CC757299F99FF00D8E146 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC756299F99FF00D8E146 /* .env.swift */; };
+		5A4CC759299FA8F800D8E146 /* AzureVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */; };
+		5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */; };
+		5A4CC75E299FC56600D8E146 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75D299FC56600D8E146 /* VoiceModel.swift */; };
+		5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */; };
+		5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C680529B5DDC300DDBF3D /* HelpsView.swift */; };
+		5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493529A39F0E000A66A4 /* Audio.swift */; };
+		5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */; };
+		5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */; };
+		5A6E493D29A3AC06000A66A4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493C29A3AC06000A66A4 /* Array.swift */; };
+		5A6E493F29A3AC4F000A66A4 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */; };
+		5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */; };
+		5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */; };
 		5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */; };
 		5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DDC299E260100C591D7 /* UserDefaults.swift */; };
+		5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		5A6F8DE3299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A6F8DE8299E848400C591D7 /* AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F8DE7299E848400C591D7 /* AzureSpeech.swift */; };
+		5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96E56F29A1588A00347F12 /* TextButtonView.swift */; };
 		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
 		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
 		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
+		5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */; };
+		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
+		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
-		FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2EF290990F20003A675 /* ContentView.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
 		FDF5C302290BDFE40003A675 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C301290BDFE40003A675 /* TextView.swift */; };
@@ -38,17 +65,63 @@
 		FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A155D7529B76A5D00E18A3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF5C2E2290990F10003A675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A155D6C29B76A5D00E18A3B;
+			remoteInfo = TextAloudShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5A155D7B29B76A5D00E18A3B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A6F8DE4299E7E1500C591D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5A6F8DE3299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.release.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.release.xcconfig"; sourceTree = "<group>"; };
+		5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
+		5A12CBBE29A3593A00E950A8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155607299D1E80001A0B7D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155608299D1F3F001A0B7D /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TextAloudShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		5A155D7429B76A5D00E18A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A155D7C29B76C5900E18A3B /* TextAloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloud.entitlements; sourceTree = "<group>"; };
+		5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudShareExtension.entitlements; sourceTree = "<group>"; };
+		5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShareViewController.swift; sourceTree = "<group>"; };
+		5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitorManager.swift; sourceTree = "<group>"; };
+		5A1765B929B21245009CEA9E /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		5A1E176629A755AD009BB492 /* VoiceSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
+		5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSpeechView.swift; sourceTree = "<group>"; };
+		5A1E176A29A793FC009BB492 /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVoiceService.swift; sourceTree = "<group>"; };
-		5A498B82299CD14300DFA38B /* VoicesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesPickerView.swift; sourceTree = "<group>"; };
 		5A4A0EC7299B979D00E3B385 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5A4A0EC8299B979D00E3B385 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioSessionManager.swift; sourceTree = "<group>"; };
@@ -56,19 +129,37 @@
 		5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
 		5A4A0ED7299B991B00E3B385 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
-		5A4A0EDE299BA73400E3B385 /* TestTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTextView.swift; sourceTree = "<group>"; };
+		5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift"; sourceTree = "<group>"; };
+		5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+ AzureSpeech.swift"; sourceTree = "<group>"; };
+		5A4CC756299F99FF00D8E146 /* .env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
+		5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureVoiceService.swift; sourceTree = "<group>"; };
+		5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechVoiceService.swift; sourceTree = "<group>"; };
+		5A4CC75D299FC56600D8E146 /* VoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
+		5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleControlButtonView.swift; sourceTree = "<group>"; };
+		5A6C680529B5DDC300DDBF3D /* HelpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpsView.swift; sourceTree = "<group>"; };
+		5A6E493529A39F0E000A66A4 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSavedService.swift; sourceTree = "<group>"; };
+		5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		5A6E493C29A3AC06000A66A4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+Audio.swift"; sourceTree = "<group>"; };
+		5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+UserDefaults.swift"; sourceTree = "<group>"; };
 		5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
 		5A6F8DDC299E260100C591D7 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MicrosoftCognitiveServicesSpeech.xcframework; sourceTree = "<group>"; };
+		5A6F8DE7299E848400C591D7 /* AzureSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureSpeech.swift; sourceTree = "<group>"; };
+		5A96E56F29A1588A00347F12 /* TextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
 		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
+		5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesSimpleTexts.swift; sourceTree = "<group>"; };
+		5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceListView.swift; sourceTree = "<group>"; };
+		5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
 		7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.debug.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.debug.xcconfig"; sourceTree = "<group>"; };
 		DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TextAloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
-		FDF5C2EF290990F20003A675 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FDF5C2F1290990F60003A675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDF5C301290BDFE40003A675 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -78,11 +169,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A155D6A29B76A5D00E18A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E7290990F10003A675 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */,
+				5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,9 +200,21 @@
 		36463982B28F8F097B9982BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */,
 				DE082F4BA7F7BF1FE8997152 /* libPods-TextAloud.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */,
+				5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */,
+				5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */,
+				5A155D7429B76A5D00E18A3B /* Info.plist */,
+			);
+			path = TextAloudShareExtension;
 			sourceTree = "<group>";
 		};
 		5A4A0EC5299B979D00E3B385 /* Utils */ = {
@@ -112,6 +223,7 @@
 				5A4A0EC6299B979D00E3B385 /* Extensions */,
 				5ADCBB56299C060300FC05C8 /* Helpers.swift */,
 				5A1555FE299D119D001A0B7D /* Localization.swift */,
+				5A4CC756299F99FF00D8E146 /* .env.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -123,6 +235,9 @@
 				5A4A0EC8299B979D00E3B385 /* Color.swift */,
 				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
 				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
+				5A12CBBE29A3593A00E950A8 /* Task.swift */,
+				5A6E493C29A3AC06000A66A4 /* Array.swift */,
+				5A1765B929B21245009CEA9E /* NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,9 +245,9 @@
 		5A4A0ECB299B97A200E3B385 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5A498B80299CC97F00DFA38B /* SpeechVoiceService.swift */,
-				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
-				5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */,
+				5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */,
+				5A6E493729A39FB9000A66A4 /* Audio */,
+				5A6F8DE9299E89D500C591D7 /* Speech */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,10 +255,12 @@
 		5A4A0ECE299B97C100E3B385 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5A6C680429B5DDB600DDBF3D /* HelpSection */,
 				FDF5C309290F122E0003A675 /* SettingsLabelView.swift */,
 				FDF5C307290F0D250003A675 /* SettingsView.swift */,
 				5A498B7E299CC24F00DFA38B /* SettingViewModel.swift */,
-				5A498B82299CD14300DFA38B /* VoicesPickerView.swift */,
+				5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */,
+				5A1E176829A7638E009BB492 /* LanguageSpeechView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -155,8 +272,6 @@
 				5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */,
 				5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */,
 				5A4A0ED0299B98DF00E3B385 /* RootView.swift */,
-				FDF5C2EF290990F20003A675 /* ContentView.swift */,
-				5A4A0EDE299BA73400E3B385 /* TestTextView.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -166,22 +281,72 @@
 			children = (
 				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
 				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
+				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
+				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
+				5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */,
+				5A1E176A29A793FC009BB492 /* IconButtonView.swift */,
+				5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
-		5A4A0ED9299B993200E3B385 /* DocumentPicker */ = {
+		5A4CC751299F6F5F00D8E146 /* Speech */ = {
 			isa = PBXGroup;
 			children = (
-				5A4A0EDA299B99E800E3B385 /* DocumentPicker.swift */,
+				5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */,
+				5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */,
+				5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */,
+				5A6E494029A3B337000A66A4 /* SpeechSynthesier+Audio.swift */,
+				5A6E494229A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift */,
 			);
-			path = DocumentPicker;
+			path = Speech;
+			sourceTree = "<group>";
+		};
+		5A4CC75A299FAE9A00D8E146 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				5A4CC758299FA8F800D8E146 /* AzureVoiceService.swift */,
+				5A4CC75B299FAEB100D8E146 /* AVSpeechVoiceService.swift */,
+				5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */,
+				5A1E176629A755AD009BB492 /* VoiceSaveService.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		5A6C680429B5DDB600DDBF3D /* HelpSection */ = {
+			isa = PBXGroup;
+			children = (
+				5A6C680529B5DDC300DDBF3D /* HelpsView.swift */,
+			);
+			path = HelpSection;
+			sourceTree = "<group>";
+		};
+		5A6E493729A39FB9000A66A4 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5A4A0ECC299B97A200E3B385 /* AVAudioSessionManager.swift */,
+				5A6E493829A39FC4000A66A4 /* AudioSavedService.swift */,
+				5A6E493A29A3A3D3000A66A4 /* LocalFileManager.swift */,
+				5A6E493E29A3AC4F000A66A4 /* AudioPlayerManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		5A6F8DE9299E89D500C591D7 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				5A4CC75A299FAE9A00D8E146 /* Voice */,
+				5A6F8DDA299E249400C591D7 /* SpeechSaveService.swift */,
+				5A6F8DE7299E848400C591D7 /* AzureSpeech.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 		FDF5C2E1290990F10003A675 = {
 			isa = PBXGroup;
 			children = (
 				FDF5C2EC290990F10003A675 /* TextAloud */,
+				5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */,
 				FDF5C2EB290990F10003A675 /* Products */,
 				103D19877BD647723098FF78 /* Pods */,
 				36463982B28F8F097B9982BA /* Frameworks */,
@@ -192,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				FDF5C2EA290990F10003A675 /* TextAloud.app */,
+				5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +365,7 @@
 		FDF5C2EC290990F10003A675 /* TextAloud */ = {
 			isa = PBXGroup;
 			children = (
+				5A155D7C29B76C5900E18A3B /* TextAloud.entitlements */,
 				FDF5C2FC2909AC6E0003A675 /* App */,
 				5A4A0ECB299B97A200E3B385 /* Services */,
 				5A4A0EC5299B979D00E3B385 /* Utils */,
@@ -222,7 +389,6 @@
 		FDF5C2FB2909AC4B0003A675 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A4A0ED9299B993200E3B385 /* DocumentPicker */,
 				5A4A0ED6299B990800E3B385 /* ViewComponents */,
 				5A4A0ECF299B97C600E3B385 /* RootView */,
 				5A4A0ECE299B97C100E3B385 /* Settings */,
@@ -241,7 +407,9 @@
 		FDF5C30D290F4AB20003A675 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */,
+				5A6E493529A39F0E000A66A4 /* Audio.swift */,
+				5A4CC75D299FC56600D8E146 /* VoiceModel.swift */,
+				5A4CC751299F6F5F00D8E146 /* Speech */,
 				5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */,
 			);
 			path = Models;
@@ -250,6 +418,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A155D7829B76A5D00E18A3B /* Build configuration list for PBXNativeTarget "TextAloudShareExtension" */;
+			buildPhases = (
+				5A155D6929B76A5D00E18A3B /* Sources */,
+				5A155D6A29B76A5D00E18A3B /* Frameworks */,
+				5A155D6B29B76A5D00E18A3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextAloudShareExtension;
+			productName = TextAloudShareExtension;
+			productReference = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FDF5C2E9290990F10003A675 /* TextAloud */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDF5C2F8290990F60003A675 /* Build configuration list for PBXNativeTarget "TextAloud" */;
@@ -258,10 +443,13 @@
 				FDF5C2E6290990F10003A675 /* Sources */,
 				FDF5C2E7290990F10003A675 /* Frameworks */,
 				FDF5C2E8290990F10003A675 /* Resources */,
+				5A6F8DE4299E7E1500C591D7 /* Embed Frameworks */,
+				5A155D7B29B76A5D00E18A3B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A155D7629B76A5D00E18A3B /* PBXTargetDependency */,
 			);
 			name = TextAloud;
 			productName = ReadAloud;
@@ -275,9 +463,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					5A155D6C29B76A5D00E18A3B = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					FDF5C2E9290990F10003A675 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
@@ -301,11 +492,19 @@
 			projectRoot = "";
 			targets = (
 				FDF5C2E9290990F10003A675 /* TextAloud */,
+				5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A155D6B29B76A5D00E18A3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E8290990F10003A675 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,39 +543,78 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A155D6929B76A5D00E18A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */,
+				5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E6290990F10003A675 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
-				FDF5C2F0290990F20003A675 /* ContentView.swift in Sources */,
+				5A4CC757299F99FF00D8E146 /* .env.swift in Sources */,
+				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
+				5A1765B629B0A23B009CEA9E /* NetworkMonitorManager.swift in Sources */,
+				5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */,
+				5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
+				5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */,
+				5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */,
 				5A6F8DDD299E260100C591D7 /* UserDefaults.swift in Sources */,
 				5A4A0ECA299B979D00E3B385 /* Color.swift in Sources */,
+				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
+				5A6E493D29A3AC06000A66A4 /* Array.swift in Sources */,
+				5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
 				5A4A0EC9299B979D00E3B385 /* View.swift in Sources */,
 				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
+				5A6E493F29A3AC4F000A66A4 /* AudioPlayerManager.swift in Sources */,
 				5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */,
+				5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */,
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
-				5A498B81299CC97F00DFA38B /* SpeechVoiceService.swift in Sources */,
+				5A4CC759299FA8F800D8E146 /* AzureVoiceService.swift in Sources */,
 				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
+				5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */,
 				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
-				5A4A0EDB299B99E800E3B385 /* DocumentPicker.swift in Sources */,
+				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
-				5A498B83299CD14300DFA38B /* VoicesPickerView.swift in Sources */,
+				5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */,
+				5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */,
+				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,
+				5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */,
 				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
+				5A1765BA29B21245009CEA9E /* NotificationName.swift in Sources */,
 				5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */,
 				5A498B7F299CC24F00DFA38B /* SettingViewModel.swift in Sources */,
+				5A4CC75E299FC56600D8E146 /* VoiceModel.swift in Sources */,
+				5A6F8DE8299E848400C591D7 /* AzureSpeech.swift in Sources */,
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
-				5A4A0EDF299BA73400E3B385 /* TestTextView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
 				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
+				5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */,
+				5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */,
+				5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */,
+				5A1E176929A7638E009BB492 /* LanguageSpeechView.swift in Sources */,
+				5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A155D7629B76A5D00E18A3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */;
+			targetProxy = 5A155D7529B76A5D00E18A3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5A155604299D128E001A0B7D /* Localizable.strings */ = {
@@ -394,6 +632,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A155D7929B76A5D00E18A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudShareExtension/TextAloudShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud.shareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A155D7A29B76A5D00E18A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudShareExtension/TextAloudShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud.shareEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FDF5C2F6290990F60003A675 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -514,10 +806,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloud/TextAloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
@@ -535,7 +829,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud2;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -550,10 +844,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FE29A01A19D02DF9D55176D /* Pods-TextAloud.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloud/TextAloud.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"TextAloud/Preview Content\"";
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
@@ -571,7 +867,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud2;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -585,6 +881,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A155D7829B76A5D00E18A3B /* Build configuration list for PBXNativeTarget "TextAloudShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A155D7929B76A5D00E18A3B /* Debug */,
+				5A155D7A29B76A5D00E18A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDF5C2E5290990F10003A675 /* Build configuration list for PBXProject "TextAloud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,15 +9,16 @@ import SwiftUI
 
 enum SelectionEnum: Int, CaseIterable{
     
-    case word, paragraph, sentence
+    case all, word, paragraph, sentence
     
     
-    var getRangeForIndex: ( _ index: Int, _ text: String) -> NSRange{
+    func getRangeForIndex( _ index: Int, _ text: String) -> NSRange{
         
         switch self {
-        case .word: return Helpers.getWordRangeAtIndex(_:_:)
-        case .paragraph: return Helpers.getParagraphRangeForLocation(_:_:)
-        case .sentence: return Helpers.getSentenceRangeForLocation(_:_:)
+        case .word: return Helpers.getRangeTextForIndex(index: index, with: .byWords, text: text)
+        case .paragraph: return Helpers.getRangeTextForIndex(index: index, with: .byParagraphs, text: text)
+        case .sentence: return Helpers.getRangeTextForIndex(index: index, with: .bySentences, text: text)
+        case .all: return Helpers.getAllTextRange(index, text)
         }
         
     }
@@ -28,10 +29,18 @@ enum SelectionEnum: Int, CaseIterable{
         case .word: return Localization.word.toString
         case .paragraph: return Localization.paragraph.toString
         case .sentence: return Localization.sentence.toString
+        case .all: return Localization.all.toString
         }
     }
     
     var keyboardShortcutValue: KeyEquivalent{
         .init(Character(String(self.rawValue)))
+    }
+    
+    var playMode: PlayMode{
+        switch self {
+        case .all: return .all
+        default: return .selecting
+        }
     }
 }

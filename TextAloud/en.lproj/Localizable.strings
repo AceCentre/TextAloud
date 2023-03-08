@@ -6,19 +6,22 @@
 */
 
 
-"play" = "Play";
+"play" = "Play all";
 "stop" = "Stop";
+"cancel" = "Cancel";
 "pause" = "Pause";
 "save" = "Save";
 "edit" = "Edit";
 "word" = "Word";
 "paragraph" = "Paragraph";
 "sentence" = "Sentence";
+"all" = "All text";
 "settings" = "Settings";
+"help" = "Help";
 
-"aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import. Note to change voice settings go to Settings -> Accessibility -> Spoken Content -> Voices";
+"aboutTextAloud %@" = "The %@ application makes it easy to read any text that you write yourself, or import.";
 
-"customization" = "Customization";
+"customization" = "Text area Customisation";
 "aboutCustomization" = "In this section, you can customize the appearance of the application. Choose a font size that is convenient for you, highlight and selection color";
 
 "textWillLook" = "Here's what the text will look like:";
@@ -27,3 +30,7 @@
 "pickHighlight" = "Pick highlight color";
 "pickVoice" = "Pick voice";
 "fontSize" = "Font size";
+
+"offlineAlertMessage" = "Select offline voices to work offline";
+"offlineAlertTitle" = "No internet connection";
+"selectVoices" = "Select voice";

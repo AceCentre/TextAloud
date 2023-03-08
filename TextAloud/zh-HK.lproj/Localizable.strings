@@ -8,15 +8,18 @@
 
 "play" = "播放";
 "stop" = "停止";
+"cancel" = "取消";
 "pause" = "暂停";
 "save" = "保存";
 "edit" = "编辑";
 "word" = "单词";
+"all" = "所有文本";
 "paragraph" = "段落";
 "sentence" = "句子";
 "settings" = "设置";
+"help" = "Help";
 
-"aboutTextAloud %@" = "%@ 应用程序可以轻松阅读您自己编写或导入的任何文本。注意更改语音设置，请转到设置 -> 辅助功能 -> 语音内容 -> 语音";
+"aboutTextAloud %@" = "%@ 应用程序可以轻松阅读您自己编写或导入的任何文本";
 
 "customization" = "自定义";
 "aboutCustomization" = "在此部分，您可以自定义应用程序的外观。选择适合您的字体大小、突出显示和选择颜色";
@@ -27,3 +30,7 @@
 "pickHighlight" = "选择高亮颜色";
 "pickVoice" = "选择语音";
 "fontSize" = "字体大小";
+
+"offlineAlertMessage" = "选择离线语音离线工作";
+"offlineAlertTitle" = "没有网络连接";
+"selectVoices" = "选择语音";

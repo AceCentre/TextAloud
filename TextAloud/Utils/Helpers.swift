@@ -5,7 +5,8 @@
 //
 
 import Foundation
-
+import PDFKit
+import SNDocx
 
 final class Helpers{
     
@@ -122,6 +123,9 @@ final class Helpers{
         return NSRange(location: startIndex, length: endIndex - startIndex)
     }
     
+    static func getAllTextRange(_ location: Int, _ text: String) -> NSRange{
+        .init(location: 0, length: text.length)
+    }
     
    static func isInCharacterSer(_ input: String, _ set: CharacterSet) -> Bool {
         return input.rangeOfCharacter(from: set) != nil
@@ -131,4 +135,56 @@ final class Helpers{
         return input == "." || input == "!" || input == "?"
     }
     
+    
+    static func getRangeTextForIndex(index: Int, with options: String.EnumerationOptions, text: String) -> NSRange{
+        var ranges = [NSRange]()
+        text.enumerateSubstrings(in: text.startIndex..<text.endIndex, options: options) { _, substringRange, _, _ in
+            ranges.append(NSRange(substringRange, in: text))
+        }
+        return ranges.first(where: {$0.contains(index)}) ?? .init(location: 0, length: 0)
+    }
+    
+    
+   static func pdfToText(for url: URL) -> String?{
+       let docContent = NSMutableAttributedString()
+       guard let pdf = PDFDocument(url: url) else {return nil}
+       for i in 1 ..< pdf.pageCount {
+           guard let page = pdf.page(at: i) else { continue }
+           guard let pageContent = page.attributedString else { continue }
+           docContent.append(pageContent)
+       }
+       return docContent.string
+   }
+    
+    static func docxToText(for url: URL) -> String?{
+        return SNDocx.shared.getText(fileUrl: url)?.withoutTags
+    }
+    
+    static func plainToText(for url: URL) -> String?{
+        guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.plain], documentAttributes: nil) else { return nil}
+        return attributedStringWithPlain.string
+    }
+    
+    
+    static func rtfToText(for url: URL) -> String?{
+        guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) else { return nil}
+        return attributedStringWithPlain.string
+    }
+    
+    
+    static func showShareSheet(data: Any){
+        UIActivityViewController(activityItems: [data], applicationActivities: nil).presentInKeyWindow()
+    }
+}
+
+
+extension UIViewController {
+    
+    func presentInKeyWindow(animated: Bool = true, completion: (() -> Void)? = nil) {
+        UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+            .first?.rootViewController?.present(self, animated: animated, completion: completion)
+    }
 }

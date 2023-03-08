@@ -8,15 +8,18 @@
 
 "play" = "Play";
 "stop" = "Stoppen";
+"cancel" = "Stornieren";
 "pause" = "Pause";
 "save" = "Speichern";
 "edit" = "Edit";
 "word" = "Wort";
+"all" = "Gesamter Text";
 "paragraph" = "Absatz";
 "sentence" = "Satz";
 "settings" = "Einstellungen";
+"help" = "Help";
 
-"aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren. Hinweis: Gehen Sie zum Ändern der Spracheinstellungen zu Einstellungen -> Bedienungshilfen -> Gesprochene Inhalte -> Stimmen";
+"aboutTextAloud %@" = "Die %@-Anwendung macht es einfach, jeden Text zu lesen, den Sie selbst schreiben oder importieren.";
 
 "customization" = "Anpassung";
 "aboutCustomization" = "In diesem Abschnitt können Sie das Erscheinungsbild der Anwendung anpassen. Wählen Sie eine für Sie passende Schriftgröße, Hervorhebungs- und Auswahlfarbe";
@@ -27,3 +30,7 @@
 "pickHighlight" = "Hervorhebungsfarbe auswählen";
 "pickVoice" = "Stimme auswählen";
 "fontSize" = "Schriftgröße";
+
+"offlineAlertMessage" = "Offline-Stimmen auswählen, um offline zu arbeiten";
+"offlineAlertTitle" = "Keine Internetverbindung";
+"selectVoices" = "Stimme auswählen";

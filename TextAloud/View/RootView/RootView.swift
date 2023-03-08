@@ -7,10 +7,14 @@
 import SwiftUI
 
 struct RootView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject var audioManager = AudioPlayerManager()
+    @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
-    @State var sheetState: SheetEnum?
-
+    @State var showSetting: Bool = false
+    @State var showFileImporter: Bool = false
+    @State var showLanguageSheet: Bool = false
     var body: some View {
         ZStack {
             VStack(spacing: 0){
@@ -19,26 +23,50 @@ struct RootView: View {
                 Spacer()
                 if !rootVM.isFocused{
                     controlsSectionView
-                    Spacer()
                 }
+                Spacer()
             }
             .padding(.horizontal)
+            loaderView
         }
-        .allFrame()
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
-        .sheet(item: $sheetState) { type in
-            switch type{
-            case .settings:
-                SettingsView()
-            case .addFile:
-                DocumentPicker(fileContent: $rootVM.text)
+        .onAppear{
+            if !rootVM.setShareObjectIfNeeded(){
+                if let text = synthesizer.getSpeechData(){
+                    rootVM.text = text
+                }
             }
         }
-        .onChange(of: rootVM.selectedRange) { range in
+        .onChange(of: rootVM.tappedRange) { range in
             if let range{
-                synthesizer.setSpeakForRange(rootVM.text, range)
+                rootVM.selectedRange = nil
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped)
             }
         }
+        .onChange(of: rootVM.text) { _ in
+            rootVM.isChangeText = true
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase{
+            case .background, .inactive:
+                synthesizer.saveSpeechData(rootVM.text)
+            default: break
+            }
+        }
+        
+        .sheet(isPresented: $showSetting){
+            SettingsView(speech: synthesizer, settingVM: settingsVM)
+        }
+        .sheet(isPresented: $showLanguageSheet){
+            NavigationView {
+                LanguageSpeechView(isSheetView: true)
+                    .environmentObject(synthesizer)
+                    .environmentObject(settingsVM)
+            }
+        }
+        .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
+        .handle(error: $rootVM.error)
+        .alert(Localization.offlineAlertTitle.toString, isPresented: $synthesizer.showOfflineAlert, actions: offlineAlertButton, message: offlineAlertMessage)
     }
 }
 
@@ -48,56 +76,104 @@ struct RootView_Previews: PreviewProvider {
         Group{
             RootView()
                 .environment(\.locale, .init(identifier: "en"))
-            RootView()
-                .environment(\.locale, .init(identifier: "fr"))
-            RootView()
-                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-            RootView()
-                .environment(\.locale, .init(identifier: "de"))
-            RootView()
-                .environment(\.locale, .init(identifier: "es"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "fr"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "de"))
+//            RootView()
+//                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
 
 //MARK: - Controls Section view
 extension RootView{
+    @ViewBuilder
     private var controlsSectionView: some View{
-        VStack(spacing: 32){
+        CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+            
+            if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
+                audioManager.audioAction(audio)
+            }else{
+                let location = synthesizer.currentWord?.nextLoacation ?? 3
+                let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
+                
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
+           }
+        }
+        .hCenter()
+        .overlay {
             HStack{
-                ButtonView(buttonText: Localization.stop.toString, buttonIcon: "stop.circle", isDisabled: !synthesizer.isPlay, action: synthesizer.stop)
-                    .keyboardShortcut(.escape)
-                Spacer()
-                ButtonView(buttonText: synthesizer.isPlay ? Localization.pause.toString : Localization.play.toString, buttonIcon: synthesizer.isPlay ? "pause.circle" : "play.circle", isDisabled: rootVM.text.isEmpty){
-                    if synthesizer.isPlay{
-                        synthesizer.pause()
-                    }else{
-                        synthesizer.speak(rootVM.text)
+                if let voice = settingsVM.activeVoiceModel{
+                    Button {
+                        if settingsVM.selectedVoices.count == 2{
+                            settingsVM.toggleVoice()
+                        }else{
+                            showLanguageSheet.toggle()
+                        }
+                        
+                    } label: {
+                        IconView(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
                     }
                 }
-                .keyboardShortcut(.space)
+                
+                Spacer()
+                if synthesizer.isActiveCashAudio{
+                    Menu {
+                        Button(role: .destructive) {
+                            synthesizer.removeAudio()
+                        } label: {
+                            Label("Remove", systemImage: "trash")
+                        }
+                        
+                        Button {
+                            if let audioUrl = synthesizer.savedAudio?.url{
+                                Helpers.showShareSheet(data: audioUrl)
+                            }
+                        } label: {
+                            Label("Share", systemImage: "arrowshape.turn.up.right.fill")
+                        }
+                    } label: {
+                        IconView(title: "Audio", icon: "waveform.circle.fill")
+                    }
+                }
             }
         }
     }
     
+    private var isPlay: Bool{
+        (synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all) ?
+        audioManager.isPlaying : synthesizer.isPlay
+    }
+    
     @ViewBuilder
-    private var editTestButton: some View{
-        Button {
-            if synthesizer.isPlay{
-                synthesizer.stop()
-            }
-            rootVM.onEditToggle()
+    private var editButton: some View{
+        TextButtonView(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
             
-        } label: {
-            Label {
-                Text(rootVM.isFocused ? Localization.save.toString : Localization.edit.toString)
-            } icon: {
-                Image(systemName: rootVM.isFocused ? "checkmark" : "highlighter")
+            rootVM.onTappedEditSaveButton()
+            ///save action
+            if rootVM.isFocused{
+                if synthesizer.isPlay{
+                    synthesizer.stop()
+                }
+                synthesizer.removeAudio()
+                synthesizer.saveSpeechData(rootVM.text)
             }
-            .font(.title3.weight(.bold))
-            .foregroundColor(.limeChalk)
         }
     }
+    
+    
+    @ViewBuilder
+    private var cancelButton: some View{
+        if rootVM.isFocused{
+            TextButtonView(title: Localization.cancel.toString, image: "xmark", isDisabled: false) {
+                rootVM.onCancelTapped()
+            }
+        }
+    }
+    
     
     @ViewBuilder
     private var selectedMenuButton: some View{
@@ -107,20 +183,21 @@ extension RootView{
                     Button(type.locale){
                         rootVM.setSelectionMode(type)
                     }
-                    .keyboardShortcut(type.keyboardShortcutValue, modifiers: .control)
+                    .keyboardShortcut(type.keyboardShortcutValue)
                     /// 1, 2 , 3
                 }
             } label: {
                 Text(rootVM.currentSelectionMode.locale)
                     .font(.title3.weight(.bold))
                     .foregroundColor(.limeChalk)
+                    .frame(width: 120, alignment: .leading)
             }
         }
     }
     
     @ViewBuilder
     private var rateMenuButton: some View{
-        if !rootVM.isFocused{
+        if !rootVM.isFocused && !synthesizer.isAzureSpeech{
             Menu {
                 ForEach(SpeechRateEnum.allCases, id: \.self) { type in
                     Button(type.valueRepresentable){
@@ -140,13 +217,14 @@ extension RootView{
 extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
-            SpeachTextViewComponent(currentWord: $synthesizer.currentWord, rootVM: rootVM)
-            HStack {
-                selectedMenuButton
-                rateMenuButton
-                    .hCenter()
-                editTestButton
-            }
+            SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
+            
+            editButton
+                .hTrailing()
+                .overlay(alignment: .leading){
+                    cancelButton
+                    selectedMenuButton
+                }
         }
         .padding(.top, 32)
         .padding(.bottom, 16)
@@ -159,14 +237,14 @@ extension RootView{
         HStack(spacing: 16){
         
             Button {
-                sheetState = .settings
+                showSetting.toggle()
             } label: {
                 Image(systemName: "slider.horizontal.3")
                     .foregroundColor(.limeChalk)
                     .font(.title)
             }
             
-            Text("Text Aloud")
+            Text("TextAloud")
                 .foregroundColor(.white)
                 .font(.title)
                 .fontWeight(.heavy)
@@ -178,8 +256,12 @@ extension RootView{
                     Button {
                         if synthesizer.isPlay{
                             synthesizer.stop()
+                        }else if audioManager.isPlaying{
+                            audioManager.stopAudio()
                         }
+                        synthesizer.currentWord = nil
                         rootVM.removeText()
+                        synthesizer.removeAudio()
                     } label: {
                         Image(systemName: "trash.circle.fill")
                     }
@@ -187,8 +269,11 @@ extension RootView{
                 Button {
                     if synthesizer.isPlay{
                         synthesizer.stop()
+                    }else if audioManager.isPlaying{
+                        audioManager.stopAudio()
                     }
-                    sheetState = .addFile
+                    synthesizer.currentWord = nil
+                    showFileImporter.toggle()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
@@ -197,10 +282,39 @@ extension RootView{
             .font(.title)
         }
     }
-    
-    enum SheetEnum: Int16, Identifiable{
-        var id: Int16 {self.rawValue}
-        case settings, addFile
-    }
 }
 
+extension RootView{
+    
+    @ViewBuilder
+    private var loaderView: some View{
+        if rootVM.showLoader{
+            ZStack{
+                Color.deepOcean.opacity(0.1).ignoresSafeArea()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .frame(width: 100, height: 100)
+                        .shadow(color: .black.opacity(0.1), radius: 5)
+                    ProgressView()
+                        .scaleEffect(1.5)
+                        .tint(.deepOcean)
+                }
+            }
+        }
+    }
+    
+}
+
+//MARK: - Offline alert
+extension RootView{
+    private func offlineAlertMessage() -> some View{
+        Text(Localization.offlineAlertMessage.toString)
+    }
+    
+    private func offlineAlertButton() -> some View{
+        Button(Localization.selectVoices.toString) {
+            showLanguageSheet.toggle()
+        }
+    }
+}
