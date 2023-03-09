@@ -53,24 +53,6 @@ class AudioPlayerManager: ObservableObject {
         }
     }
     
-    #warning("TODO")
-//    func seekTo(_ audio: AudioModel, _ selectedRange: NSRange){
-//        if !isPlaying{
-//            setAudio(audio)
-//            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
-//                self.playerDidFinishPlaying()
-//            }
-//            startTimer(for: selectedRange)
-//        }else{
-//            player.pause()
-//        }
-//
-//        let time: Double = Double(rangeIndex) * audio.averageWordTime
-//        let seekTime = CMTime(seconds: time, preferredTimescale: 60000)
-//        player.seek(to: seekTime, toleranceBefore: .zero, toleranceAfter: .zero)
-//        player.play()
-//    }
-    
 }
 
 
