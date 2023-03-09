@@ -17,8 +17,8 @@ extension Array where Iterator.Element == Double{
 
 extension NSRange{
     
-    var nextLoacation: Int{
-        self.location + self.length + 3
+    var nextLocation: Int {
+        self.location + self.length + 1
     }
     
 }
