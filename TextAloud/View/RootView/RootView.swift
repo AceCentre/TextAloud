@@ -97,7 +97,7 @@ extension RootView{
             if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
                 audioManager.audioAction(audio)
             }else{
-                let location = synthesizer.currentWord?.nextLoacation ?? 3
+                let location = synthesizer.currentWord?.nextLocation ?? 3
                 let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
                 synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
