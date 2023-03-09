@@ -51,7 +51,7 @@ class CustomShareViewController: UIViewController {
     }
 
     @objc private func doneAction() {
-        let def = UserDefaults(suiteName: "group.uk.org.acecentre.TextAloud")
+        let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
         def?.set(textView.text, forKey: "shareText")
         extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
     }
