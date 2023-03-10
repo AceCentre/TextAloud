@@ -76,7 +76,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
         rangeOffset = range.location
         let range = rangeOffset..<(rangeOffset + range.length)
-        let prepairText = text[range]
+        let prepairText = text[range].trimmingCharacters(in: .whitespacesAndNewlines)
         if isAzureSpeech{
             if isOnlineMode{
                 speakAzure(prepairText, voiceId: activeVoiceId)
