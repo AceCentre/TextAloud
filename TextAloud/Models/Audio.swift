@@ -28,7 +28,7 @@ struct AudioModel: Codable{
         
         init(offset: UInt, wordLength: UInt, timeOffsets: UInt) {
             self.range = .init(location: Int(offset), length: Int(wordLength))
-            self.timeOffsets = timeOffsets.tikcsToMillisecond
+            self.timeOffsets = timeOffsets.tikcsToSeconds
         }
     }
 }

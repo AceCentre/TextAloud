@@ -92,6 +92,12 @@ extension String {
         default : return false
         }
     }
+    
+    
+    func lastIndexInt(of char: Character) -> Int? {
+        return lastIndex(of: char)?.utf16Offset(in: self)
+    }
+    
 }
 
 

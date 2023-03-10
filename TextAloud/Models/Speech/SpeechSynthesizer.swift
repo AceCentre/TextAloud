@@ -26,10 +26,10 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     let audioSaveService = AudioSavedService()
     @Published var savedAudio: AudioModel?
     var prepairRangesData = [AudioModel.RangesData]()
-    var rangePublisher = PassthroughSubject<NSRange, Never>()
     var cancellable: AnyCancellable?
-    var azureDelayTasks = [Task<(), any Error>]()
     var playMode: PlayMode = .all
+    var speechTimer: Timer?
+    var rangeIndex: Int = 0
 
     @Published var currentWord: NSRange?
     @Published var isPlay: Bool = false
@@ -91,8 +91,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
-            azureDelayTasks.forEach({$0.cancel()})
-            cancellable?.cancel()
+            resetTimer()
         }else if synth.isSpeaking{
             print("STOP")
             synth.stopSpeaking(at: .immediate)
@@ -134,6 +133,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             showOfflineAlert.toggle()
             return false
         }
+    }
+    
+    func resetTimer(){
+        speechTimer?.invalidate()
+        rangeIndex = 0
     }
 }
 
