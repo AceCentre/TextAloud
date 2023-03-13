@@ -5,14 +5,14 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 
 class RootViewModel: ObservableObject{
-    
     @Published var text: String = "Example text, press the plus button to add your own document."
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
-    @Published var currentSelectionMode: SelectionEnum = .paragraph
+    @AppStorage("currentSelectionMode") var currentSelectionMode: SelectionEnum = .paragraph
     @Published var isFocused: Bool = false
     @Published var selectedRange: NSRange?
     @Published var tappedRange: NSRange?
