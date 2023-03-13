@@ -99,19 +99,6 @@ extension AudioPlayerManager{
              }
          })
 
-
- //        let interval = CMTimeMake(value: 1, timescale: 2)
- //        timeObserver = player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
- //            guard let self = self else { return }
- //            let time = time.seconds
- //            self.currentAudio?.updateRemainingDuration(time)
- //            if (self.currentAudio?.duration ?? 0) > time{
- //                withAnimation {
- //                    self.currentTime = time
- //                }
- //            }
- //        }
-
      }
      
     func stopAudio() {
@@ -128,12 +115,10 @@ extension AudioPlayerManager{
      }
     
     private func playerDidFinishPlaying() {
-         print("DidFinishPlaying")
         player.pause()
         player.seek(to: .zero)
         sumplesTimer?.invalidate()
         currentAudio = nil
         currentRange = nil
-        //currentTime = .zero
-     }
+    }
 }
