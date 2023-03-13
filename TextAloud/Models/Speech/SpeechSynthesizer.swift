@@ -75,8 +75,9 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             if mode != .tapped{return}
         }
         rangeOffset = range.location
-        let range = rangeOffset..<(rangeOffset + range.length)
-        let prepairText = text[range]
+        
+        let prepairText = String(text.substring(with: range) ?? "default")
+        
         if isAzureSpeech{
             if isOnlineMode{
                 speakAzure(prepairText, voiceId: activeVoiceId)
