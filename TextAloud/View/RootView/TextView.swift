@@ -75,24 +75,22 @@ struct TextView: UIViewRepresentable {
     func updateUIView(_ uiView: UITextView, context: Context) {
         
         let attrStr = NSMutableAttributedString(string: text)
-        
-        
         attrStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .heavy), range: NSRange(location: 0, length: attrStr.length))
 
         attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: attrStr.length))
 
-        if let currentWord, currentWord.isExistRange(for: text), !isEditing{
+        if let currentWord, !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWord)
             if !isEditing{
                 uiView.scrollRangeToVisible(currentWord)
             }
         }
         
-        if let selectedRange, selectedRange.isExistRange(for: text), !isEditing{
+        if let selectedRange, !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
         }
         
-        if let tappedRange, tappedRange.isExistRange(for: text), !isEditing{
+        if let tappedRange, !isEditing{
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: tappedRange)
         }
     
@@ -124,19 +122,6 @@ struct TextView: UIViewRepresentable {
         }
         
         
-//        func updateTextAlignment(_ uiView: UITextView){
-//            guard let first = uiView.text.components(separatedBy: " ").first else { return }
-//            let isRTLCode = first.guessLanguageCode().isRTLCode
-//            let aligment: NSTextAlignment = isRTLCode ? .right : .natural
-//
-//
-//            if uiView.textAlignment != aligment {
-//                print("update aligment", isRTLCode)
-//                uiView.textAlignment = aligment
-//            }
-//        }
-        
-        
         func textViewDidBeginEditing(_ textView: UITextView) {
             DispatchQueue.main.async {
                 self.parent.focused = true
@@ -154,12 +139,6 @@ struct TextView: UIViewRepresentable {
                 self.parent.focused = false
             }
         }
-        
-//        func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-//           updateTextAlignment(textView)
-//            return true
-//        }
-        
 
         
         /// Handle tapped in uiText view
@@ -179,13 +158,6 @@ struct TextView: UIViewRepresentable {
                 }
             }
         }
-    }
-}
-
-
-extension NSRange{
-    func isExistRange(for str: String) -> Bool{
-        self.location != NSNotFound && NSMaxRange(self) <= str.count
     }
 }
 
