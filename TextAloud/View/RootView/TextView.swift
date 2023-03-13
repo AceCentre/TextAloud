@@ -73,8 +73,6 @@ struct TextView: UIViewRepresentable {
         return textView
     }
     func updateUIView(_ uiView: UITextView, context: Context) {
-        print("update")
-       
         
         let attrStr = NSMutableAttributedString(string: text)
         
