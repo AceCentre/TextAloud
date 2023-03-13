@@ -68,7 +68,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     }
             
     func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode) {
-        print("PLAY")
         playMode = mode
         if isPlay{
             stop()
