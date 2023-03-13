@@ -27,8 +27,18 @@ final class Helpers{
             ranges.append(NSRange(substringRange, in: text))
         }
         
+    
         // Find the matching range or move to the next stop
         if let foundRange = ranges.first(where: {$0.contains(index)}) {
+            
+            // Get the text in the range that we have found.
+            // If its just an empty string then just recurse to the next range.
+            let textThatWillPlay = String(text.substring(with: foundRange) ?? "default")
+            let trimmed = textThatWillPlay.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed.count == 0 {
+                return getRangeTextForIndex(index: index + 1, with: options, text: text)
+            }
+            
             return foundRange
         } else {
             return getRangeTextForIndex(index: index + 1, with: options, text: text)
