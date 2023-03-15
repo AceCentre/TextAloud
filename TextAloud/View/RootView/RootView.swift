@@ -29,7 +29,7 @@ struct RootView: View {
             .padding(.horizontal)
             loaderView
         }
-        .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))   
         .onChange(of: rootVM.tappedRange) { range in
             if let range{
                 rootVM.selectedRange = nil
@@ -41,6 +41,12 @@ struct RootView: View {
         }
         .onChange(of: scenePhase) { phase in
             switch phase{
+            case .active:
+                if !rootVM.setShareObjectIfNeeded(){
+                    if let text = synthesizer.getSpeechData(){
+                        rootVM.text = text
+                    }
+                }
             case .background, .inactive:
                 synthesizer.saveSpeechData(rootVM.text)
             default: break
@@ -69,14 +75,14 @@ struct RootView_Previews: PreviewProvider {
         Group{
             RootView()
                 .environment(\.locale, .init(identifier: "en"))
-//            RootView()
-//                .environment(\.locale, .init(identifier: "fr"))
-//            RootView()
-//                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-//            RootView()
-//                .environment(\.locale, .init(identifier: "de"))
-//            RootView()
-//                .environment(\.locale, .init(identifier: "es"))
+            //            RootView()
+            //                .environment(\.locale, .init(identifier: "fr"))
+            //            RootView()
+            //                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
+            //            RootView()
+            //                .environment(\.locale, .init(identifier: "de"))
+            //            RootView()
+            //                .environment(\.locale, .init(identifier: "es"))
         }
     }
 }
@@ -94,7 +100,7 @@ extension RootView{
                 let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
                 synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
-           }
+            }
         }
         .hCenter()
         .overlay {
@@ -228,7 +234,7 @@ extension RootView{
 extension RootView{
     private var customNavHeaderView: some View{
         HStack(spacing: 16){
-        
+            
             Button {
                 showSetting.toggle()
             } label: {

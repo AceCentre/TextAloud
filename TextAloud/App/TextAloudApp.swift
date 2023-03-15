@@ -12,7 +12,6 @@ struct TextAloudApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
-                .defaultAppStorage(UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")!)
         }
     }
 }
