@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 class RootViewModel: ObservableObject{
-    @Published var text: String = "Example text, press the plus button to add your own document."
+    @AppStorage("shareText") var text: String = "Example text, press the plus button to add your own document."
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
     @AppStorage("currentSelectionMode") var currentSelectionMode: SelectionEnum = .paragraph
@@ -92,16 +92,6 @@ class RootViewModel: ObservableObject{
         }
     }
     
-    func setShareObjectIfNeeded() -> Bool{
-        let key = "shareText"
-        let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
-        if let text = def?.string(forKey: key), !text.isEmpty{
-            self.text = text
-            def?.removeObject(forKey: key)
-            return true
-        }
-        return false
-    }
 }
 
 

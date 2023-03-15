@@ -46,7 +46,7 @@ class CustomShareViewController: UIViewController {
 
     // 3: Define the actions for the navigation items
     @objc private func cancelAction () {
-        let error = NSError(domain: "some.bundle.identifier", code: 0, userInfo: [NSLocalizedDescriptionKey: "An error description"])
+        let error = NSError(domain: "uk.org.acecentre.TextAloud", code: 0, userInfo: [NSLocalizedDescriptionKey: "User Cancelled"])
         extensionContext?.cancelRequest(withError: error)
     }
 
