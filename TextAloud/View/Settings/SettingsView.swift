@@ -53,6 +53,7 @@ extension SettingsView{
             VStack(spacing: 16) {
                 aboutGroupView
                 customizationGroupView
+                voiceAllowanceView
                 HelpsBlockView()
             }
             .padding(.horizontal)
@@ -67,6 +68,53 @@ extension SettingsView{
                     Image(systemName: "xmark")
                 }
             }
+        }
+    }
+}
+
+extension SettingsView {
+    var timeUsedInMinutesLabel: String {
+        let timeUsedInMinutes = settingVM.timeUsedInSeconds / 60
+        if timeUsedInMinutes == 1 {
+            return "1 minute"
+        }
+        
+        return String(timeUsedInMinutes) + " minutes"
+    }
+    
+    var timeLeftInMinutesLabel: String {
+        let timeLeftInSeconds = settingVM.timeCapInSeconds - settingVM.timeUsedInSeconds
+        let timeLeftInMinutes = timeLeftInSeconds / 60
+        
+        if timeLeftInMinutes == 1 {
+            return "1 minute"
+        }
+        
+        return String(timeLeftInMinutes) + " minutes"
+
+    }
+    
+    private var voiceAllowanceView: some View {
+        Group{
+            GroupBox(label: SettingsLabelView(labelText: "Voice Allowance", labelImage: "clock")) {
+                Divider().padding(.vertical, 4)
+                HStack{
+                    Text("Used")
+                        .font(.callout.weight(.medium))
+                    Spacer()
+                    Text(timeUsedInMinutesLabel)
+                        .foregroundColor(.secondary)
+                }
+                Divider().padding(.vertical, 4)
+                HStack{
+                    Text("Left")
+                        .font(.callout.weight(.medium))
+                    Spacer()
+                    Text(timeLeftInMinutesLabel)
+                        .foregroundColor(.secondary)
+                }
+            }
+                                              
         }
     }
 }

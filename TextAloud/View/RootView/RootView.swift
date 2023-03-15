@@ -33,7 +33,8 @@ struct RootView: View {
         .onChange(of: rootVM.tappedRange) { range in
             if let range{
                 rootVM.selectedRange = nil
-                synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped)
+                let duration = synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped)
+                settingsVM.trackSecondsUsed(secondsUsed: duration)
             }
         }
         .onChange(of: rootVM.text) { _ in
@@ -99,7 +100,9 @@ extension RootView{
                 let location = synthesizer.currentWord?.nextLocation ?? 3
                 let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
-                synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
+                let duration = synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
+                settingsVM.trackSecondsUsed(secondsUsed: duration)
+
             }
         }
         .hCenter()

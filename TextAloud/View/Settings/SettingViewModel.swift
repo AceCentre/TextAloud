@@ -15,6 +15,9 @@ class SettingViewModel: ObservableObject{
     @AppStorage("fontSize") var fontSize: Int = 25
     @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     
+    @AppStorage("timeUsedInSeconds") var timeUsedInSeconds: Int = 0
+    @Published var timeCapInSeconds = 60 * 120 // 2 Hours
+    
     @Published var showVoicePicker: Bool = false
 
     @Published var selectedVoices = [VoiceModel]()
@@ -38,6 +41,10 @@ extension SettingViewModel{
     
     var allLanguages: [LanguageModel]{
         voiceMode == .azure ? azureVoiceService.languages : aVoiceService.languages
+    }
+    
+    func trackSecondsUsed(secondsUsed: Int) {
+        self.timeUsedInSeconds += secondsUsed
     }
     
     var activeVoiceModel: VoiceModel?{

@@ -67,11 +67,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
             
-    func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode) {
+    func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode) -> Int {
         playMode = mode
         if isPlay{
             stop()
-            if mode != .tapped{return}
+            if mode != .tapped{ return 0 }
         }
         rangeOffset = range.location
         
@@ -80,12 +80,15 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         if isAzureSpeech{
             if isOnlineMode{
                 speakAzure(prepairText, voiceId: activeVoiceId)
+                return 10 // Currently assume it only takes 10 seconds
             }
         }else{
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
             synth.speak(utterance)
+            return 10 // assume it takes 10 seconds 
         }
+        return 0
     }
         
     func stop() {
