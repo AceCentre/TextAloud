@@ -29,12 +29,13 @@ struct RootView: View {
             .padding(.horizontal)
             loaderView
         }
-        .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))   
+        .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
         .onChange(of: rootVM.tappedRange) { range in
             if let range{
                 rootVM.selectedRange = nil
-                let duration = synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped)
-                settingsVM.trackSecondsUsed(secondsUsed: duration)
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped, completion: {duration in
+                    settingsVM.trackSecondsUsed(secondsUsed: duration)
+                })
             }
         }
         .onChange(of: rootVM.text) { _ in
@@ -100,9 +101,9 @@ extension RootView{
                 let location = synthesizer.currentWord?.nextLocation ?? 3
                 let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
                 
-                let duration = synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode)
-                settingsVM.trackSecondsUsed(secondsUsed: duration)
-
+                synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode, completion: { duration in
+                    settingsVM.trackSecondsUsed(secondsUsed: duration)
+                })
             }
         }
         .hCenter()

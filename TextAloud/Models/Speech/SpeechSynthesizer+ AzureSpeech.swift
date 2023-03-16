@@ -23,10 +23,10 @@ extension SpeechSynthesizer{
     
     
     
-    func speakAzure(_ text: String, voiceId: String){
+    func speakAzure(_ text: String, voiceId: String, completion: ((Double) -> ())?){
         if azureSpeech.configurateSpeechSynthesizer(voiceId){
             addHandlers(text)
-            azureSpeech.speak(text, type: .text)
+            azureSpeech.speak(text, type: .text, completion: completion)
         }
     }
     

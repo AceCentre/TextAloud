@@ -58,7 +58,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         playMode = .setting
         if type == .azure{
             azureSpeech.stop()
-            speakAzure(text, voiceId: id)
+            // We dont bother with completetion so we dont track the time that samples take
+            speakAzure(text, voiceId: id, completion: nil)
         }else{
             synth.stopSpeaking(at: .immediate)
             let utterance = AVSpeechUtterance(string: text)
@@ -67,11 +68,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
             
-    func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode) -> Int {
+    func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode, completion: ((Double) -> ())?) {
         playMode = mode
         if isPlay{
             stop()
-            if mode != .tapped{ return 0 }
+            if mode != .tapped{ return  }
         }
         rangeOffset = range.location
         
@@ -79,16 +80,14 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         
         if isAzureSpeech{
             if isOnlineMode{
-                speakAzure(prepairText, voiceId: activeVoiceId)
-                return 10 // Currently assume it only takes 10 seconds
+                speakAzure(prepairText, voiceId: activeVoiceId, completion: completion)
             }
         }else{
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
             synth.speak(utterance)
-            return 10 // assume it takes 10 seconds 
+            completion?(10)
         }
-        return 0
     }
         
     func stop() {
