@@ -1,0 +1,19 @@
+name: "Release: Manage Versions"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  GetCurrentVersion:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run script
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const script = require('./version-handling')
+            script({github, context, core})
