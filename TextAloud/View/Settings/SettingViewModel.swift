@@ -15,8 +15,8 @@ class SettingViewModel: ObservableObject{
     @AppStorage("fontSize") var fontSize: Int = 25
     @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     
-    @AppStorage("timeUsedInSeconds") var timeUsedInSeconds: Int = 0
-    @Published var timeCapInSeconds = 60 * 120 // 2 Hours
+    @AppStorage("timeUsedInSeconds") var timeUsedInSeconds: Double = 0
+    @Published var timeCapInSeconds: Double = 60 * 120 // 2 Hours
     
     @Published var showVoicePicker: Bool = false
 
@@ -43,7 +43,7 @@ extension SettingViewModel{
         voiceMode == .azure ? azureVoiceService.languages : aVoiceService.languages
     }
     
-    func trackSecondsUsed(secondsUsed: Int) {
+    func trackSecondsUsed(secondsUsed: Double) {
         self.timeUsedInSeconds += secondsUsed
     }
     
