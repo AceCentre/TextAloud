@@ -16,7 +16,7 @@ const getNewVersion = (currentVersion, commit) => {
 };
 
 module.exports = ({ github, context, core }) => {
-  const commit = context.payload.commits[0].message;
+  const commit = context.payload.commits.map((x) => x.message).join(" = ");
 
   console.log("Commit message:", commit);
 
