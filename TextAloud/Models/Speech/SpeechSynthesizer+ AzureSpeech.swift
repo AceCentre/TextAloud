@@ -25,19 +25,20 @@ extension SpeechSynthesizer{
     
     func speakAzure(_ text: String, voiceId: String, completion: ((Double) -> ())?){
         if azureSpeech.configurateSpeechSynthesizer(voiceId){
-            addHandlers(text)
-            azureSpeech.speak(text, type: .text, completion: completion)
+            addHandlers(text, completion: completion)
+            azureSpeech.speak(text, type: .text)
         }
     }
     
     
-    private func addHandlers(_ text: String){
+    private func addHandlers(_ text: String, completion: ((Double) -> ())?){
         
         prepairRangesData.removeAll()
         startAzureRangeSubscription()
         
         azureSpeech.onCompletedHandler = { event in
             DispatchQueue.main.async {
+                completion?(event.result.audioDuration)
                 self.isPlay = false
                 if self.playMode == .all{
                     self.saveAudio(name: text.createName, for: event.result.audioDuration, audioData: event.result.audioData)

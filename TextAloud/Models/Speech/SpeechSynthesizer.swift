@@ -30,16 +30,19 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     var cancellable: AnyCancellable?
     var azureDelayTasks = [Task<(), any Error>]()
     var playMode: PlayMode = .all
-
+    
     @Published var currentWord: NSRange?
     @Published var isPlay: Bool = false
     @Published var showOfflineAlert: Bool = false
     var rangeOffset: Int = 0
     
+    var completionCallback: ((Double) -> ())? = nil
+    var startTimestamp: Date? = nil
+    
     var isActiveCashAudio: Bool{
         isAzureSpeech && savedAudio != nil
     }
-        
+    
     override init() {
         
         AVAudioSessionManager.share.setAudioSessionPlayback()
@@ -49,10 +52,10 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         super.init()
         
         synth.delegate = self
-    
+        
     }
     
-
+    
     //activate speek for test voices
     func activateSimple(_ text: String, id: String, type: VoiceMode){
         playMode = .setting
@@ -67,7 +70,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             synth.speak(utterance)
         }
     }
-            
+    
     func setSpeakForRange(_ text: String, _ range: NSRange, mode: PlayMode, completion: ((Double) -> ())?) {
         playMode = mode
         if isPlay{
@@ -86,10 +89,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
             synth.speak(utterance)
-            completion?(10)
+            
+            completionCallback = completion
         }
     }
-        
+    
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
@@ -122,7 +126,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
             }
         }
     }
-        
+    
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
         if !activeVoiceId.isEmpty{
             utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
@@ -143,7 +147,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
 
 
 enum SpeechRateEnum: Int, CaseIterable{
-
+    
     case min, slow, defaul, fast, veryFast, max
     
     var rateValue: Float{

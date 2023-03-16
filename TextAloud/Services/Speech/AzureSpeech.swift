@@ -58,7 +58,7 @@ class AzureSpeech{
     /// - Parameters:
     ///   - text: some String
     ///   - type: SpeakInputType text or ssml
-    func speak(_ text: String, type: SpeakInputType, completion: ((Double) -> ())?) {
+    func speak(_ text: String, type: SpeakInputType) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else {return}
             
@@ -70,7 +70,6 @@ class AzureSpeech{
                 result = try? self.synthesizer.speakSsml(text)
             }
             
-            completion?(result?.audioDuration ?? 0)
             
             if let result, result.reason == SPXResultReason.canceled
             {

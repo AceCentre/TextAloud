@@ -44,6 +44,7 @@ extension SettingViewModel{
     }
     
     func trackSecondsUsed(secondsUsed: Double) {
+        print("Tracking duration of", secondsUsed)
         self.timeUsedInSeconds += secondsUsed
     }
     
