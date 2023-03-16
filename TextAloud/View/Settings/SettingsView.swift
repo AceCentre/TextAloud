@@ -74,24 +74,24 @@ extension SettingsView{
 
 extension SettingsView {
     var timeUsedInMinutesLabel: String {
-        let timeUsedInMinutes = settingVM.timeUsedInSeconds / 60
-        if timeUsedInMinutes == 1 {
-            return "1 minute"
-        }
+        let measurment = Measurement(value: settingVM.timeUsedInSeconds.rounded(), unit: UnitDuration.seconds)
+        let formatter = MeasurementFormatter()
         
-        return String(timeUsedInMinutes) + " minutes"
+        formatter.unitStyle = .long
+        formatter.unitOptions = .naturalScale
+        
+        return formatter.string(from: measurment)
     }
     
     var timeLeftInMinutesLabel: String {
         let timeLeftInSeconds = settingVM.timeCapInSeconds - settingVM.timeUsedInSeconds
-        let timeLeftInMinutes = timeLeftInSeconds / 60
+        let measurment = Measurement(value: timeLeftInSeconds.rounded(), unit: UnitDuration.seconds)
+        let formatter = MeasurementFormatter()
         
-        if timeLeftInMinutes == 1 {
-            return "1 minute"
-        }
+        formatter.unitStyle = .long
+        formatter.unitOptions = .naturalScale
         
-        return String(timeLeftInMinutes) + " minutes"
-
+        return formatter.string(from: measurment)
     }
     
     private var voiceAllowanceView: some View {
