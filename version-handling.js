@@ -18,6 +18,8 @@ const getNewVersion = () => {
 module.exports = ({ github, context, core }) => {
   console.log({ github, context, core });
 
+  console.log(context.payload.commits);
+
   const projectFilePath = path.join(
     __dirname,
     "./TextAloud.xcodeproj/project.pbxproj"
