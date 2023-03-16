@@ -23,4 +23,4 @@ jobs:
         uses: EndBug/add-and-commit@v9.1.1
         with:
           add: "./TextAloud.xcodeproj/project.pbxproj"
-          message: "Release new version"
+          message: "[AUTO RELEASE]"
