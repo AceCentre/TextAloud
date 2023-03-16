@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const getNewVersion = () => {
+const getNewVersion = (currentVersion, commit) => {
   const [major, minor, patch] = currentVersion.split(".");
 
   if (commit.includes("[PATCH]")) {
@@ -16,9 +16,9 @@ const getNewVersion = () => {
 };
 
 module.exports = ({ github, context, core }) => {
-  console.log({ github, context, core });
+  const commit = context.payload.commits[0].message;
 
-  console.log(context.payload.commits);
+  console.log("Commit message:", commit);
 
   const projectFilePath = path.join(
     __dirname,
@@ -54,7 +54,7 @@ module.exports = ({ github, context, core }) => {
 
   console.log("Current version is: ", currentVersion);
 
-  const newVersion = getNewVersion();
+  const newVersion = getNewVersion(currentVersion, commit);
 
   if (newVersion === null) {
     console.log("You didn't ask for a new version");
