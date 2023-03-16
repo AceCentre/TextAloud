@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  GetCurrentVersion:
+  HandleVersionChange:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,3 +18,9 @@ jobs:
           script: |
             const script = require('./version-handling')
             script({github, context, core})
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          add: "./TextAloud.xcodeproj/project.pbxproj"
+          message: "Release new version"
