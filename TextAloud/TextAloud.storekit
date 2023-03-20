@@ -1,0 +1,35 @@
+{
+  "identifier" : "6DA1D1F6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6446371887",
+      "localizations" : [
+        {
+          "description" : "Use TextAloud for as long as you would like",
+          "displayName" : "Unlimited Voice Allowance",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "unlimited_voice_allowance",
+      "referenceName" : "Unlimited Voice Allowance",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6444098619",
+    "_developerTeamID" : "K45HHA96ND",
+    "_lastSynchronizedDate" : 700677661.08540201
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}
