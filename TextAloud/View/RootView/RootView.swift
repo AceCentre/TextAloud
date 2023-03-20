@@ -11,6 +11,7 @@ struct RootView: View {
     @StateObject var audioManager = AudioPlayerManager()
     @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
+    @StateObject var storeKitManager = StoreKitManager()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
     @State var showSetting: Bool = false
     @State var showFileImporter: Bool = false
@@ -56,7 +57,7 @@ struct RootView: View {
         }
         
         .sheet(isPresented: $showSetting){
-            SettingsView(speech: synthesizer, settingVM: settingsVM)
+            SettingsView(speech: synthesizer, settingVM: settingsVM, storeKitManager: storeKitManager)
         }
         .sheet(isPresented: $showLanguageSheet){
             NavigationView {
@@ -94,6 +95,30 @@ extension RootView{
     @ViewBuilder
     private var controlsSectionView: some View{
         CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+            
+            let overAllowance = settingsVM.allowanceLeft() <= 0
+            // let overAllowance = true
+            let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
+            
+            if overAllowance && !payingUser {
+                Task {
+                    do {
+                        let _ = try await storeKitManager.purchase(storeKitManager.unlimitedVoiceAllowance)
+                    } catch {
+                        print("Failed - cant buy \(error)")
+                    }
+                }
+                
+                print("You've hit the limit! And you've not paid, lets show a modal")
+                return
+            } else if overAllowance && payingUser {
+                print("You are over the limit, but you've paid so its all good")
+            } else if payingUser {
+                print("You've paid but you still have time left so its all good")
+            } else {
+                print("You haven't paid, but you still have time left, so its all good")
+            }
+            
             
             if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
                 audioManager.audioAction(audio)
