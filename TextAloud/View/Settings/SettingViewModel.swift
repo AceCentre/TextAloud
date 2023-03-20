@@ -43,6 +43,10 @@ extension SettingViewModel{
         voiceMode == .azure ? azureVoiceService.languages : aVoiceService.languages
     }
     
+    func allowanceLeft() -> Double {
+        return self.timeCapInSeconds - self.timeUsedInSeconds
+    }
+    
     func trackSecondsUsed(secondsUsed: Double) {
         print("Tracking duration of", secondsUsed)
         self.timeUsedInSeconds += secondsUsed
