@@ -56,6 +56,7 @@
 		5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */; };
 		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
 		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
+		D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */; };
 		D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
 		D5E1C20629C37EB600606B89 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1C20529C37EB600606B89 /* StoreKitManager.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
@@ -159,6 +160,7 @@
 		5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceListView.swift; sourceTree = "<group>"; };
 		5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
 		7E3226CDFD2DFA263261D90D /* Pods-TextAloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextAloud.debug.xcconfig"; path = "Target Support Files/Pods-TextAloud/Pods-TextAloud.debug.xcconfig"; sourceTree = "<group>"; };
+		D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
 		D5701FE929BA067200F45BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloud.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloud.storekit; path = TextAloud/TextAloud.storekit; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
+				D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */,
 				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
 				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
 				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
@@ -572,6 +575,7 @@
 				5A4CC757299F99FF00D8E146 /* .env.swift in Sources */,
 				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
 				5A1765B629B0A23B009CEA9E /* NetworkMonitorManager.swift in Sources */,
+				D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */,
 				5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */,
 				5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */,
 				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,

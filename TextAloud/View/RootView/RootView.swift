@@ -16,7 +16,9 @@ struct RootView: View {
     @State var showSetting: Bool = false
     @State var showFileImporter: Bool = false
     @State var showLanguageSheet: Bool = false
+    @State var showUpgradeModal: Bool = false
     var body: some View {
+      
         ZStack {
             VStack(spacing: 0){
                 customNavHeaderView
@@ -55,7 +57,14 @@ struct RootView: View {
             default: break
             }
         }
-        
+        .sheet(isPresented: $showUpgradeModal) {
+            InAppPurchaseSheet(onPurchaseClick: {
+                Task {
+                    let _ = try await storeKitManager.purchase(storeKitManager.unlimitedVoiceAllowance)
+                    showUpgradeModal = false
+                }
+            })
+        }
         .sheet(isPresented: $showSetting){
             SettingsView(speech: synthesizer, settingVM: settingsVM, storeKitManager: storeKitManager)
         }
@@ -101,13 +110,7 @@ extension RootView{
             let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
             
             if overAllowance && !payingUser {
-                Task {
-                    do {
-                        let _ = try await storeKitManager.purchase(storeKitManager.unlimitedVoiceAllowance)
-                    } catch {
-                        print("Failed - cant buy \(error)")
-                    }
-                }
+                showUpgradeModal = true
                 
                 print("You've hit the limit! And you've not paid, lets show a modal")
                 return
