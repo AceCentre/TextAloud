@@ -89,20 +89,15 @@ class StoreKitManager: ObservableObject {
         for await result in Transaction.currentEntitlements {
             do {
                 let transaction = try checkVerified(result)
-                
-                print("transaction")
-                
+                                
                 // Make sure to add everything to our list of purchasedProducts
                 if let product = storeProducts.first(where: { $0.id == transaction.productID}) {
                     purchasedProducts.append(product)
                 }
-                
-                print("Product")
-                
+                                
                 if let unwrappedVoiceAllowance = self.unlimitedVoiceAllowance {
                     
                     if transaction.productID == unwrappedVoiceAllowance.id {
-                        print("You have the unlimted voice allowance")
                         self.hasPurchasedUnlimitedVoiceAllowance = true
                     } else {
                         throw StoreError.invalidProductPurchased
@@ -111,7 +106,7 @@ class StoreKitManager: ObservableObject {
                     throw StoreError.checkingStatusBeforeProductsRetrieved
                 }
             } catch {
-                //storekit has a transaction that fails verification, don't delvier content to the user
+                // storekit has a transaction that fails verification, don't delvier content to the user
                 print("Transaction failed verification")
             }
         }
