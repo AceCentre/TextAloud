@@ -8,6 +8,7 @@
 
 import Foundation
 import StoreKit
+import SwiftUI
 
 class StoreKitManager: ObservableObject {
     @Published var storeProducts: [Product] = []
@@ -16,6 +17,9 @@ class StoreKitManager: ObservableObject {
     @Published var unlimitedVoiceAllowance: Product? = nil
     @Published var hasPurchasedUnlimitedVoiceAllowance: Bool? = nil
     
+    @Published var sayThankYou: Bool = false
+    @AppStorage("thankYouAcknowledged") var thankYouAcknowledged: Bool = false
+
     var updateListenerTask: Task<Void, Error>? = nil
     
     init() {
@@ -99,6 +103,11 @@ class StoreKitManager: ObservableObject {
                     
                     if transaction.productID == unwrappedVoiceAllowance.id {
                         self.hasPurchasedUnlimitedVoiceAllowance = true
+                        
+                        if !self.thankYouAcknowledged {
+                            self.sayThankYou = true
+                        }
+                      
                     } else {
                         throw StoreError.invalidProductPurchased
                     }
@@ -118,7 +127,7 @@ class StoreKitManager: ObservableObject {
         self.purchasedProducts = purchasedProducts
     }
     
-    func purchase(_ product: Product?) async throws -> Transaction? {
+    func purchase(_ product: Product?) async throws -> StoreKit.Transaction? {
         
         if let unwrappedProduct = product {
             let result = try await unwrappedProduct.purchase()
