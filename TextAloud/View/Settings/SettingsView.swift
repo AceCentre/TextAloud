@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsView: View {
     @ObservedObject var speech: SpeechSynthesizer
     @ObservedObject var settingVM: SettingViewModel
-    @ObservedObject var storeKitManager: StoreKitManager
     @Environment(\.dismiss) var dismiss
         
     var body: some View {
@@ -31,7 +30,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel(), storeKitManager: StoreKitManager())
+            SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
                 .environment(\.locale, .init(identifier: "en"))
 //          SettingsView(speech: SpeechSynthesizer(), settingVM: SettingViewModel())
 //                .environment(\.locale, .init(identifier: "fr"))
@@ -84,23 +83,7 @@ extension SettingsView {
         return formatter.string(from: measurment)
     }
     
-    var timeLeftInMinutesLabel: String {
-        
-        if storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true {
-            return "Unlimited"
-        }
-        
-        let timeLeftInSeconds = settingVM.timeCapInSeconds - settingVM.timeUsedInSeconds
-        let measurment = Measurement(value: timeLeftInSeconds.rounded(), unit: UnitDuration.seconds)
-        let formatter = MeasurementFormatter()
-        
-        formatter.unitStyle = .long
-        formatter.unitOptions = .naturalScale
-        
-        
-        
-        return formatter.string(from: measurment)
-    }
+    var timeLeftInMinutesLabel: String = "Unlimited"
     
     private var voiceAllowanceView: some View {
         Group{

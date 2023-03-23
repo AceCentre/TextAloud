@@ -11,7 +11,6 @@ struct RootView: View {
     @StateObject var audioManager = AudioPlayerManager()
     @StateObject var settingsVM = SettingViewModel()
     @StateObject var rootVM = RootViewModel()
-    @StateObject var storeKitManager = StoreKitManager()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
     @State var showSetting: Bool = false
     @State var showFileImporter: Bool = false
@@ -60,13 +59,13 @@ struct RootView: View {
         .sheet(isPresented: $showUpgradeModal) {
             InAppPurchaseSheet(onPurchaseClick: {
                 Task {
-                    let _ = try await storeKitManager.purchase(storeKitManager.unlimitedVoiceAllowance)
+                    // let _ = try await storeKitManager.purchase(storeKitManager.unlimitedVoiceAllowance)
                     showUpgradeModal = false
                 }
             })
         }
         .sheet(isPresented: $showSetting){
-            SettingsView(speech: synthesizer, settingVM: settingsVM, storeKitManager: storeKitManager)
+            SettingsView(speech: synthesizer, settingVM: settingsVM)
         }
         .sheet(isPresented: $showLanguageSheet){
             NavigationView {
@@ -107,7 +106,8 @@ extension RootView{
             
             let overAllowance = settingsVM.allowanceLeft() <= 0
             // let overAllowance = true
-            let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
+            // let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
+            let payingUser = true
             
             if overAllowance && !payingUser {
                 showUpgradeModal = true
