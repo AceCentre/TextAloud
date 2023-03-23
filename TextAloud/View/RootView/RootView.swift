@@ -75,6 +75,16 @@ struct RootView: View {
                     .environmentObject(settingsVM)
             }
         }
+        .sheet(isPresented: $storeKitManager.sayThankYou, onDismiss: {
+            storeKitManager.thankYouAcknowledged = true
+            print("Dismissed")
+        }) {
+            ThankYouSheet {
+                storeKitManager.sayThankYou = false
+                storeKitManager.thankYouAcknowledged = true
+                print("Closed")
+            }
+        }
         .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
         .alert(Localization.offlineAlertTitle.toString, isPresented: $synthesizer.showOfflineAlert, actions: offlineAlertButton, message: offlineAlertMessage)
@@ -105,8 +115,8 @@ extension RootView{
     private var controlsSectionView: some View{
         CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
             
-            let overAllowance = settingsVM.allowanceLeft() <= 0
-            // let overAllowance = true
+            // let overAllowance = settingsVM.allowanceLeft() <= 0
+            let overAllowance = true
             let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
             
             if overAllowance && !payingUser {
