@@ -115,8 +115,8 @@ extension RootView{
     private var controlsSectionView: some View{
         CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
             
-            // let overAllowance = settingsVM.allowanceLeft() <= 0
-            let overAllowance = true
+            let overAllowance = settingsVM.allowanceLeft() <= 0
+            // let overAllowance = true
             let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
             
             if overAllowance && !payingUser {
