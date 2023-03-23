@@ -17,10 +17,34 @@ jobs:
         with:
           script: |
             const script = require('./version-handling')
-            script({github, context, core})
+            script({ github, context, core })
 
       - name: Commit changes
+        id: commit_changes
         uses: EndBug/add-and-commit@v9.1.1
         with:
           add: "./TextAloud.xcodeproj/project.pbxproj"
           message: "[AUTO RELEASE]"
+
+      - name: Open pull request
+        if: ${{ steps.commit_changes.outputs.github.rest.pulls.create == 'true' }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { repo, owner } = context.repo;
+            const result = await github.rest.pulls.create({
+              title: 'Release new PRO version',
+              owner,
+              repo,
+              head: 'main',
+              base: 'TextAloudPro',
+              body: [
+                'Update PRO version of the app with the latest changes.',
+              ].join('\n')
+            });
+            github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: result.data.number,
+              labels: ['Release Pro', 'automated']
+            });
