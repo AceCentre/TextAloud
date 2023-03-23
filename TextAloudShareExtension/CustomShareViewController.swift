@@ -46,12 +46,12 @@ class CustomShareViewController: UIViewController {
 
     // 3: Define the actions for the navigation items
     @objc private func cancelAction () {
-        let error = NSError(domain: "uk.org.acecentre.TextAloud", code: 0, userInfo: [NSLocalizedDescriptionKey: "User Cancelled"])
+        let error = NSError(domain: "uk.org.acecentre.TextAloudPro", code: 0, userInfo: [NSLocalizedDescriptionKey: "User Cancelled"])
         extensionContext?.cancelRequest(withError: error)
     }
 
     @objc private func doneAction() {
-        let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
+        let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.AloudPro")
         def?.set(textView.text, forKey: "shareText")
         extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
     }
