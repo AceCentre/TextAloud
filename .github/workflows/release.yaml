@@ -27,7 +27,7 @@ jobs:
           message: "[AUTO RELEASE]"
 
       - name: Open pull request
-        if: ${{ steps.commit_changes.outputs.github.rest.pulls.create == 'true' }}
+        if: ${{ steps.commit_changes.outputs.committed == 'true' }}
         uses: actions/github-script@v6
         with:
           script: |
