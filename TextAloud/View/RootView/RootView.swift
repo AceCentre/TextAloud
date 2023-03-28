@@ -66,7 +66,10 @@ struct RootView: View {
             })
         }
         .sheet(isPresented: $showSetting){
-            SettingsView(speech: synthesizer, settingVM: settingsVM, storeKitManager: storeKitManager)
+            SettingsView(speech: synthesizer, settingVM: settingsVM, storeKitManager: storeKitManager, onPurchaseClick: {
+                showSetting = false
+                showUpgradeModal = true
+            })
         }
         .sheet(isPresented: $showLanguageSheet){
             NavigationView {
