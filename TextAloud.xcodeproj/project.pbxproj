@@ -57,6 +57,7 @@
 		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
 		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
 		D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */; };
+		D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4929D48475008D9251 /* ExceptionCatcher */; };
 		D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */; };
 		D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
 		D5E1C20629C37EB600606B89 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1C20529C37EB600606B89 /* StoreKitManager.swift */; };
@@ -191,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */,
+				D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */,
 				201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */,
 				5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
@@ -356,9 +358,17 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
+		D5695A4529D48269008D9251 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		FDF5C2E1290990F10003A675 = {
 			isa = PBXGroup;
 			children = (
+				D5695A4529D48269008D9251 /* Packages */,
 				D5E1C20429C37E1A00606B89 /* TextAloud.storekit */,
 				FDF5C2EC290990F10003A675 /* TextAloud */,
 				5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */,
@@ -469,6 +479,9 @@
 				5A155D7629B76A5D00E18A3B /* PBXTargetDependency */,
 			);
 			name = TextAloud;
+			packageProductDependencies = (
+				D5695A4929D48475008D9251 /* ExceptionCatcher */,
+			);
 			productName = ReadAloud;
 			productReference = FDF5C2EA290990F10003A675 /* TextAloud.app */;
 			productType = "com.apple.product-type.application";
@@ -504,6 +517,9 @@
 				"zh-HK",
 			);
 			mainGroup = FDF5C2E1290990F10003A675;
+			packageReferences = (
+				D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */,
+			);
 			productRefGroup = FDF5C2EB290990F10003A675 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -932,6 +948,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/ExceptionCatcher";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5695A4929D48475008D9251 /* ExceptionCatcher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */;
+			productName = ExceptionCatcher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FDF5C2E2290990F10003A675 /* Project object */;
 }

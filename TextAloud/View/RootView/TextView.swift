@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+import ExceptionCatcher
 
 
 struct TextView: UIViewRepresentable {
@@ -64,19 +65,30 @@ struct TextView: UIViewRepresentable {
 
         attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: attrStr.length))
 
-        if let currentWord{
-            attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWord)
-            if !isEditing{
-                uiView.scrollRangeToVisible(currentWord)
+        if let currentWordRange = currentWord {
+            if attrStr.mutableString.isRangeValid(range: currentWordRange) {
+                attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWordRange)
+               
+                if !isEditing{
+                    uiView.scrollRangeToVisible(currentWordRange)
+                }
             }
+            
+       
         }
         
-        if let selectedRange{
-            attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
+        if let selectedRange {
+            if attrStr.mutableString.isRangeValid(range: selectedRange) {
+                attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
+            }
+            
         }
         
         if let tappedRange, !isEditing{
-            attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: tappedRange)
+            if attrStr.mutableString.isRangeValid(range: tappedRange) {
+                attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: tappedRange)
+
+            }
         }
     
         uiView.attributedText = attrStr
@@ -160,5 +172,22 @@ extension String {
         let length = self.utf16.count
         let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
         return languageCode
+    }
+    
+
+}
+
+extension NSMutableString {
+    func isRangeValid(range: NSRange) -> Bool {
+        do {
+            try ExceptionCatcher.catch {
+                return self.substring(with: range)
+            }
+            print("Uncaught, true")
+            return true
+        } catch {
+            print("Caught, false")
+            return false
+        }
     }
 }
