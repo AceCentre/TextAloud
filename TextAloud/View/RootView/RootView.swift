@@ -18,19 +18,13 @@ struct RootView: View {
     @State var showLanguageSheet: Bool = false
     @State var showUpgradeModal: Bool = false
     var body: some View {
-      
+        
         ZStack {
             VStack(spacing: 0){
                 customNavHeaderView
                 speachTextViewComponet
-                Spacer()
-                if !rootVM.isFocused{
-                    controlsSectionView
-                }
-                Spacer()
             }
             .padding(.horizontal)
-            loaderView
         }
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
         .onChange(of: rootVM.tappedRange) { range in
@@ -100,14 +94,24 @@ struct RootView_Previews: PreviewProvider {
         Group{
             RootView()
                 .environment(\.locale, .init(identifier: "en"))
-            //            RootView()
-            //                .environment(\.locale, .init(identifier: "fr"))
-            //            RootView()
-            //                .environment(\.locale, .init(identifier: "zh_Hant_HK"))
-            //            RootView()
-            //                .environment(\.locale, .init(identifier: "de"))
-            //            RootView()
-            //                .environment(\.locale, .init(identifier: "es"))
+        }
+    }
+}
+
+extension RootView {
+    @ViewBuilder
+    private var globeLanguageSwitcher: some View {
+        if let voice = settingsVM.activeVoiceModel{
+            Button {
+                if settingsVM.selectedVoices.count == 2{
+                    settingsVM.toggleVoice()
+                }else{
+                    showLanguageSheet.toggle()
+                }
+                
+            } label: {
+                IconView(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
+            }
         }
     }
 }
@@ -147,42 +151,28 @@ extension RootView{
                 })
             }
         }
-        .hCenter()
-        .overlay {
-            HStack{
-                if let voice = settingsVM.activeVoiceModel{
-                    Button {
-                        if settingsVM.selectedVoices.count == 2{
-                            settingsVM.toggleVoice()
-                        }else{
-                            showLanguageSheet.toggle()
-                        }
-                        
-                    } label: {
-                        IconView(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
-                    }
+        
+    }
+    
+    @ViewBuilder
+    private var cacheView: some View {
+        if synthesizer.isActiveCashAudio && !rootVM.isFocused {
+            Menu {
+                Button(role: .destructive) {
+                    synthesizer.removeAudio()
+                } label: {
+                    Label("Remove", systemImage: "trash")
                 }
                 
-                Spacer()
-                if synthesizer.isActiveCashAudio{
-                    Menu {
-                        Button(role: .destructive) {
-                            synthesizer.removeAudio()
-                        } label: {
-                            Label("Remove", systemImage: "trash")
-                        }
-                        
-                        Button {
-                            if let audioUrl = synthesizer.savedAudio?.url{
-                                Helpers.showShareSheet(data: audioUrl)
-                            }
-                        } label: {
-                            Label("Share", systemImage: "arrowshape.turn.up.right.fill")
-                        }
-                    } label: {
-                        IconView(title: "Audio", icon: "waveform.circle.fill")
+                Button {
+                    if let audioUrl = synthesizer.savedAudio?.url{
+                        Helpers.showShareSheet(data: audioUrl)
                     }
+                } label: {
+                    Label("Share", systemImage: "arrowshape.turn.up.right.fill")
                 }
+            } label: {
+                IconView(title: "Audio", icon: "waveform.circle.fill")
             }
         }
     }
@@ -190,6 +180,16 @@ extension RootView{
     private var isPlay: Bool{
         (synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all) ?
         audioManager.isPlaying : synthesizer.isPlay
+    }
+    
+    @ViewBuilder
+    private var fullWidthSpacer: some View {
+        Spacer().frame(maxWidth: .infinity)
+    }
+    
+    @ViewBuilder
+    private var fullHeightSpacer: some View {
+        Spacer().frame(maxHeight: .infinity)
     }
     
     @ViewBuilder
@@ -214,7 +214,7 @@ extension RootView{
         if rootVM.isFocused{
             TextButtonView(title: Localization.cancel.toString, image: "xmark", isDisabled: false) {
                 rootVM.onCancelTapped()
-            }
+            }.hLeading()
         }
     }
     
@@ -234,7 +234,7 @@ extension RootView{
                 Text(rootVM.currentSelectionMode.locale)
                     .font(.title3.weight(.bold))
                     .foregroundColor(.limeChalk)
-                    .frame(width: 120, alignment: .leading)
+                    .frame(width: 120, alignment: .center)
             }
         }
     }
@@ -262,16 +262,40 @@ extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
             SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
-            
-            editButton
-                .hTrailing()
-                .overlay(alignment: .leading){
-                    cancelButton
-                    selectedMenuButton
+                .padding(.top, 32)
+                        
+            HStack {
+                HStack {
+                    VStack {
+                        if !rootVM.isFocused {
+                            selectedMenuButton
+                            globeLanguageSwitcher
+                        } else {
+                            cancelButton
+                        }
+                    }
+                    fullWidthSpacer
+                }.frame(maxWidth: .infinity)
+                
+                if !rootVM.isFocused {
+                    VStack{
+                        
+                        controlsSectionView.frame(maxWidth: .infinity)
+                        
+                    }
                 }
+                HStack {
+                        fullWidthSpacer
+                        VStack {
+                            editButton
+                            cacheView
+                        }
+                    
+                }.frame(maxWidth: .infinity)
+            }
+            
         }
-        .padding(.top, 32)
-        .padding(.bottom, 16)
+        
     }
 }
 
@@ -326,28 +350,6 @@ extension RootView{
             .font(.title)
         }
     }
-}
-
-extension RootView{
-    
-    @ViewBuilder
-    private var loaderView: some View{
-        if rootVM.showLoader{
-            ZStack{
-                Color.deepOcean.opacity(0.1).ignoresSafeArea()
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color.white)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: .black.opacity(0.1), radius: 5)
-                    ProgressView()
-                        .scaleEffect(1.5)
-                        .tint(.deepOcean)
-                }
-            }
-        }
-    }
-    
 }
 
 //MARK: - Offline alert
