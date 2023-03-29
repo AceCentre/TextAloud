@@ -11,7 +11,6 @@ import UIKit
 
 
 struct TextView: UIViewRepresentable {
-    
     @Binding var focused: Bool
     @Binding var text: String
     @Binding var isEditing: Bool
@@ -19,6 +18,8 @@ struct TextView: UIViewRepresentable {
     @Binding var selectedRange: NSRange?
     @Binding var tappedRange: NSRange?
     @Binding var selectionMode: SelectionEnum
+    @Binding var cursorPos: Int?
+
     @AppStorage("fontSize") var fontSize: Int = 25
     @AppStorage("selectedColor") var selectedColor: Color = Color(UIColor(red: 0.96, green: 0.9, blue: 0.258, alpha: 0.4))
     @AppStorage("readingColor") var readingColor: Color = Color.red
@@ -56,20 +57,21 @@ struct TextView: UIViewRepresentable {
         return textView
     }
     func updateUIView(_ uiView: UITextView, context: Context) {
-        
+        let cursorPos = uiView.selectedRange
+
         let attrStr = NSMutableAttributedString(string: text)
         attrStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .heavy), range: NSRange(location: 0, length: attrStr.length))
 
         attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: NSRange(location: 0, length: attrStr.length))
 
-        if let currentWord, !isEditing{
+        if let currentWord{
             attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(readingColor), range: currentWord)
             if !isEditing{
                 uiView.scrollRangeToVisible(currentWord)
             }
         }
         
-        if let selectedRange, !isEditing{
+        if let selectedRange{
             attrStr.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor(selectedColor), range: selectedRange)
         }
         
@@ -78,6 +80,8 @@ struct TextView: UIViewRepresentable {
         }
     
         uiView.attributedText = attrStr
+        
+        uiView.selectedRange = cursorPos
         
         onEdit(uiView)
     }
@@ -108,6 +112,12 @@ struct TextView: UIViewRepresentable {
         func textViewDidBeginEditing(_ textView: UITextView) {
             DispatchQueue.main.async {
                 self.parent.focused = true
+            }
+        }
+        
+        func textViewDidChangeSelection(_ textView: UITextView) {
+            DispatchQueue.main.async {
+                self.parent.cursorPos = textView.selectedRange.location
             }
         }
 
