@@ -12,9 +12,10 @@ struct TextButtonView: View {
     var isDisabled: Bool = false
     let action: () -> Void
     var body: some View {
-        Button {
+        Button(action:  {
             action()
-        } label: {
+        },
+               label: {
             HStack {
                 if let image{
                     Image(systemName: image)
@@ -24,8 +25,10 @@ struct TextButtonView: View {
             .font(.title3.weight(.bold))
             .foregroundColor(.limeChalk)
             .opacity(isDisabled ? 0.5 : 1)
-        }
+        })
         .disabled(isDisabled)
+        .scaledToFill()
+        
     }
 }
 
