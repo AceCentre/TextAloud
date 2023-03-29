@@ -18,6 +18,7 @@ class RootViewModel: ObservableObject{
     @Published var tappedRange: NSRange?
     @Published var error: AppError?
     @Published var showLoader: Bool = false
+    @Published var cursorPos: Int?
     private var cancellable = Set<AnyCancellable>()
     private let ncPublisher = NotificationCenter.default
         .publisher(for: NSNotification.OnStopSpeech)
