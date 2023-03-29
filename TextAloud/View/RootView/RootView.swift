@@ -142,9 +142,15 @@ extension RootView{
             
             if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
                 audioManager.audioAction(audio)
-            }else{
+            } else {
                 let location = synthesizer.currentWord?.nextLocation ?? 3
-                let range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
+
+                var range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
+                
+                if let cursorPos = rootVM.cursorPos, rootVM.isEditMode {
+                    range = rootVM.setSelectedRangeForMode(with: cursorPos < rootVM.text.length ? cursorPos : rootVM.text.length - 1)
+                }
+                
                 
                 synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode, completion: { duration in
                     settingsVM.trackSecondsUsed(secondsUsed: duration)
@@ -277,13 +283,8 @@ extension RootView{
                     fullWidthSpacer
                 }.frame(maxWidth: .infinity)
                 
-                if !rootVM.isFocused {
-                    VStack{
-                        
-                        controlsSectionView.frame(maxWidth: .infinity)
-                        
-                    }
-                }
+                controlsSectionView.frame(maxWidth: .infinity)
+                
                 HStack {
                         fullWidthSpacer
                         VStack {
@@ -294,7 +295,7 @@ extension RootView{
                 }.frame(maxWidth: .infinity)
             }
             
-        }
+        }.padding(.bottom)
         
     }
 }
