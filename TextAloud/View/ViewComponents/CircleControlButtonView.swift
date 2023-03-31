@@ -30,7 +30,7 @@ struct CircleControlButtonView: View {
                 }
                 .opacity(isDisabled ? 0.7 : 1)
         }
-        .keyboardShortcut(isPlay ? .escape : .space)
+        .keyboardShortcut(isPlay ? .escape : .return)
         .disabled(isDisabled)
     }
 }
