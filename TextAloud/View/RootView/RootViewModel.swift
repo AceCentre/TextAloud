@@ -7,6 +7,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import PDFKit
 
 class RootViewModel: ObservableObject{
     @Published var text: String = "Example text, press the plus button to add your own document."
@@ -117,20 +118,73 @@ extension RootViewModel{
         case .success(let success):
             if let url = success.first, url.startAccessingSecurityScopedResource(){
                 
-                if let type = FileType(rawValue: url.pathExtension){
+                if let type = FileType(rawValue: url.pathExtension) {
                     
-                    DispatchQueue.global(qos: .userInitiated).async{
-                        if let text = type.getText(for: url){
-                            DispatchQueue.main.async {
-                                url.stopAccessingSecurityScopedResource()
-                                self.text = text
-                                self.showLoader = false
-                                self.setDefaultRangeForMode()
-                                if text.isEmpty{
-                                    self.error = .messageError("Failed to upload, try again")
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        
+                        if type == .pdf {
+                            print("Trying PDF Type")
+                            
+                            if let pdf = PDFDocument(url: url) {
+                                let pageCount = pdf.pageCount
+                                let documentContent = NSMutableAttributedString()
+
+                                for i in 0 ..< pageCount {
+                                    guard let page = pdf.page(at: i) else { continue }
+                                    guard let pageContent = page.attributedString else { continue }
+                                    documentContent.append(pageContent)
+                                }
+                                
+                                let text = String(documentContent.mutableString)
+                                
+                                DispatchQueue.main.async {
+                                    url.stopAccessingSecurityScopedResource()
+                                    self.text = text
+                                    self.showLoader = false
+                                    self.setDefaultRangeForMode()
+                                    if text.isEmpty{
+                                        self.error = .messageError("Failed to upload, try again")
+                                    }
+                                }
+                                
+                                
+                            }
+
+                            
+                        } else if type == .docx {
+
+                            if let text = Helpers.docxToText(for: url) {
+                                DispatchQueue.main.async {
+                                    url.stopAccessingSecurityScopedResource()
+                                    self.text = text
+                                    self.showLoader = false
+                                    self.setDefaultRangeForMode()
+
+                                    if text.isEmpty{
+                                        self.error = .messageError("Failed to upload, try again")
+                                    }
+                                }                            
+                            
+                            }
+
+                        } else {
+                            
+                            if let text = type.getText(for: url){
+                                DispatchQueue.main.async {
+                                    url.stopAccessingSecurityScopedResource()
+                                    self.text = text
+                                    self.showLoader = false
+                                    self.setDefaultRangeForMode()
+                                    
+                                    if text.isEmpty{
+                                        self.error = .messageError("Failed to upload, try again")
+                                    }
                                 }
                             }
                         }
+                        
+                        
+                    
                     }
                 }else{
                     self.showLoader = false
