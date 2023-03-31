@@ -33,8 +33,8 @@ enum SelectionEnum: Int, CaseIterable{
         }
     }
     
-    var keyboardShortcutValue: KeyEquivalent{
-        .init(Character(String(self.rawValue)))
+    var keyboardShortcutValue: KeyEquivalent {
+        return KeyEquivalent(Character(String(self.rawValue)))
     }
     
     var playMode: PlayMode{
