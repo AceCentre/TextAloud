@@ -58,6 +58,7 @@
 		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
 		D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */; };
 		D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4929D48475008D9251 /* ExceptionCatcher */; };
+		D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */; };
 		D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */; };
 		D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
 		D5E1C20629C37EB600606B89 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1C20529C37EB600606B89 /* StoreKitManager.swift */; };
@@ -193,6 +194,7 @@
 			files = (
 				D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */,
 				D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */,
+				D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */,
 				201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */,
 				5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
@@ -481,6 +483,7 @@
 			name = TextAloud;
 			packageProductDependencies = (
 				D5695A4929D48475008D9251 /* ExceptionCatcher */,
+				D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */,
 			);
 			productName = ReadAloud;
 			productReference = FDF5C2EA290990F10003A675 /* TextAloud.app */;
@@ -519,6 +522,7 @@
 			mainGroup = FDF5C2E1290990F10003A675;
 			packageReferences = (
 				D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */,
+				D5695A4B29D6FD9F008D9251 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = FDF5C2EB290990F10003A675 /* Products */;
 			projectDirPath = "";
@@ -958,6 +962,14 @@
 				kind = branch;
 			};
 		};
+		D5695A4B29D6FD9F008D9251 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -965,6 +977,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */;
 			productName = ExceptionCatcher;
+		};
+		D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5695A4B29D6FD9F008D9251 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
+
 
 struct SettingsLink<Content: View>: View {
     var label: String
@@ -25,8 +27,6 @@ struct SettingsLink<Content: View>: View {
                 }
             } } else {
                 
-                
-                
                 NavigationLink {
                     content
                 } label: {
@@ -35,6 +35,36 @@ struct SettingsLink<Content: View>: View {
                     Spacer()
                     Image(systemName: "chevron.right")
                 }}
+    }
+}
+
+struct YoutubeVideo: View {
+    var title: String
+    var description: String
+    var videoURL: String
+    
+    var body: some View {
+        Section{
+            
+            
+            VStack(alignment: .leading) {
+                Text(title).font(.title)
+                Text(description).font(.caption)
+                GeometryReader { reader in
+                    
+                    YouTubePlayerView(
+                        YouTubePlayer(
+                            source: YouTubePlayer.Source.url(videoURL),
+                            configuration: .init(useModestBranding:true)
+                        ),
+                        placeholderOverlay: {
+                            ProgressView()
+                        }
+                    )
+                    .frame(width: reader.size.width, height: reader.size.width / 16 * 9)
+                }.aspectRatio(CGSize(width: 16, height: 9), contentMode: .fit)
+            }.padding(.vertical)
+        }
     }
 }
 
@@ -93,12 +123,18 @@ extension SettingsView{
                         SettingsLink(label: "Text Display Customisation") {
                             customizationGroupView
                         }
+                        Divider().padding(.vertical, 4)
+
+                        SettingsLink(label: "Help Videos") {
+                            videosList
+                        }
                     }
                 }
                 Spacer().padding(.vertical, 2)
                 
                 Group {
                     GroupBox {
+                        
                         SettingsLink(label:"Documentation", pageLink: "https://docs.acecentre.org.uk/products/v/textaloud/") {}
                         Divider().padding(.vertical, 4)
                         SettingsLink(label:"Find out more about Ace Centre", pageLink: "https://acecentre.org.uk") {}
@@ -165,6 +201,42 @@ extension SettingsView {
         
         
         return formatter.string(from: measurment)
+    }
+    
+    private var videosList: some View {
+        List {
+            
+            
+            YoutubeVideo(
+                title: "App Tour",
+                description: "A tour of all the features in TextAloud",
+                videoURL: "https://www.youtube.com/watch?v=692w57FaGgQ"
+            )
+            YoutubeVideo(
+                title: "Switching Voices",
+                description: "How to switch voices and languages",
+                videoURL: "https://www.youtube.com/watch?v=pVjykJ9PEOE"
+            )
+            YoutubeVideo(
+                title: "Importing Files",
+                description: "How to import documents into text aloud",
+                videoURL: "https://www.youtube.com/watch?v=t9-YGbD2fmE"
+            )
+            YoutubeVideo(
+                title: "Keyboard Access",
+                description: "How to use TextAloud with a keyboard",
+                videoURL: "https://www.youtube.com/watch?v=hMKcAZVX_K0"
+            )
+            YoutubeVideo(
+                title: "Switch Access",
+                description: "How to use TextAloud with a switch",
+                videoURL: "https://www.youtube.com/watch?v=D8jP3dbSxK4"
+            )
+        }
+        
+        .listStyle(InsetGroupedListStyle())
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle("Help Videos")
     }
     
     private var voiceAllowanceView: some View {
@@ -275,7 +347,7 @@ extension SettingsView{
         }
         .padding(.horizontal)
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Text Display Customisation")
+        .navigationTitle("Text Customisation")
         
         
     }
