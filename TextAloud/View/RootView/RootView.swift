@@ -25,6 +25,7 @@ struct RootView: View {
                 speachTextViewComponet
             }
             .padding(.horizontal)
+            loaderView
         }
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
         .onChange(of: rootVM.tappedRange) { range in
@@ -96,6 +97,29 @@ struct RootView_Previews: PreviewProvider {
                 .environment(\.locale, .init(identifier: "en"))
         }
     }
+}
+
+
+extension RootView{
+
+    @ViewBuilder
+    private var loaderView: some View{
+        if rootVM.showLoader{
+            ZStack{
+                Color.deepOcean.opacity(0.1).ignoresSafeArea()
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.white)
+                        .frame(width: 100, height: 100)
+                        .shadow(color: .black.opacity(0.1), radius: 5)
+                    ProgressView()
+                        .scaleEffect(1.5)
+                        .tint(.deepOcean)
+                }
+            }
+        }
+    }
+
 }
 
 extension RootView {
@@ -288,7 +312,7 @@ extension RootView{
                 HStack {
                         fullWidthSpacer
                         VStack {
-                            editButton
+                            editButton.padding(.bottom, synthesizer.isActiveCashAudio || rootVM.isFocused ? 0 : 80)
                             cacheView
                         }
                     
