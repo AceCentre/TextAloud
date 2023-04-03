@@ -16,7 +16,7 @@ class SettingViewModel: ObservableObject{
     @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     
     @AppStorage("timeUsedInSeconds") var timeUsedInSeconds: Double = 0
-    @Published var timeCapInSeconds: Double = 60 * 120 // 2 Hours
+    @Published var timeCapInSeconds: Double = 60 * 30 // 30 Mins
     
     @Published var showVoicePicker: Bool = false
 
