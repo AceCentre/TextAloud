@@ -232,6 +232,11 @@ extension SettingsView {
                 description: "How to use TextAloud with a switch",
                 videoURL: "https://www.youtube.com/watch?v=D8jP3dbSxK4"
             )
+            YoutubeVideo(
+                title: "Unlimited Time Usage",
+                description: "How to use purchase unlimited usage of TextAloud",
+                videoURL: "https://www.youtube.com/watch?v=ncxU0ZOoKXw"
+            )
         }
         
         .listStyle(InsetGroupedListStyle())
