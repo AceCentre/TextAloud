@@ -38,8 +38,7 @@ struct InAppPurchaseSheet: View {
             (
                 Text("If your organisation does not support purchasing 'In-App Purchases' then you can ")
                 +
-                // TODO: Link needs updating so it actually points to the pro version
-                Text("[click here to buy the Pro version of TextAloud](https://acecentre.org.uk)")
+                Text("[click here to buy the Pro version of TextAloud](https://apps.apple.com/gb/app/textaloud-pro-text-to-speech/id6446679219)")
                     .underline()
                 +
                 Text(" on the App Store which includes unlimited time.")
