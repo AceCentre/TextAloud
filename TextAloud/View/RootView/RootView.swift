@@ -86,6 +86,29 @@ struct RootView: View {
         .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
         .alert(Localization.offlineAlertTitle.toString, isPresented: $synthesizer.showOfflineAlert, actions: offlineAlertButton, message: offlineAlertMessage)
+        .onOpenURL { url in
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            
+            if let unwrappedHost = url.host {
+                if unwrappedHost == "insertText" {
+                    let text = components?.queryItems?.filter({ $0.name == "text" }).first
+                    
+                    if let unwrappeQuery = text, let unwrappedText = unwrappeQuery.value {
+                        rootVM.text = unwrappedText
+                        
+                        if let decoded = Data(base64Encoded: unwrappedText) {
+                            rootVM.text = String(data: decoded, encoding: .utf8) ?? "Error sharing text"
+                        }
+                    }
+                } else {
+                    print("You called an unsupported host")
+                }
+            } else {
+                print("Couldn't unwrap host")
+            }
+            
+          
+        }
     }
 }
 

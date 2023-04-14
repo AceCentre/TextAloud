@@ -14,7 +14,6 @@
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */; };
 		5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */; };
 		5A1765B629B0A23B009CEA9E /* NetworkMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */; };
 		5A1765BA29B21245009CEA9E /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1765B929B21245009CEA9E /* NotificationName.swift */; };
 		5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E176629A755AD009BB492 /* VoiceSaveService.swift */; };
@@ -121,7 +120,6 @@
 		5A155D7429B76A5D00E18A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A155D7C29B76C5900E18A3B /* TextAloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloud.entitlements; sourceTree = "<group>"; };
 		5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudShareExtension.entitlements; sourceTree = "<group>"; };
-		5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShareViewController.swift; sourceTree = "<group>"; };
 		5A1765B529B0A23B009CEA9E /* NetworkMonitorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitorManager.swift; sourceTree = "<group>"; };
 		5A1765B929B21245009CEA9E /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		5A1E176629A755AD009BB492 /* VoiceSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */ = {
 			isa = PBXGroup;
 			children = (
-				5A155D7E29B778E300E18A3B /* CustomShareViewController.swift */,
 				5A155D7D29B76CC000E18A3B /* TextAloudShareExtension.entitlements */,
 				5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */,
 				5A155D7429B76A5D00E18A3B /* Info.plist */,
@@ -585,7 +582,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */,
-				5A155D7F29B778E300E18A3B /* CustomShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
