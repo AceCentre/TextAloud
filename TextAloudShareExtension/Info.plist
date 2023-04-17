@@ -15,7 +15,7 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.share-services</string>
 		<key>NSExtensionPrincipalClass</key>
-		<string>TextAloudShareExtension.ShareViewController</string>
+		<string>TextAloudShareExtension.ShareNavigationController</string>
 	</dict>
 </dict>
 </plist>
