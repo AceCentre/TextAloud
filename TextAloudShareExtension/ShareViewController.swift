@@ -7,8 +7,15 @@ import UIKit
 import Social
 import CoreServices
 import UniformTypeIdentifiers
+import Foundation
 import SwiftUI
+import Combine
 import TextAloudKit
+import PDFKit
+
+enum FileType: String{
+    case rtf, pdf, docx, txt
+}
 
 class ShareNavigationController: UINavigationController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -50,29 +57,100 @@ class ShareViewController: UIViewController {
         ])
     }
     
+    /**
+     TODO: This has a bunch of repetitive code that should be moved into a framework and reused
+    */
+    func getTextFromItem(item: NSSecureCoding?) -> String {
+        if let text = item as? String {
+            return text
+        } else if let url = item as? NSURL {
+            print("THIS IS A URL")
+            
+             url.startAccessingSecurityScopedResource()
+                
+            guard let pathExtention = url.pathExtension else { return "Cannot read file. E01" }
+            
+            if let type = FileType(rawValue: pathExtention) {
+                if type == .pdf {
+                    print("Trying PDF Type")
+                    
+                    if let pdf = PDFDocument(url: url as URL) {
+                        let pageCount = pdf.pageCount
+                        let documentContent = NSMutableAttributedString()
+                        
+                        for i in 0 ..< pageCount {
+                            guard let page = pdf.page(at: i) else { continue }
+                            guard let pageContent = page.attributedString else { continue }
+                            documentContent.append(pageContent)
+                        }
+                        
+                        let text = String(documentContent.mutableString)
+                        
+                        return text
+                    }
+                } else if type == .txt {
+                    guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url as URL, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.plain], documentAttributes: nil) else { return "Unsupported File" }
+                    return attributedStringWithPlain.string
+                } else if type == .rtf {
+                    guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url as URL, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) else { return "Unsupported File" }
+                    return attributedStringWithPlain.string
+                } else {
+                    return "Unsupported file type."
+                }
+            }
+            
+            
+        }
+        
+        
+        return "This text cannot be processed by TextAloud"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let context = extensionContext else { return }
+        print("APPEARED")
+        
+        guard let context = extensionContext else {
+            print("No context")
+            return
+        }
         let items = context.inputItems
-        guard let extensionItem = items[0] as? NSExtensionItem else { return }
-        guard let provider = extensionItem.attachments?.first else { return }
-        guard provider.hasItemConformingToTypeIdentifier(self.desiredType) else { return }
+        guard let extensionItem = items[0] as? NSExtensionItem else {
+        
+            print("No itmes")
+            return
+            
+        }
+        guard let provider = extensionItem.attachments?.first else {
+            print("No provider")
+            return
+            
+        }
+        guard provider.hasItemConformingToTypeIdentifier(self.desiredType) else {
+            print("Not type")
+            return
+            
+        }
+        
+        print("GOT THIS FAR")
         
         provider.loadItem(forTypeIdentifier: self.desiredType) {(item, error) in
+            print("ITEM LOADED")
+            
             if let error = error {
                 print("Text-Error: \(error.localizedDescription)")
             }
             
-            if let text = item as? String {
-                let base64EncodedText = Data(text.utf8).base64EncodedString()
-                self.appURLString = "textaloud://insertText?text=" + base64EncodedText
-                
-                let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
-                def?.set(text, forKey: "shareText")
-                
-                self.openMainApp()
-            }
+            let result = self.getTextFromItem(item: item)
+            let base64EncodedText = Data(result.utf8).base64EncodedString()
+            self.appURLString = "textaloud://insertText?text=" + base64EncodedText
+            
+            let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
+            def?.set(result, forKey: "shareText")
+            
+            self.openMainApp()
+
         }
     }
     
