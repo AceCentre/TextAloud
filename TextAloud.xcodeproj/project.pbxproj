@@ -56,7 +56,8 @@
 		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
 		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
 		D541E2F929ED568E00B56D30 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D541E2EC29ED559100B56D30 /* TextAloudKit.framework */; platformFilter = ios; };
-		D541E2FA29ED568E00B56D30 /* TextAloudKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D541E2EC29ED559100B56D30 /* TextAloudKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55B777429ED66110066E553 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D541E2EC29ED559100B56D30 /* TextAloudKit.framework */; };
+		D55B777529ED66110066E553 /* TextAloudKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D541E2EC29ED559100B56D30 /* TextAloudKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */; };
 		D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4929D48475008D9251 /* ExceptionCatcher */; };
 		D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */; };
@@ -114,18 +115,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D55B777529ED66110066E553 /* TextAloudKit.framework in Embed Frameworks */,
 				5A6F8DE3299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D541E2FB29ED568E00B56D30 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D541E2FA29ED568E00B56D30 /* TextAloudKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +217,7 @@
 				D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */,
 				D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */,
 				201AB9A28F44CCC6429AFD36 /* libPods-TextAloud.a in Frameworks */,
+				D55B777429ED66110066E553 /* TextAloudKit.framework in Frameworks */,
 				5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +511,6 @@
 				5A155D6929B76A5D00E18A3B /* Sources */,
 				5A155D6A29B76A5D00E18A3B /* Frameworks */,
 				5A155D6B29B76A5D00E18A3B /* Resources */,
-				D541E2FB29ED568E00B56D30 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
