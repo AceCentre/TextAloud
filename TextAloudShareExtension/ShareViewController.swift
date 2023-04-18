@@ -41,7 +41,7 @@ class ShareViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray6
         
-        let child = UIHostingController(rootView: Loading())
+        let child = UIHostingController(rootView: ShareLoadingPage())
         
         child.view.translatesAutoresizingMaskIntoConstraints = false
         child.view.frame = self.view.bounds

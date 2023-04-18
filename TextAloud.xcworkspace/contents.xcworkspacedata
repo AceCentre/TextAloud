@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:TextAloudKit/TextAloudKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:TextAloud.xcodeproj">
