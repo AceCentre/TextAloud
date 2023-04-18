@@ -6,7 +6,6 @@
 
 import Foundation
 import PDFKit
-import SNDocx
 
 final class Helpers{
     static func getAllTextRange(_ location: Int, _ text: String) -> NSRange{
@@ -56,10 +55,6 @@ final class Helpers{
        }
        return docContent.string
    }
-    
-    static func docxToText(for url: URL) -> String?{
-        return SNDocx.shared.getText(fileUrl: url)?.withoutTags
-    }
     
     static func plainToText(for url: URL) -> String?{
         guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.plain], documentAttributes: nil) else { return nil}
