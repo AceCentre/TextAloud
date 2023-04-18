@@ -151,22 +151,6 @@ extension RootViewModel{
                             }
 
                             
-                        } else if type == .docx {
-
-                            if let text = Helpers.docxToText(for: url) {
-                                DispatchQueue.main.async {
-                                    url.stopAccessingSecurityScopedResource()
-                                    self.text = text
-                                    self.showLoader = false
-                                    self.setDefaultRangeForMode()
-
-                                    if text.isEmpty{
-                                        self.error = .messageError("Failed to upload, try again")
-                                    }
-                                }                            
-                            
-                            }
-
                         } else {
                             
                             if let text = type.getText(for: url){
@@ -203,13 +187,12 @@ extension RootViewModel{
 extension RootViewModel{
     
     enum FileType: String{
-        case rtf, pdf, docx, txt
+        case rtf, pdf, txt
         
         func getText(for url: URL) -> String?{
             switch self {
             case .rtf: return Helpers.rtfToText(for: url)
             case .pdf: return Helpers.pdfToText(for: url)
-            case .docx: return Helpers.docxToText(for: url)
             case .txt: return Helpers.plainToText(for: url)
             }
         }
