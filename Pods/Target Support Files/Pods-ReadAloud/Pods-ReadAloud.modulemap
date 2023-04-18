@@ -1,6 +1,0 @@
-module Pods_TextAloud {
-  umbrella header "Pods-TextAloud-umbrella.h"
-
-  export *
-  module * { export * }
-}
