@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D541E2E129ED559000B56D30 /* TextAloudKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D541E2E029ED559000B56D30 /* TextAloudKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D541E2EE29ED55F600B56D30 /* ShareLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D541E2ED29ED55F600B56D30 /* ShareLoading.swift */; };
-		D541E2FE29ED5DD300B56D30 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D541E2FD29ED5DD300B56D30 /* Media.xcassets */; };
+		D531FD9C29ED9FA7008AA92F /* TextAloudKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D531FD9B29ED9FA7008AA92F /* TextAloudKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5EF7F6229EDA27600F9993E /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF7F6129EDA27600F9993E /* ImageExtension.swift */; };
+		D5EF7F6429EDA58A00F9993E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5EF7F6329EDA58A00F9993E /* Assets.xcassets */; };
+		D5EF7F6729EDA69A00F9993E /* LoadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EF7F6629EDA69A00F9993E /* LoadingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D541E2DD29ED559000B56D30 /* TextAloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextAloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D541E2E029ED559000B56D30 /* TextAloudKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextAloudKit.h; sourceTree = "<group>"; };
-		D541E2ED29ED55F600B56D30 /* ShareLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLoading.swift; sourceTree = "<group>"; };
-		D541E2FD29ED5DD300B56D30 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D531FD9829ED9FA7008AA92F /* TextAloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextAloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D531FD9B29ED9FA7008AA92F /* TextAloudKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextAloudKit.h; sourceTree = "<group>"; };
+		D5EF7F6129EDA27600F9993E /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		D5EF7F6329EDA58A00F9993E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5EF7F6629EDA69A00F9993E /* LoadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D541E2DA29ED559000B56D30 /* Frameworks */ = {
+		D531FD9529ED9FA7008AA92F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -30,54 +32,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D541E2D329ED559000B56D30 = {
+		D531FD8E29ED9FA7008AA92F = {
 			isa = PBXGroup;
 			children = (
-				D541E2DF29ED559000B56D30 /* TextAloudKit */,
-				D541E2DE29ED559000B56D30 /* Products */,
+				D531FD9A29ED9FA7008AA92F /* TextAloudKit */,
+				D531FD9929ED9FA7008AA92F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D541E2DE29ED559000B56D30 /* Products */ = {
+		D531FD9929ED9FA7008AA92F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D541E2DD29ED559000B56D30 /* TextAloudKit.framework */,
+				D531FD9829ED9FA7008AA92F /* TextAloudKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D541E2DF29ED559000B56D30 /* TextAloudKit */ = {
+		D531FD9A29ED9FA7008AA92F /* TextAloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				D541E2E029ED559000B56D30 /* TextAloudKit.h */,
-				D541E2ED29ED55F600B56D30 /* ShareLoading.swift */,
-				D541E2FD29ED5DD300B56D30 /* Media.xcassets */,
+				D531FD9B29ED9FA7008AA92F /* TextAloudKit.h */,
+				D5EF7F6529EDA66800F9993E /* Components */,
+				D5EF7F6029EDA25F00F9993E /* Utils */,
+				D5EF7F6329EDA58A00F9993E /* Assets.xcassets */,
 			);
 			path = TextAloudKit;
+			sourceTree = "<group>";
+		};
+		D5EF7F6029EDA25F00F9993E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF7F6129EDA27600F9993E /* ImageExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D5EF7F6529EDA66800F9993E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D5EF7F6629EDA69A00F9993E /* LoadingPage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D541E2D829ED559000B56D30 /* Headers */ = {
+		D531FD9329ED9FA7008AA92F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D541E2E129ED559000B56D30 /* TextAloudKit.h in Headers */,
+				D531FD9C29ED9FA7008AA92F /* TextAloudKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D541E2DC29ED559000B56D30 /* TextAloudKit */ = {
+		D531FD9729ED9FA7008AA92F /* TextAloudKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D541E2E429ED559000B56D30 /* Build configuration list for PBXNativeTarget "TextAloudKit" */;
+			buildConfigurationList = D531FD9F29ED9FA7008AA92F /* Build configuration list for PBXNativeTarget "TextAloudKit" */;
 			buildPhases = (
-				D541E2D829ED559000B56D30 /* Headers */,
-				D541E2D929ED559000B56D30 /* Sources */,
-				D541E2DA29ED559000B56D30 /* Frameworks */,
-				D541E2DB29ED559000B56D30 /* Resources */,
+				D531FD9329ED9FA7008AA92F /* Headers */,
+				D531FD9429ED9FA7008AA92F /* Sources */,
+				D531FD9529ED9FA7008AA92F /* Frameworks */,
+				D531FD9629ED9FA7008AA92F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -85,25 +104,25 @@
 			);
 			name = TextAloudKit;
 			productName = TextAloudKit;
-			productReference = D541E2DD29ED559000B56D30 /* TextAloudKit.framework */;
+			productReference = D531FD9829ED9FA7008AA92F /* TextAloudKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D541E2D429ED559000B56D30 /* Project object */ = {
+		D531FD8F29ED9FA7008AA92F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					D541E2DC29ED559000B56D30 = {
+					D531FD9729ED9FA7008AA92F = {
 						CreatedOnToolsVersion = 14.3;
 						LastSwiftMigration = 1430;
 					};
 				};
 			};
-			buildConfigurationList = D541E2D729ED559000B56D30 /* Build configuration list for PBXProject "TextAloudKit" */;
+			buildConfigurationList = D531FD9229ED9FA7008AA92F /* Build configuration list for PBXProject "TextAloudKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,40 +130,41 @@
 				en,
 				Base,
 			);
-			mainGroup = D541E2D329ED559000B56D30;
-			productRefGroup = D541E2DE29ED559000B56D30 /* Products */;
+			mainGroup = D531FD8E29ED9FA7008AA92F;
+			productRefGroup = D531FD9929ED9FA7008AA92F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D541E2DC29ED559000B56D30 /* TextAloudKit */,
+				D531FD9729ED9FA7008AA92F /* TextAloudKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D541E2DB29ED559000B56D30 /* Resources */ = {
+		D531FD9629ED9FA7008AA92F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D541E2FE29ED5DD300B56D30 /* Media.xcassets in Resources */,
+				D5EF7F6429EDA58A00F9993E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D541E2D929ED559000B56D30 /* Sources */ = {
+		D531FD9429ED9FA7008AA92F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D541E2EE29ED55F600B56D30 /* ShareLoading.swift in Sources */,
+				D5EF7F6729EDA69A00F9993E /* LoadingPage.swift in Sources */,
+				D5EF7F6229EDA27600F9993E /* ImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D541E2E229ED559000B56D30 /* Debug */ = {
+		D531FD9D29ED9FA7008AA92F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -205,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		D541E2E329ED559000B56D30 /* Release */ = {
+		D531FD9E29ED9FA7008AA92F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +279,7 @@
 			};
 			name = Release;
 		};
-		D541E2E529ED559000B56D30 /* Debug */ = {
+		D531FDA029ED9FA7008AA92F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -301,7 +321,7 @@
 			};
 			name = Debug;
 		};
-		D541E2E629ED559000B56D30 /* Release */ = {
+		D531FDA129ED9FA7008AA92F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -345,25 +365,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D541E2D729ED559000B56D30 /* Build configuration list for PBXProject "TextAloudKit" */ = {
+		D531FD9229ED9FA7008AA92F /* Build configuration list for PBXProject "TextAloudKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D541E2E229ED559000B56D30 /* Debug */,
-				D541E2E329ED559000B56D30 /* Release */,
+				D531FD9D29ED9FA7008AA92F /* Debug */,
+				D531FD9E29ED9FA7008AA92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D541E2E429ED559000B56D30 /* Build configuration list for PBXNativeTarget "TextAloudKit" */ = {
+		D531FD9F29ED9FA7008AA92F /* Build configuration list for PBXNativeTarget "TextAloudKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D541E2E529ED559000B56D30 /* Debug */,
-				D541E2E629ED559000B56D30 /* Release */,
+				D531FDA029ED9FA7008AA92F /* Debug */,
+				D531FDA129ED9FA7008AA92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D541E2D429ED559000B56D30 /* Project object */;
+	rootObject = D531FD8F29ED9FA7008AA92F /* Project object */;
 }
