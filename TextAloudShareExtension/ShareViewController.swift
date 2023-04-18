@@ -144,7 +144,14 @@ class ShareViewController: UIViewController {
             
             let result = self.getTextFromItem(item: item)
             let base64EncodedText = Data(result.utf8).base64EncodedString()
-            self.appURLString = "textaloud://insertText?text=" + base64EncodedText
+            
+            var urlScheme = "textaloud"
+            
+            if let isTextAloudPro = ProcessInfo.processInfo.environment["TEXTALOUDPRO"] {
+                urlScheme = "textaloudpro"
+            }
+            
+            self.appURLString = urlScheme + "://insertText?text=" + base64EncodedText
             
             let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
             def?.set(result, forKey: "shareText")

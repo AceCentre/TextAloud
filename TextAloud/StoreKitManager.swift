@@ -23,6 +23,12 @@ class StoreKitManager: ObservableObject {
     var updateListenerTask: Task<Void, Error>? = nil
     
     init() {
+        // Bypass all store code if we are on TextAloudPro
+        if let isTextAloudPro = ProcessInfo.processInfo.environment["TEXTALOUDPRO"] {
+            hasPurchasedUnlimitedVoiceAllowance = true
+            return
+        }
+        
         updateListenerTask = listenForTransactions()
         
         Task {
@@ -32,6 +38,11 @@ class StoreKitManager: ObservableObject {
     }
     
     deinit {
+        // Bypass all store code if we are on TextAloudPro
+        if let isTextAloudPro = ProcessInfo.processInfo.environment["TEXTALOUDPRO"] {
+            return
+        }
+        
         updateListenerTask?.cancel()
     }
     
