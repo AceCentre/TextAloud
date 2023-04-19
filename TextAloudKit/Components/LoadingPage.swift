@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
- struct LoadingPage: View {
+struct LoadingPage: View {
     var title: String
     var subtitle: String
         

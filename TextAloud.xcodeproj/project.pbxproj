@@ -61,8 +61,75 @@
 		D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4929D48475008D9251 /* ExceptionCatcher */; };
 		D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */; };
 		D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */; };
-		D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
-		D5E1C20629C37EB600606B89 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E1C20529C37EB600606B89 /* StoreKitManager.swift */; };
+		D58686A929EF2A54004E5A4B /* TextAloudProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */; };
+		D58686AD29EF2A55004E5A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58686AC29EF2A55004E5A4B /* Assets.xcassets */; };
+		D58686B029EF2A55004E5A4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58686AF29EF2A55004E5A4B /* Preview Assets.xcassets */; };
+		D58686BC29EF2A8B004E5A4B /* TextAloudKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */; };
+		D5B9CDCB29EF2BAB00531DA2 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDCA29EF2BAB00531DA2 /* ImageExtension.swift */; };
+		D5B9CDCD29EF2BBD00531DA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */; };
+		D5B9CDD529EF2C5500531DA2 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDD429EF2C5500531DA2 /* ShareViewController.swift */; };
+		D5B9CDDC29EF2C5500531DA2 /* TextAloudProShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D5B9CDD229EF2C5400531DA2 /* TextAloudProShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D5B9CDE429EFE38100531DA2 /* NetworkMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDE329EFE38100531DA2 /* NetworkMonitorManager.swift */; };
+		D5B9CDEA29EFE3FA00531DA2 /* AudioSavedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDE629EFE3FA00531DA2 /* AudioSavedService.swift */; };
+		D5B9CDEB29EFE3FA00531DA2 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDE729EFE3FA00531DA2 /* AudioPlayerManager.swift */; };
+		D5B9CDEC29EFE3FA00531DA2 /* AVAudioSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDE829EFE3FA00531DA2 /* AVAudioSessionManager.swift */; };
+		D5B9CDED29EFE3FA00531DA2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDE929EFE3FA00531DA2 /* LocalFileManager.swift */; };
+		D5B9CDF629EFE41100531DA2 /* SpeechSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDEF29EFE41100531DA2 /* SpeechSaveService.swift */; };
+		D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF029EFE41100531DA2 /* AzureSpeech.swift */; };
+		D5B9CDF829EFE41100531DA2 /* AVSpeechVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF229EFE41100531DA2 /* AVSpeechVoiceService.swift */; };
+		D5B9CDF929EFE41100531DA2 /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF329EFE41100531DA2 /* VoicesSimpleTexts.swift */; };
+		D5B9CDFA29EFE41100531DA2 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF429EFE41100531DA2 /* VoiceSaveService.swift */; };
+		D5B9CDFB29EFE41100531DA2 /* AzureVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF529EFE41100531DA2 /* AzureVoiceService.swift */; };
+		D5B9CE3229EFE46500531DA2 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */; };
+		D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2129EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift */; };
+		D5B9CE3429EFE46500531DA2 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2229EFE46500531DA2 /* SpeechSynthesizer.swift */; };
+		D5B9CE3529EFE46500531DA2 /* SpeechSynthesier+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2329EFE46500531DA2 /* SpeechSynthesier+Audio.swift */; };
+		D5B9CE3629EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2429EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift */; };
+		D5B9CE3729EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2529EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */; };
+		D5B9CE3829EFE46500531DA2 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2629EFE46500531DA2 /* Audio.swift */; };
+		D5B9CE3929EFE46500531DA2 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2729EFE46500531DA2 /* VoiceModel.swift */; };
+		D5B9CE3F29EFE5F400531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; };
+		D5B9CE4029EFE5F400531DA2 /* TextAloudKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5B9CE4429EFE60000531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; };
+		D5B9CE4A29EFE63200531DA2 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5B9CE4929EFE63200531DA2 /* ExceptionCatcher */; };
+		D5B9CE4C29EFE63200531DA2 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5B9CE4B29EFE63200531DA2 /* YouTubePlayerKit */; };
+		D5B9CE4D29EFE63B00531DA2 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
+		D5B9CE4E29EFE63B00531DA2 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5B9CE6829EFE69200531DA2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5229EFE69200531DA2 /* SettingsView.swift */; };
+		D5B9CE6929EFE69200531DA2 /* HelpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5429EFE69200531DA2 /* HelpsView.swift */; };
+		D5B9CE6A29EFE69200531DA2 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5529EFE69200531DA2 /* SettingViewModel.swift */; };
+		D5B9CE6B29EFE69200531DA2 /* LanguageSpeechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5629EFE69200531DA2 /* LanguageSpeechView.swift */; };
+		D5B9CE6C29EFE69200531DA2 /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5729EFE69200531DA2 /* VoiceListView.swift */; };
+		D5B9CE6D29EFE69200531DA2 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5829EFE69200531DA2 /* SettingsLabelView.swift */; };
+		D5B9CE6E29EFE69200531DA2 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */; };
+		D5B9CE6F29EFE69200531DA2 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */; };
+		D5B9CE7029EFE69200531DA2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5C29EFE69200531DA2 /* RootView.swift */; };
+		D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5D29EFE69200531DA2 /* TextView.swift */; };
+		D5B9CE7229EFE69200531DA2 /* CircleControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5F29EFE69200531DA2 /* CircleControlButtonView.swift */; };
+		D5B9CE7329EFE69200531DA2 /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */; };
+		D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */; };
+		D5B9CE7529EFE69200531DA2 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6229EFE69200531DA2 /* SearchTextView.swift */; };
+		D5B9CE7629EFE69200531DA2 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */; };
+		D5B9CE7729EFE69200531DA2 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */; };
+		D5B9CE7829EFE69200531DA2 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */; };
+		D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6629EFE69200531DA2 /* ButtonView.swift */; };
+		D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */; };
+		D5B9CE8729EFE6B100531DA2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7C29EFE6B100531DA2 /* .env.swift */; };
+		D5B9CE8829EFE6B100531DA2 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7D29EFE6B100531DA2 /* Localization.swift */; };
+		D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */; };
+		D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8029EFE6B100531DA2 /* View.swift */; };
+		D5B9CE8B29EFE6B100531DA2 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */; };
+		D5B9CE8C29EFE6B100531DA2 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */; };
+		D5B9CE8D29EFE6B100531DA2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8329EFE6B100531DA2 /* Array.swift */; };
+		D5B9CE8E29EFE6B100531DA2 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */; };
+		D5B9CE8F29EFE6B100531DA2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8529EFE6B100531DA2 /* Task.swift */; };
+		D5B9CE9029EFE6B100531DA2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8629EFE6B100531DA2 /* Color.swift */; };
+		D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */; };
+		D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */; };
+		D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
+		D5B9CE9729EFEF5A00531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
+		D5B9CE9B29EFFC4600531DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
@@ -79,6 +146,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5A155D6C29B76A5D00E18A3B;
 			remoteInfo = TextAloudShareExtension;
+		};
+		D5B9CDDA29EF2C5500531DA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF5C2E2290990F10003A675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B9CDD129EF2C5400531DA2;
+			remoteInfo = TextAloudProShareExtension;
+		};
+		D5B9CE4129EFE5F400531DA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF5C2E2290990F10003A675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58686B829EF2A8B004E5A4B;
+			remoteInfo = TextAloudKit;
+		};
+		D5B9CE4629EFE60000531DA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF5C2E2290990F10003A675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D58686B829EF2A8B004E5A4B;
+			remoteInfo = TextAloudKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,6 +190,29 @@
 			files = (
 				D531FDA629ED9FDC008AA92F /* TextAloudKit.framework in Embed Frameworks */,
 				5A6F8DE3299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9CDE029EF2C5500531DA2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D5B9CDDC29EF2C5500531DA2 /* TextAloudProShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9CE4329EFE5F400531DA2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5B9CE4029EFE5F400531DA2 /* TextAloudKit.framework in Embed Frameworks */,
+				D5B9CE4E29EFE63B00531DA2 /* MicrosoftCognitiveServicesSpeech.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,9 +277,73 @@
 		D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
 		D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
 		D5701FE929BA067200F45BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D58686A629EF2A53004E5A4B /* TextAloudPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloudPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudProApp.swift; sourceTree = "<group>"; };
+		D58686AC29EF2A55004E5A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D58686AF29EF2A55004E5A4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextAloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextAloudKit.h; sourceTree = "<group>"; };
+		D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPage.swift; sourceTree = "<group>"; };
+		D5B9CDCA29EF2BAB00531DA2 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5B9CDD229EF2C5400531DA2 /* TextAloudProShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TextAloudProShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B9CDD429EF2C5500531DA2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		D5B9CDD929EF2C5500531DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B9CDE129EF2D2400531DA2 /* TextAloudProShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudProShareExtension.entitlements; sourceTree = "<group>"; };
+		D5B9CDE329EFE38100531DA2 /* NetworkMonitorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorManager.swift; sourceTree = "<group>"; };
+		D5B9CDE629EFE3FA00531DA2 /* AudioSavedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSavedService.swift; sourceTree = "<group>"; };
+		D5B9CDE729EFE3FA00531DA2 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		D5B9CDE829EFE3FA00531DA2 /* AVAudioSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioSessionManager.swift; sourceTree = "<group>"; };
+		D5B9CDE929EFE3FA00531DA2 /* LocalFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		D5B9CDEF29EFE41100531DA2 /* SpeechSaveService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSaveService.swift; sourceTree = "<group>"; };
+		D5B9CDF029EFE41100531DA2 /* AzureSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureSpeech.swift; sourceTree = "<group>"; };
+		D5B9CDF229EFE41100531DA2 /* AVSpeechVoiceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSpeechVoiceService.swift; sourceTree = "<group>"; };
+		D5B9CDF329EFE41100531DA2 /* VoicesSimpleTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicesSimpleTexts.swift; sourceTree = "<group>"; };
+		D5B9CDF429EFE41100531DA2 /* VoiceSaveService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
+		D5B9CDF529EFE41100531DA2 /* AzureVoiceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureVoiceService.swift; sourceTree = "<group>"; };
+		D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
+		D5B9CE2129EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+UserDefaults.swift"; sourceTree = "<group>"; };
+		D5B9CE2229EFE46500531DA2 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		D5B9CE2329EFE46500531DA2 /* SpeechSynthesier+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+Audio.swift"; sourceTree = "<group>"; };
+		D5B9CE2429EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+ AzureSpeech.swift"; sourceTree = "<group>"; };
+		D5B9CE2529EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift"; sourceTree = "<group>"; };
+		D5B9CE2629EFE46500531DA2 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		D5B9CE2729EFE46500531DA2 /* VoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceModel.swift; sourceTree = "<group>"; };
+		D5B9CE5229EFE69200531DA2 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D5B9CE5429EFE69200531DA2 /* HelpsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpsView.swift; sourceTree = "<group>"; };
+		D5B9CE5529EFE69200531DA2 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		D5B9CE5629EFE69200531DA2 /* LanguageSpeechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSpeechView.swift; sourceTree = "<group>"; };
+		D5B9CE5729EFE69200531DA2 /* VoiceListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceListView.swift; sourceTree = "<group>"; };
+		D5B9CE5829EFE69200531DA2 /* SettingsLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
+		D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		D5B9CE5C29EFE69200531DA2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		D5B9CE5D29EFE69200531DA2 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		D5B9CE5F29EFE69200531DA2 /* CircleControlButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleControlButtonView.swift; sourceTree = "<group>"; };
+		D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
+		D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
+		D5B9CE6229EFE69200531DA2 /* SearchTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
+		D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
+		D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
+		D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
+		D5B9CE6629EFE69200531DA2 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
+		D5B9CE7C29EFE6B100531DA2 /* .env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
+		D5B9CE7D29EFE6B100531DA2 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D5B9CE8029EFE6B100531DA2 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
+		D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		D5B9CE8329EFE6B100531DA2 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		D5B9CE8529EFE6B100531DA2 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D5B9CE8629EFE6B100531DA2 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
+		D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudPro.entitlements; sourceTree = "<group>"; };
+		D5B9CE9A29EFFBB900531DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
-		D5E1C20529C37EB600606B89 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
 		FDF5C2F1290990F60003A675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,13 +363,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D58686A329EF2A53004E5A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CE3F29EFE5F400531DA2 /* TextAloudKit.framework in Frameworks */,
+				D5B9CE4D29EFE63B00531DA2 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
+				D5B9CE9729EFEF5A00531DA2 /* StoreKit.framework in Frameworks */,
+				D5B9CE4A29EFE63200531DA2 /* ExceptionCatcher in Frameworks */,
+				D5B9CE4C29EFE63200531DA2 /* YouTubePlayerKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58686B629EF2A8B004E5A4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9CDCF29EF2C5400531DA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CE4429EFE60000531DA2 /* TextAloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E7290990F10003A675 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E1C20329C3791200606B89 /* StoreKit.framework in Frameworks */,
 				D531FDA529ED9FDC008AA92F /* TextAloudKit.framework in Frameworks */,
 				D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */,
+				D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */,
 				D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */,
 				5A6F8DE2299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */,
 			);
@@ -350,12 +552,235 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
+		D58686A729EF2A54004E5A4B /* TextAloudPro */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE9A29EFFBB900531DA2 /* Info.plist */,
+				D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */,
+				D5B9CE7B29EFE6B100531DA2 /* Utils */,
+				D5B9CE5029EFE69200531DA2 /* View */,
+				D5B9CE3E29EFE4D400531DA2 /* App */,
+				D5B9CE1E29EFE46500531DA2 /* Models */,
+				D5B9CDE229EFE36800531DA2 /* Services */,
+				D58686AC29EF2A55004E5A4B /* Assets.xcassets */,
+				D58686AE29EF2A55004E5A4B /* Preview Content */,
+			);
+			path = TextAloudPro;
+			sourceTree = "<group>";
+		};
+		D58686AE29EF2A55004E5A4B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D58686AF29EF2A55004E5A4B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D58686BA29EF2A8B004E5A4B /* TextAloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDC629EF2B4700531DA2 /* Components */,
+				D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */,
+				D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */,
+				D5B9CDC929EF2B9500531DA2 /* Utils */,
+				D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */,
+				D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */,
+			);
+			path = TextAloudKit;
+			sourceTree = "<group>";
+		};
+		D5B9CDC629EF2B4700531DA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D5B9CDC929EF2B9500531DA2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDCA29EF2BAB00531DA2 /* ImageExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D5B9CDD329EF2C5500531DA2 /* TextAloudProShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDE129EF2D2400531DA2 /* TextAloudProShareExtension.entitlements */,
+				D5B9CDD429EF2C5500531DA2 /* ShareViewController.swift */,
+				D5B9CDD929EF2C5500531DA2 /* Info.plist */,
+			);
+			path = TextAloudProShareExtension;
+			sourceTree = "<group>";
+		};
+		D5B9CDE229EFE36800531DA2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDE329EFE38100531DA2 /* NetworkMonitorManager.swift */,
+				D5B9CDEE29EFE41100531DA2 /* Speech */,
+				D5B9CDE529EFE39100531DA2 /* Audio */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D5B9CDE529EFE39100531DA2 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDE729EFE3FA00531DA2 /* AudioPlayerManager.swift */,
+				D5B9CDE629EFE3FA00531DA2 /* AudioSavedService.swift */,
+				D5B9CDE829EFE3FA00531DA2 /* AVAudioSessionManager.swift */,
+				D5B9CDE929EFE3FA00531DA2 /* LocalFileManager.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		D5B9CDEE29EFE41100531DA2 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDEF29EFE41100531DA2 /* SpeechSaveService.swift */,
+				D5B9CDF029EFE41100531DA2 /* AzureSpeech.swift */,
+				D5B9CDF129EFE41100531DA2 /* Voice */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
+		D5B9CDF129EFE41100531DA2 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CDF229EFE41100531DA2 /* AVSpeechVoiceService.swift */,
+				D5B9CDF329EFE41100531DA2 /* VoicesSimpleTexts.swift */,
+				D5B9CDF429EFE41100531DA2 /* VoiceSaveService.swift */,
+				D5B9CDF529EFE41100531DA2 /* AzureVoiceService.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		D5B9CE1E29EFE46500531DA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */,
+				D5B9CE2029EFE46500531DA2 /* Speech */,
+				D5B9CE2629EFE46500531DA2 /* Audio.swift */,
+				D5B9CE2729EFE46500531DA2 /* VoiceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5B9CE2029EFE46500531DA2 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE2129EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift */,
+				D5B9CE2229EFE46500531DA2 /* SpeechSynthesizer.swift */,
+				D5B9CE2329EFE46500531DA2 /* SpeechSynthesier+Audio.swift */,
+				D5B9CE2429EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift */,
+				D5B9CE2529EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
+		D5B9CE3E29EFE4D400531DA2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D5B9CE5029EFE69200531DA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE5129EFE69200531DA2 /* Settings */,
+				D5B9CE5929EFE69200531DA2 /* RootView */,
+				D5B9CE5E29EFE69200531DA2 /* ViewComponents */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5B9CE5129EFE69200531DA2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE5229EFE69200531DA2 /* SettingsView.swift */,
+				D5B9CE5329EFE69200531DA2 /* HelpSection */,
+				D5B9CE5529EFE69200531DA2 /* SettingViewModel.swift */,
+				D5B9CE5629EFE69200531DA2 /* LanguageSpeechView.swift */,
+				D5B9CE5729EFE69200531DA2 /* VoiceListView.swift */,
+				D5B9CE5829EFE69200531DA2 /* SettingsLabelView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D5B9CE5329EFE69200531DA2 /* HelpSection */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE5429EFE69200531DA2 /* HelpsView.swift */,
+			);
+			path = HelpSection;
+			sourceTree = "<group>";
+		};
+		D5B9CE5929EFE69200531DA2 /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */,
+				D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */,
+				D5B9CE5C29EFE69200531DA2 /* RootView.swift */,
+				D5B9CE5D29EFE69200531DA2 /* TextView.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		D5B9CE5E29EFE69200531DA2 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE5F29EFE69200531DA2 /* CircleControlButtonView.swift */,
+				D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */,
+				D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */,
+				D5B9CE6229EFE69200531DA2 /* SearchTextView.swift */,
+				D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */,
+				D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */,
+				D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */,
+				D5B9CE6629EFE69200531DA2 /* ButtonView.swift */,
+				D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		D5B9CE7B29EFE6B100531DA2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE7C29EFE6B100531DA2 /* .env.swift */,
+				D5B9CE7D29EFE6B100531DA2 /* Localization.swift */,
+				D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */,
+				D5B9CE7F29EFE6B100531DA2 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D5B9CE7F29EFE6B100531DA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CE8029EFE6B100531DA2 /* View.swift */,
+				D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */,
+				D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */,
+				D5B9CE8329EFE6B100531DA2 /* Array.swift */,
+				D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */,
+				D5B9CE8529EFE6B100531DA2 /* Task.swift */,
+				D5B9CE8629EFE6B100531DA2 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FDF5C2E1290990F10003A675 = {
 			isa = PBXGroup;
 			children = (
 				D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */,
+				5A155604299D128E001A0B7D /* Localizable.strings */,
 				FDF5C2EC290990F10003A675 /* TextAloud */,
 				5A155D6E29B76A5D00E18A3B /* TextAloudShareExtension */,
+				D58686A729EF2A54004E5A4B /* TextAloudPro */,
+				D58686BA29EF2A8B004E5A4B /* TextAloudKit */,
+				D5B9CDD329EF2C5500531DA2 /* TextAloudProShareExtension */,
 				FDF5C2EB290990F10003A675 /* Products */,
 				36463982B28F8F097B9982BA /* Frameworks */,
 			);
@@ -366,6 +791,9 @@
 			children = (
 				FDF5C2EA290990F10003A675 /* TextAloud.app */,
 				5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */,
+				D58686A629EF2A53004E5A4B /* TextAloudPro.app */,
+				D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */,
+				D5B9CDD229EF2C5400531DA2 /* TextAloudProShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,8 +810,6 @@
 				FDF5C2FB2909AC4B0003A675 /* View */,
 				FDF5C2F1290990F60003A675 /* Assets.xcassets */,
 				FDF5C2F3290990F60003A675 /* Preview Content */,
-				5A155604299D128E001A0B7D /* Localizable.strings */,
-				D5E1C20529C37EB600606B89 /* StoreKitManager.swift */,
 			);
 			path = TextAloud;
 			sourceTree = "<group>";
@@ -427,6 +853,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D58686B429EF2A8B004E5A4B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58686BC29EF2A8B004E5A4B /* TextAloudKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */ = {
 			isa = PBXNativeTarget;
@@ -443,6 +880,67 @@
 			name = TextAloudShareExtension;
 			productName = TextAloudShareExtension;
 			productReference = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D58686A529EF2A53004E5A4B /* TextAloudPro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58686B329EF2A55004E5A4B /* Build configuration list for PBXNativeTarget "TextAloudPro" */;
+			buildPhases = (
+				D58686A229EF2A53004E5A4B /* Sources */,
+				D58686A329EF2A53004E5A4B /* Frameworks */,
+				D58686A429EF2A53004E5A4B /* Resources */,
+				D5B9CDE029EF2C5500531DA2 /* Embed Foundation Extensions */,
+				D5B9CE4329EFE5F400531DA2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5B9CDDB29EF2C5500531DA2 /* PBXTargetDependency */,
+				D5B9CE4229EFE5F400531DA2 /* PBXTargetDependency */,
+			);
+			name = TextAloudPro;
+			packageProductDependencies = (
+				D5B9CE4929EFE63200531DA2 /* ExceptionCatcher */,
+				D5B9CE4B29EFE63200531DA2 /* YouTubePlayerKit */,
+			);
+			productName = TextAloudPro;
+			productReference = D58686A629EF2A53004E5A4B /* TextAloudPro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D58686B829EF2A8B004E5A4B /* TextAloudKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D58686BD29EF2A8B004E5A4B /* Build configuration list for PBXNativeTarget "TextAloudKit" */;
+			buildPhases = (
+				D58686B429EF2A8B004E5A4B /* Headers */,
+				D58686B529EF2A8B004E5A4B /* Sources */,
+				D58686B629EF2A8B004E5A4B /* Frameworks */,
+				D58686B729EF2A8B004E5A4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TextAloudKit;
+			productName = TextAloudKit;
+			productReference = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5B9CDD129EF2C5400531DA2 /* TextAloudProShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5B9CDDD29EF2C5500531DA2 /* Build configuration list for PBXNativeTarget "TextAloudProShareExtension" */;
+			buildPhases = (
+				D5B9CDCE29EF2C5400531DA2 /* Sources */,
+				D5B9CDCF29EF2C5400531DA2 /* Frameworks */,
+				D5B9CDD029EF2C5400531DA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5B9CE4729EFE60000531DA2 /* PBXTargetDependency */,
+			);
+			name = TextAloudProShareExtension;
+			productName = TextAloudProShareExtension;
+			productReference = D5B9CDD229EF2C5400531DA2 /* TextAloudProShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		FDF5C2E9290990F10003A675 /* TextAloud */ = {
@@ -476,11 +974,21 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					5A155D6C29B76A5D00E18A3B = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					D58686A529EF2A53004E5A4B = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					D58686B829EF2A8B004E5A4B = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+					};
+					D5B9CDD129EF2C5400531DA2 = {
+						CreatedOnToolsVersion = 14.3;
 					};
 					FDF5C2E9290990F10003A675 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -493,7 +1001,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				fr,
 				de,
 				es,
@@ -510,12 +1017,40 @@
 			targets = (
 				FDF5C2E9290990F10003A675 /* TextAloud */,
 				5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */,
+				D58686A529EF2A53004E5A4B /* TextAloudPro */,
+				D58686B829EF2A8B004E5A4B /* TextAloudKit */,
+				D5B9CDD129EF2C5400531DA2 /* TextAloudProShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5A155D6B29B76A5D00E18A3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58686A429EF2A53004E5A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58686B029EF2A55004E5A4B /* Preview Assets.xcassets in Resources */,
+				D5B9CE9B29EFFC4600531DA2 /* Localizable.strings in Resources */,
+				D58686AD29EF2A55004E5A4B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58686B729EF2A8B004E5A4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CDCD29EF2BBD00531DA2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9CDD029EF2C5400531DA2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,11 +1078,85 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D58686A229EF2A53004E5A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CDFB29EFE41100531DA2 /* AzureVoiceService.swift in Sources */,
+				D58686A929EF2A54004E5A4B /* TextAloudProApp.swift in Sources */,
+				D5B9CE8829EFE6B100531DA2 /* Localization.swift in Sources */,
+				D5B9CDF829EFE41100531DA2 /* AVSpeechVoiceService.swift in Sources */,
+				D5B9CE3629EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
+				D5B9CE6D29EFE69200531DA2 /* SettingsLabelView.swift in Sources */,
+				D5B9CE8D29EFE6B100531DA2 /* Array.swift in Sources */,
+				D5B9CDEC29EFE3FA00531DA2 /* AVAudioSessionManager.swift in Sources */,
+				D5B9CE3929EFE46500531DA2 /* VoiceModel.swift in Sources */,
+				D5B9CE3529EFE46500531DA2 /* SpeechSynthesier+Audio.swift in Sources */,
+				D5B9CE7629EFE69200531DA2 /* TextButtonView.swift in Sources */,
+				D5B9CDEB29EFE3FA00531DA2 /* AudioPlayerManager.swift in Sources */,
+				D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */,
+				D5B9CE7329EFE69200531DA2 /* InAppPurchaseSheet.swift in Sources */,
+				D5B9CE7529EFE69200531DA2 /* SearchTextView.swift in Sources */,
+				D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */,
+				D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */,
+				D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */,
+				D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */,
+				D5B9CE8F29EFE6B100531DA2 /* Task.swift in Sources */,
+				D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */,
+				D5B9CE8E29EFE6B100531DA2 /* UserDefaults.swift in Sources */,
+				D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */,
+				D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */,
+				D5B9CDEA29EFE3FA00531DA2 /* AudioSavedService.swift in Sources */,
+				D5B9CE7729EFE69200531DA2 /* IconButtonView.swift in Sources */,
+				D5B9CE3429EFE46500531DA2 /* SpeechSynthesizer.swift in Sources */,
+				D5B9CDF629EFE41100531DA2 /* SpeechSaveService.swift in Sources */,
+				D5B9CDFA29EFE41100531DA2 /* VoiceSaveService.swift in Sources */,
+				D5B9CDE429EFE38100531DA2 /* NetworkMonitorManager.swift in Sources */,
+				D5B9CE7029EFE69200531DA2 /* RootView.swift in Sources */,
+				D5B9CE6C29EFE69200531DA2 /* VoiceListView.swift in Sources */,
+				D5B9CE6A29EFE69200531DA2 /* SettingViewModel.swift in Sources */,
+				D5B9CE6B29EFE69200531DA2 /* LanguageSpeechView.swift in Sources */,
+				D5B9CE8B29EFE6B100531DA2 /* StringExtentions.swift in Sources */,
+				D5B9CDED29EFE3FA00531DA2 /* LocalFileManager.swift in Sources */,
+				D5B9CE8C29EFE6B100531DA2 /* NotificationName.swift in Sources */,
+				D5B9CE7829EFE69200531DA2 /* ErrorViewModif.swift in Sources */,
+				D5B9CE6F29EFE69200531DA2 /* RootViewModel.swift in Sources */,
+				D5B9CE8729EFE6B100531DA2 /* .env.swift in Sources */,
+				D5B9CE6929EFE69200531DA2 /* HelpsView.swift in Sources */,
+				D5B9CE6829EFE69200531DA2 /* SettingsView.swift in Sources */,
+				D5B9CE3829EFE46500531DA2 /* Audio.swift in Sources */,
+				D5B9CE9029EFE6B100531DA2 /* Color.swift in Sources */,
+				D5B9CE6E29EFE69200531DA2 /* SpeachTextViewComponent.swift in Sources */,
+				D5B9CE7229EFE69200531DA2 /* CircleControlButtonView.swift in Sources */,
+				D5B9CE3729EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */,
+				D5B9CE3229EFE46500531DA2 /* SelectionModeEnum.swift in Sources */,
+				D5B9CDF929EFE41100531DA2 /* VoicesSimpleTexts.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D58686B529EF2A8B004E5A4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */,
+				D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */,
+				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
+				D5B9CDCB29EF2BAB00531DA2 /* ImageExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9CDCE29EF2C5400531DA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5B9CDD529EF2C5500531DA2 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDF5C2E6290990F10003A675 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E1C20629C37EB600606B89 /* StoreKitManager.swift in Sources */,
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
 				5A4CC757299F99FF00D8E146 /* .env.swift in Sources */,
 				5A4CC760299FCF7700D8E146 /* CircleControlButtonView.swift in Sources */,
@@ -608,6 +1217,21 @@
 			platformFilter = ios;
 			target = 5A155D6C29B76A5D00E18A3B /* TextAloudShareExtension */;
 			targetProxy = 5A155D7529B76A5D00E18A3B /* PBXContainerItemProxy */;
+		};
+		D5B9CDDB29EF2C5500531DA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B9CDD129EF2C5400531DA2 /* TextAloudProShareExtension */;
+			targetProxy = D5B9CDDA29EF2C5500531DA2 /* PBXContainerItemProxy */;
+		};
+		D5B9CE4229EFE5F400531DA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58686B829EF2A8B004E5A4B /* TextAloudKit */;
+			targetProxy = D5B9CE4129EFE5F400531DA2 /* PBXContainerItemProxy */;
+		};
+		D5B9CE4729EFE60000531DA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D58686B829EF2A8B004E5A4B /* TextAloudKit */;
+			targetProxy = D5B9CE4629EFE60000531DA2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -677,6 +1301,215 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D58686B129EF2A55004E5A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloudPro/TextAloudPro.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TextAloudPro/Preview Content\"";
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudPro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TextAloud Pro";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D58686B229EF2A55004E5A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TextAloudPro/TextAloudPro.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TextAloudPro/Preview Content\"";
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudPro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "TextAloud Pro";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D58686BE29EF2A8B004E5A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D58686BF29EF2A8B004E5A4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5B9CDDE29EF2C5500531DA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudProShareExtension/TextAloudProShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudProShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudProShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.TextAloudProShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5B9CDDF29EF2C5500531DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TextAloudProShareExtension/TextAloudProShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K45HHA96ND;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TextAloudProShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TextAloudProShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.TextAloudProShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -885,6 +1718,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D58686B329EF2A55004E5A4B /* Build configuration list for PBXNativeTarget "TextAloudPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58686B129EF2A55004E5A4B /* Debug */,
+				D58686B229EF2A55004E5A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D58686BD29EF2A8B004E5A4B /* Build configuration list for PBXNativeTarget "TextAloudKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D58686BE29EF2A8B004E5A4B /* Debug */,
+				D58686BF29EF2A8B004E5A4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5B9CDDD29EF2C5500531DA2 /* Build configuration list for PBXNativeTarget "TextAloudProShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5B9CDDE29EF2C5500531DA2 /* Debug */,
+				D5B9CDDF29EF2C5500531DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDF5C2E5290990F10003A675 /* Build configuration list for PBXProject "TextAloud" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -931,6 +1791,16 @@
 			productName = ExceptionCatcher;
 		};
 		D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5695A4B29D6FD9F008D9251 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+		D5B9CE4929EFE63200531DA2 /* ExceptionCatcher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5695A4829D48475008D9251 /* XCRemoteSwiftPackageReference "ExceptionCatcher" */;
+			productName = ExceptionCatcher;
+		};
+		D5B9CE4B29EFE63200531DA2 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D5695A4B29D6FD9F008D9251 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;

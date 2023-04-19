@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 @main
 struct TextAloudApp: App {
+    @StateObject var settings = RootSettings(isTextAloudPro: false)
+    
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environmentObject(settings)
         }
     }
 }

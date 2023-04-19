@@ -10,21 +10,25 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-class StoreKitManager: ObservableObject {
+public class StoreKitManager: ObservableObject {
+    public var isTextAloudPro: Bool = false
+    
     @Published var storeProducts: [Product] = []
     @Published var purchasedProducts: [Product] = []
     
-    @Published var unlimitedVoiceAllowance: Product? = nil
-    @Published var hasPurchasedUnlimitedVoiceAllowance: Bool? = nil
+    @Published public var unlimitedVoiceAllowance: Product? = nil
+    @Published public var hasPurchasedUnlimitedVoiceAllowance: Bool? = nil
     
-    @Published var sayThankYou: Bool = false
-    @AppStorage("thankYouAcknowledged") var thankYouAcknowledged: Bool = false
+    @Published public var sayThankYou: Bool = false
+    @AppStorage("thankYouAcknowledged") public var thankYouAcknowledged: Bool = false
 
     var updateListenerTask: Task<Void, Error>? = nil
     
-    init() {
+    public init() {}
+    
+    public func setup() {
         // Bypass all store code if we are on TextAloudPro
-        if let isTextAloudPro = ProcessInfo.processInfo.environment["TEXTALOUDPRO"] {
+        if self.isTextAloudPro {
             hasPurchasedUnlimitedVoiceAllowance = true
             return
         }
@@ -39,7 +43,7 @@ class StoreKitManager: ObservableObject {
     
     deinit {
         // Bypass all store code if we are on TextAloudPro
-        if let isTextAloudPro = ProcessInfo.processInfo.environment["TEXTALOUDPRO"] {
+        if self.isTextAloudPro {
             return
         }
         
@@ -68,7 +72,7 @@ class StoreKitManager: ObservableObject {
     
     
     @MainActor
-    func requestProducts() async {
+    public func requestProducts() async {
         do {
             self.storeProducts = try await Product.products(for: ["unlimited_voice_allowance"])
             
@@ -96,7 +100,7 @@ class StoreKitManager: ObservableObject {
     }
     
     @MainActor
-    func updateCustomerStatus() async {
+    public func updateCustomerStatus() async {
         var purchasedProducts: [Product] = []
         
         print("Updating status")
@@ -138,7 +142,7 @@ class StoreKitManager: ObservableObject {
         self.purchasedProducts = purchasedProducts
     }
     
-    func purchase(_ product: Product?) async throws -> StoreKit.Transaction? {
+    public func purchase(_ product: Product?) async throws -> StoreKit.Transaction? {
         
         if let unwrappedProduct = product {
             let result = try await unwrappedProduct.purchase()
