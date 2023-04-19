@@ -16,6 +16,7 @@ struct RootView: View {
     @StateObject var rootVM = RootViewModel()
     @StateObject var storeKitManager = StoreKitManager()
     @StateObject var synthesizer: SpeechSynthesizer = SpeechSynthesizer()
+    @StateObject var networkManager = NetworkMonitorManager()
     @State var showSetting: Bool = false
     @State var showFileImporter: Bool = false
     @State var showLanguageSheet: Bool = false
@@ -95,7 +96,31 @@ struct RootView: View {
         }
         .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
-        .alert(Localization.offlineAlertTitle.toString, isPresented: $synthesizer.showOfflineAlert, actions: offlineAlertButton, message: offlineAlertMessage)
+        .alert(
+            "No Internet Connection",
+            isPresented: $networkManager.presentOfflineNotification,
+            actions: {
+                Button(Localization.selectVoices.toString) {
+                    showLanguageSheet.toggle()
+                }
+                Button("Ignore") {
+                    networkManager.presentExpensiveNotification = false
+                }
+            },            message: offlineAlertMessage
+        )
+        .alert(
+            "Using Mobile Data",
+            isPresented: $networkManager.presentExpensiveNotification,
+            actions: {
+                Button(Localization.selectVoices.toString) {
+                    showLanguageSheet.toggle()
+                }
+                Button("Ignore") {
+                    networkManager.presentExpensiveNotification = false
+                }
+            },
+            message: expensiveAlertMessage
+        )
         .onOpenURL { url in
             let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
             
@@ -412,13 +437,11 @@ extension RootView{
 
 //MARK: - Offline alert
 extension RootView{
-    private func offlineAlertMessage() -> some View{
-        Text(Localization.offlineAlertMessage.toString)
+    private func offlineAlertMessage() -> some View {
+        Text("Please switch to an offline voice to continue using TextAloud.")
     }
     
-    private func offlineAlertButton() -> some View{
-        Button(Localization.selectVoices.toString) {
-            showLanguageSheet.toggle()
-        }
+    private func expensiveAlertMessage() -> some View {
+        Text("TextAloud will use your mobile data allowance. Switch to Wifi or switch to an offline voice.")
     }
 }

@@ -15,7 +15,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
     @AppStorage("activeVoiceId") var activeVoiceId: String = ""
     let speechSaveService = SpeechSaveService.shared
-    let networkManager = NetworkMonitorManager()
     //MARK: AVSpeech
     @Published var rateMode: SpeechRateEnum = .defaul
     var lastUtterance: AVSpeechUtterance?
@@ -33,7 +32,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
     @Published var currentWord: NSRange?
     @Published var isPlay: Bool = false
-    @Published var showOfflineAlert: Bool = false
     var rangeOffset: Int = 0
     
     var completionCallback: ((Double) -> ())? = nil
@@ -81,10 +79,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         
         let prepairText = String(text.substring(with: range) ?? "default")
         
-        if isAzureSpeech{
-            if isOnlineMode{
-                speakAzure(prepairText, voiceId: activeVoiceId, completion: completion)
-            }
+        if isAzureSpeech {
+            speakAzure(prepairText, voiceId: activeVoiceId, completion: completion)
         }else{
             let utterance = AVSpeechUtterance(string: prepairText)
             setVoiceIfNeeded(utterance)
@@ -130,15 +126,6 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     private func setVoiceIfNeeded(_ utterance: AVSpeechUtterance){
         if !activeVoiceId.isEmpty{
             utterance.voice = AVSpeechSynthesisVoice(identifier: activeVoiceId)
-        }
-    }
-    
-    private var isOnlineMode: Bool{
-        if networkManager.isOnline{
-            return true
-        }else{
-            showOfflineAlert.toggle()
-            return false
         }
     }
 }
