@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 struct TextButtonView: View {
     let title: LocalizedStringKey

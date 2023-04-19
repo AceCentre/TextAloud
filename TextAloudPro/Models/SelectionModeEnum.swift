@@ -5,7 +5,7 @@
 //
 
 import SwiftUI
-
+import TextAloudKit
 
 enum SelectionEnum: Int, CaseIterable{
     

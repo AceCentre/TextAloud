@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-enum Localization: String {
+public enum Localization: String {
 
     case play
     case stop
@@ -34,7 +34,7 @@ enum Localization: String {
     case help
     
     
-    var toString: LocalizedStringKey {
+    public var toString: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
 }

@@ -370,7 +370,7 @@ extension RootView{
                     .font(.title)
             }
             
-            Text("TextAloud")
+            Text("TextAloud Pro")
                 .foregroundColor(.white)
                 .font(.title)
                 .fontWeight(.heavy)

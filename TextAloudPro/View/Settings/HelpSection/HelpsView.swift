@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 struct HelpsBlockView: View {
     let supportLink = "https://docs.acecentre.org.uk/products/v/textaloud/"

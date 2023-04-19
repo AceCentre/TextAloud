@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */; };
 		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
-		5A1555FF299D119D001A0B7D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1555FE299D119D001A0B7D /* Localization.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */; };
 		5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -115,7 +114,6 @@
 		D5B9CE7829EFE69200531DA2 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */; };
 		D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6629EFE69200531DA2 /* ButtonView.swift */; };
 		D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */; };
-		D5B9CE8829EFE6B100531DA2 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7D29EFE6B100531DA2 /* Localization.swift */; };
 		D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */; };
 		D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8029EFE6B100531DA2 /* View.swift */; };
 		D5B9CE8B29EFE6B100531DA2 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */; };
@@ -129,6 +127,7 @@
 		D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
 		D5B9CE9729EFEF5A00531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
 		D5B9CE9B29EFFC4600531DA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
+		D5B9CEA129F0231A00531DA2 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEA029F0231A00531DA2 /* Localization.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
@@ -221,7 +220,6 @@
 /* Begin PBXFileReference section */
 		5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
 		5A12CBBE29A3593A00E950A8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		5A1555FE299D119D001A0B7D /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -327,7 +325,6 @@
 		D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
 		D5B9CE6629EFE69200531DA2 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
-		D5B9CE7D29EFE6B100531DA2 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5B9CE8029EFE6B100531DA2 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
@@ -340,6 +337,7 @@
 		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
 		D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudPro.entitlements; sourceTree = "<group>"; };
 		D5B9CE9A29EFFBB900531DA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D5B9CEA029F0231A00531DA2 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,7 +426,6 @@
 			children = (
 				5A4A0EC6299B979D00E3B385 /* Extensions */,
 				5ADCBB56299C060300FC05C8 /* Helpers.swift */,
-				5A1555FE299D119D001A0B7D /* Localization.swift */,
 				5A4CC756299F99FF00D8E146 /* .env.swift */,
 			);
 			path = Utils;
@@ -599,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B9CDCA29EF2BAB00531DA2 /* ImageExtension.swift */,
+				D5B9CEA029F0231A00531DA2 /* Localization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -747,7 +745,6 @@
 		D5B9CE7B29EFE6B100531DA2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D5B9CE7D29EFE6B100531DA2 /* Localization.swift */,
 				D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */,
 				D5B9CE7F29EFE6B100531DA2 /* Extensions */,
 			);
@@ -1081,7 +1078,6 @@
 			files = (
 				D5B9CDFB29EFE41100531DA2 /* AzureVoiceService.swift in Sources */,
 				D58686A929EF2A54004E5A4B /* TextAloudProApp.swift in Sources */,
-				D5B9CE8829EFE6B100531DA2 /* Localization.swift in Sources */,
 				D5B9CDF829EFE41100531DA2 /* AVSpeechVoiceService.swift in Sources */,
 				D5B9CE3629EFE46500531DA2 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
 				D5B9CE6D29EFE69200531DA2 /* SettingsLabelView.swift in Sources */,
@@ -1135,6 +1131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */,
+				D5B9CEA129F0231A00531DA2 /* Localization.swift in Sources */,
 				D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */,
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
 				D5B9CDCB29EF2BAB00531DA2 /* ImageExtension.swift in Sources */,
@@ -1187,7 +1184,6 @@
 				5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */,
 				5A4CC75C299FAEB100D8E146 /* AVSpeechVoiceService.swift in Sources */,
 				5A6E494129A3B337000A66A4 /* SpeechSynthesier+Audio.swift in Sources */,
-				5A1555FF299D119D001A0B7D /* Localization.swift in Sources */,
 				5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */,
 				5A1765BA29B21245009CEA9E /* NotificationName.swift in Sources */,
 				5A6F8DDB299E249400C591D7 /* SpeechSaveService.swift in Sources */,

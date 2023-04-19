@@ -6,6 +6,7 @@
 
 import SwiftUI
 import Combine
+import TextAloudKit
 
 class SettingViewModel: ObservableObject{
     
