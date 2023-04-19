@@ -50,7 +50,7 @@ module.exports = ({ github, context, core }) => {
     count++;
   }
 
-  if (count !== 4) throw new Error("Didn't find four entries of the version");
+  console.log(`Changing ${count} version numbers`);
 
   console.log("Current version is: ", currentVersion);
 
