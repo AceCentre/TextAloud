@@ -90,7 +90,7 @@
 		D5B9CE3929EFE46500531DA2 /* VoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2729EFE46500531DA2 /* VoiceModel.swift */; };
 		D5B9CE3F29EFE5F400531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; };
 		D5B9CE4029EFE5F400531DA2 /* TextAloudKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D5B9CE4429EFE60000531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; };
+		D5B9CE4429EFE60000531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; platformFilter = ios; };
 		D5B9CE4A29EFE63200531DA2 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5B9CE4929EFE63200531DA2 /* ExceptionCatcher */; };
 		D5B9CE4C29EFE63200531DA2 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5B9CE4B29EFE63200531DA2 /* YouTubePlayerKit */; };
 		D5B9CE4D29EFE63B00531DA2 /* MicrosoftCognitiveServicesSpeech.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F8DE1299E7E1500C591D7 /* MicrosoftCognitiveServicesSpeech.xcframework */; };
@@ -1222,6 +1222,7 @@
 		};
 		D5B9CE4729EFE60000531DA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = D58686B829EF2A8B004E5A4B /* TextAloudKit */;
 			targetProxy = D5B9CE4629EFE60000531DA2 /* PBXContainerItemProxy */;
 		};
@@ -1473,16 +1474,17 @@
 				INFOPLIST_FILE = TextAloudProShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloudProShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.TextAloudProShareExtension;
+				MARKETING_VERSION = 1.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1500,16 +1502,17 @@
 				INFOPLIST_FILE = TextAloudProShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TextAloudProShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.TextAloudProShareExtension;
+				MARKETING_VERSION = 1.12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.org.acecentre.TextAloudPro.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

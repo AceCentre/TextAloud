@@ -17,6 +17,7 @@ enum FileType: String{
     case rtf, pdf, docx, txt
 }
 
+@objc(ShareNavigationController)
 class ShareNavigationController: UINavigationController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -145,11 +146,11 @@ class ShareViewController: UIViewController {
             let result = self.getTextFromItem(item: item)
             let base64EncodedText = Data(result.utf8).base64EncodedString()
             
-            var urlScheme = "textaloudpro"
+            let urlScheme = "textaloudpro"
             
             self.appURLString = urlScheme + "://insertText?text=" + base64EncodedText
             
-            let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.Aloud")
+            let def = UserDefaults(suiteName: "group.uk.org.acecentre.Text.AloudPro")
             def?.set(result, forKey: "shareText")
             
             self.openMainApp()

@@ -56,8 +56,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.mobilenotes"
+         RemotePath = "/var/containers/Bundle/Application/30BA24A3-5D15-441F-ACBA-A5C855FA1907/MobileNotes.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D58686A529EF2A53004E5A4B"
@@ -65,7 +69,7 @@
             BlueprintName = "TextAloudPro"
             ReferencedContainer = "container:TextAloud.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

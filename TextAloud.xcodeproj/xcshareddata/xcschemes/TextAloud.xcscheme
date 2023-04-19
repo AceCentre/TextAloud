@@ -67,7 +67,7 @@
          referenceType = "1">
       </LocationScenarioReference>
       <StoreKitConfigurationFileReference
-         identifier = "../TextAloud/TextAloud.storekit">
+         identifier = "../TextAloud/TextAloudStore.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
