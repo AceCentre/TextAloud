@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */; };
-		5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A12CBBE29A3593A00E950A8 /* Task.swift */; };
 		5A155602299D128E001A0B7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A155604299D128E001A0B7D /* Localizable.strings */; };
 		5A155D7029B76A5D00E18A3B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A155D6F29B76A5D00E18A3B /* ShareViewController.swift */; };
 		5A155D7729B76A5D00E18A3B /* TextAloudShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A155D6D29B76A5D00E18A3B /* TextAloudShareExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -110,7 +109,6 @@
 		D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */; };
 		D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */; };
 		D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8029EFE6B100531DA2 /* View.swift */; };
-		D5B9CE8F29EFE6B100531DA2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8529EFE6B100531DA2 /* Task.swift */; };
 		D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */; };
 		D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */; };
 		D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
@@ -125,6 +123,8 @@
 		D5B9CEAF29F150B000531DA2 /* NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEAE29F150B000531DA2 /* NSRange.swift */; };
 		D5B9CEB129F151F300531DA2 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB029F151F300531DA2 /* NSNotification.swift */; };
 		D5B9CEB329F153AD00531DA2 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB229F153AD00531DA2 /* UserDefaults.swift */; };
+		D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB429F1545300531DA2 /* UInt.swift */; };
+		D5B9CEB729F1547700531DA2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB629F1547700531DA2 /* Task.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
@@ -215,7 +215,6 @@
 
 /* Begin PBXFileReference section */
 		5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
-		5A12CBBE29A3593A00E950A8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5A155603299D128E001A0B7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155605299D1CC0001A0B7D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A155606299D1DB1001A0B7D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -317,7 +316,6 @@
 		D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5B9CE8029EFE6B100531DA2 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		D5B9CE8529EFE6B100531DA2 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
 		D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudPro.entitlements; sourceTree = "<group>"; };
@@ -331,6 +329,8 @@
 		D5B9CEAE29F150B000531DA2 /* NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRange.swift; sourceTree = "<group>"; };
 		D5B9CEB029F151F300531DA2 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		D5B9CEB229F153AD00531DA2 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		D5B9CEB429F1545300531DA2 /* UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
+		D5B9CEB629F1547700531DA2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -427,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				5A4A0EC7299B979D00E3B385 /* View.swift */,
-				5A12CBBE29A3593A00E950A8 /* Task.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +587,8 @@
 				D5B9CEA829F14E3F00531DA2 /* String.swift */,
 				D5B9CEB029F151F300531DA2 /* NSNotification.swift */,
 				D5B9CEAE29F150B000531DA2 /* NSRange.swift */,
+				D5B9CEB629F1547700531DA2 /* Task.swift */,
+				D5B9CEB429F1545300531DA2 /* UInt.swift */,
 				D5B9CEB229F153AD00531DA2 /* UserDefaults.swift */,
 				D5B9CEAA29F14FA300531DA2 /* Sequence.swift */,
 				D5B9CEA629F1462500531DA2 /* Color.swift */,
@@ -748,7 +749,6 @@
 			isa = PBXGroup;
 			children = (
 				D5B9CE8029EFE6B100531DA2 /* View.swift */,
-				D5B9CE8529EFE6B100531DA2 /* Task.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1081,7 +1081,6 @@
 				D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */,
 				D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */,
 				D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */,
-				D5B9CE8F29EFE6B100531DA2 /* Task.swift in Sources */,
 				D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */,
 				D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */,
 				D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */,
@@ -1119,6 +1118,8 @@
 				D5B9CEB329F153AD00531DA2 /* UserDefaults.swift in Sources */,
 				D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */,
 				D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */,
+				D5B9CEB729F1547700531DA2 /* Task.swift in Sources */,
+				D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */,
 				D5B9CEA729F1462500531DA2 /* Color.swift in Sources */,
 				D5B9CEB129F151F300531DA2 /* NSNotification.swift in Sources */,
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
@@ -1177,7 +1178,6 @@
 				5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */,
 				FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */,
 				5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */,
-				5A12CBBF29A3593A00E950A8 /* Task.swift in Sources */,
 				5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */,
 				5A6E493629A39F0E000A66A4 /* Audio.swift in Sources */,
 				5A1E176929A7638E009BB492 /* LanguageSpeechView.swift in Sources */,

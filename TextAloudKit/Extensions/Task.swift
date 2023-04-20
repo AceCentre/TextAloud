@@ -1,15 +1,15 @@
 //
 //  Task.swift
-//  TextAloud
+//  TextAloudKit
 //
+//  Created by Gavin Henderson on 20/04/2023.
 //
 
 import Foundation
 
-
 extension Task where Failure == Error {
     @discardableResult
-    static func delayed(
+    static public func delayed(
         byTimeInterval delayInterval: TimeInterval,
         priority: TaskPriority? = nil,
         operation: @escaping @Sendable () async throws -> Success
@@ -22,16 +22,3 @@ extension Task where Failure == Error {
     }
 }
 
-
-extension UInt{
-    
-    ///ticks = 100 nanosec
-    var tikcsToSeconds: Double{
-        Double(self) / 10_000_000
-    }
-    
-    var tikcsToMillisecond: Double{
-        Double(self) / 10
-    }
-    
-}
