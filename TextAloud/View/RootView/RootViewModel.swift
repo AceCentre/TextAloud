@@ -97,7 +97,7 @@ class RootViewModel: ObservableObject{
     func setShareObjectIfNeeded() -> Bool{
         let key = "shareText"
         
-        var suiteName = "group.uk.org.acecentre.Text.Aloud"
+        let suiteName = "group.uk.org.acecentre.Text.Aloud"
         
         let def = UserDefaults(suiteName: suiteName)
         if let text = def?.string(forKey: key), !text.isEmpty{
