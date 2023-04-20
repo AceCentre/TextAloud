@@ -12,10 +12,10 @@ public class NetworkMonitorManager: ObservableObject {
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "NetworkManager")
     
-    @Published var isOnline: Bool = false
-    @Published var isExpensive: Bool = false
-    @Published var presentExpensiveNotification: Bool = false
-    @Published var presentOfflineNotification: Bool = false
+    @Published public var isOnline: Bool = false
+    @Published public var isExpensive: Bool = false
+    @Published public var presentExpensiveNotification: Bool = false
+    @Published public var presentOfflineNotification: Bool = false
 
     public init() {
         monitor.pathUpdateHandler = { path in
