@@ -227,10 +227,10 @@ extension RootView{
             } else {
                 let location = synthesizer.currentWord?.nextLocation ?? 3
 
-                var range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.length ? location : 0)
+                var range = rootVM.setSelectedRangeForMode(with: location < rootVM.text.count ? location : 0)
                 
                 if let cursorPos = rootVM.cursorPos, rootVM.isEditMode {
-                    range = rootVM.setSelectedRangeForMode(with: cursorPos < rootVM.text.length ? cursorPos : rootVM.text.length - 1)
+                    range = rootVM.setSelectedRangeForMode(with: cursorPos < rootVM.text.count ? cursorPos : rootVM.text.count - 1)
                 }
                 
                 

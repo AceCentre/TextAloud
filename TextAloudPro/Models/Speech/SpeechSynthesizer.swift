@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFAudio
 import Combine
+import TextAloudKit
 
 class SpeechSynthesizer: NSObject, ObservableObject {
     

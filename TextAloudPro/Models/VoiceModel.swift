@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import TextAloudKit
 
 struct VoiceModel: Identifiable, Hashable, Codable{
     

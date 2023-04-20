@@ -8,17 +8,12 @@
 import Foundation
 
 extension String {
-
-    var length: Int {
-        return count
-    }
-
     subscript (i: Int) -> String {
         return self[i ..< i + 1]
     }
     
     func substring(fromIndex: Int) -> String {
-        return self[min(fromIndex, length) ..< length]
+        return self[min(fromIndex, self.count) ..< self.count]
     }
 
     func substring(toIndex: Int) -> String {
@@ -26,8 +21,8 @@ extension String {
     }
 
     subscript (r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
+        let range = Range(uncheckedBounds: (lower: max(0, min(self.count, r.lowerBound)),
+                                            upper: min(self.count, max(0, r.upperBound))))
         let start = index(startIndex, offsetBy: range.lowerBound)
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ..< end])
@@ -45,18 +40,18 @@ extension String {
         self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
     
-    var titlecased: String {
+    public var titlecased: String {
         self.replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression, range: self.range(of: self))
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .capitalized
     }
     
-    func substring(with nsrange: NSRange) -> Substring? {
+    public func substring(with nsrange: NSRange) -> Substring? {
         guard let range = Range(nsrange, in: self) else { return nil }
         return self[range]
     }
     
-    var getFullLocaleLanguageStr: String{
+    public var getFullLocaleLanguageStr: String{
         let locale: Locale = .current
         
         guard let countru = locale.localizedString(forLanguageCode: self) else {
@@ -70,7 +65,7 @@ extension String {
         return "\(countru) (\(region))"
     }
     
-    var shortLocaleLanguage: String{
+    public var shortLocaleLanguage: String{
         let locale: Locale = .current
         
         guard let countru = locale.localizedString(forLanguageCode: self) else {
@@ -80,7 +75,7 @@ extension String {
         return "\(countru) \(region)"
     }
     
-    var createName: String{
+    public var createName: String{
        String(self.prefix(10) + "...")
     }
     
@@ -91,13 +86,5 @@ extension String {
             return true
         default : return false
         }
-    }
-}
-
-
-extension Sequence where Element: Hashable {
-    func uniqued() -> [Element] {
-        var set = Set<Element>()
-        return filter { set.insert($0).inserted }
     }
 }

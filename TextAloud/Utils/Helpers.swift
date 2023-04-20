@@ -9,7 +9,7 @@ import PDFKit
 
 final class Helpers{
     static func getAllTextRange(_ location: Int, _ text: String) -> NSRange{
-        .init(location: 0, length: text.length)
+        .init(location: 0, length: text.count)
     }
     
     static func getRangeTextForIndex(index: Int, with options: String.EnumerationOptions, text: String) -> NSRange{
@@ -17,7 +17,7 @@ final class Helpers{
         let fullTextRange = text.startIndex ..< text.endIndex
         
         // If we have overshot with our recursion bail back to the start
-        if index > text.length {
+        if index > text.count {
             return .init(location: 0, length: 0)
         }
         

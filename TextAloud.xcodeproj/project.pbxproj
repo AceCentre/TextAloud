@@ -113,7 +113,6 @@
 		D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */; };
 		D5B9CE8929EFE6B100531DA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */; };
 		D5B9CE8A29EFE6B100531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8029EFE6B100531DA2 /* View.swift */; };
-		D5B9CE8B29EFE6B100531DA2 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */; };
 		D5B9CE8C29EFE6B100531DA2 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */; };
 		D5B9CE8D29EFE6B100531DA2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8329EFE6B100531DA2 /* Array.swift */; };
 		D5B9CE8E29EFE6B100531DA2 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */; };
@@ -127,13 +126,14 @@
 		D5B9CEA329F0377300531DA2 /* ShareExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEA229F0377300531DA2 /* ShareExtension.swift */; };
 		D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEA429F042AF00531DA2 /* NetworkManager.swift */; };
 		D5B9CEA729F1462500531DA2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEA629F1462500531DA2 /* Color.swift */; };
+		D5B9CEA929F14E3F00531DA2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEA829F14E3F00531DA2 /* String.swift */; };
+		D5B9CEAB29F14FA300531DA2 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEAA29F14FA300531DA2 /* Sequence.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
 		FDF5C302290BDFE40003A675 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C301290BDFE40003A675 /* TextView.swift */; };
 		FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C307290F0D250003A675 /* SettingsView.swift */; };
 		FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C309290F122E0003A675 /* SettingsLabelView.swift */; };
-		FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,7 +323,6 @@
 		D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		D5B9CE7E29EFE6B100531DA2 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5B9CE8029EFE6B100531DA2 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 		D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D5B9CE8329EFE6B100531DA2 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -336,6 +335,8 @@
 		D5B9CEA229F0377300531DA2 /* ShareExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtension.swift; sourceTree = "<group>"; };
 		D5B9CEA429F042AF00531DA2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D5B9CEA629F1462500531DA2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D5B9CEA829F14E3F00531DA2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D5B9CEAA29F14FA300531DA2 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,7 +346,6 @@
 		FDF5C301290BDFE40003A675 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FDF5C307290F0D250003A675 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDF5C309290F122E0003A675 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
-		FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,7 +433,6 @@
 			isa = PBXGroup;
 			children = (
 				5A4A0EC7299B979D00E3B385 /* View.swift */,
-				FDF5C30B290F4A0F0003A675 /* StringExtentions.swift */,
 				5A6F8DDC299E260100C591D7 /* UserDefaults.swift */,
 				5A12CBBE29A3593A00E950A8 /* Task.swift */,
 				5A6E493C29A3AC06000A66A4 /* Array.swift */,
@@ -595,6 +594,8 @@
 			isa = PBXGroup;
 			children = (
 				D5B9CDCA29EF2BAB00531DA2 /* Image.swift */,
+				D5B9CEA829F14E3F00531DA2 /* String.swift */,
+				D5B9CEAA29F14FA300531DA2 /* Sequence.swift */,
 				D5B9CEA629F1462500531DA2 /* Color.swift */,
 			);
 			path = Extensions;
@@ -753,7 +754,6 @@
 			isa = PBXGroup;
 			children = (
 				D5B9CE8029EFE6B100531DA2 /* View.swift */,
-				D5B9CE8129EFE6B100531DA2 /* StringExtentions.swift */,
 				D5B9CE8229EFE6B100531DA2 /* NotificationName.swift */,
 				D5B9CE8329EFE6B100531DA2 /* Array.swift */,
 				D5B9CE8429EFE6B100531DA2 /* UserDefaults.swift */,
@@ -1105,7 +1105,6 @@
 				D5B9CE6C29EFE69200531DA2 /* VoiceListView.swift in Sources */,
 				D5B9CE6A29EFE69200531DA2 /* SettingViewModel.swift in Sources */,
 				D5B9CE6B29EFE69200531DA2 /* LanguageSpeechView.swift in Sources */,
-				D5B9CE8B29EFE6B100531DA2 /* StringExtentions.swift in Sources */,
 				D5B9CDED29EFE3FA00531DA2 /* LocalFileManager.swift in Sources */,
 				D5B9CE8C29EFE6B100531DA2 /* NotificationName.swift in Sources */,
 				D5B9CE7829EFE69200531DA2 /* ErrorViewModif.swift in Sources */,
@@ -1128,10 +1127,12 @@
 				D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */,
 				D5B9CEA329F0377300531DA2 /* ShareExtension.swift in Sources */,
 				D5B9CEA129F0231A00531DA2 /* Localization.swift in Sources */,
+				D5B9CEA929F14E3F00531DA2 /* String.swift in Sources */,
 				D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */,
 				D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */,
 				D5B9CEA729F1462500531DA2 /* Color.swift in Sources */,
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
+				D5B9CEAB29F14FA300531DA2 /* Sequence.swift in Sources */,
 				D5B9CDCB29EF2BAB00531DA2 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1172,7 +1173,6 @@
 				D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */,
 				5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */,
 				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
-				FDF5C30C290F4A0F0003A675 /* StringExtentions.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
 				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,
