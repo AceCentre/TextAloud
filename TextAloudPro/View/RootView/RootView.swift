@@ -22,7 +22,7 @@ struct RootView: View {
     @State var showLanguageSheet: Bool = false
     @State var showUpgradeModal: Bool = false
     
-  
+    @State var activityItemsToShare: ActivityItems?
     
     var body: some View {
         
@@ -62,6 +62,9 @@ struct RootView: View {
                 synthesizer.saveSpeechData(rootVM.text)
             default: break
             }
+        }
+        .sheet(item: $activityItemsToShare) { shareItem in
+            ActivityView(activityItems: shareItem.activityItems)
         }
         .sheet(isPresented: $showUpgradeModal) {
             InAppPurchaseSheet(onPurchaseClick: {
@@ -254,7 +257,7 @@ extension RootView{
                 
                 Button {
                     if let audioUrl = synthesizer.savedAudio?.url{
-                        Helpers.showShareSheet(data: audioUrl)
+                        activityItemsToShare = ActivityItems([audioUrl])
                     }
                 } label: {
                     Label("Share", systemImage: "arrowshape.turn.up.right.fill")

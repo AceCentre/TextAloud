@@ -67,21 +67,4 @@ final class Helpers{
         guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) else { return nil}
         return attributedStringWithPlain.string
     }
-    
-    
-    static func showShareSheet(data: Any){
-        UIActivityViewController(activityItems: [data], applicationActivities: nil).presentInKeyWindow()
-    }
-}
-
-
-extension UIViewController {
-    
-    func presentInKeyWindow(animated: Bool = true, completion: (() -> Void)? = nil) {
-        UIApplication
-            .shared
-            .connectedScenes
-            .compactMap { ($0 as? UIWindowScene)?.keyWindow }
-            .first?.rootViewController?.present(self, animated: animated, completion: completion)
-    }
 }
