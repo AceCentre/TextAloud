@@ -8,43 +8,7 @@ import Foundation
 import PDFKit
 
 final class Helpers{
-    static func getAllTextRange(_ location: Int, _ text: String) -> NSRange{
-        .init(location: 0, length: text.count)
-    }
-    
-    static func getRangeTextForIndex(index: Int, with options: String.EnumerationOptions, text: String) -> NSRange{
-        var ranges = [NSRange]()
-        let fullTextRange = text.startIndex ..< text.endIndex
-        
-        // If we have overshot with our recursion bail back to the start
-        if index > text.count {
-            return .init(location: 0, length: 0)
-        }
-        
-        // Put all the ranges into a list
-        text.enumerateSubstrings(in: fullTextRange, options: options) { _, substringRange, enclosingRange, _ in
-            ranges.append(NSRange(substringRange, in: text))
-        }
-        
-    
-        // Find the matching range or move to the next stop
-        if let foundRange = ranges.first(where: {$0.contains(index)}) {
-            
-            // Get the text in the range that we have found.
-            // If its just an empty string then just recurse to the next range.
-            let textThatWillPlay = String(text.substring(with: foundRange) ?? "default")
-            let trimmed = textThatWillPlay.trimmingCharacters(in: .whitespacesAndNewlines)
-            if trimmed.count == 0 {
-                return getRangeTextForIndex(index: index + 1, with: options, text: text)
-            }
-            
-            return foundRange
-        } else {
-            return getRangeTextForIndex(index: index + 1, with: options, text: text)
-        }
-    }
-    
-    
+
    static func pdfToText(for url: URL) -> String?{
        let docContent = NSMutableAttributedString()
        guard let pdf = PDFDocument(url: url) else {return nil}

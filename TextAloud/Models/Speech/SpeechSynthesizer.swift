@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFAudio
 import Combine
+import TextAloudKit
 
 class SpeechSynthesizer: NSObject, ObservableObject {
     
@@ -90,6 +91,11 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
+    func setSpeakForRange(_ text: String, _ range: NSRange, textSelectionMode: TextSelectionEnum, completion: ((Double) -> ())?) {
+        playMode = PlayMode.textSelectionToPlayMode(textSelection: textSelectionMode)
+        self.setSpeakForRange(text, range, mode: playMode, completion: completion)
+    }
+    
     func stop() {
         if isAzureSpeech{
             azureSpeech.stop()
@@ -167,4 +173,11 @@ enum SpeechRateEnum: Int, CaseIterable{
 
 enum PlayMode: Int{
     case all, selecting, tapped, setting
+    
+    static func textSelectionToPlayMode(textSelection: TextSelectionEnum) -> PlayMode {
+        switch textSelection {
+        case .all: return .all
+        default: return .selecting
+        }
+    }
 }

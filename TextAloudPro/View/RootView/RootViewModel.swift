@@ -8,12 +8,13 @@ import Foundation
 import SwiftUI
 import Combine
 import PDFKit
+import TextAloudKit
 
 class RootViewModel: ObservableObject{
     @Published var text: String = "Example text, press the plus button to add your own document."
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
-    @AppStorage("currentSelectionMode") var currentSelectionMode: SelectionEnum = .paragraph
+    @AppStorage("currentSelectionMode") var currentSelectionMode: TextSelectionEnum = .paragraph
     @Published var isFocused: Bool = false
     @Published var selectedRange: NSRange?
     @Published var tappedRange: NSRange?
@@ -54,7 +55,7 @@ class RootViewModel: ObservableObject{
         text.removeAll()
     }
     
-    func setSelectionMode(_ type: SelectionEnum){
+    func setSelectionMode(_ type: TextSelectionEnum){
         tappedRange = nil
         selectedRange = nil
         currentSelectionMode = type

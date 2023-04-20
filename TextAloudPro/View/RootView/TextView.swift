@@ -7,7 +7,7 @@
 
 import SwiftUI
 import UIKit
-
+import TextAloudKit
 import ExceptionCatcher
 
 
@@ -18,7 +18,7 @@ struct TextView: UIViewRepresentable {
     @Binding var currentWord: NSRange?
     @Binding var selectedRange: NSRange?
     @Binding var tappedRange: NSRange?
-    @Binding var selectionMode: SelectionEnum
+    @Binding var selectionMode: TextSelectionEnum
     @Binding var cursorPos: Int?
 
     @AppStorage("fontSize") var fontSize: Int = 25

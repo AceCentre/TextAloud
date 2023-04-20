@@ -42,7 +42,6 @@
 		5A96E57029A1588A00347F12 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A96E56F29A1588A00347F12 /* TextButtonView.swift */; };
 		5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */; };
 		5ADCBB57299C060300FC05C8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB56299C060300FC05C8 /* Helpers.swift */; };
-		5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */; };
 		5AEF7F9F29A4B11D00D3BCAD /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */; };
 		5AEF7FA129A4C26500D3BCAD /* VoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */; };
 		5AF0E1F529ACAD95004BB2F8 /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */; };
@@ -72,7 +71,6 @@
 		D5B9CDF929EFE41100531DA2 /* VoicesSimpleTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF329EFE41100531DA2 /* VoicesSimpleTexts.swift */; };
 		D5B9CDFA29EFE41100531DA2 /* VoiceSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF429EFE41100531DA2 /* VoiceSaveService.swift */; };
 		D5B9CDFB29EFE41100531DA2 /* AzureVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDF529EFE41100531DA2 /* AzureVoiceService.swift */; };
-		D5B9CE3229EFE46500531DA2 /* SelectionModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */; };
 		D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2129EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift */; };
 		D5B9CE3429EFE46500531DA2 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2229EFE46500531DA2 /* SpeechSynthesizer.swift */; };
 		D5B9CE3529EFE46500531DA2 /* SpeechSynthesier+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE2329EFE46500531DA2 /* SpeechSynthesier+Audio.swift */; };
@@ -125,6 +123,7 @@
 		D5B9CEB729F1547700531DA2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB629F1547700531DA2 /* Task.swift */; };
 		D5B9CEB929F1556000531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB829F1556000531DA2 /* View.swift */; };
 		D5B9CEBC29F1787000531DA2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEBB29F1787000531DA2 /* ActivityView.swift */; };
+		D5B9CEBF29F1849100531DA2 /* TextSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEBE29F1849100531DA2 /* TextSelection.swift */; };
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
@@ -255,7 +254,6 @@
 		5A96E56F29A1588A00347F12 /* TextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
 		5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		5ADCBB56299C060300FC05C8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
 		5AEF7F9E29A4B11D00D3BCAD /* VoicesSimpleTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicesSimpleTexts.swift; sourceTree = "<group>"; };
 		5AEF7FA029A4C26500D3BCAD /* VoiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceListView.swift; sourceTree = "<group>"; };
 		5AF0E1F429ACAD95004BB2F8 /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 		D5B9CDF329EFE41100531DA2 /* VoicesSimpleTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicesSimpleTexts.swift; sourceTree = "<group>"; };
 		D5B9CDF429EFE41100531DA2 /* VoiceSaveService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceSaveService.swift; sourceTree = "<group>"; };
 		D5B9CDF529EFE41100531DA2 /* AzureVoiceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureVoiceService.swift; sourceTree = "<group>"; };
-		D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionModeEnum.swift; sourceTree = "<group>"; };
 		D5B9CE2129EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+UserDefaults.swift"; sourceTree = "<group>"; };
 		D5B9CE2229EFE46500531DA2 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		D5B9CE2329EFE46500531DA2 /* SpeechSynthesier+Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesier+Audio.swift"; sourceTree = "<group>"; };
@@ -331,6 +328,7 @@
 		D5B9CEB629F1547700531DA2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D5B9CEB829F1556000531DA2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		D5B9CEBB29F1787000531DA2 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D5B9CEBE29F1849100531DA2 /* TextSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelection.swift; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
 		FDF5C2EA290990F10003A675 /* TextAloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -558,6 +556,7 @@
 				D5B9CEBA29F1786100531DA2 /* Views */,
 				D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */,
 				D5B9CEA029F0231A00531DA2 /* Localization.swift */,
+				D5B9CEBD29F1847E00531DA2 /* Models */,
 				D5B9CEA429F042AF00531DA2 /* NetworkManager.swift */,
 				D5B9CEA229F0377300531DA2 /* ShareExtension.swift */,
 			);
@@ -643,7 +642,6 @@
 		D5B9CE1E29EFE46500531DA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D5B9CE1F29EFE46500531DA2 /* SelectionModeEnum.swift */,
 				D5B9CE2029EFE46500531DA2 /* Speech */,
 				D5B9CE2629EFE46500531DA2 /* Audio.swift */,
 				D5B9CE2729EFE46500531DA2 /* VoiceModel.swift */,
@@ -745,6 +743,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D5B9CEBD29F1847E00531DA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CEBE29F1849100531DA2 /* TextSelection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FDF5C2E1290990F10003A675 = {
 			isa = PBXGroup;
 			children = (
@@ -820,7 +826,6 @@
 				5A6E493529A39F0E000A66A4 /* Audio.swift */,
 				5A4CC75D299FC56600D8E146 /* VoiceModel.swift */,
 				5A4CC751299F6F5F00D8E146 /* Speech */,
-				5ADCBB58299C12E300FC05C8 /* SelectionModeEnum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1093,7 +1098,6 @@
 				D5B9CE6E29EFE69200531DA2 /* SpeachTextViewComponent.swift in Sources */,
 				D5B9CE7229EFE69200531DA2 /* CircleControlButtonView.swift in Sources */,
 				D5B9CE3729EFE46500531DA2 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */,
-				D5B9CE3229EFE46500531DA2 /* SelectionModeEnum.swift in Sources */,
 				D5B9CDF929EFE41100531DA2 /* VoicesSimpleTexts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1113,6 +1117,7 @@
 				D5B9CEB729F1547700531DA2 /* Task.swift in Sources */,
 				D5B9CEBC29F1787000531DA2 /* ActivityView.swift in Sources */,
 				D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */,
+				D5B9CEBF29F1849100531DA2 /* TextSelection.swift in Sources */,
 				D5B9CEA729F1462500531DA2 /* Color.swift in Sources */,
 				D5B9CEB129F151F300531DA2 /* NSNotification.swift in Sources */,
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
@@ -1154,7 +1159,6 @@
 				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
 				D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */,
 				5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */,
-				5ADCBB59299C12E300FC05C8 /* SelectionModeEnum.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
 				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
 				5ADCBB55299BCA2900FC05C8 /* FlexStackView.swift in Sources */,

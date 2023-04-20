@@ -237,7 +237,7 @@ extension RootView{
                 }
                 
                 
-                synthesizer.setSpeakForRange(rootVM.text, range, mode: rootVM.currentSelectionMode.playMode, completion: { duration in
+                synthesizer.setSpeakForRange(rootVM.text, range, textSelectionMode: rootVM.currentSelectionMode, completion: { duration in
                     settingsVM.trackSecondsUsed(secondsUsed: duration)
                 })
             }
@@ -314,7 +314,7 @@ extension RootView{
     private var selectedMenuButton: some View{
         if !rootVM.isFocused{
             Menu {
-                ForEach(SelectionEnum.allCases, id: \.self) { type in
+                ForEach(TextSelectionEnum.allCases, id: \.self) { type in
                     Button(type.locale){
                         rootVM.setSelectionMode(type)
                     }
