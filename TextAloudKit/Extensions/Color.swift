@@ -8,16 +8,10 @@ import SwiftUI
 
 
 extension Color{
-    
-    
-    static let deepOcean = Color("Deep Ocean")
-    
-    static let lightOcean = Color("Light Ocean")
-    
-    static let limeChalk = Color("Lime Chalk")
-    
-    static let orange = Color("Orange")
-    
+    static public let deepOcean = Color("Deep Ocean")
+    static public let lightOcean = Color("Light Ocean")
+    static public let limeChalk = Color("Lime Chalk")
+    static public let orange = Color("Orange")
 }
 
 
