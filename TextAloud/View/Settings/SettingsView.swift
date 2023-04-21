@@ -135,13 +135,28 @@ extension SettingsView{
                 Group {
                     GroupBox {
                         
-                        SettingsLink(label:"Documentation", pageLink: "https://docs.acecentre.org.uk/products/v/textaloud/") {}
-                        Divider().padding(.vertical, 4)
-                        SettingsLink(label:"Find out more about Ace Centre", pageLink: "https://acecentre.org.uk") {}
-                        Divider().padding(.vertical, 4)
-                        SettingsLink(label:"Contact Us", pageLink: "https://acecentre.org.uk/contact") {}
-                        Divider().padding(.vertical, 4)
-                        SettingsLink(label:"Recieve our Newsletter", pageLink: "https://acecentre.org.uk/?newsletter=textaloud") {}
+                        Group {
+                            SettingsLink(label:"Documentation", pageLink: "https://docs.acecentre.org.uk/products/v/textaloud/") {}
+                            Divider().padding(.vertical, 4)
+                        }
+                        Group {
+                            SettingsLink(label:"Find out more about Ace Centre", pageLink: "https://acecentre.org.uk") {}
+                            Divider().padding(.vertical, 4)
+                        }
+                        Group {                
+                            SettingsLink(label:"Contact Us", pageLink: "https://acecentre.org.uk/contact") {}
+                            Divider().padding(.vertical, 4)
+                        }               
+                        Group {                   
+                            SettingsLink(label:"Recieve our Newsletter", pageLink: "https://acecentre.org.uk/?newsletter=textaloud") {}
+                            Divider().padding(.vertical, 4)
+                        }
+                        Group {
+                            SettingsLink(label:"Give us Feedback", pageLink: "https://acecentre.org.uk/form/textaloud-feedback") {}
+                            Divider().padding(.vertical, 4)
+                        }
+                        LeaveReviewLink(label: "Leave a review")
+                        
                     }
                     Spacer().padding(.vertical, 2)
 }
