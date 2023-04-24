@@ -20,7 +20,7 @@ class TextSelection {
         
         // If we have overshot with our recursion bail back to the start
         if index > text.count {
-            return .init(location: 0, length: 0)
+            return getRangeTextForIndex(index: 0, with: options, text: text)
         }
         
         // Put all the ranges into a list
