@@ -117,20 +117,109 @@ final class TextSelectionTests: XCTestCase {
     func testFirstSentanceFromStart() throws {
         let input = "First. Second."
         let location = 0
-        let expected = NSRange(location: 0, length: 5)
+        let expected = NSRange(location: 0, length: 7)
         
-        let result = TextSelectionEnum.word.getRangeForIndex(location, input)
+        let result = TextSelectionEnum.sentence.getRangeForIndex(location, input)
         XCTAssertEqual(result, expected, "The wrong range was calculated")
     }
     
-    /// Returns the first sentance even if second setance has no Capital
+    /// Returns the everything if there is no capital as its all one sentence
+    /// This is a known limitation of the built in iterator
+    /// Luckly the built in iOS keyboard auto capitals after a full stop so its not a huge issue.
     func testFirstSentanceNoFullCap() throws {
         let input = "First. second."
         let location = 0
-        let expected = NSRange(location: 0, length: 5)
+        let expected = NSRange(location: 0, length: 14)
         
-        let result = TextSelectionEnum.word.getRangeForIndex(location, input)
+        let result = TextSelectionEnum.sentence.getRangeForIndex(location, input)
         XCTAssertEqual(result, expected, "The wrong range was calculated")
     }
-
+    
+    /// Returns the everything if there is no capital as its all one sentence
+    func testAlternativePunctuation() throws {
+        let input = "First! Second? Third."
+        
+        XCTAssertEqual(TextSelectionEnum.sentence.getRangeForIndex(0, input), NSRange(location: 0, length: 7), "The wrong range was calculated")
+        XCTAssertEqual(TextSelectionEnum.sentence.getRangeForIndex(7, input), NSRange(location: 7, length: 8), "The wrong range was calculated")
+        XCTAssertEqual(TextSelectionEnum.sentence.getRangeForIndex(15, input), NSRange(location: 15, length: 6), "The wrong range was calculated")
+    }
+    
+    /// Wraps back round to the start to find the first sentence if curor is negative
+    func testReturnsFirstSentenceIsNegative() throws {
+        let input = "This is a sentence. Another one"
+        let location = -99
+        let expected = NSRange(location: 0, length: 20)
+        
+        let result = TextSelectionEnum.sentence.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
+    
+    /// Wraps back round to the start to find the first sentence if curor is too high
+    func testReturnsFirstSentenceIsTooHigh() throws {
+        let input = "This is a sentence. Another one"
+        let location = 99
+        let expected = NSRange(location: 0, length: 20)
+        
+        let result = TextSelectionEnum.sentence.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
+    
+    
+    /// Returns the first paragraph
+    func testReturnsTheFirstParagraph() throws {
+        let input = """
+        This is the first para
+        
+        This is the second para
+        """
+        let location = 0
+        let expected = NSRange(location: 0, length: 22)
+        
+        let result = TextSelectionEnum.paragraph.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
+    
+    /// Returns the second paragraph
+    func testReturnsTheSecondaragraph() throws {
+        let input = """
+        This is the first para
+        
+        This is the second para
+        """
+        let location = 24
+        let expected = NSRange(location: 24, length: 23)
+        
+        let result = TextSelectionEnum.paragraph.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
+    
+    /// Returns the second paragraph when a single new line is in place
+    func testParagraphSplitWithSingleNewLine() throws {
+        let input = """
+        This is the first para
+        This is the second para
+        """
+        let location = 24
+        let expected = NSRange(location: 23, length: 23)
+        
+        let result = TextSelectionEnum.paragraph.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
+    
+    /// Skips a large group of new lines
+    func testParagraphSkipNewLineGroup() throws {
+        let input = """
+        This is the first para
+        
+        
+        
+        
+        This is the second para
+        """
+        let location = 24
+        let expected = NSRange(location: 27, length: 23)
+        
+        let result = TextSelectionEnum.paragraph.getRangeForIndex(location, input)
+        XCTAssertEqual(result, expected, "The wrong range was calculated")
+    }
 }
