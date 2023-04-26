@@ -48,7 +48,7 @@ class RootViewModel: ObservableObject{
     var isDisabledSaveButton: Bool{
         isFocused && !isChangeText
     }
-        
+    
     func removeText(){
         tappedRange = nil
         selectedRange = nil
@@ -112,8 +112,6 @@ class RootViewModel: ObservableObject{
 
 
 extension RootViewModel{
-    
-    
     func onDocumentPick(for result: Result<[URL], Error>){
         showLoader = true
         selectedRange = nil
@@ -122,57 +120,25 @@ extension RootViewModel{
         case .success(let success):
             if let url = success.first, url.startAccessingSecurityScopedResource(){
                 
-                if let type = FileType(rawValue: url.pathExtension) {
-                    
+                if let type = TextAloudFileType(rawValue: url.pathExtension) {
                     DispatchQueue.global(qos: .userInitiated).async {
-                        
-                        if type == .pdf {
-                            print("Trying PDF Type")
+                        guard let text = type.getText(for: url) else {
+                            self.showLoader = false
+                            self.error = .messageError("Failed to upload, try again. E1")
+                            return
+                        }
+                       
+                        DispatchQueue.main.async {
+                            url.stopAccessingSecurityScopedResource()
+                            self.text = text
+                            self.showLoader = false
+                            self.setDefaultRangeForMode()
                             
-                            if let pdf = PDFDocument(url: url) {
-                                let pageCount = pdf.pageCount
-                                let documentContent = NSMutableAttributedString()
-
-                                for i in 0 ..< pageCount {
-                                    guard let page = pdf.page(at: i) else { continue }
-                                    guard let pageContent = page.attributedString else { continue }
-                                    documentContent.append(pageContent)
-                                }
-                                
-                                let text = String(documentContent.mutableString)
-                                
-                                DispatchQueue.main.async {
-                                    url.stopAccessingSecurityScopedResource()
-                                    self.text = text
-                                    self.showLoader = false
-                                    self.setDefaultRangeForMode()
-                                    if text.isEmpty{
-                                        self.error = .messageError("Failed to upload, try again")
-                                    }
-                                }
-                                
-                                
-                            }
-
-                            
-                        } else {
-                            
-                            if let text = type.getText(for: url){
-                                DispatchQueue.main.async {
-                                    url.stopAccessingSecurityScopedResource()
-                                    self.text = text
-                                    self.showLoader = false
-                                    self.setDefaultRangeForMode()
-                                    
-                                    if text.isEmpty{
-                                        self.error = .messageError("Failed to upload, try again")
-                                    }
-                                }
+                            if text.isEmpty{
+                                self.showLoader = false
+                                self.error = .messageError("Failed to upload, try again. E2")
                             }
                         }
-                        
-                        
-                    
                     }
                 }else{
                     self.showLoader = false
@@ -185,22 +151,3 @@ extension RootViewModel{
         }
     }
 }
-
-
-
-extension RootViewModel{
-    
-    enum FileType: String{
-        case rtf, pdf, txt
-        
-        func getText(for url: URL) -> String?{
-            switch self {
-            case .rtf: return Helpers.rtfToText(for: url)
-            case .pdf: return Helpers.pdfToText(for: url)
-            case .txt: return Helpers.plainToText(for: url)
-            }
-        }
-    }
-}
-
-
