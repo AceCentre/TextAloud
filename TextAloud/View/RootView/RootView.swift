@@ -97,7 +97,7 @@ struct RootView: View {
                 print("Closed")
             }
         }
-        .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text, .content], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
+        .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.pdf, .rtf, .text], allowsMultipleSelection: false, onCompletion: rootVM.onDocumentPick)
         .handle(error: $rootVM.error)
         .alert(
             "No Internet Connection",
