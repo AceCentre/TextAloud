@@ -54,45 +54,21 @@ public class ShareViewController: UIViewController {
         ])
     }
     
-    /**
-     TODO: This has a bunch of repetitive code that should be moved into a framework and reused
-    */
     func getTextFromItem(item: NSSecureCoding?) -> String {
         if let text = item as? String {
             return text
         } else if let url = item as? NSURL {
             print("THIS IS A URL")
             
-             url.startAccessingSecurityScopedResource()
-                
+            url.startAccessingSecurityScopedResource()
+            
             guard let pathExtention = url.pathExtension else { return "Cannot read file. E01" }
             
-            if let type = FileType(rawValue: pathExtention) {
-                if type == .pdf {
-                    print("Trying PDF Type")
-                    
-                    if let pdf = PDFDocument(url: url as URL) {
-                        let pageCount = pdf.pageCount
-                        let documentContent = NSMutableAttributedString()
-                        
-                        for i in 0 ..< pageCount {
-                            guard let page = pdf.page(at: i) else { continue }
-                            guard let pageContent = page.attributedString else { continue }
-                            documentContent.append(pageContent)
-                        }
-                        
-                        let text = String(documentContent.mutableString)
-                        
-                        return text
-                    }
-                } else if type == .txt {
-                    guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url as URL, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.plain], documentAttributes: nil) else { return "Unsupported File" }
-                    return attributedStringWithPlain.string
-                } else if type == .rtf {
-                    guard let attributedStringWithPlain: NSAttributedString = try? NSAttributedString(url: url as URL, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) else { return "Unsupported File" }
-                    return attributedStringWithPlain.string
+            if let type = TextAloudFileType(rawValue: pathExtention) {
+                if let result = type.getText(for: url as URL) {
+                    return result
                 } else {
-                    return "Unsupported file type."
+                    return "Cannot read file: E2"
                 }
             }
             
@@ -103,54 +79,53 @@ public class ShareViewController: UIViewController {
         return "This text cannot be processed by TextAloud"
     }
     
+    func openTextInApp(result: String) {
+        let base64EncodedText = Data(result.utf8).base64EncodedString()
+        
+        self.appURLString = self.appUrlPrefix + "://insertText?text=" + base64EncodedText
+        
+        let def = UserDefaults(suiteName: self.groupName)
+        def?.set(result, forKey: "shareText")
+        
+        self.openMainApp()
+    }
+    
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("APPEARED")
-        
-        guard let context = extensionContext else {
-            print("No context")
-            return
-        }
-        let items = context.inputItems
-        guard let extensionItem = items[0] as? NSExtensionItem else {
-        
-            print("No itmes")
-            return
-            
-        }
-        guard let provider = extensionItem.attachments?.first else {
-            print("No provider")
-            return
-            
-        }
-        guard provider.hasItemConformingToTypeIdentifier(self.desiredType) else {
-            print("Not type")
-            return
-            
-        }
-        
-        print("GOT THIS FAR")
-        
-        provider.loadItem(forTypeIdentifier: self.desiredType) {(item, error) in
-            print("ITEM LOADED")
-            
-            if let error = error {
-                print("Text-Error: \(error.localizedDescription)")
-            }
-            
-            let result = self.getTextFromItem(item: item)
-            let base64EncodedText = Data(result.utf8).base64EncodedString()
+        if let context = extensionContext {
+            let items = context.inputItems
+            if let extensionItem = items[0] as? NSExtensionItem {
+                if let provider = extensionItem.attachments?.first {
+                    if provider.hasItemConformingToTypeIdentifier(self.desiredType) {
                         
-            self.appURLString = self.appUrlPrefix + "://insertText?text=" + base64EncodedText
-            
-            let def = UserDefaults(suiteName: self.groupName)
-            def?.set(result, forKey: "shareText")
-            
-            self.openMainApp()
-
+                        provider.loadItem(forTypeIdentifier: self.desiredType) {(item, error) in
+                            print("ITEM LOADED")
+                            
+                            if let error = error {
+                                print("Text-Error: \(error.localizedDescription)")
+                            }
+                            
+                            let result = self.getTextFromItem(item: item)
+                            
+                            self.openTextInApp(result: result)
+                        }
+                        
+                    } else {
+                        self.openTextInApp(result: "Failed to read file. E4")
+                        
+                    }
+                } else {
+                    self.openTextInApp(result: "Failed to read file. E3")
+                }
+            } else {
+                self.openTextInApp(result: "Failed to read file. E2")
+            }
+        } else {
+            self.openTextInApp(result: "Failed to read file. E1")
         }
     }
+    
     
     
     
