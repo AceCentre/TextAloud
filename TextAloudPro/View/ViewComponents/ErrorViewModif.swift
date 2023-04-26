@@ -45,7 +45,7 @@ enum AppError: LocalizedError, Equatable{
         case .unknow(let error):
             return "Unknown error \(error)"
         case .importerError: return "Error importing file, try again"
-        case .unSupportedFile: return "Sory, this file type is not yet supported"
+        case .unSupportedFile: return "Sorry, this file type is not yet supported"
         }
     }
 }
