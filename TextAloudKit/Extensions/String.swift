@@ -28,18 +28,6 @@ extension String {
         return String(self[start ..< end])
     }
     
-    var byWordsAndRanges: [(String, Range<String.Index>)] {
-        var words: [(String, Range<String.Index>)] = []
-        enumerateSubstrings(in: startIndex..., options: .byWords) { word, range, _, _ in
-            words.append((word!, range))
-        }
-        return words
-    }
-    
-    var withoutTags: String {
-        self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-    
     public var titlecased: String {
         self.replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression, range: self.range(of: self))
             .trimmingCharacters(in: .whitespacesAndNewlines)
@@ -77,14 +65,5 @@ extension String {
     
     public var createName: String{
        String(self.prefix(10) + "...")
-    }
-    
-    var isRTLCode: Bool{
-        switch self{
-        case "ar", "arc", "dv", "fa", "ha", "he", "khw", "ks", "ku",
-            "ps", "ur", "yi":
-            return true
-        default : return false
-        }
     }
 }
