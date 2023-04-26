@@ -24,8 +24,8 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     //MARK: - Azure
     let azureSpeech = AzureSpeech.share
     let audioSaveService = AudioSavedService()
-    @Published var savedAudio: AudioModel?
-    var prepairRangesData = [AudioModel.RangesData]()
+    @Published var savedAudio: Audio?
+    var prepairRangesData = [Audio.RangesData]()
     var rangePublisher = PassthroughSubject<NSRange, Never>()
     var cancellable: AnyCancellable?
     var azureDelayTasks = [Task<(), any Error>]()

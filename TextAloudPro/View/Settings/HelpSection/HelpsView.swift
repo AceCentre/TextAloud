@@ -11,6 +11,7 @@ struct HelpsBlockView: View {
     let supportLink = "https://docs.acecentre.org.uk/products/v/textaloud/"
     let contactLink = "https://forms.office.com/Pages/ResponsePage.aspx?id=bFwgTJtTgU-Raj-O_eaPrNZFPqw5Il9Hp4B1mWQ_eQhUNzBFOEhKWFEwUVhBTEYzQkFIQTRMTjhaSS4u"
     let privacyLink = "https://docs.acecentre.org.uk/products/v/textaloud/privacy"
+    
     var body: some View {
         Group{
             GroupBox(label: SettingsLabelView(labelText: Localization.help.toString, labelImage: "questionmark.circle")) {

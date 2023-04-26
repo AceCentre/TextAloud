@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import TextAloudKit
 
 class SpeechSaveService {
 
@@ -31,7 +32,7 @@ class SpeechSaveService {
 
 
 struct SpeechSaveModel: Codable{
-    var audio: AudioModel?
+    var audio: Audio?
     var text: String
     var lastWordRange: NSRange?
 }

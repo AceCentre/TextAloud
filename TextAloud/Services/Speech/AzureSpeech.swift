@@ -33,8 +33,8 @@ class AzureSpeech{
         var result: Bool = false
         
         do {
-            let sub = SPEECH_KEY
-            let region = SPEECH_REGION
+            let sub = "688eeeba205b456d8474beb30c5e457c"
+            let region = "uksouth"
             
             if let speechConfig = try? SPXSpeechConfiguration(subscription: sub, region: region){
                 

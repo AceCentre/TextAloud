@@ -1,4 +1,3 @@
-//
 //  Audio.swift
 //  TextAloud
 //
@@ -7,30 +6,31 @@
 import Foundation
 
 
-struct AudioModel: Codable{
-    let url: URL
+public struct Audio: Codable{
+    public let url: URL
     let duration: Double
-    let rangesData: [RangesData]
-    let averageWordTime: Double
+    public let rangesData: [RangesData]
+    public let averageWordTime: Double
     
     
-    init(url: URL, duration: Double, rangesData: [RangesData]) {
+    public init(url: URL, duration: Double, rangesData: [RangesData]) {
         self.url = url
         self.duration = duration
         self.rangesData = rangesData
         self.averageWordTime = duration / Double(rangesData.count)
     }
         
-    struct RangesData: Codable{
-        
-        let range: NSRange
+    public struct RangesData: Codable{
+        public let range: NSRange
         let timeOffsets: Double
         
-        init(offset: UInt, wordLength: UInt, timeOffsets: UInt) {
+        public init(offset: UInt, wordLength: UInt, timeOffsets: UInt) {
             self.range = .init(location: Int(offset), length: Int(wordLength))
             self.timeOffsets = timeOffsets.tikcsToMillisecond
         }
     }
+
+
 }
 
 

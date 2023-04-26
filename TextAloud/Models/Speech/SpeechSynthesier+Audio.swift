@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import TextAloudKit
 
 extension SpeechSynthesizer{
     

@@ -8,12 +8,13 @@ import Foundation
 import SwiftUI
 import AVKit
 import Combine
+import TextAloudKit
 
 class AudioPlayerManager: ObservableObject {
     
     //@Published var currentTime: Double = .zero
     @AppStorage("isAzureSpeech") var isAzureSpeech: Bool = false
-    @Published var currentAudio: AudioModel?
+    @Published var currentAudio: Audio?
     @Published var isPlaying: Bool = false
     @Published var player: AVPlayer!
     @Published var session: AVAudioSession!
@@ -33,7 +34,7 @@ class AudioPlayerManager: ObservableObject {
         isAzureSpeech && currentAudio != nil
     }
     
-    private func setAudio(_ audio: AudioModel){
+    private func setAudio(_ audio: Audio){
         currentAudio = audio
         player = AVPlayer(url: audio.url)
         startSubscriptions()
@@ -44,7 +45,7 @@ class AudioPlayerManager: ObservableObject {
     }
     
  
-    func audioAction(_ audio: AudioModel){
+    func audioAction(_ audio: Audio){
         if isPlaying {
             stopAudio()
         } else {
@@ -77,7 +78,7 @@ extension AudioPlayerManager{
             .store(in: &subscriptions)
     }
     
-    private func playAudio(_ audio: AudioModel) {
+    private func playAudio(_ audio: Audio) {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
             self.playerDidFinishPlaying()
         }
