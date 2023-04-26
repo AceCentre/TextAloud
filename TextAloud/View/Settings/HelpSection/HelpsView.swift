@@ -63,16 +63,3 @@ extension HelpsBlockView{
     }
 }
 
-
-extension Bundle{
-    
-    var appVersionShort: String {
-        guard let result = infoDictionary?["CFBundleShortVersionString"] as? String else {return ""}
-        return result
-    }
-    
-    var appVersionLong: String {
-        guard let result = infoDictionary?["CFBundleVersion"] as? String else {return ""}
-        return result
-    }
-}
