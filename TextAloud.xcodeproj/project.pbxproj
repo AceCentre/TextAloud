@@ -19,7 +19,6 @@
 		5A4A0ED1299B98DF00E3B385 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED0299B98DF00E3B385 /* RootView.swift */; };
 		5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */; };
 		5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */; };
-		5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0ED7299B991B00E3B385 /* ButtonView.swift */; };
 		5A4A0EDD299B9AB400E3B385 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */; };
 		5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */; };
 		5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */; };
@@ -101,7 +100,6 @@
 		D5B9CE7629EFE69200531DA2 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */; };
 		D5B9CE7729EFE69200531DA2 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */; };
 		D5B9CE7829EFE69200531DA2 /* ErrorViewModif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */; };
-		D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6629EFE69200531DA2 /* ButtonView.swift */; };
 		D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */; };
 		D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */; };
 		D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */; };
@@ -239,7 +237,6 @@
 		5A4A0ED0299B98DF00E3B385 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
-		5A4A0ED7299B991B00E3B385 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		5A4A0EDC299B9AB400E3B385 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
 		5A4CC752299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift"; sourceTree = "<group>"; };
 		5A4CC754299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechSynthesizer+ AzureSpeech.swift"; sourceTree = "<group>"; };
@@ -314,7 +311,6 @@
 		D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
 		D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModif.swift; sourceTree = "<group>"; };
-		D5B9CE6629EFE69200531DA2 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexStackView.swift; sourceTree = "<group>"; };
 		D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
@@ -472,7 +468,6 @@
 				5ADCBB54299BCA2900FC05C8 /* FlexStackView.swift */,
 				D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */,
 				D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */,
-				5A4A0ED7299B991B00E3B385 /* ButtonView.swift */,
 				5A4CC75F299FCF7700D8E146 /* CircleControlButtonView.swift */,
 				5A96E56F29A1588A00347F12 /* TextButtonView.swift */,
 				5A12CBBC29A29ED100E950A8 /* ErrorViewModif.swift */,
@@ -556,7 +551,6 @@
 			children = (
 				D5B9CE9A29EFFBB900531DA2 /* Info.plist */,
 				D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */,
-				D5B9CE7B29EFE6B100531DA2 /* Utils */,
 				D5B9CE5029EFE69200531DA2 /* View */,
 				D5B9CE3E29EFE4D400531DA2 /* App */,
 				D5B9CE1E29EFE46500531DA2 /* Models */,
@@ -748,17 +742,9 @@
 				D5B9CE6329EFE69200531DA2 /* TextButtonView.swift */,
 				D5B9CE6429EFE69200531DA2 /* IconButtonView.swift */,
 				D5B9CE6529EFE69200531DA2 /* ErrorViewModif.swift */,
-				D5B9CE6629EFE69200531DA2 /* ButtonView.swift */,
 				D5B9CE6729EFE69200531DA2 /* FlexStackView.swift */,
 			);
 			path = ViewComponents;
-			sourceTree = "<group>";
-		};
-		D5B9CE7B29EFE6B100531DA2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		D5B9CEBD29F1847E00531DA2 /* Models */ = {
@@ -1135,7 +1121,6 @@
 				D5B9CE7529EFE69200531DA2 /* SearchTextView.swift in Sources */,
 				D5B9CE7A29EFE69200531DA2 /* FlexStackView.swift in Sources */,
 				D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */,
-				D5B9CE7929EFE69200531DA2 /* ButtonView.swift in Sources */,
 				D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */,
 				D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */,
 				D5B9CDEA29EFE3FA00531DA2 /* AudioSavedService.swift in Sources */,
@@ -1215,7 +1200,6 @@
 				D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */,
 				5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */,
 				5A1E176B29A793FD009BB492 /* IconButtonView.swift in Sources */,
-				5A4A0ED8299B991B00E3B385 /* ButtonView.swift in Sources */,
 				5A12CBBD29A29ED100E950A8 /* ErrorViewModif.swift in Sources */,
 				5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */,
 				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
