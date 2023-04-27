@@ -205,7 +205,7 @@ extension RootView {
 extension RootView{
     @ViewBuilder
     private var controlsSectionView: some View{
-        CircleControlButtonView(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
+        PlayPauseButton(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
             
             let overAllowance = settingsVM.allowanceLeft() <= 0
             // let overAllowance = true
