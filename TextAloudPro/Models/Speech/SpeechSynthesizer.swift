@@ -56,7 +56,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
     
     
     //activate speek for test voices
-    func activateSimple(_ text: String, id: String, type: VoiceMode){
+    func activateSimple(_ text: String, id: String, type: VoiceProvider){
         playMode = .setting
         if type == .azure{
             azureSpeech.stop()
@@ -107,7 +107,7 @@ class SpeechSynthesizer: NSObject, ObservableObject {
         }
     }
     
-    func stop(for type: VoiceMode){
+    func stop(for type: VoiceProvider){
         if type == .azure{
             azureSpeech.stop()
         }else if type == .apple{

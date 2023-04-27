@@ -1,12 +1,13 @@
 //
-//  VoicesSimpleTexts.swift
-//  TextAloud
+//  VoiceSampleText.swift
+//  TextAloudKit
 //
+//  Created by Gavin Henderson on 27/04/2023.
 //
 
 
 
-let voicesSimpleTexts = [
+public let voiceSampleText = [
 
     "af":"Hallo, ek is jou nuwe praatstem. Hoe klink ek?",
     "am":"ጤና ይስጥልኝ ፣ እኔ አዲሱ ተናጋሪ ድምጽህ ነኝ። እንዴት ነው የምሰማው?",

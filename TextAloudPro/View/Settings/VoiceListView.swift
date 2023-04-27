@@ -5,10 +5,11 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 struct VoiceListView: View {
     @Environment(\.dismiss) var dismiss
-    @Binding var selectedVoice: VoiceModel?
+    @Binding var selectedVoice: Voice?
     var viewMode: ViewMode = .all
     @State var showAbotSheet: Bool = false
     @State var searchText: String = ""
@@ -66,7 +67,7 @@ extension VoiceListView{
     
     private var voiceServicePisker: some View{
         Picker(selection: $settingVM.voiceMode) {
-            ForEach(VoiceMode.allCases, id: \.self){mode in
+            ForEach(VoiceProvider.allCases, id: \.self){mode in
                 Text(mode.title)
                     .tag(mode)
             }
@@ -82,7 +83,7 @@ extension VoiceListView{
 
 extension VoiceListView{
     
-    var filteredLanguage: [LanguageModel] {
+    var filteredLanguage: [LanguageGroup] {
         
         if searchText.isEmpty {
             return viewMode == .all ? settingVM.allLanguages : selectedLaunguages
@@ -92,13 +93,13 @@ extension VoiceListView{
         }
     }
     
-    var selectedLaunguages: [LanguageModel]{
+    var selectedLaunguages: [LanguageGroup]{
         guard let selectedVoice = selectedVoice else {return []}
         return settingVM.languages(for: selectedVoice.languageCode)
         
     }
     
-    private func filterLanguage(_ laung: LanguageModel) -> Bool{
+    private func filterLanguage(_ laung: LanguageGroup) -> Bool{
         laung.languageStr.localizedCaseInsensitiveContains(searchText)
     }
     
@@ -111,10 +112,10 @@ extension VoiceListView{
         }
     }
     
-    private func sectionRowView(_ language: LanguageModel) -> some View{
+    private func sectionRowView(_ language: LanguageGroup) -> some View{
         Section {
             ForEach(language.voices){voice in
-                voiceRowView(voice, voiceText: language.simpleVoiceText)
+                voiceRowView(voice, voiceText: language.sampleVoiceText)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if !settingVM.voiceIsActive(voice.id){
@@ -130,7 +131,7 @@ extension VoiceListView{
     }
     
     @ViewBuilder
-    private func voiceRowView(_ voice: VoiceModel, voiceText: String) -> some View{
+    private func voiceRowView(_ voice: Voice, voiceText: String) -> some View{
         let isPlay: Bool = speech.isPlay && tappedVoiceId == voice.id
         HStack {
             Image(systemName: "person.crop.circle.fill")

@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 struct LanguageSpeechView: View {
     @Environment(\.dismiss) var dismiss
@@ -12,7 +13,7 @@ struct LanguageSpeechView: View {
     @State var sheet: SheetMode?
     @EnvironmentObject var settingVM: SettingViewModel
     @EnvironmentObject var speech: SpeechSynthesizer
-    @State var selectedVoice: VoiceModel?
+    @State var selectedVoice: Voice?
     var body: some View {
         List {
             ForEach(settingVM.selectedVoices) { voice in
@@ -73,7 +74,7 @@ struct LanguageSpeechView_Previews: PreviewProvider {
 
 extension LanguageSpeechView{
     
-    private func rowView(_ voice: VoiceModel) -> some View{
+    private func rowView(_ voice: Voice) -> some View{
         HStack {
             VStack(alignment: .leading, spacing: 10){
                 Button {

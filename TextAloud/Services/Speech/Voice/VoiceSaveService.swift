@@ -5,7 +5,7 @@
 //
 
 import Foundation
-
+import TextAloudKit
 
 class VoiceSaveService {
     
@@ -15,12 +15,12 @@ class VoiceSaveService {
     private init(){}
     
     
-    func save(_ model: [VoiceModel]){
+    func save(_ model: [Voice]){
         userDefault.saveObject(model, key: userDataKey)
     }
     
     
-    func load() -> [VoiceModel]?{
+    func load() -> [Voice]?{
         return userDefault.loadObject(key: userDataKey)
     }
     
