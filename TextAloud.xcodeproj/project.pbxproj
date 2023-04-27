@@ -121,7 +121,7 @@
 		D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB429F1545300531DA2 /* UInt.swift */; };
 		D5B9CEB729F1547700531DA2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB629F1547700531DA2 /* Task.swift */; };
 		D5B9CEB929F1556000531DA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEB829F1556000531DA2 /* View.swift */; };
-		D5B9CEBC29F1787000531DA2 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEBB29F1787000531DA2 /* ActivityView.swift */; };
+		D5B9CEBC29F1787000531DA2 /* ShareActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */; };
 		D5B9CEBF29F1849100531DA2 /* TextSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEBE29F1849100531DA2 /* TextSelection.swift */; };
 		D5B9CEC729F1927500531DA2 /* TextSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CEC629F1927500531DA2 /* TextSelection.swift */; };
 		D5B9CEC829F1927500531DA2 /* TextAloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */; };
@@ -334,7 +334,7 @@
 		D5B9CEB429F1545300531DA2 /* UInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt.swift; sourceTree = "<group>"; };
 		D5B9CEB629F1547700531DA2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D5B9CEB829F1556000531DA2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		D5B9CEBB29F1787000531DA2 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareActivity.swift; sourceTree = "<group>"; };
 		D5B9CEBE29F1849100531DA2 /* TextSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelection.swift; sourceTree = "<group>"; };
 		D5B9CEC429F1927500531DA2 /* TextAloudKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextAloudKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B9CEC629F1927500531DA2 /* TextSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSelection.swift; sourceTree = "<group>"; };
@@ -536,6 +536,16 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
+		D55F39AA29F9808A00665B96 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9CEA429F042AF00531DA2 /* NetworkManager.swift */,
+				D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */,
+				D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
 		D58686A729EF2A54004E5A4B /* TextAloudPro */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,16 +573,12 @@
 		D58686BA29EF2A8B004E5A4B /* TextAloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				D5B9CDC629EF2B4700531DA2 /* Components */,
 				D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */,
 				D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */,
+				D5B9CDC629EF2B4700531DA2 /* Components */,
 				D5B9CDC929EF2B9500531DA2 /* Extensions */,
-				D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */,
-				D5B9CEBA29F1786100531DA2 /* Views */,
-				D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */,
-				D5B9CEA029F0231A00531DA2 /* Localization.swift */,
+				D55F39AA29F9808A00665B96 /* Observables */,
 				D5B9CEBD29F1847E00531DA2 /* Models */,
-				D5B9CEA429F042AF00531DA2 /* NetworkManager.swift */,
 				D5B9CEA229F0377300531DA2 /* ShareExtension.swift */,
 			);
 			path = TextAloudKit;
@@ -581,6 +587,7 @@
 		D5B9CDC629EF2B4700531DA2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */,
 				D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */,
 				D55E90A329F2A991004786AD /* LeaveReview.swift */,
 			);
@@ -750,18 +757,11 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		D5B9CEBA29F1786100531DA2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D5B9CEBB29F1787000531DA2 /* ActivityView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		D5B9CEBD29F1847E00531DA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D5B9CEBE29F1849100531DA2 /* TextSelection.swift */,
+				D5B9CEA029F0231A00531DA2 /* Localization.swift */,
 				D55F39A829F97DDD00665B96 /* Audio.swift */,
 				D55F39A429F91D8B00665B96 /* FileReader.swift */,
 			);
@@ -1171,7 +1171,7 @@
 				D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */,
 				D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */,
 				D5B9CEB729F1547700531DA2 /* Task.swift in Sources */,
-				D5B9CEBC29F1787000531DA2 /* ActivityView.swift in Sources */,
+				D5B9CEBC29F1787000531DA2 /* ShareActivity.swift in Sources */,
 				D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */,
 				D55F39A929F97DDD00665B96 /* Audio.swift in Sources */,
 				D5B9CEBF29F1849100531DA2 /* TextSelection.swift in Sources */,
