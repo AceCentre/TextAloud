@@ -195,7 +195,7 @@ extension RootView {
                 }
                 
             } label: {
-                IconView(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
+                IconWithTitle(title: voice.languageCode.shortLocaleLanguage, subtitle: voice.representableName, icon: "globe.europe.africa.fill")
             }
         }
     }
@@ -263,7 +263,7 @@ extension RootView{
                     Label("Share", systemImage: "arrowshape.turn.up.right.fill")
                 }
             } label: {
-                IconView(title: "Audio", icon: "waveform.circle.fill")
+                IconWithTitle(title: "Audio", icon: "waveform.circle.fill")
             }
         }
     }
