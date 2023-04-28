@@ -77,7 +77,7 @@ extension VoiceListView{
     }
     
     private var voiceSearchView: some View{
-        SearchTextView(text: $searchText)
+        SearchInput(text: $searchText)
     }
 }
 

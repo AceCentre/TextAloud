@@ -1,16 +1,23 @@
 //
-//  SearchTextView.swift
-//  TextAloud
+//  SearchInput.swift
+//  TextAloudKit
 //
+//  Created by Gavin Henderson on 28/04/2023.
 //
 
+import Foundation
 import SwiftUI
 
-struct SearchTextView: View {
+public struct SearchInput: View {
     @Namespace var namespace
     @FocusState var isFocus: Bool
     @Binding var text: String
-    var body: some View {
+    
+    public init(text: Binding<String>) {
+        self._text = text
+    }
+    
+    public var body: some View {
         HStack {
             HStack{
                 Image(systemName: "magnifyingglass")
@@ -44,8 +51,11 @@ struct SearchTextView: View {
     }
 }
 
-struct SearchTextView_Previews: PreviewProvider {
+struct SearchInput_Previews: PreviewProvider {
     static var previews: some View {
-        SearchTextView(text: .constant(""))
+        SearchInput(text: .constant(""))
+        SearchInput(text: .constant("United Kingdom"))
+        SearchInput(text: .constant("")).preferredColorScheme(.dark)
+        SearchInput(text: .constant("United Kingdom")).preferredColorScheme(.dark)
     }
 }
