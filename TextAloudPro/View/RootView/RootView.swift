@@ -285,7 +285,7 @@ extension RootView{
     
     @ViewBuilder
     private var editButton: some View{
-        TextButtonView(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
+        ButtonWithIconAndText(title: rootVM.isFocused ? Localization.save.toString : Localization.edit.toString, image: rootVM.isFocused ? "checkmark" : "highlighter", isDisabled: rootVM.isDisabledSaveButton) {
             
             rootVM.onTappedEditSaveButton()
             ///save action
@@ -303,7 +303,7 @@ extension RootView{
     @ViewBuilder
     private var cancelButton: some View{
         if rootVM.isFocused{
-            TextButtonView(title: Localization.cancel.toString, image: "xmark", isDisabled: false) {
+            ButtonWithIconAndText(title: Localization.cancel.toString, image: "xmark", isDisabled: false) {
                 rootVM.onCancelTapped()
             }.hLeading()
         }
