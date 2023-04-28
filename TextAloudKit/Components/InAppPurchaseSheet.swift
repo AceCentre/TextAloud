@@ -7,11 +7,20 @@
 
 import SwiftUI
 
-struct InAppPurchaseSheet: View {
+public struct InAppPurchaseSheet: View {
     var onPurchaseClick: () -> ()
     @State var disableButton: Bool = false
     
-    private var viewContainer: some View{
+    public init(onPurchaseClick: @escaping () -> Void, disableButton: Bool) {
+        self.onPurchaseClick = onPurchaseClick
+        self.disableButton = disableButton
+    }
+    
+    public init(onPurchaseClick: @escaping () -> Void) {
+        self.onPurchaseClick = onPurchaseClick
+        self.disableButton = false
+    }
+    public var body: some View{
         VStack {
             Text("Free Trial Expired").font(.title).bold().padding()
             
@@ -69,10 +78,6 @@ struct InAppPurchaseSheet: View {
         .padding(.top)
         
     }
-    
-    var body: some View {
-        viewContainer
-    }
 }
 
 
@@ -80,7 +85,7 @@ struct InAppPurchaseSheet_Previews: PreviewProvider {
     static var previews: some View {
         Text("Test")
             .sheet(isPresented: .constant(true)) {
-                InAppPurchaseSheet( onPurchaseClick: {
+                InAppPurchaseSheet(onPurchaseClick: {
                     print("Purchase")
                 })
             }

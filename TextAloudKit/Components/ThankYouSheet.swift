@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct ThankYouSheet: View {
+public struct ThankYouSheet: View {
     var onContinue: () -> ()
     
-    var body: some View {
+    public init(onContinue: @escaping () -> Void) {
+        self.onContinue = onContinue
+    }
+    
+    public var body: some View {
         VStack {
             Text("Thank you for purchasing TextAloud!").font(.title).bold().padding().multilineTextAlignment(.center)
             Image("AceLogo").resizable().scaledToFit().frame(maxWidth: 250)

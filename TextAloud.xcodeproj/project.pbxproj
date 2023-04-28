@@ -49,10 +49,10 @@
 		D55F39B929FBD8B500665B96 /* ButtonWithIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39B829FBD8B500665B96 /* ButtonWithIconAndText.swift */; };
 		D55F39BB29FBD9BA00665B96 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39BA29FBD9BA00665B96 /* AppError.swift */; };
 		D55F39BF29FBE06200665B96 /* ErrorHandlerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */; };
-		D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */; };
+		D55F39C129FBE40100665B96 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39C029FBE40100665B96 /* ThankYouSheet.swift */; };
+		D55F39C329FBE42300665B96 /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39C229FBE42300665B96 /* InAppPurchaseSheet.swift */; };
 		D5695A4A29D48475008D9251 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4929D48475008D9251 /* ExceptionCatcher */; };
 		D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */; };
-		D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */; };
 		D58686A929EF2A54004E5A4B /* TextAloudProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */; };
 		D58686AD29EF2A55004E5A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58686AC29EF2A55004E5A4B /* Assets.xcassets */; };
 		D58686B029EF2A55004E5A4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D58686AF29EF2A55004E5A4B /* Preview Assets.xcassets */; };
@@ -93,8 +93,6 @@
 		D5B9CE6F29EFE69200531DA2 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */; };
 		D5B9CE7029EFE69200531DA2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5C29EFE69200531DA2 /* RootView.swift */; };
 		D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5D29EFE69200531DA2 /* TextView.swift */; };
-		D5B9CE7329EFE69200531DA2 /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */; };
-		D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */; };
 		D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */; };
 		D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */; };
 		D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
@@ -258,8 +256,8 @@
 		D55F39B829FBD8B500665B96 /* ButtonWithIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithIconAndText.swift; sourceTree = "<group>"; };
 		D55F39BA29FBD9BA00665B96 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerModifier.swift; sourceTree = "<group>"; };
-		D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
-		D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
+		D55F39C029FBE40100665B96 /* ThankYouSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
+		D55F39C229FBE42300665B96 /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
 		D5701FE929BA067200F45BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D58686A629EF2A53004E5A4B /* TextAloudPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloudPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudProApp.swift; sourceTree = "<group>"; };
@@ -298,8 +296,6 @@
 		D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		D5B9CE5C29EFE69200531DA2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D5B9CE5D29EFE69200531DA2 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
-		D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
 		D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
 		D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudPro.entitlements; sourceTree = "<group>"; };
@@ -453,8 +449,6 @@
 		5A4A0ED6299B990800E3B385 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D56C9E5129C9B6C600DFF59F /* InAppPurchaseSheet.swift */,
-				D5695A4129CC9BD9008D9251 /* ThankYouSheet.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -571,8 +565,10 @@
 			children = (
 				D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */,
 				D55F39B629FBD4DE00665B96 /* IconWithTitle.swift */,
+				D55F39C029FBE40100665B96 /* ThankYouSheet.swift */,
 				D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */,
 				D55F39B829FBD8B500665B96 /* ButtonWithIconAndText.swift */,
+				D55F39C229FBE42300665B96 /* InAppPurchaseSheet.swift */,
 				D55F39B429FBC67A00665B96 /* SearchInput.swift */,
 				D55F39B229FABEEB00665B96 /* PlayPauseButton.swift */,
 				D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */,
@@ -722,8 +718,6 @@
 		D5B9CE5E29EFE69200531DA2 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D5B9CE6029EFE69200531DA2 /* InAppPurchaseSheet.swift */,
-				D5B9CE6129EFE69200531DA2 /* ThankYouSheet.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1098,9 +1092,7 @@
 				D5B9CE3529EFE46500531DA2 /* SpeechSynthesier+Audio.swift in Sources */,
 				D5B9CDEB29EFE3FA00531DA2 /* AudioPlayerManager.swift in Sources */,
 				D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */,
-				D5B9CE7329EFE69200531DA2 /* InAppPurchaseSheet.swift in Sources */,
 				D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */,
-				D5B9CE7429EFE69200531DA2 /* ThankYouSheet.swift in Sources */,
 				D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */,
 				D5B9CDEA29EFE3FA00531DA2 /* AudioSavedService.swift in Sources */,
 				D5B9CE3429EFE46500531DA2 /* SpeechSynthesizer.swift in Sources */,
@@ -1132,6 +1124,7 @@
 				D55E90A429F2A991004786AD /* LeaveReview.swift in Sources */,
 				D55F39AE29FA89EF00665B96 /* LanguageGroup.swift in Sources */,
 				D55F39A529F91D8B00665B96 /* FileReader.swift in Sources */,
+				D55F39C329FBE42300665B96 /* InAppPurchaseSheet.swift in Sources */,
 				D55F39B929FBD8B500665B96 /* ButtonWithIconAndText.swift in Sources */,
 				D5B9CEB329F153AD00531DA2 /* UserDefaults.swift in Sources */,
 				D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */,
@@ -1149,6 +1142,7 @@
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
 				D55F39BB29FBD9BA00665B96 /* AppError.swift in Sources */,
 				D5B9CEAB29F14FA300531DA2 /* Sequence.swift in Sources */,
+				D55F39C129FBE40100665B96 /* ThankYouSheet.swift in Sources */,
 				D55F39BF29FBE06200665B96 /* ErrorHandlerModifier.swift in Sources */,
 				D5B9CEAF29F150B000531DA2 /* NSRange.swift in Sources */,
 				D55F39B329FABEEB00665B96 /* PlayPauseButton.swift in Sources */,
@@ -1178,7 +1172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */,
-				D56C9E5229C9B6C600DFF59F /* InAppPurchaseSheet.swift in Sources */,
 				5A6E493929A39FC4000A66A4 /* AudioSavedService.swift in Sources */,
 				5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */,
 				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
@@ -1190,7 +1183,6 @@
 				FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */,
 				5A4CC759299FA8F800D8E146 /* AzureVoiceService.swift in Sources */,
 				5A4A0ECD299B97A200E3B385 /* AVAudioSessionManager.swift in Sources */,
-				D5695A4229CC9BD9008D9251 /* ThankYouSheet.swift in Sources */,
 				5A6C680629B5DDC300DDBF3D /* HelpsView.swift in Sources */,
 				5A4A0ED3299B98E600E3B385 /* RootViewModel.swift in Sources */,
 				5A6E493B29A3A3D3000A66A4 /* LocalFileManager.swift in Sources */,
