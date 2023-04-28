@@ -10,7 +10,7 @@ import Combine
 import PDFKit
 import TextAloudKit
 
-class RootViewModel: ObservableObject{
+class RootViewModel: ObservableObject {
     @Published var text: String = "Example text, press the plus button to add your own document."
     @Published var isChangeText: Bool = false
     @Published var isEditMode: Bool = false
@@ -143,7 +143,7 @@ extension RootViewModel{
                     }
                 }else{
                     self.showLoader = false
-                    self.error = .unSupportedFile
+                    self.error = .unsupportedFile
                 }
             }
         case .failure(_):

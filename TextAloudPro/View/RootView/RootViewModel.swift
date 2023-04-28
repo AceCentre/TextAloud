@@ -142,7 +142,7 @@ extension RootViewModel{
                     }
                 }else{
                     self.showLoader = false
-                    self.error = .unSupportedFile
+                    self.error = .unsupportedFile
                 }
             }
         case .failure(_):

@@ -23,4 +23,8 @@ extension View{
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    public func handle(error: Binding<AppError?>) -> some View {
+        modifier(ErrorHandleModifier(error: error))
+    }
+    
 }
