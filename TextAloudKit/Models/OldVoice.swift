@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Voice: Identifiable, Hashable, Codable{
+public struct OldVoice: Identifiable, Hashable, Codable{
     
     public let id: String
     let name: String

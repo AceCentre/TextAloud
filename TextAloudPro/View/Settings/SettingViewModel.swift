@@ -22,7 +22,7 @@ class SettingViewModel: ObservableObject{
     
     @Published var showVoicePicker: Bool = false
 
-    @Published var selectedVoices = [Voice]()
+    @Published var selectedVoices = [OldVoice]()
     @Published var voiceMode: VoiceProvider = .apple
     @Published var lastPrimaryLanguage: String = ""
     private var cancellable = Set<AnyCancellable>()
@@ -54,7 +54,7 @@ extension SettingViewModel{
         self.timeUsedInSeconds += secondsUsed
     }
     
-    var activeVoiceModel: Voice?{
+    var activeVoiceModel: OldVoice?{
         selectedVoices.first(where: {$0.id == activeVoiceId})
     }
     
@@ -62,7 +62,7 @@ extension SettingViewModel{
         voiceMode == .azure ? azureVoiceService.getLanguagesForCode(code) : aVoiceService.getLanguagesForCode(code)
     }
     
-    func addOrRemoveVoice(for voice: Voice){
+    func addOrRemoveVoice(for voice: OldVoice){
         if voiceIsContains(for: voice.id){
             removeVoice(for: voice.id)
         }else{
@@ -92,7 +92,7 @@ extension SettingViewModel{
 //        }
 //    }
     
-    func setActiveVoice(for voice: Voice){
+    func setActiveVoice(for voice: OldVoice){
         isAzureSpeech = voice.type == .azure
         activeVoiceId = voice.id
     }
@@ -127,7 +127,7 @@ extension SettingViewModel{
         voiceSaveService.save(selectedVoices)
     }
     
-    private func addVoice(for voice: Voice){
+    private func addVoice(for voice: OldVoice){
         if selectedVoices.count < maxCountLaunguges{
             selectedVoices.append(voice)
         }

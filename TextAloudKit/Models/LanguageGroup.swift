@@ -11,9 +11,9 @@ public struct LanguageGroup: Identifiable{
     public var id: String{ code }
     public let code: String
     public var languageStr: String { code.getFullLocaleLanguageStr }
-    public let voices: [Voice]
+    public let voices: [OldVoice]
     
-    public init(code: String, voices: [Voice]) {
+    public init(code: String, voices: [OldVoice]) {
         self.code = code
         self.voices = voices
     }
