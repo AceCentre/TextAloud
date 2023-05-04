@@ -163,15 +163,3 @@ struct TextView: UIViewRepresentable {
         }
     }
 }
-
-
-extension String {
-    func guessLanguageCode() -> String {
-        let length = self.utf16.count
-        let languageCode = CFStringTokenizerCopyBestStringLanguage(self as CFString, CFRange(location: 0, length: length)) as String? ?? ""
-        return languageCode
-    }
-    
-
-}
-
