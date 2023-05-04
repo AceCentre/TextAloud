@@ -14,10 +14,8 @@ extension NSMutableString {
             try ExceptionCatcher.catch {
                 return self.substring(with: range)
             }
-            print("Uncaught, true")
             return true
         } catch {
-            print("Caught, false")
             return false
         }
     }

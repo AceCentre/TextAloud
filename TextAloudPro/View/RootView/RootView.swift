@@ -39,11 +39,28 @@ struct RootView: View {
             storeKitManager.setup()
         }
         .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
-        .onChange(of: rootVM.tappedRange) { range in
-            if let range{
-                rootVM.selectedRange = nil
+        .onChange(of: rootVM.selectedRange) { range in            
+            let overAllowance = settingsVM.allowanceLeft() <= 0
+            let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
+            
+            if overAllowance && !payingUser {
+                showUpgradeModal = true
+                
+                print("You've hit the limit! And you've not paid, lets show a modal")
+                return
+            } else if overAllowance && payingUser {
+                print("You are over the limit, but you've paid so its all good")
+            } else if payingUser {
+                print("You've paid but you still have time left so its all good")
+            } else {
+                print("You haven't paid, but you still have time left, so its all good")
+            }
+            
+            
+            if let range {
                 synthesizer.setSpeakForRange(rootVM.text, range, mode: .tapped, completion: {duration in
                     settingsVM.trackSecondsUsed(secondsUsed: duration)
+                    rootVM.selectedRange = nil
                 })
             }
         }
@@ -206,25 +223,7 @@ extension RootView{
     @ViewBuilder
     private var controlsSectionView: some View{
         PlayPauseButton(isPlay: isPlay, isDisabled: rootVM.text.isEmpty){
-            
-            let overAllowance = settingsVM.allowanceLeft() <= 0
-            // let overAllowance = true
-            let payingUser = storeKitManager.hasPurchasedUnlimitedVoiceAllowance == true
-            
-            if overAllowance && !payingUser {
-                showUpgradeModal = true
-                
-                print("You've hit the limit! And you've not paid, lets show a modal")
-                return
-            } else if overAllowance && payingUser {
-                print("You are over the limit, but you've paid so its all good")
-            } else if payingUser {
-                print("You've paid but you still have time left so its all good")
-            } else {
-                print("You haven't paid, but you still have time left, so its all good")
-            }
-            
-            
+
             if synthesizer.isActiveCashAudio && rootVM.currentSelectionMode == .all, let audio = synthesizer.savedAudio{
                 audioManager.audioAction(audio)
             } else {
@@ -237,9 +236,8 @@ extension RootView{
                 }
                 
                 
-                synthesizer.setSpeakForRange(rootVM.text, range, textSelectionMode: rootVM.currentSelectionMode, completion: { duration in
-                    settingsVM.trackSecondsUsed(secondsUsed: duration)
-                })
+                                rootVM.selectedRange = range
+
             }
         }
         

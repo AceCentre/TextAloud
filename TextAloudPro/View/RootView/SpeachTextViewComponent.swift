@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import TextAloudKit
 
 struct SpeachTextViewComponent: View {
     @Binding var currentWord: NSRange?

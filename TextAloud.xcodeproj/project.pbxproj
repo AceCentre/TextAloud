@@ -65,6 +65,7 @@
 		D58686BC29EF2A8B004E5A4B /* TextAloudKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5AB36C92A03C4C800BAFEE3 /* NSMutableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB36C82A03C4C800BAFEE3 /* NSMutableString.swift */; };
 		D5AB36CB2A03C52C00BAFEE3 /* ExceptionCatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D5AB36CA2A03C52C00BAFEE3 /* ExceptionCatcher */; };
+		D5AB36CD2A0410C800BAFEE3 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB36CC2A0410C800BAFEE3 /* TextView.swift */; };
 		D5B9CDC829EF2B8500531DA2 /* LoadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */; };
 		D5B9CDCB29EF2BAB00531DA2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CDCA29EF2BAB00531DA2 /* Image.swift */; };
 		D5B9CDCD29EF2BBD00531DA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */; };
@@ -99,7 +100,6 @@
 		D5B9CE6E29EFE69200531DA2 /* SpeachTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */; };
 		D5B9CE6F29EFE69200531DA2 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */; };
 		D5B9CE7029EFE69200531DA2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5C29EFE69200531DA2 /* RootView.swift */; };
-		D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE5D29EFE69200531DA2 /* TextView.swift */; };
 		D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */; };
 		D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */; };
 		D5B9CE9529EFEF5200531DA2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E1C20229C3791200606B89 /* StoreKit.framework */; };
@@ -124,7 +124,6 @@
 		FDF5C2EE290990F20003A675 /* TextAloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C2ED290990F10003A675 /* TextAloudApp.swift */; };
 		FDF5C2F2290990F60003A675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F1290990F60003A675 /* Assets.xcassets */; };
 		FDF5C2F5290990F60003A675 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */; };
-		FDF5C302290BDFE40003A675 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C301290BDFE40003A675 /* TextView.swift */; };
 		FDF5C308290F0D250003A675 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C307290F0D250003A675 /* SettingsView.swift */; };
 		FDF5C30A290F122E0003A675 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5C309290F122E0003A675 /* SettingsLabelView.swift */; };
 /* End PBXBuildFile section */
@@ -280,6 +279,7 @@
 		D58686B929EF2A8B004E5A4B /* TextAloudKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextAloudKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58686BB29EF2A8B004E5A4B /* TextAloudKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextAloudKit.h; sourceTree = "<group>"; };
 		D5AB36C82A03C4C800BAFEE3 /* NSMutableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableString.swift; sourceTree = "<group>"; };
+		D5AB36CC2A0410C800BAFEE3 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D5B9CDC729EF2B8500531DA2 /* LoadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPage.swift; sourceTree = "<group>"; };
 		D5B9CDCA29EF2BAB00531DA2 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,7 +310,6 @@
 		D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeachTextViewComponent.swift; sourceTree = "<group>"; };
 		D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		D5B9CE5C29EFE69200531DA2 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		D5B9CE5D29EFE69200531DA2 /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D5B9CE9129EFEAB700531DA2 /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		D5B9CE9329EFECAE00531DA2 /* RootSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSettings.swift; sourceTree = "<group>"; };
 		D5B9CE9929EFFB3900531DA2 /* TextAloudPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextAloudPro.entitlements; sourceTree = "<group>"; };
@@ -337,7 +336,6 @@
 		FDF5C2ED290990F10003A675 /* TextAloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAloudApp.swift; sourceTree = "<group>"; };
 		FDF5C2F1290990F60003A675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF5C2F4290990F60003A675 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FDF5C301290BDFE40003A675 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FDF5C307290F0D250003A675 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDF5C309290F122E0003A675 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -445,7 +443,6 @@
 		5A4A0ECF299B97C600E3B385 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
-				FDF5C301290BDFE40003A675 /* TextView.swift */,
 				5A4A0ED4299B98EC00E3B385 /* SpeachTextViewComponent.swift */,
 				5A4A0ED2299B98E600E3B385 /* RootViewModel.swift */,
 				5A4A0ED0299B98DF00E3B385 /* RootView.swift */,
@@ -579,6 +576,7 @@
 			children = (
 				D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */,
 				D55F39B629FBD4DE00665B96 /* IconWithTitle.swift */,
+				D5AB36CC2A0410C800BAFEE3 /* TextView.swift */,
 				D55F39C029FBE40100665B96 /* ThankYouSheet.swift */,
 				D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */,
 				D55F39B829FBD8B500665B96 /* ButtonWithIconAndText.swift */,
@@ -724,7 +722,6 @@
 				D5B9CE5A29EFE69200531DA2 /* SpeachTextViewComponent.swift */,
 				D5B9CE5B29EFE69200531DA2 /* RootViewModel.swift */,
 				D5B9CE5C29EFE69200531DA2 /* RootView.swift */,
-				D5B9CE5D29EFE69200531DA2 /* TextView.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -1098,7 +1095,6 @@
 				D5B9CDEC29EFE3FA00531DA2 /* AVAudioSessionManager.swift in Sources */,
 				D5B9CE3529EFE46500531DA2 /* SpeechSynthesier+Audio.swift in Sources */,
 				D5B9CDEB29EFE3FA00531DA2 /* AudioPlayerManager.swift in Sources */,
-				D5B9CE7129EFE69200531DA2 /* TextView.swift in Sources */,
 				D5B9CDF729EFE41100531DA2 /* AzureSpeech.swift in Sources */,
 				D5B9CE3329EFE46500531DA2 /* SpeechSynthesier+UserDefaults.swift in Sources */,
 				D5B9CDEA29EFE3FA00531DA2 /* AudioSavedService.swift in Sources */,
@@ -1135,6 +1131,7 @@
 				D5AB36C92A03C4C800BAFEE3 /* NSMutableString.swift in Sources */,
 				D55F39D32A01330400665B96 /* ProviderEnum.swift in Sources */,
 				D55F39D52A01331E00665B96 /* ConnectionType.swift in Sources */,
+				D5AB36CD2A0410C800BAFEE3 /* TextView.swift in Sources */,
 				D55F39C329FBE42300665B96 /* InAppPurchaseSheet.swift in Sources */,
 				D55F39D72A0145AA00665B96 /* VoiceProviderProtocol.swift in Sources */,
 				D55F39B929FBD8B500665B96 /* ButtonWithIconAndText.swift in Sources */,
@@ -1191,7 +1188,6 @@
 				5A1E176729A755AD009BB492 /* VoiceSaveService.swift in Sources */,
 				5A6E494329A3B6DC000A66A4 /* SpeechSynthesier+UserDefaults.swift in Sources */,
 				5A4CC755299F70CE00D8E146 /* SpeechSynthesizer+ AzureSpeech.swift in Sources */,
-				FDF5C302290BDFE40003A675 /* TextView.swift in Sources */,
 				5A6E493F29A3AC4F000A66A4 /* AudioPlayerManager.swift in Sources */,
 				5A4A0ED5299B98EC00E3B385 /* SpeachTextViewComponent.swift in Sources */,
 				5A4CC753299F6F7100D8E146 /* SpeechSynthesizer+AVSpeechSynthesizerDelegate.swift in Sources */,
