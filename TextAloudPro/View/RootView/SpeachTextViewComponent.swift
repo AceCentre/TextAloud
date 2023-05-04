@@ -13,7 +13,7 @@ struct SpeachTextViewComponent: View {
     var body: some View {
         GeometryReader { proxy in
             
-            TextView(focused: $rootVM.isFocused, text: $rootVM.text, isEditing: $rootVM.isEditMode, currentWord: $currentWord, selectedRange: $rootVM.selectedRange, tappedRange: $rootVM.tappedRange, selectionMode: $rootVM.currentSelectionMode, cursorPos: $rootVM.cursorPos)
+            TextView(focused: $rootVM.isFocused, text: $rootVM.text, isEditing: $rootVM.isEditMode, currentWord: $currentWord, selectedRange: $rootVM.selectedRange, selectionMode: $rootVM.currentSelectionMode, cursorPos: $rootVM.cursorPos)
             
                 .padding(10)
                 .frame(height: proxy.size.height)

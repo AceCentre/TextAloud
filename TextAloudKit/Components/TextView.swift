@@ -14,7 +14,6 @@ public struct TextView: UIViewRepresentable {
     @Binding var isEditing: Bool
     @Binding var currentWord: NSRange?
     @Binding var selectedRange: NSRange?
-    @Binding var tappedRange: NSRange?
     @Binding var selectionMode: TextSelectionEnum
     @Binding var cursorPos: Int?
 
@@ -28,7 +27,6 @@ public struct TextView: UIViewRepresentable {
         isEditing: Binding<Bool>,
         currentWord: Binding<NSRange?>,
         selectedRange: Binding<NSRange?>,
-        tappedRange: Binding<NSRange?>,
         selectionMode: Binding<TextSelectionEnum>,
         cursorPos: Binding<Int?>
     ){
@@ -37,7 +35,6 @@ public struct TextView: UIViewRepresentable {
         self._isEditing = isEditing
         self._currentWord = currentWord
         self._selectedRange = selectedRange
-        self._tappedRange = tappedRange
         self._selectionMode = selectionMode
         self._cursorPos = cursorPos
     }

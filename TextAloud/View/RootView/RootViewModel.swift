@@ -17,7 +17,6 @@ class RootViewModel: ObservableObject {
     @AppStorage("currentSelectionMode") var currentSelectionMode: TextSelectionEnum = .paragraph
     @Published var isFocused: Bool = false
     @Published var selectedRange: NSRange?
-    @Published var tappedRange: NSRange?
     @Published var error: AppError?
     @Published var showLoader: Bool = false
     @Published var cursorPos: Int?
@@ -30,18 +29,6 @@ class RootViewModel: ObservableObject {
     
     
     init(){
-        startNSNotificationSubsc()
-    }
-    
-    
-    
-    private func startNSNotificationSubsc(){
-        ncPublisher
-            .receive(on: DispatchQueue.main)
-            .sink { _ in
-                self.tappedRange = nil
-            }
-            .store(in: &cancellable)
     }
     
     
@@ -50,13 +37,11 @@ class RootViewModel: ObservableObject {
     }
         
     func removeText(){
-        tappedRange = nil
         selectedRange = nil
         text.removeAll()
     }
     
     func setSelectionMode(_ type: TextSelectionEnum){
-        tappedRange = nil
         selectedRange = nil
         currentSelectionMode = type
     }
@@ -84,7 +69,6 @@ class RootViewModel: ObservableObject {
         let range = currentSelectionMode.getRangeForIndex(location, text)
         if currentSelectionMode != .all{
             selectedRange = range
-            tappedRange = nil
         }
         return range
     }
@@ -116,7 +100,6 @@ extension RootViewModel{
     func onDocumentPick(for result: Result<[URL], Error>){
         showLoader = true
         selectedRange = nil
-        tappedRange = nil
         switch result {
         case .success(let success):
             if let url = success.first, url.startAccessingSecurityScopedResource(){
