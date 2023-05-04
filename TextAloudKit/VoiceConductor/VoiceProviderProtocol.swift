@@ -15,12 +15,19 @@ protocol VoiceProviderProtocol {
 }
 
 class SystemProvider: VoiceProviderProtocol {
+    var systemSynthesizer: AVSpeechSynthesizer
+    
+    init() {
+        self.systemSynthesizer = AVSpeechSynthesizer()
+    }
+    
     func speak(text: String, voice: Voice) {
-        /// TODO Write speak function
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(identifier: voice.id)
+        systemSynthesizer.speak(utterance)
     }
     
     func setup() {
-        /// TODO Write setup function
     }
     
     func getVoices() -> [Voice] {
