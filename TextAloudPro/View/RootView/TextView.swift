@@ -8,8 +8,6 @@
 import SwiftUI
 import UIKit
 import TextAloudKit
-import ExceptionCatcher
-
 
 struct TextView: UIViewRepresentable {
     @Binding var focused: Bool
@@ -175,19 +173,4 @@ extension String {
     }
     
 
-}
-
-extension NSMutableString {
-    func isRangeValid(range: NSRange) -> Bool {
-        do {
-            try ExceptionCatcher.catch {
-                return self.substring(with: range)
-            }
-            print("Uncaught, true")
-            return true
-        } catch {
-            print("Caught, false")
-            return false
-        }
-    }
 }
