@@ -350,7 +350,7 @@ extension RootView{
 extension RootView{
     private var speachTextViewComponet: some View{
         VStack(spacing: 16) {
-            SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
+            TextView(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
                 .padding(.top, 32)
                         
             HStack {

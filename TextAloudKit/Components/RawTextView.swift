@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-public struct TextView: UIViewRepresentable {
+public struct RawTextView: UIViewRepresentable {
     @Binding var focused: Bool
     @Binding var text: String
     @Binding var isEditing: Bool
@@ -115,9 +115,9 @@ public struct TextView: UIViewRepresentable {
     
     public class Coordinator: NSObject, UITextViewDelegate {
 
-        var parent: TextView
+        var parent: RawTextView
         
-        init(_ uiTextView: TextView) {
+        init(_ uiTextView: RawTextView) {
             self.parent = uiTextView
         }
         
