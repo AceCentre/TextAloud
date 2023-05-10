@@ -9,7 +9,7 @@ import TextAloudKit
 
 struct VoiceListView: View {
     @Environment(\.dismiss) var dismiss
-    @Binding var selectedVoice: OldVoice?
+    @Binding var selectedVoice: Voice?
     var viewMode: ViewMode = .all
     @State var showAbotSheet: Bool = false
     @State var searchText: String = ""
@@ -131,7 +131,7 @@ extension VoiceListView{
     }
     
     @ViewBuilder
-    private func voiceRowView(_ voice: OldVoice, voiceText: String) -> some View{
+    private func voiceRowView(_ voice: Voice, voiceText: String) -> some View{
         let isPlay: Bool = speech.isPlay && tappedVoiceId == voice.id
         HStack {
             Image(systemName: "person.crop.circle.fill")

@@ -39,7 +39,7 @@
 		D55F39A529F91D8B00665B96 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39A429F91D8B00665B96 /* FileReader.swift */; };
 		D55F39A729F964E900665B96 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39A629F964E900665B96 /* Bundle.swift */; };
 		D55F39A929F97DDD00665B96 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39A829F97DDD00665B96 /* Audio.swift */; };
-		D55F39AC29FA85E600665B96 /* OldVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39AB29FA85E600665B96 /* OldVoice.swift */; };
+		D55F39AC29FA85E600665B96 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39AB29FA85E600665B96 /* Voice.swift */; };
 		D55F39AE29FA89EF00665B96 /* LanguageGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39AD29FA89EF00665B96 /* LanguageGroup.swift */; };
 		D55F39B129FA8A5E00665B96 /* VoiceSampleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39B029FA8A5E00665B96 /* VoiceSampleText.swift */; };
 		D55F39B329FABEEB00665B96 /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39B229FABEEB00665B96 /* PlayPauseButton.swift */; };
@@ -50,12 +50,6 @@
 		D55F39BF29FBE06200665B96 /* ErrorHandlerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */; };
 		D55F39C129FBE40100665B96 /* ThankYouSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39C029FBE40100665B96 /* ThankYouSheet.swift */; };
 		D55F39C329FBE42300665B96 /* InAppPurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39C229FBE42300665B96 /* InAppPurchaseSheet.swift */; };
-		D55F39CD2A012EF000665B96 /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39CC2A012EF000665B96 /* Voice.swift */; };
-		D55F39CF2A0132DF00665B96 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39CE2A0132DF00665B96 /* Language.swift */; };
-		D55F39D12A0132F400665B96 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39D02A0132F300665B96 /* Gender.swift */; };
-		D55F39D32A01330400665B96 /* ProviderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39D22A01330400665B96 /* ProviderEnum.swift */; };
-		D55F39D52A01331E00665B96 /* ConnectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39D42A01331E00665B96 /* ConnectionType.swift */; };
-		D55F39D72A0145AA00665B96 /* VoiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39D62A0145AA00665B96 /* VoiceProviderProtocol.swift */; };
 		D55F39D92A0159C000665B96 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55F39D82A0159C000665B96 /* Language.swift */; };
 		D5695A4D29D6FD9F008D9251 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D5695A4C29D6FD9F008D9251 /* YouTubePlayerKit */; };
 		D58686A929EF2A54004E5A4B /* TextAloudProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58686A829EF2A54004E5A4B /* TextAloudProApp.swift */; };
@@ -250,7 +244,7 @@
 		D55F39A429F91D8B00665B96 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		D55F39A629F964E900665B96 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		D55F39A829F97DDD00665B96 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
-		D55F39AB29FA85E600665B96 /* OldVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldVoice.swift; sourceTree = "<group>"; };
+		D55F39AB29FA85E600665B96 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		D55F39AD29FA89EF00665B96 /* LanguageGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGroup.swift; sourceTree = "<group>"; };
 		D55F39B029FA8A5E00665B96 /* VoiceSampleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSampleText.swift; sourceTree = "<group>"; };
 		D55F39B229FABEEB00665B96 /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
@@ -261,12 +255,6 @@
 		D55F39BE29FBE06200665B96 /* ErrorHandlerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerModifier.swift; sourceTree = "<group>"; };
 		D55F39C029FBE40100665B96 /* ThankYouSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouSheet.swift; sourceTree = "<group>"; };
 		D55F39C229FBE42300665B96 /* InAppPurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseSheet.swift; sourceTree = "<group>"; };
-		D55F39CC2A012EF000665B96 /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
-		D55F39CE2A0132DF00665B96 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-		D55F39D02A0132F300665B96 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
-		D55F39D22A01330400665B96 /* ProviderEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderEnum.swift; sourceTree = "<group>"; };
-		D55F39D42A01331E00665B96 /* ConnectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionType.swift; sourceTree = "<group>"; };
-		D55F39D62A0145AA00665B96 /* VoiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceProviderProtocol.swift; sourceTree = "<group>"; };
 		D55F39D82A0159C000665B96 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		D5701FE929BA067200F45BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D58686A629EF2A53004E5A4B /* TextAloudPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextAloudPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -506,19 +494,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		D55F39CB2A012EE000665B96 /* VoiceConductor */ = {
-			isa = PBXGroup;
-			children = (
-				D55F39CC2A012EF000665B96 /* Voice.swift */,
-				D55F39D22A01330400665B96 /* ProviderEnum.swift */,
-				D55F39D42A01331E00665B96 /* ConnectionType.swift */,
-				D55F39D62A0145AA00665B96 /* VoiceProviderProtocol.swift */,
-				D55F39D02A0132F300665B96 /* Gender.swift */,
-				D55F39CE2A0132DF00665B96 /* Language.swift */,
-			);
-			path = VoiceConductor;
-			sourceTree = "<group>";
-		};
 		D58686A729EF2A54004E5A4B /* TextAloudPro */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,7 +528,6 @@
 				D55F39AA29F9808A00665B96 /* Observables */,
 				D5B9CEBD29F1847E00531DA2 /* Models */,
 				D5B9CEA229F0377300531DA2 /* ShareExtension.swift */,
-				D55F39CB2A012EE000665B96 /* VoiceConductor */,
 			);
 			path = TextAloudKit;
 			sourceTree = "<group>";
@@ -712,7 +686,7 @@
 				D5B9CEA029F0231A00531DA2 /* Localization.swift */,
 				D55F39A829F97DDD00665B96 /* Audio.swift */,
 				D55F39A429F91D8B00665B96 /* FileReader.swift */,
-				D55F39AB29FA85E600665B96 /* OldVoice.swift */,
+				D55F39AB29FA85E600665B96 /* Voice.swift */,
 				D55F39AD29FA89EF00665B96 /* LanguageGroup.swift */,
 			);
 			path = Models;
@@ -1099,18 +1073,14 @@
 				D55F39A729F964E900665B96 /* Bundle.swift in Sources */,
 				D5B9CE9229EFEAB700531DA2 /* StoreKitManager.swift in Sources */,
 				D5B9CEA329F0377300531DA2 /* ShareExtension.swift in Sources */,
-				D55F39CD2A012EF000665B96 /* Voice.swift in Sources */,
 				D5B9CEA129F0231A00531DA2 /* Localization.swift in Sources */,
 				D5B9CEA929F14E3F00531DA2 /* String.swift in Sources */,
 				D55E90A429F2A991004786AD /* LeaveReview.swift in Sources */,
 				D55F39AE29FA89EF00665B96 /* LanguageGroup.swift in Sources */,
 				D55F39A529F91D8B00665B96 /* FileReader.swift in Sources */,
 				D5AB36C92A03C4C800BAFEE3 /* NSMutableString.swift in Sources */,
-				D55F39D32A01330400665B96 /* ProviderEnum.swift in Sources */,
-				D55F39D52A01331E00665B96 /* ConnectionType.swift in Sources */,
 				D5AB36CD2A0410C800BAFEE3 /* RawTextView.swift in Sources */,
 				D55F39C329FBE42300665B96 /* InAppPurchaseSheet.swift in Sources */,
-				D55F39D72A0145AA00665B96 /* VoiceProviderProtocol.swift in Sources */,
 				D55F39B929FBD8B500665B96 /* ButtonWithIconAndText.swift in Sources */,
 				D5B9CEB329F153AD00531DA2 /* UserDefaults.swift in Sources */,
 				D5B9CEA529F042AF00531DA2 /* NetworkManager.swift in Sources */,
@@ -1118,13 +1088,12 @@
 				D5B9CEB729F1547700531DA2 /* Task.swift in Sources */,
 				D5B9CEBC29F1787000531DA2 /* ShareActivity.swift in Sources */,
 				D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */,
-				D55F39AC29FA85E600665B96 /* OldVoice.swift in Sources */,
+				D55F39AC29FA85E600665B96 /* Voice.swift in Sources */,
 				D55F39A929F97DDD00665B96 /* Audio.swift in Sources */,
 				D55F39B729FBD4DE00665B96 /* IconWithTitle.swift in Sources */,
 				D5B9CEBF29F1849100531DA2 /* TextSelection.swift in Sources */,
 				D55F39B129FA8A5E00665B96 /* VoiceSampleText.swift in Sources */,
 				D5B9CEA729F1462500531DA2 /* Color.swift in Sources */,
-				D55F39D12A0132F400665B96 /* Gender.swift in Sources */,
 				D5B9CEB129F151F300531DA2 /* NSNotification.swift in Sources */,
 				D5B9CE9429EFECAE00531DA2 /* RootSettings.swift in Sources */,
 				D55F39BB29FBD9BA00665B96 /* AppError.swift in Sources */,
@@ -1132,7 +1101,6 @@
 				D55F39C129FBE40100665B96 /* ThankYouSheet.swift in Sources */,
 				D55F39BF29FBE06200665B96 /* ErrorHandlerModifier.swift in Sources */,
 				D5B9CEAF29F150B000531DA2 /* NSRange.swift in Sources */,
-				D55F39CF2A0132DF00665B96 /* Language.swift in Sources */,
 				D55F39B329FABEEB00665B96 /* PlayPauseButton.swift in Sources */,
 				D5B9CDCB29EF2BAB00531DA2 /* Image.swift in Sources */,
 				D55F39B529FBC67A00665B96 /* SearchInput.swift in Sources */,

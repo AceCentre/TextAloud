@@ -15,12 +15,12 @@ class VoiceSaveService {
     private init(){}
     
     
-    func save(_ model: [OldVoice]){
+    func save(_ model: [Voice]){
         userDefault.saveObject(model, key: userDataKey)
     }
     
     
-    func load() -> [OldVoice]?{
+    func load() -> [Voice]?{
         return userDefault.loadObject(key: userDataKey)
     }
     

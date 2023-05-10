@@ -13,7 +13,7 @@ struct LanguageSpeechView: View {
     @State var sheet: SheetMode?
     @EnvironmentObject var settingVM: SettingViewModel
     @EnvironmentObject var speech: SpeechSynthesizer
-    @State var selectedVoice: OldVoice?
+    @State var selectedVoice: Voice?
     var body: some View {
         List {
             ForEach(settingVM.selectedVoices) { voice in
@@ -74,7 +74,7 @@ struct LanguageSpeechView_Previews: PreviewProvider {
 
 extension LanguageSpeechView{
     
-    private func rowView(_ voice: OldVoice) -> some View{
+    private func rowView(_ voice: Voice) -> some View{
         HStack {
             VStack(alignment: .leading, spacing: 10){
                 Button {
