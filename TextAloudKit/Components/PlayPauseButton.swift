@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// TODO - Delete this
 public struct PlayPauseButton: View {
     var isPlay: Bool
     var isDisabled: Bool = false
@@ -41,6 +42,58 @@ public struct PlayPauseButton: View {
         }
         .keyboardShortcut(isPlay ? .escape : .return)
         .disabled(isDisabled)
+    }
+}
+
+public struct StopButton: View {
+    var action: () -> Void
+    
+    public init(action:  @escaping () -> Void) {
+        self.action = action
+    }
+    
+    public var body: some View {
+        Button {
+            action()
+        } label: {
+            Image(systemName: "stop.fill")
+                .font(.system(size: 30))
+                .foregroundColor(.white)
+                .frame(width: 65, height: 65)
+                .background{
+                    Circle()
+                        .fill(Color.limeChalk)
+                        .shadow(color: .black.opacity(0.15), radius: 4, x: 2, y: 4)
+                }
+        }
+        .keyboardShortcut(.escape)
+    }
+}
+
+
+public struct PlayButton: View {
+    var action: () -> Void
+    
+    public init(action:  @escaping () -> Void) {
+        self.action = action
+    }
+    
+    public var body: some View {
+        Button {
+            action()
+        } label: {
+            Image(systemName: "play.fill")
+                .font(.system(size: 30))
+                .foregroundColor(.white)
+                .frame(width: 65, height: 65)
+                .background{
+                    Circle()
+                        .fill(Color.limeChalk)
+                        .shadow(color: .black.opacity(0.15), radius: 4, x: 2, y: 4)
+                }
+
+        }
+        .keyboardShortcut(.return)
     }
 }
 

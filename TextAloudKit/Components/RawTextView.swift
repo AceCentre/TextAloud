@@ -9,7 +9,6 @@ import SwiftUI
 import UIKit
 
 public struct RawTextView: UIViewRepresentable {
-    @Binding var focused: Bool
     @Binding var text: String
     @Binding var isEditing: Bool
     @Binding var currentWord: NSRange?
@@ -22,7 +21,6 @@ public struct RawTextView: UIViewRepresentable {
     @AppStorage("readingColor") var readingColor: Color = Color.red
     
     public init(
-        focused: Binding<Bool>,
         text: Binding<String>,
         isEditing: Binding<Bool>,
         currentWord: Binding<NSRange?>,
@@ -30,7 +28,6 @@ public struct RawTextView: UIViewRepresentable {
         selectionMode: Binding<TextSelectionEnum>,
         cursorPos: Binding<Int?>
     ){
-        self._focused = focused
         self._text = text
         self._isEditing = isEditing
         self._currentWord = currentWord
@@ -124,7 +121,7 @@ public struct RawTextView: UIViewRepresentable {
         
         public func textViewDidBeginEditing(_ textView: UITextView) {
             DispatchQueue.main.async {
-                self.parent.focused = true
+                self.parent.isEditing = true
             }
         }
         
@@ -142,7 +139,7 @@ public struct RawTextView: UIViewRepresentable {
         
         public func textViewDidEndEditing(_ textView: UITextView) {
             DispatchQueue.main.async {
-                self.parent.focused = false
+                self.parent.isEditing = false
             }
         }
 
