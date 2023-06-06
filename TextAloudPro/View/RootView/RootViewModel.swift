@@ -30,8 +30,19 @@ class RootViewModel: ObservableObject{
     
     
     init(){
+        startNSNotificationSubsc()
     }
     
+    
+    
+    private func startNSNotificationSubsc(){
+        ncPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.tappedRange = nil
+            }
+            .store(in: &cancellable)
+    }
     
     
     var isDisabledSaveButton: Bool{

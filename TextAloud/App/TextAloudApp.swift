@@ -10,12 +10,18 @@ import TextAloudKit
 
 @main
 struct TextAloudApp: App {
-    @StateObject var settings = RootSettings(isTextAloudPro: false)
+    // Root Settings stores the app level settings
+    // This is designed to store variables to differentiate between the Free and Pro version of the app
+    @StateObject var rootSettings = RootSettings(
+        isTextAloudPro: false,
+        groupName: "uk.org.acecentre.Text.Aloud",
+        appName: "TextAloud"
+    )
     
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(settings)
+            HomePage()
+                .environmentObject(rootSettings)
         }
     }
 }

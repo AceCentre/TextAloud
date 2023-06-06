@@ -6,9 +6,13 @@
 //
 
 public class RootSettings: ObservableObject {
-    @Published public var isTextAloudPro = false
+    @Published public var isTextAloudPro: Bool
+    @Published public var groupName: String
+    @Published public var appName: String
     
-    public init(isTextAloudPro: Bool) {
+    public init(isTextAloudPro: Bool, groupName: String, appName: String) {
         self.isTextAloudPro = isTextAloudPro
+        self.groupName = groupName
+        self.appName = appName
     }
 }

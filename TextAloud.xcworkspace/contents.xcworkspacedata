@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Pages">
+   </Group>
    <FileRef
       location = "group:TextAloud.xcodeproj">
    </FileRef>
