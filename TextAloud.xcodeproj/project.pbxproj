@@ -100,6 +100,7 @@
 		D5BCA7EA2A152041008E0146 /* TextState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BCA7E92A152041008E0146 /* TextState.swift */; };
 		D5BCA7EC2A15212E008E0146 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BCA7EB2A15212E008E0146 /* TextInputArea.swift */; };
 		D5BCA7EE2A17B5B0008E0146 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BCA7ED2A17B5B0008E0146 /* Controls.swift */; };
+		D5C0FFCF2A45D841001467A8 /* NavigationLinkWithIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0FFCE2A45D841001467A8 /* NavigationLinkWithIconAndText.swift */; };
 		D5F20D862A17D1A100721C3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B9CDCC29EF2BBD00531DA2 /* Assets.xcassets */; };
 		D5F20D892A1B7C7800721C3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5F20D882A1B7C7800721C3E /* Preview Assets.xcassets */; };
 		D5F20D8B2A1B847000721C3E /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F20D8A2A1B847000721C3E /* LinearGradient.swift */; };
@@ -289,6 +290,7 @@
 		D5BCA7E92A152041008E0146 /* TextState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextState.swift; sourceTree = "<group>"; };
 		D5BCA7EB2A15212E008E0146 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 		D5BCA7ED2A17B5B0008E0146 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		D5C0FFCE2A45D841001467A8 /* NavigationLinkWithIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkWithIconAndText.swift; sourceTree = "<group>"; };
 		D5E1C20229C3791200606B89 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5E1C20429C37E1A00606B89 /* TextAloudStore.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextAloudStore.storekit; path = TextAloud/TextAloudStore.storekit; sourceTree = "<group>"; };
 		D5F20D882A1B7C7800721C3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			children = (
 				D5B9CEBB29F1787000531DA2 /* ShareActivity.swift */,
 				D5AB36D42A0D1EA000BAFEE3 /* Header.swift */,
+				D5C0FFCE2A45D841001467A8 /* NavigationLinkWithIconAndText.swift */,
 				D55F39B629FBD4DE00665B96 /* IconWithTitle.swift */,
 				D5BCA7EB2A15212E008E0146 /* TextInputArea.swift */,
 				D5AB36CC2A0410C800BAFEE3 /* RawTextView.swift */,
@@ -1000,6 +1003,7 @@
 				D5B9CEB729F1547700531DA2 /* Task.swift in Sources */,
 				D5B9CEBC29F1787000531DA2 /* ShareActivity.swift in Sources */,
 				D5B9CEB529F1545300531DA2 /* UInt.swift in Sources */,
+				D5C0FFCF2A45D841001467A8 /* NavigationLinkWithIconAndText.swift in Sources */,
 				D5AB36D52A0D1EA000BAFEE3 /* Header.swift in Sources */,
 				D5711DDA2A1F9A8F007EA5B4 /* SettingsState.swift in Sources */,
 				D55F39AC29FA85E600665B96 /* Voice.swift in Sources */,
