@@ -26,7 +26,10 @@ public struct HomePage: View {
                     clearAction: {
                         text.clear()
                     },
-                    importAction: {}
+                    importAction: {},
+                    settingsView: {
+                        Text("This is the settings page")
+                    }
                 )
                 TextInputArea(text: text)
                 Controls()
