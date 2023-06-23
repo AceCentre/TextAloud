@@ -8,31 +8,25 @@
 import Foundation
 import SwiftUI
 
-public struct Header: View {
+struct Header<Destination>: View where Destination: View {
     var appName: String
     
     var clearAction: () -> Void
     var importAction: () -> Void
     
-    public init(
-        appName: String,
-        clearAction: @escaping () -> Void,
-        importAction: @escaping () -> Void
-    ) {
-        self.appName = appName
-        self.clearAction = clearAction
-        self.importAction = importAction
-    }
+    @ViewBuilder var settingsView: () -> Destination
     
     public var body: some View {
             HStack {
+                NavigationLinkWithIconAndText(
+                    title: UIScreen.main.bounds.width < 500 ? nil : "Settings",
+                    image: "slider.horizontal.3",
+                    type: .primary,
+                    destination: {
+                        settingsView()
+                    }
+                )
 
-//                ButtonWithIconAndText(title: UIScreen.main.bounds.width < 500 ? nil : "Settings", image: "slider.horizontal.3", type: .primary, action: settingsAction)
-                NavigationLink {
-                    Text("Test")
-                } label: {
-                    Text("test")
-                }
                 Text(appName)
                     .foregroundColor(.white)
                     .font(.title2)
@@ -54,8 +48,8 @@ public struct Header: View {
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            Header(appName: "TextAloud", clearAction: {}, importAction: {})
-            Header(appName: "TextAloud Pro", clearAction: {}, importAction: {})
+            Header(appName: "TextAloud", clearAction: {}, importAction: {}, settingsView: { Text("Settings") })
+            Header(appName: "TextAloud Pro", clearAction: {}, importAction: {}, settingsView: { Text("Settings") })
             Spacer().frame(maxHeight: .infinity)
             
         }.background(LinearGradient.fullBackground)
