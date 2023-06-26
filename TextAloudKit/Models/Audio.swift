@@ -21,11 +21,11 @@ public struct Audio: Codable{
     }
         
     public struct RangesData: Codable{
-        public let range: NSRange
+//        public let range: NSRange
         let timeOffsets: Double
         
         public init(offset: UInt, wordLength: UInt, timeOffsets: UInt) {
-            self.range = .init(location: Int(offset), length: Int(wordLength))
+//            self.range = .init(location: Int(offset), length: Int(wordLength))
             self.timeOffsets = timeOffsets.tikcsToMillisecond
         }
     }

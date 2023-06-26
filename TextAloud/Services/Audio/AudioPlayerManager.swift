@@ -88,14 +88,14 @@ extension AudioPlayerManager{
     
     private func startTimer(for range: NSRange? = nil) {
 
-         guard let audio = currentAudio else {return}
+        guard let audio = currentAudio else {return}
          
          // set index if needded
-         self.rangeIndex = audio.rangesData.firstIndex(where: {$0.range.location == range?.location}) ?? 0
+        // self.rangeIndex = audio.rangesData.firstIndex(where: {$0.range.location == range?.location}) ?? 0
         self.sumplesTimer = Timer.scheduledTimer(withTimeInterval: audio.averageWordTime, repeats: true, block: { (timer) in
              
              if self.rangeIndex < audio.rangesData.count {
-                 self.currentRange = audio.rangesData[self.rangeIndex].range
+                 // self.currentRange = audio.rangesData[self.rangeIndex].range
                  self.rangeIndex += 1
              }
          })
