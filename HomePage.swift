@@ -18,8 +18,6 @@ public struct HomePage: View {
     public var body: some View {
         NavigationView
         {
-            
-            
             VStack {
                 Header(
                     appName: rootSettings.appName,
@@ -35,7 +33,10 @@ public struct HomePage: View {
                 Controls()
             }
             .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
-        }.navigationViewStyle(.stack)
+            .navigationBarHidden(true)
+        }
+        
+        .navigationViewStyle(.stack)
         
     }
 }
