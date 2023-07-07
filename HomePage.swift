@@ -12,12 +12,12 @@ public struct HomePage: View {
     @EnvironmentObject var rootSettings: RootSettings
     @StateObject var text: TextState = TextState()
     @StateObject var settings = SettingsState()
+    @State var settingsModalOpen = true
     
     public init() {}
     
     public var body: some View {
-        NavigationView
-        {
+        
             VStack {
                 Header(
                     appName: rootSettings.appName,
@@ -25,18 +25,19 @@ public struct HomePage: View {
                         text.clear()
                     },
                     importAction: {},
-                    settingsView: {
-                        Text("This is the settings page")
+                    settingsAction: {
+                        settingsModalOpen = true
                     }
                 )
                 TextInputArea(text: text)
                 Controls()
             }
             .background(LinearGradient(gradient: Gradient(colors: [.deepOcean, .lightOcean]), startPoint: .top, endPoint: .bottom))
-            .navigationBarHidden(true)
-        }
+            .sheet(isPresented: $settingsModalOpen, content: {
+                SettingsPage(settings: settings)
+            })
         
-        .navigationViewStyle(.stack)
+
         
     }
 }

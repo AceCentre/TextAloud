@@ -8,25 +8,21 @@
 import Foundation
 import SwiftUI
 
-struct Header<Destination>: View where Destination: View {
+struct Header: View {
     var appName: String
     
     var clearAction: () -> Void
     var importAction: () -> Void
-    
-    @ViewBuilder var settingsView: () -> Destination
-    
+    var settingsAction: () -> Void
+        
     public var body: some View {
             HStack {
-                NavigationLinkWithIconAndText(
+                ButtonWithIconAndText(
                     title: UIScreen.main.bounds.width < 500 ? nil : "Settings",
                     image: "slider.horizontal.3",
                     type: .primary,
-                    destination: {
-                        settingsView()
-                    }
+                    action: settingsAction
                 )
-
                 Text(appName)
                     .foregroundColor(.white)
                     .font(.title2)
@@ -48,8 +44,8 @@ struct Header<Destination>: View where Destination: View {
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            Header(appName: "TextAloud", clearAction: {}, importAction: {}, settingsView: { Text("Settings") })
-            Header(appName: "TextAloud Pro", clearAction: {}, importAction: {}, settingsView: { Text("Settings") })
+            Header(appName: "TextAloud", clearAction: {}, importAction: {}, settingsAction: {})
+            Header(appName: "TextAloud Pro", clearAction: {}, importAction: {}, settingsAction: {})
             Spacer().frame(maxHeight: .infinity)
             
         }.background(LinearGradient.fullBackground)
