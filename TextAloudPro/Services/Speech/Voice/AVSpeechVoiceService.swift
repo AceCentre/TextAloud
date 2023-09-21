@@ -19,13 +19,40 @@ class AVSpeechVoiceService: VoiceServiceProtocol{
     }
     
     func fetchVoices() {
-        let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
-        let uniquedLang = aVFvoices.map({$0.language}).uniqued()
+        if #available(iOS 17.0, *) {
+            AVSpeechSynthesizer.requestPersonalVoiceAuthorization() { status in
+                let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
+                let uniquedLang = aVFvoices.map({$0.language}).uniqued()
 
-        self.languages = uniquedLang.map({ code -> LanguageGroup in
-            let voice = aVFvoices.filter({$0.language == code}).map({OldVoice(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: ($0.gender == .male ? .male : .female), type: .apple)})
-            return  .init(code: code, voices: voice)
-        })
+                
+                
+                self.languages = uniquedLang.map({ code -> LanguageGroup in
+                    let voice = aVFvoices
+                        .filter({$0.language == code})
+                        .filter { $0.voiceTraits.contains(.isPersonalVoice) == false } // Does not contain
+                        .map({OldVoice(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: ($0.gender == .male ? .male : .female), type: .apple)})
+                    
+                    return  .init(code: code, voices: voice)
+                })
+                
+                let personalVoices = aVFvoices.filter { $0.voiceTraits.contains(.isPersonalVoice) }
+                
+                if(personalVoices.count > 0) {
+                    let voices: [OldVoice] = personalVoices
+                        .map({OldVoice(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: .personal, type: .apple)})
+                    
+                    self.languages.insert(.init(code: "en", languageStr: "Personal Voice", voices: voices), at:0)
+                }
+            }
+        } else {
+            let aVFvoices = AVSpeechSynthesisVoice.speechVoices()
+            let uniquedLang = aVFvoices.map({$0.language}).uniqued()
+
+            self.languages = uniquedLang.map({ code -> LanguageGroup in
+                let voice = aVFvoices.filter({$0.language == code}).map({OldVoice(id: $0.identifier, name: $0.name, languageCode: $0.language, gender: ($0.gender == .male ? .male : .female), type: .apple)})
+                return  .init(code: code, voices: voice)
+            })
+        }
     }
     
     

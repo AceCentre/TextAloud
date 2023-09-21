@@ -32,12 +32,13 @@ public struct OldVoice: Identifiable, Hashable, Codable{
     }
     
     public enum Gender: Int, Codable{
-        case male, female
+        case male, female, personal
         
         public var toStr: String{
             switch self{
             case .male: return "Male"
             case .female: return "Female"
+            case .personal: return "Personal"
             }
         }
     }
