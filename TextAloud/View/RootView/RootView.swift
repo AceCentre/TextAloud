@@ -346,14 +346,40 @@ extension RootView{
             }
         }
     }
+    
+    @ViewBuilder
+    private var progressBar: some View {
+       
+        // Checking condition if synthesizer is speaking
+        // and unwrapping the lowerbound of currentWord being synthesized
+        if let currentWord = synthesizer.currentWord, synthesizer.isPlay {
+            ProgressBar(
+                value: currentWord.upperBound,
+                total: rootVM.text.count,
+                color: .limeChalk
+            )
+            
+        } else {
+            
+            // Placeholder view: it keeps the layout space without showing the view
+            ProgressBar(
+                value: 0,
+                total: 1,
+                color: .deepOcean
+            )
+            .hidden()
+        }
+    }
 }
 
 //MARK: - Text Editor Section View
 extension RootView{
     private var speachTextViewComponet: some View{
-        VStack(spacing: 16) {
+        VStack(spacing: 12) {
             SpeachTextViewComponent(currentWord: audioManager.isSetAudio ? $audioManager.currentRange : $synthesizer.currentWord, rootVM: rootVM)
                 .padding(.top, 32)
+            
+            progressBar
                         
             HStack {
                 HStack {
